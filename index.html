@@ -608,6 +608,33 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
 .askbox-n{margin:10px 2px 0;font-size:13px;color:#5d5a54}
 @media (max-width:560px){.askbox-row{flex-direction:column}.askbox-b{width:100%}}
 @media (prefers-reduced-motion:reduce){.askbox::before,.askbox-spark{animation:none}}
+
+/* hero: five workshop scenes crossfading slowly (no zoom); one photo for reduced motion */
+.hero__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 45%;opacity:0;transition:opacity 1.8s cubic-bezier(.22,.61,.36,1)}
+.hero__img img.on{opacity:1}
+html:not(.js) .hero__img img:first-child{opacity:1}
+.hero__dots{position:absolute;right:clamp(16px,3vw,32px);bottom:clamp(16px,3vh,28px);z-index:3;display:flex;gap:6px}
+.hero__dots i{width:18px;height:3px;border-radius:3px;background:rgba(255,255,255,.28);overflow:hidden;position:relative}
+.hero__dots i.on{background:rgba(255,255,255,.5)}
+.hero__dots i.on::after{content:"";position:absolute;inset:0;background:#f39a36;transform-origin:left;animation:herodot 6s linear forwards}
+@keyframes herodot{from{transform:scaleX(0)}}
+@media (prefers-reduced-motion:reduce){.hero__dots{display:none}.hero__img img{transition:none}}
+@media (max-width:759px){.hero__dots{bottom:auto;top:calc(var(--hh,64px) + 18px);right:16px}}
+
+/* warning lights: on laptops the panel holds still while scrolling steps through the lights (native sticky, scroll only read) */
+.lights.scrolly .duo{position:sticky;top:calc(var(--sticky-top,84px));}
+.lights.scrolly{padding-bottom:var(--scrolly-extra,0px)}
+.lights .lsteps{display:none}
+.lights.scrolly .lsteps{display:flex;gap:5px;justify-content:center;margin-top:14px}
+.lights .lsteps i{width:22px;height:3px;border-radius:3px;background:rgba(18,20,23,.14)}
+.lights .lsteps i.on{background:#f39a36}
+
+/* phones: the header Call button and the bottom Call bar already carry the number */
+.n-short{display:none}
+@media (max-width:759px){
+  .n-long{display:none}.n-short{display:inline}
+  .hero__more .tl-call,.door__phone{display:none}
+}
 </style>
 </head>
 <body>
@@ -658,9 +685,14 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
 
 <main id="main">
 <section class="hero" id="top" aria-labelledby="hero-h">
-  <picture class="hero__img">
-    <img src="assets/img/hero-1536.webp" srcset="assets/img/hero-800.webp 800w, assets/img/hero-1536.webp 1536w" sizes="100vw" width="1536" height="864" fetchpriority="high" decoding="async" alt="Illustration of a workshop at night, a red car up on a two-post hoist under work lights, with the roller door open to the street">
-  </picture>
+  <div class="hero__img" id="heroShow">
+    <img class="on" src="assets/img/hero-1536.webp" srcset="assets/img/hero-800.webp 800w, assets/img/hero-1536.webp 1536w" sizes="100vw" width="1536" height="864" fetchpriority="high" decoding="async" alt="Illustration of a workshop at night, a red car up on a two-post hoist under work lights, with the roller door open to the street">
+    <img data-srcset="assets/img/hero-wheel-800.webp 800w, assets/img/hero-wheel-1536.webp 1536w" data-src="assets/img/hero-wheel-1536.webp" sizes="100vw" width="1536" height="864" decoding="async" alt="Illustration of a mechanic changing a front wheel in a workshop at dusk, with the brake disc showing">
+    <img data-srcset="assets/img/hero-inspect-800.webp 800w, assets/img/hero-inspect-1536.webp 1536w" data-src="assets/img/hero-inspect-1536.webp" sizes="100vw" width="1536" height="864" decoding="async" alt="Illustration of a night safety inspection: a torch checking the front tyre of an SUV with its headlights on">
+    <img data-srcset="assets/img/hero-diag-800.webp 800w, assets/img/hero-diag-1536.webp 1536w" data-src="assets/img/hero-diag-1536.webp" sizes="100vw" width="1536" height="864" decoding="async" alt="Illustration of a ute with its bonnet open under a work lamp, a laptop running diagnostics beside it">
+    <img data-srcset="assets/img/hero-street-800.webp 800w, assets/img/hero-street-1536.webp 1536w" data-src="assets/img/hero-street-1536.webp" sizes="100vw" width="1536" height="864" decoding="async" alt="Illustration of the workshop from the street at night, the roller door half open and light spilling onto wet concrete">
+  </div>
+  <div class="hero__dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
   <span class="ai">AI illustration</span>
 
   <div class="door" aria-hidden="true">
@@ -689,7 +721,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
       <p class="rego__priv">We use your rego only to look up the car. It isn't stored.</p>
       <div class="rego__out" id="rego-out" role="status" aria-live="polite"></div>
     </form>
-    <p class="hero__more"><a class="tl" href="tel:+61287985715">Or call (02) 8798 5715</a><a class="tl" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Get directions</a></p>
+    <p class="hero__more"><a class="tl tl-call" href="tel:+61287985715">Or call (02) 8798 5715</a><a class="tl" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Get directions</a></p>
     <p class="hero__status" data-status><span class="dot" aria-hidden="true"></span><span data-status-text>Mon to Fri 9am to 5pm, Sat 9am to 2pm</span></p>
   </div>
 </section>
@@ -725,7 +757,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
         </div>
 
         <article class="lp" id="lp-engine" style="--c:var(--orange)">
-          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-engine"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Amber light: get it checked soon</p><h3>Check engine</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-engine"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Amber light: get it checked soon</p><h3>Check engine</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="n-long">Call (02) 8798 5715</span><span class="n-short">Call the workshop</span></a></div>
           <dl>
             <div><dt>What it usually means</dt><dd>The engine computer has found a fault. It can be small, like a loose fuel cap, or something that needs fixing, like a sensor or ignition problem.</dd></div>
             <div><dt>Can I keep driving?</dt><dd>If it stays on steadily, you can usually drive on gently and book it in soon. If it flashes, the engine may be misfiring badly: slow down, stop somewhere safe as soon as you can and call, as driving on can damage the exhaust system. Your owner's manual has the details for your car.</dd></div>
@@ -734,7 +766,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
         </article>
 
         <article class="lp" id="lp-battery" style="--c:var(--red)">
-          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-battery"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: act now</p><h3>Battery or charging</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-battery"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: act now</p><h3>Battery or charging</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="n-long">Call (02) 8798 5715</span><span class="n-short">Call the workshop</span></a></div>
           <dl>
             <div><dt>What it usually means</dt><dd>The battery isn't being charged. Common causes are a worn alternator, a loose or broken drive belt, or a battery or wiring fault.</dd></div>
             <div><dt>Can I keep driving?</dt><dd>Not far. The car is running on what's left in the battery and may stop. Switch off what you don't need, like the air con and radio, and get somewhere safe. If other lights come on too, stop.</dd></div>
@@ -743,7 +775,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
         </article>
 
         <article class="lp" id="lp-oil" style="--c:var(--red)">
-          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-oil"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: stop safely</p><h3>Oil pressure</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-oil"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: stop safely</p><h3>Oil pressure</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="n-long">Call (02) 8798 5715</span><span class="n-short">Call the workshop</span></a></div>
           <dl>
             <div><dt>What it usually means</dt><dd>Oil pressure is too low. The engine may be low on oil, or there may be a fault with the oil pump or a sensor.</dd></div>
             <div><dt>Can I keep driving?</dt><dd>No. Stop as soon as it's safe and switch the engine off. An engine without oil pressure can be damaged quickly. Check the oil level once it has cooled, and call before driving on.</dd></div>
@@ -752,7 +784,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
         </article>
 
         <article class="lp" id="lp-brake" style="--c:var(--red)">
-          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-brake"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: stop safely</p><h3>Brake system</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-brake"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: stop safely</p><h3>Brake system</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="n-long">Call (02) 8798 5715</span><span class="n-short">Call the workshop</span></a></div>
           <dl>
             <div><dt>What it usually means</dt><dd>On most cars it lights up when the park brake is on. If it stays on with the park brake off, the brake fluid may be low or there may be a fault in the brakes.</dd></div>
             <div><dt>Can I keep driving?</dt><dd>Check the park brake first. If the light stays on, stop somewhere safe and don't drive on until the brakes have been checked.</dd></div>
@@ -761,7 +793,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
         </article>
 
         <article class="lp" id="lp-abs" style="--c:var(--orange)">
-          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-abs"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Amber light: get it checked soon</p><h3>ABS</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-abs"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Amber light: get it checked soon</p><h3>ABS</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="n-long">Call (02) 8798 5715</span><span class="n-short">Call the workshop</span></a></div>
           <dl>
             <div><dt>What it usually means</dt><dd>The anti-lock braking system has a fault. Your normal brakes should still work, but the wheels can lock under hard braking.</dd></div>
             <div><dt>Can I keep driving?</dt><dd>Usually yes, carefully. Leave extra room in front and book it in soon. If the red brake light is on as well, stop safely.</dd></div>
@@ -770,7 +802,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
         </article>
 
         <article class="lp" id="lp-tyre" style="--c:var(--orange)">
-          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-tyre"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Amber light: get it checked soon</p><h3>Tyre pressure</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-tyre"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Amber light: get it checked soon</p><h3>Tyre pressure</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="n-long">Call (02) 8798 5715</span><span class="n-short">Call the workshop</span></a></div>
           <dl>
             <div><dt>What it usually means</dt><dd>One or more tyres is below its set pressure. Only cars with tyre pressure monitoring have this light.</dd></div>
             <div><dt>Can I keep driving?</dt><dd>Gently, to the nearest air pump. Inflate the tyres to the pressures on the tyre placard, often inside the driver's door. If a tyre looks flat or the car pulls to one side, stop somewhere safe.</dd></div>
@@ -779,7 +811,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
         </article>
 
         <article class="lp" id="lp-airbag" style="--c:var(--red)">
-          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-airbag"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red on many cars: don't put it off</p><h3>Airbag (SRS)</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-airbag"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red on many cars: don't put it off</p><h3>Airbag (SRS)</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="n-long">Call (02) 8798 5715</span><span class="n-short">Call the workshop</span></a></div>
           <dl>
             <div><dt>What it usually means</dt><dd>The airbag system has found a fault. The airbags, and on some cars the seatbelt pretensioners, may not work in a crash.</dd></div>
             <div><dt>Can I keep driving?</dt><dd>The car will usually drive normally, but you and your passengers are less protected. Have it checked soon.</dd></div>
@@ -788,7 +820,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
         </article>
 
         <article class="lp" id="lp-temp" style="--c:var(--red)">
-          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-temp"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: stop safely</p><h3>Engine temperature</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-temp"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: stop safely</p><h3>Engine temperature</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="n-long">Call (02) 8798 5715</span><span class="n-short">Call the workshop</span></a></div>
           <dl>
             <div><dt>What it usually means</dt><dd>The engine is running too hot. Common causes are low coolant, a leak, or a fault with the fan, thermostat or water pump.</dd></div>
             <div><dt>Can I keep driving?</dt><dd>No. Stop as soon as it's safe and switch off. Let the engine cool, and never open the radiator cap while it's hot. Call before driving on.</dd></div>
@@ -797,7 +829,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
         </article>
 
         <article class="lp" id="lp-aircon" style="--c:#dfe7f1">
-          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-snow"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Something you notice, not a warning light</p><h3>Air con not cooling</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-snow"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Something you notice, not a warning light</p><h3>Air con not cooling</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="n-long">Call (02) 8798 5715</span><span class="n-short">Call the workshop</span></a></div>
           <dl>
             <div><dt>What it usually means</dt><dd>The system may be low on gas from a slow leak, or a part such as the compressor or a fan may have a fault.</dd></div>
             <div><dt>Can I keep driving?</dt><dd>Yes. The air con also helps clear a fogged windscreen, so take more care in wet weather until it's fixed.</dd></div>
@@ -997,7 +1029,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
       <p>Most jobs follow the same four legs.</p>
     </div>
     <ol class="card steps rv">
-      <li><span class="sn" aria-hidden="true">1</span><h3>Call</h3><p>Ring <a href="tel:+61287985715">(02) 8798 5715</a> or Balli on <a href="tel:+61433597181">0433 597 181</a>. Tell us the car and what it's doing.</p></li>
+      <li><span class="sn" aria-hidden="true">1</span><h3>Call</h3><p><span class="n-long">Ring <a href="tel:+61287985715">(02) 8798 5715</a> or Balli on <a href="tel:+61433597181">0433 597 181</a>.</span><span class="n-short">Ring the workshop or Balli on his mobile.</span> Tell us the car and what it's doing.</p></li>
       <li><span class="sn" aria-hidden="true">2</span><h3>Drop it at Unit 4B</h3><p>4 Homepride Avenue, Warwick Farm, during opening hours.</p></li>
       <li><span class="sn" aria-hidden="true">3</span><h3>We do the work</h3><p>Repairs, servicing or the inspection you booked in for.</p></li>
       <li><span class="sn" aria-hidden="true">4</span><h3>Pick it up</h3><p>Collect your keys from Unit 4B and drive home.</p></li>
@@ -1081,7 +1113,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
       <h2 id="call-h">Light on, or rego due?</h2>
       <p>Call the workshop and tell us what the car is doing. We'll tell you when to bring it in.</p>
       <div class="callcard__acts">
-        <a class="btn btn--ink" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
+        <a class="btn btn--ink" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="n-long">Call (02) 8798 5715</span><span class="n-short">Call the workshop</span></a>
         <a class="tl" href="tel:+61433597181">Or Balli's mobile, 0433 597 181</a>
         <a class="tl" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Get directions</a>
       </div>
@@ -1345,6 +1377,41 @@ f.addEventListener("submit",function(e){e.preventDefault();var q=f.q.value.trim(
   var form=inp.closest("form");if(form&&form.requestSubmit)form.requestSubmit();else{var b=document.querySelector(".ac-in button[type=submit],.ac-in .ac-send");if(b)b.click();}
   f.q.value="";})();
 });})();
+</script>
+
+<script>
+/* Hero scenes: crossfade every 6s once the roller door has opened; pause off screen; none under reduced motion */
+(function(){var box=document.getElementById("heroShow");if(!box)return;var imgs=[].slice.call(box.querySelectorAll("img")),dots=[].slice.call(document.querySelectorAll(".hero__dots i"));
+ var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;if(reduce||imgs.length<2)return;
+ function load(im){if(im.dataset.src){im.srcset=im.dataset.srcset;im.src=im.dataset.src;im.removeAttribute("data-src");}}
+ var cur=0,timer=null,vis=true;
+ function go(){var nx=(cur+1)%imgs.length,im=imgs[nx];load(im);load(imgs[(nx+1)%imgs.length]);
+  var show=function(){imgs[cur].classList.remove("on");im.classList.add("on");dots.forEach(function(d,k){d.classList.toggle("on",k===nx);if(k===nx){d.style.animation="none";void d.offsetWidth;d.style.animation="";}});cur=nx;};
+  if(im.complete&&im.naturalWidth)show();else im.addEventListener("load",show,{once:true});}
+ function start(){if(!timer)timer=setInterval(function(){if(vis&&!document.hidden)go();},6000);}
+ addEventListener("load",function(){setTimeout(function(){load(imgs[1]);start();},2600);});
+ if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;},{threshold:.15}).observe(box);
+})();
+/* Warning lights: on laptops, scrolling down through the section steps through the lights */
+(function(){var sec=document.querySelector(".lights"),duo=sec&&sec.querySelector(".duo"),btns=sec?[].slice.call(sec.querySelectorAll(".lbtn")):[];
+ if(!duo||!btns.length)return;var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ var steps=document.createElement("div");steps.className="lsteps";steps.setAttribute("aria-hidden","true");btns.forEach(function(){steps.appendChild(document.createElement("i"));});duo.appendChild(steps);
+ var on=false,last=-1,raf=0,STEP=0,mark=document.createElement("div");mark.setAttribute("aria-hidden","true");duo.parentNode.insertBefore(mark,duo);
+ function fits(){var hdr=document.querySelector("body > header");var top=(hdr?hdr.getBoundingClientRect().bottom:70)+14;sec.style.setProperty("--sticky-top",top+"px");
+  return innerWidth>=981&&!reduce&&duo.offsetHeight<innerHeight-top-12;}
+ function setup(){var want=fits();sec.classList.toggle("scrolly",want);on=want;STEP=Math.round(innerHeight*0.42);
+  sec.style.setProperty("--scrolly-extra",want?(STEP*(btns.length-1))+"px":"0px");last=-1;
+  if(want)duo.dispatchEvent(new Event("pointerdown"));/* stop the timed auto-cycle: scrolling drives it now */
+  tick();}
+ function tick(){raf=0;if(!on)return;var r=duo.getBoundingClientRect(),secr=sec.getBoundingClientRect();
+  var top=parseFloat(getComputedStyle(sec).getPropertyValue("--sticky-top"))||84;
+  var progressed=Math.max(0,top-mark.getBoundingClientRect().top);
+  var i=Math.min(btns.length-1,Math.floor(progressed/STEP));
+  if(i!==last){last=i;btns[i].click();[].forEach.call(steps.children,function(d,k){d.classList.toggle("on",k===i);});}}
+ addEventListener("scroll",function(){if(on&&!raf)raf=requestAnimationFrame(tick);},{passive:true});
+ addEventListener("resize",function(){clearTimeout(setup._t);setup._t=setTimeout(setup,200);});
+ if(document.readyState==="complete")setup();else addEventListener("load",setup);
+})();
 </script>
 <!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=3e2b31b7" data-label="Ask Shine" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-nudge="Hi, I'm the Shine Auto Repairs assistant. Got a question about a pink slip, a repair or a warning light?" data-nudge-after="15" data-nudge-open="1" data-avoid=".qbar" defer></script><!--/chat-->
 
