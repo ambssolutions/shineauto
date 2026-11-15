@@ -18,6 +18,11 @@ Preview: `python3 -m http.server` in the repo root, then open http://localhost:8
 - `assets/site.css`: styles
 - `BRIEF.md`, `CONTENT-NEEDED.md`, `CLAUDE.md`
 
+## Concept gallery and section mix (review stage)
+- `/` is the concept gallery (`index.html`): five homepage concepts in `designs/NN-slug/`, with the floating switcher `assets/concepts.js`. Short links: /roller-door, /plate, /job-card, /dashboard, /pressed-metal.
+- `/mix` (`mix.html`): pick the best version of each section, plus the overall look, then send the mix to AMBS or copy a link. Sections and where each design keeps them live in `assets/mix-data.js`; thumbnails come from `node tools/section-thumbs.mjs`.
+- The previous live design is concept 05 (`designs/05-pressed-metal/`). Once a mix is chosen, the hybrid becomes the site at `/` and the gallery is removed.
+
 ## Rego lookup (built, switched off)
 Customers type their plate and the site shows the make, model and year (and the rego due date for states that provide it; NSW drivers get a link to Service NSW's free check), then answers the pink or blue slip questions for them.
 - `api/rego.mjs`: Vercel function that calls the provider, so the key stays secret. It returns only the car's description (no VIN or owner details), stores nothing, limits repeat lookups and checks the request comes from this site.
