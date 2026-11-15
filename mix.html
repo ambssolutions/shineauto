@@ -142,6 +142,7 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;paddin
   <a class="brand" href="./"><img src="assets/favicon.svg" width="32" height="32" alt="" style="border-radius:8px">Shine Auto Repairs<span class="hide-sm">· Build your own mix</span></a>
   <nav aria-label="Actions">
     <a class="btn hide-sm" href="./">All designs</a>
+    <a class="btn hide-sm" href="mix-preview">See my mix</a>
 
     <button class="btn primary" type="button" id="toSummary">Your mix <span class="count" id="countTop">0</span></button>
   </nav>
@@ -182,7 +183,7 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;paddin
           <h3>Send your mix</h3>
           <label>Your name<input name="name" autocomplete="name"></label>
           <label>Notes <textarea name="notes" placeholder="Anything to change, keep or combine."></textarea></label>
-          <div class="row"><button class="btn primary" type="submit">Send to AMBS</button><button class="btn" type="button" id="copyLink">Copy link to this mix</button><button class="btn" type="button" id="reset">Start again</button></div>
+          <div class="row"><button class="btn primary" type="submit">Send to AMBS</button><a class="btn" id="seePage" href="mix-preview">See it as one page</a><button class="btn" type="button" id="copyLink">Copy link to this mix</button><button class="btn" type="button" id="reset">Start again</button></div>
           <p class="status" role="status" aria-live="polite" id="status"></p>
         </form>
       </div>
@@ -317,6 +318,8 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;paddin
   }
   $('toSummary').addEventListener('click', summary); $('finish').addEventListener('click', summary); $('back').addEventListener('click', function(){ go(cur) });
   function shareUrl(){ return location.origin + location.pathname + '?mix=' + encodeURIComponent(mixParam()) }
+  function syncSee(){ var e = $('seePage'); if (e) e.href = 'mix-preview' + (mixParam() ? '?mix=' + encodeURIComponent(mixParam()) : ''); }
+  setInterval(syncSee, 800); syncSee();
   $('copyLink').addEventListener('click', function(){ if (!mixParam()) { $('status').textContent = 'Nothing is chosen yet. Go back to the sections and click a version of each one first.'; return; } var u = shareUrl(); (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(function(){ $('status').textContent = 'Link copied. Anyone who opens it sees this mix.' }).catch(function(){ prompt('Copy this link', u) }) });
   $('reset').addEventListener('click', function(){ if (!confirm('Clear all your choices?')) return; picks = {}; save(); go(0) });
   $('send').addEventListener('submit', function(e){
