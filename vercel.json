@@ -49,32 +49,57 @@
   "redirects": [
     {
       "source": "/your-mix",
-      "destination": "/designs/06-your-mix/",
+      "destination": "/",
       "permanent": false
     },
     {
       "source": "/roller-door",
-      "destination": "/designs/01-roller-door/",
+      "destination": "/",
       "permanent": false
     },
     {
       "source": "/plate",
-      "destination": "/designs/02-number-plate/",
+      "destination": "/",
       "permanent": false
     },
     {
       "source": "/job-card",
-      "destination": "/designs/03-job-card/",
+      "destination": "/",
       "permanent": false
     },
     {
       "source": "/dashboard",
-      "destination": "/designs/04-dashboard/",
+      "destination": "/",
       "permanent": false
     },
     {
       "source": "/pressed-metal",
-      "destination": "/designs/05-pressed-metal/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/mix",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/mix-preview",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/preview",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/designs/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/gallery",
+      "destination": "/",
       "permanent": false
     }
   ]

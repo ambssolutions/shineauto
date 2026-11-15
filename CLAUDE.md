@@ -22,11 +22,13 @@ Built by AMBS Solutions. Follow the **ambs-website-design** skill (and **website
 - Footer credit: "Proudly designed by AMBS Solutions".
 
 ## This site
-- Design idea: "pressed metal". Embossed orange keys, brushed-steel plates with rivets, stamped numbers, keys that press in. The client asked for embossed, high-detail and unique. Signature: the 3D "Walk around a pink slip" bay. Details in BRIEF.md.
+- Design: "Your Mix", modernised. The client picked sections from a five-concept gallery, then asked for a modern, interactive feel like the AMBS site. Dark cinematic roller-door hero with the rego plate lookup; everything below is light and airy: Inter Tight + Inter, white rounded cards, soft shadows, pill buttons, Shine orange #f39a36 (deeper #c4700f/#9a5208 for text on light), red only for warning lights.
+- Signature pieces: roller door intro, rego plate lookup, warning-lights panel, 3D pink slip car (`assets/inspect.js`), Ask Shine assistant (`chat/`).
 - Photos are AI illustrations, labelled on the page. Swap for real photos when supplied.
 - NSW fees and rules are sourced from nsw.gov.au and dated. Re-check every 1 July.
-- Stack: static HTML, CSS and JS, no build step. Preview with `python3 -m http.server` in this folder.
-- Content lives in: `assets/content.js` (business facts, hours, reviews). Hours also appear in `index.html` (JSON-LD, the week strip, the hours table and the FAQ): change all together.
-- Form endpoint: none yet. The enquiry form is hidden until `email` is set in content.js.
+- Warning-light wording was safety-reviewed: change it only with care, in the page and in `chat/chat-config.json` together.
+- Stack: static HTML (one self-contained `index.html`), no build step. Preview with `python3 -m http.server` in the repo root.
+- Facts live in `index.html` (hours appear in the hero status script, the bento hours card, the FAQ and the JSON-LD) and in `chat/chat-config.json` for the assistant: change both together, then rebuild the chat index.
+- Rego lookup: `api/rego.mjs`, switched on by Vercel env vars (see README).
 - Languages: English (Australia), `lang="en-AU"`. Phones shown as (02) 8798 5715, linked as tel:+61287985715.
 - Things to finish before launch: see README.md
