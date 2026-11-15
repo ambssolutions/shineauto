@@ -67,33 +67,45 @@ body{font:500 14px/1.4 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-s
     f.dataset.src = "designs/" + slug + "/"; f.dataset.sel = sel; f.dataset.key = s.key; f.dataset.first = i === 0 ? "1" : "";
   });
 
-  // measure the section, size the frame to it, then measure again: resizing the frame changes
-  // anything sized by the viewport (heroes, photo breaks) and moves the section, so repeat until it settles
-  function measure(f) {
+  // Each frame keeps only its chosen section: everything else on that concept page is hidden, so the frame's
+  // content is exactly the section. This works even on phone browsers that size frames to their content.
+  function isolate(f) {
     var w = f.contentWindow, doc = w.document, key = f.dataset.key;
+    if (doc.documentElement.hasAttribute("data-mix-isolated")) return true;
     var el = key === "footer" ? doc.querySelector("body > footer, footer") : doc.querySelector(f.dataset.sel);
-    if (!el) return null;
-    var hdr = doc.querySelector("body > header"), fixedHdr = hdr && w.getComputedStyle(hdr).position === "fixed";
-    var r = el.getBoundingClientRect(), top = r.top + w.scrollY, h = r.height;
-    if (f.dataset.first && key === "hero") { h = r.bottom + w.scrollY; top = 0; }
-    else if (f.dataset.first && fixedHdr) { top -= hdr.offsetHeight; h += hdr.offsetHeight; }
-    return { top: Math.max(0, Math.round(top)), h: Math.max(160, Math.ceil(h)) };
+    if (!el) return false;
+    var st = doc.createElement("style"); st.id = "mixhide";
+    st.textContent = HIDE + (f.dataset.first ? "" : HIDE_HEADER) + "[data-mixoff]{display:none!important}";
+    doc.head.appendChild(st);
+    var keep = el;
+    while (keep && keep !== doc.body) {
+      var parent = keep.parentElement;
+      [].forEach.call(parent.children, function (sib) {
+        if (sib === keep || /^(SCRIPT|STYLE|LINK|TEMPLATE)$/.test(sib.tagName)) return;
+        if (f.dataset.first && parent === doc.body && sib.matches("header")) return;
+        if (sib.matches("[data-concept-switcher]")) return;
+        sib.setAttribute("data-mixoff", "");
+      });
+      if (parent !== doc.body && !f.dataset.first) { parent.style.paddingTop = "0"; parent.style.marginTop = "0"; }
+      keep = parent;
+    }
+    doc.documentElement.setAttribute("data-mix-isolated", ""); f._el = el;
+    w.scrollTo(0, 0);
+    return true;
   }
   function fit(f) {
     try {
+      if (!isolate(f)) return;
       var w = f.contentWindow, doc = w.document;
-      if (!doc.getElementById("mixhide")) {
-        var st = doc.createElement("style"); st.id = "mixhide";
-        st.textContent = HIDE + (f.dataset.first ? "" : HIDE_HEADER);
-        doc.head.appendChild(st);
-      }
       for (var i = 0; i < 4; i++) {
-        var m = measure(f); if (!m) return;
+        var el = f._el || doc.body, r = el.getBoundingClientRect();
+        var h = Math.max(160, Math.ceil(r.bottom + w.scrollY + parseFloat(w.getComputedStyle(el).marginBottom || 0)));
+        if (f.dataset.first && f.dataset.key === "hero") h = Math.min(h, Math.max(560, innerHeight));
         var cur = parseFloat(f.style.height) || 900;
-        if (Math.abs(cur - m.h) <= 2) { w.scrollTo(0, m.top); return; }
-        f.style.height = m.h + "px"; void doc.documentElement.offsetHeight;
+        if (Math.abs(cur - h) <= 2) break;
+        f.style.height = h + "px"; void doc.documentElement.offsetHeight;
       }
-      var last = measure(f); if (last) w.scrollTo(0, last.top);
+      w.scrollTo(0, 0);
     } catch (e) {}
   }
   function start(f) {
