@@ -93,7 +93,7 @@
       "permanent": false
     },
     {
-      "source": "/designs/:path*",
+      "source": "/designs/(.*)",
       "destination": "/",
       "permanent": false
     },
