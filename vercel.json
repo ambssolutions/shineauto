@@ -41,5 +41,32 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/roller-door",
+      "destination": "/designs/01-roller-door/",
+      "permanent": false
+    },
+    {
+      "source": "/plate",
+      "destination": "/designs/02-number-plate/",
+      "permanent": false
+    },
+    {
+      "source": "/job-card",
+      "destination": "/designs/03-job-card/",
+      "permanent": false
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/designs/04-dashboard/",
+      "permanent": false
+    },
+    {
+      "source": "/pressed-metal",
+      "destination": "/designs/05-pressed-metal/",
+      "permanent": false
+    }
   ]
 }
