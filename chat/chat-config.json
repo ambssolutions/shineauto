@@ -344,6 +344,30 @@
    "a": "The price is not set by us: the NSW Government caps a pink slip for a car at $52, from 1 July 2026. If it doesn't pass and is fixed and checked again here within 14 days, there's no second inspection fee.",
    "link": "#slips",
    "link_label": "Pink and blue slips"
+  },
+  {
+   "id": "pink_valid",
+   "q": "How long is a pink slip valid?",
+   "also": "pink slip valid, pink slip expiry, how long does a pink slip last, pink slip good for",
+   "a": "A pink slip report is valid for six months.",
+   "link": "/guides/pink-slip-vs-blue-slip-nsw",
+   "link_label": "Pink slip vs blue slip"
+  },
+  {
+   "id": "blue_valid",
+   "q": "How long is a blue slip valid?",
+   "also": "blue slip valid, blue slip expiry, how long does a blue slip last",
+   "a": "A blue slip report is valid for 42 days.",
+   "link": "/guides/pink-slip-vs-blue-slip-nsw",
+   "link_label": "Pink slip vs blue slip"
+  },
+  {
+   "id": "lpg_extra",
+   "q": "Do LPG cars need anything extra for a pink slip?",
+   "also": "lpg extra, lpg tank, gas system check, lpg inspection",
+   "a": "On LPG cars the pink slip also checks the gas system: the tank, lines and fittings. We do pink slips for petrol, diesel and LPG vehicles.",
+   "link": "/guides/lpg-diesel-pink-slip-nsw",
+   "link_label": "LPG and diesel pink slips"
   }
  ],
  "translations": {},

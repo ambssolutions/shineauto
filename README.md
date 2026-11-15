@@ -6,10 +6,13 @@ Preview: `python3 -m http.server` in the repo root, then open http://localhost:8
 
 ## Pages
 - `index.html`: the site. Roller-door hero with the rego plate lookup and live open/closed status, warning lights ("What's that light on your dash?") with an Ask Shine box, services panel, "Servicing all makes" carousel, "Quality work guaranteed" photo card, the 3D "Walk around a pink slip" bay with the checklist, pink and blue slip fee cards, how a job goes, hours/address/rating bento, FAQ, call card, footer.
+- `guides/`: Car guides hub and six SEO articles (pink vs blue slip, pink slip checklist, warning lights, LPG/diesel pink slips, logbook servicing, summer car check), sharing `guides/guides.css`. Facts cite nsw.gov.au and the TfNSW safety check standards.
 - `privacy.html`, `404.html`
 
 ## Files
 - `assets/inspect.js` + `assets/vendor/`: the 3D bay (three.js r160, loaded near the section only, photo fallback without WebGL)
+- `assets/logo-mark.svg`: the Spanner S logo (also the favicon); `assets/logo-lockup.svg` for documents
+- `assets/brands/`: official brand logo SVGs for the makes carousel (confirm logo use with Shine)
 - `assets/img/`: AI illustrations as WebP (labelled on the page). Replace with real photos when supplied.
 - `api/rego.mjs`: Vercel function for the plate lookup (switched off until a provider key is set; the page says "coming soon" meanwhile)
 - `chat/`: the Ask Shine assistant (`chat.js`, `chat-index.json`). Edit answers in `chat/chat-config.json` (not published, see `.vercelignore`), then rebuild the index with the website-chat-bot skill's `build_chat_index.py --site <folder with index.html> --config chat/chat-config.json --out chat --base /chat/` and update the `?v=` on the script tag in `index.html`.
