@@ -122,6 +122,12 @@ html:not(.js) .hero__blur img:first-child{opacity:1}
 .nw{white-space:nowrap}
 .hero__more{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2px 22px;font-size:.95rem}
 .hero__more a{color:#fff;text-decoration-color:rgba(243,154,54,.7)}
+.hero__meta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 10px}
+.hero__meta .hero__status{margin:0}
+.hero__rate{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:4px 14px 4px 12px;border-radius:999px;background:rgba(14,15,18,.55);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font-size:.88rem;color:#fff;text-decoration:none;transition:background .4s}
+.hero__rate:hover{background:rgba(14,15,18,.75)}
+.hero__rate b{font-weight:700;color:#ffc277}
+.hr-stars{display:inline-flex;gap:1px}.hr-stars svg{width:13px;height:13px;fill:#f39a36}
 .hero__status{display:inline-flex;align-items:center;gap:9px;min-height:32px;padding:4px 14px;border-radius:999px;background:rgba(14,15,18,.55);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);font-size:.88rem;color:#e4e6ea}
 .hero__status.is-open .dot{background:#4cc77d}
 .ai{position:absolute;z-index:2;right:12px;top:12px;padding:4px 10px;border-radius:999px;font:500 .72rem/1.3 var(--sans);color:#eef0f3;background:rgba(14,15,18,.72);pointer-events:none}
@@ -866,7 +872,10 @@ body .ac-av svg{display:none}
   </div>
 
   <div class="hero__body">
-    <p class="hero__status" data-status><span class="dot" aria-hidden="true"></span><span data-status-text>Mon to Fri 9am to 5pm, Sat 9am to 2pm</span></p>
+    <div class="hero__meta">
+      <p class="hero__status" data-status><span class="dot" aria-hidden="true"></span><span data-status-text>Mon to Fri 9am to 5pm, Sat 9am to 2pm</span></p>
+      <a class="hero__rate" href="https://search.google.com/local/reviews?placeid=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener" aria-label="93% of reviewers give us 5 stars. Read our Google reviews"><span class="hr-stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></svg></span><span><b>93%</b> five-star reviews</span></a>
+    </div>
     <h1 id="hero-h"><span class="w" style="--d:0"><span>Mechanic</span></span> <span class="w" style="--d:1"><span>and</span></span> <span class="nw"><span class="w" style="--d:2"><span>pink</span></span> <span class="w" style="--d:3"><span>slips</span></span></span> <span class="w" style="--d:4"><span>in</span></span> <span class="nw"><span class="w" style="--d:5"><span>Warwick</span></span> <span class="w" style="--d:6"><span>Farm</span></span></span></h1>
     <p class="hero__lede">Car repairs, <span class="kw">pink slips</span> for petrol, diesel and LPG, blue slips and logbook servicing near Liverpool, NSW. Open six days.</p>
     <form class="rego" id="rego" novalidate>
