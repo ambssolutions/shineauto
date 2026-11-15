@@ -56,7 +56,7 @@ body{font:500 14px/1.4 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-s
   d.getElementById("summary").textContent = list.length + " sections" + (picks.style && picks.style !== "none" ? " · look: " + NAMES[picks.style] : "");
 
   // each part is the real concept page in a frame, scrolled to its section and sized to fit it
-  var HIDE = "html{scroll-behavior:auto!important}*{content-visibility:visible!important;contain-intrinsic-size:none!important}[data-concept-switcher],.quick,.qbar,.quickbar,.mbar{display:none!important}";
+  var HIDE = "html{scroll-behavior:auto!important}*{content-visibility:visible!important;contain-intrinsic-size:none!important}[data-concept-switcher],.quick,.qbar,.qb,.quickbar,.mbar,.qbar-wrap{display:none!important}";
   var HIDE_HEADER = "body>header{display:none!important}";
   list.forEach(function (s, i) {
     var slug = picks[s.key], sel = M.selFor(s, slug);
