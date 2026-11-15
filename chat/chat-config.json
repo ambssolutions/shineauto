@@ -262,7 +262,7 @@
    "q": "What do your customers say?",
    "also": "reviews, rating, stars, google reviews, good mechanic",
    "a": "We have a 4.8 rating from 57 reviews on Birdeye, as at 15 November 2026.",
-   "link": "https://search.google.com/local/reviews?placeid=ChIJ-YbkfgOVEmsRFlQ4039uDYI",
+   "link": "https://reviews.birdeye.com/shine-auto-repairs-167828409186722",
    "link_label": "Read the reviews"
   },
   {
@@ -292,8 +292,8 @@
   {
    "id": "makes",
    "q": "Do you service my make of car?",
-   "also": "bmw, mercedes, audi, toyota, mazda, kia, nissan, volkswagen, vw, lexus, volvo, jeep, tesla, byd, european, all makes, my car brand, make, brand",
-   "a": "We service all makes, including Toyota, Mazda, Kia, Nissan, Volkswagen, BMW, Mercedes-Benz, Audi, Lexus, Volvo, Jeep, Tesla and BYD. Call with your make and model to book.",
+   "also": "bmw, mercedes, audi, toyota, mazda, kia, nissan, volkswagen, vw, lexus, volvo, jeep, european, all makes, my car brand, make, brand",
+   "a": "We service all makes, including Toyota, Mazda, Kia, Nissan, Volkswagen, BMW, Mercedes-Benz, Audi, Lexus, Volvo and Jeep. Call with your make and model to book.",
    "link": "#services",
    "link_label": "Our services"
   },
@@ -368,6 +368,14 @@
    "a": "On LPG cars the pink slip also checks the gas system: the tank, lines and fittings. We do pink slips for petrol, diesel and LPG vehicles.",
    "link": "/guides/lpg-diesel-pink-slip-nsw",
    "link_label": "LPG and diesel pink slips"
+  },
+  {
+   "id": "ev",
+   "q": "Do you service electric cars?",
+   "also": "electric car, ev, tesla, byd, hybrid battery, electric vehicle, plug in",
+   "a": "Electric vehicle servicing is not listed on our website. Call the workshop to check before you book.",
+   "link": "",
+   "link_label": ""
   }
  ],
  "translations": {},

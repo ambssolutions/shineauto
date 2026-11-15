@@ -218,6 +218,7 @@ section{position:relative}
 .item:hover{background:rgba(255,255,255,.7);color:var(--ink)}
 .item[aria-pressed="true"],.item[aria-selected="true"]{background:#fff;color:var(--ink);font-weight:600;box-shadow:var(--sh-sm)}
 .item[aria-pressed="true"] .ib,.item[aria-selected="true"] .ib{background:var(--dash);color:var(--c,var(--orange));box-shadow:none}
+.makes__note{margin:6px auto 0;font-size:.85rem;color:var(--ink-2)}
 .legend{list-style:none;margin:14px 0 0;padding:14px 6px 0;border-top:1px solid var(--line-2);display:grid;gap:8px;font-size:.9rem;color:var(--ink-2)}
 .legend li{display:flex;gap:10px;align-items:baseline}
 .legend strong{color:var(--ink)}
@@ -763,7 +764,7 @@ html:not(.js) .hero__img img:first-child{opacity:1}
         </select></span>
         <button class="btn" type="submit" id="rego-go">Look up my car</button>
       </div>
-      <p class="rego__priv">We use your rego only to look up the car. It isn't stored.</p>
+      <p class="rego__priv">Your rego is sent to our lookup provider to find the car. We don't store it.</p>
       <div class="rego__out" id="rego-out" role="status" aria-live="polite"></div>
     </form>
     <p class="hero__more"><a class="tl tl-call" href="tel:+61287985715">Or call (02) 8798 5715</a><a class="tl" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Get directions</a></p>
@@ -773,10 +774,11 @@ html:not(.js) .hero__img img:first-child{opacity:1}
 <section class="sec makes" id="makes" aria-labelledby="makes-h">
   <div class="sec__head">
     <h2 id="makes-h">Servicing all makes, including</h2>
+    <p class="makes__note">Independent workshop. Not affiliated with any car maker.</p>
   </div>
   <div class="marquee" role="region" tabindex="0" aria-label="Makes we service. Hover or focus to pause.">
-    <ul class="mq" aria-label="Makes"><li class="mk"><img src="assets/brands/toyota.svg" alt="Toyota" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mazda.svg" alt="Mazda" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/kia.svg" alt="Kia" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/nissan.svg" alt="Nissan" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volkswagen.svg" alt="Volkswagen" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/bmw.svg" alt="BMW" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mercedes.svg" alt="Mercedes-Benz" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/audi.svg" alt="Audi" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/lexus.svg" alt="Lexus" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volvo.svg" alt="Volvo" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/jeep.svg" alt="Jeep" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/tesla.svg" alt="Tesla" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/byd.svg" alt="BYD" width="120" height="44" loading="lazy" decoding="async"></li></ul>
-    <ul class="mq" aria-hidden="true"><li class="mk"><img src="assets/brands/toyota.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mazda.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/kia.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/nissan.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volkswagen.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/bmw.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mercedes.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/audi.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/lexus.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volvo.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/jeep.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/tesla.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/byd.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li></ul>
+    <ul class="mq" aria-label="Makes"><li class="mk"><img src="assets/brands/toyota.svg" alt="Toyota" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mazda.svg" alt="Mazda" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/kia.svg" alt="Kia" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/nissan.svg" alt="Nissan" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volkswagen.svg" alt="Volkswagen" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/bmw.svg" alt="BMW" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mercedes.svg" alt="Mercedes-Benz" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/audi.svg" alt="Audi" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/lexus.svg" alt="Lexus" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volvo.svg" alt="Volvo" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/jeep.svg" alt="Jeep" width="120" height="44" loading="lazy" decoding="async"></li></ul>
+    <ul class="mq" aria-hidden="true"><li class="mk"><img src="assets/brands/toyota.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mazda.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/kia.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/nissan.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volkswagen.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/bmw.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mercedes.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/audi.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/lexus.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volvo.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/jeep.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li></ul>
   </div>
 </section>
 
@@ -784,7 +786,7 @@ html:not(.js) .hero__img img:first-child{opacity:1}
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="lights-h">What's that light on your dash?</h2>
-      <p>Tap the one you can see for what it usually means and whether to keep driving.</p>
+      <p>Tap a light to see what it means and whether to keep driving.</p>
     </div>
     <div class="duo">
       <div class="rv">
@@ -799,10 +801,6 @@ html:not(.js) .hero__img img:first-child{opacity:1}
           <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-temp" data-l="temp" style="--c:var(--red)"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-temp"/></svg></span>Engine temperature</button>
           <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-aircon" data-l="aircon" style="--c:#dfe7f1"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-snow"/></svg></span>Air con not cooling</button>
         </div>
-        <ul class="legend" aria-label="How to read a warning light">
-          <li><span class="sw" style="--c:var(--red)"></span><span><strong>Red</strong> usually means stop when it's safe, or act now.</span></li>
-          <li><span class="sw" style="--c:var(--orange)"></span><span><strong>Amber</strong> usually means get it checked soon.</span></li>
-        </ul>
       </div>
       <div class="card lpanel rv" id="lpanel" aria-live="polite">
         <div class="lp-intro">
@@ -905,7 +903,7 @@ html:not(.js) .hero__img img:first-child{opacity:1}
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="svc-h">What we work on</h2>
-      <p>Everything on our card, from engine and brake work to rego checks.</p>
+      <p>From engine and brake work to rego checks.</p>
     </div>
     <div class="duo">
       <div class="list tabs rv" role="tablist" aria-label="Services" aria-orientation="vertical">
@@ -919,31 +917,31 @@ html:not(.js) .hero__img img:first-child{opacity:1}
       </div>
       <div class="spanels rv">
         <div class="card spanel on" role="tabpanel" id="s-repairs" aria-labelledby="t-repairs">
-          <figure class="shot"><img src="assets/img/repairs-640.webp" srcset="assets/img/repairs-640.webp 640w, assets/img/repairs-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A mechanic tightening a bolt on an engine under a work lamp" loading="lazy" decoding="async"><span class="scanw"></span><span class="wid" aria-hidden="true"><span class="wl"><span>Engine</span><span>Brakes</span><span>Steering</span></span></span><figcaption class="ai">AI illustration</figcaption></figure>
-          <div class="sbody"><p class="sno">01 / 07</p><h3>All mechanical repairs</h3><p>If it's mechanical, bring it in.</p><ul class="ticks"><li>Engine</li><li>Brakes</li><li>Steering</li><li>Suspension</li><li>Defect clearances</li></ul></div>
+          <figure class="shot"><img src="assets/img/repairs-640.webp" srcset="assets/img/repairs-640.webp 640w, assets/img/repairs-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A mechanic tightening a bolt on an engine under a work lamp" loading="lazy" decoding="async"><span class="scanw"></span><figcaption class="ai">AI illustration</figcaption></figure>
+          <div class="sbody"><p class="sno">01 / 07</p><h3>All mechanical repairs</h3><ul class="ticks"><li>Engine</li><li>Brakes</li><li>Steering</li><li>Suspension</li><li>Defect clearances</li></ul></div>
         </div>
         <div class="card spanel" role="tabpanel" id="s-pink" aria-labelledby="t-pink">
-          <figure class="shot"><img src="assets/img/pinkslip-640.webp" srcset="assets/img/pinkslip-640.webp 640w, assets/img/pinkslip-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A tread depth gauge pressed into a tyre" loading="lazy" decoding="async"><span class="wid" aria-hidden="true"><span class="wl"><span>Tyres</span><span>Brakes</span><span>Lights</span></span></span><figcaption class="ai">AI illustration</figcaption></figure>
+          <figure class="shot"><img src="assets/img/pinkslip-640.webp" srcset="assets/img/pinkslip-640.webp 640w, assets/img/pinkslip-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A tread depth gauge pressed into a tyre" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
           <div class="sbody"><p class="sno">02 / 07</p><h3>Pink slips</h3><p>The safety check for renewing rego, for petrol, diesel and LPG vehicles.</p><a class="tl" href="#slips">Fees and when you need one</a></div>
         </div>
         <div class="card spanel" role="tabpanel" id="s-blue" aria-labelledby="t-blue">
-          <figure class="shot"><img src="assets/img/blueslip-640.webp" srcset="assets/img/blueslip-640.webp 640w, assets/img/blueslip-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A stamped vehicle identification plate" loading="lazy" decoding="async"><span class="frame"></span><span class="wid" aria-hidden="true">Safety and identity check</span><figcaption class="ai">AI illustration</figcaption></figure>
+          <figure class="shot"><img src="assets/img/blueslip-640.webp" srcset="assets/img/blueslip-640.webp 640w, assets/img/blueslip-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A stamped vehicle identification plate" loading="lazy" decoding="async"><span class="frame"></span><figcaption class="ai">AI illustration</figcaption></figure>
           <div class="sbody"><p class="sno">03 / 07</p><h3>Blue slips</h3><p>A safety and identity check to register a car in NSW.</p><a class="tl" href="#slips">Fees and when you need one</a></div>
         </div>
         <div class="card spanel" role="tabpanel" id="s-logbook" aria-labelledby="t-logbook">
-          <figure class="shot"><img src="assets/img/logbook-640.webp" srcset="assets/img/logbook-640.webp 640w, assets/img/logbook-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="Fresh oil being poured into an engine" loading="lazy" decoding="async"><span class="wid" aria-hidden="true"><span class="g"><span class="fbar"><i></i></span></span>To your logbook schedule</span><figcaption class="ai">AI illustration</figcaption></figure>
+          <figure class="shot"><img src="assets/img/logbook-640.webp" srcset="assets/img/logbook-640.webp 640w, assets/img/logbook-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="Fresh oil being poured into an engine" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
           <div class="sbody"><p class="sno">04 / 07</p><h3>Logbook servicing</h3><p>Servicing to the schedule in your car's logbook. Bring the logbook with you.</p></div>
         </div>
         <div class="card spanel" role="tabpanel" id="s-aircon" aria-labelledby="t-aircon">
-          <figure class="shot"><img src="assets/img/aircon-640.webp" srcset="assets/img/aircon-640.webp 640w, assets/img/aircon-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="Air conditioning pressure gauges connected to a car" loading="lazy" decoding="async"><span class="wid" aria-hidden="true"><span class="g"><span class="flow"><i></i><i></i><i></i></span></span>Regas and repairs</span><figcaption class="ai">AI illustration</figcaption></figure>
+          <figure class="shot"><img src="assets/img/aircon-640.webp" srcset="assets/img/aircon-640.webp 640w, assets/img/aircon-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="Air conditioning pressure gauges connected to a car" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
           <div class="sbody"><p class="sno">05 / 07</p><h3>Air con regas and repairs</h3><p>For air con that blows warm or doesn't cool like it used to.</p><ul class="ticks"><li>Regas</li><li>Repairs</li></ul></div>
         </div>
         <div class="card spanel" role="tabpanel" id="s-tyres" aria-labelledby="t-tyres">
-          <figure class="shot"><img src="assets/img/tyres-640.webp" srcset="assets/img/tyres-640.webp 640w, assets/img/tyres-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A new tyre standing on the workshop floor" loading="lazy" decoding="async"><span class="wid" aria-hidden="true"><span class="g"><svg class="gauge" viewBox="0 0 46 28"><path d="M4 25a19 19 0 0 1 38 0" fill="none" stroke="#e4e3df" stroke-width="5" stroke-linecap="round"/><path d="M4 25a19 19 0 0 1 9-16" fill="none" stroke="#d9342b" stroke-width="5" stroke-linecap="round"/><path d="M33 9a19 19 0 0 1 9 16" fill="none" stroke="#2f9e5b" stroke-width="5" stroke-linecap="round"/><g class="nd"><path d="M22 25 23 9l1 16z" fill="#15171c"/><circle cx="23" cy="25" r="3" fill="#15171c"/></g></svg></span>Your tyre size</span><figcaption class="ai">AI illustration</figcaption></figure>
+          <figure class="shot"><img src="assets/img/tyres-640.webp" srcset="assets/img/tyres-640.webp 640w, assets/img/tyres-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A new tyre standing on the workshop floor" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
           <div class="sbody"><p class="sno">06 / 07</p><h3>Tyres</h3><p>Have your tyre size handy when you call. It's printed on the side of the tyre.</p></div>
         </div>
         <div class="card spanel" role="tabpanel" id="s-battery" aria-labelledby="t-battery">
-          <figure class="shot"><img src="assets/img/battery-640.webp" srcset="assets/img/battery-640.webp 640w, assets/img/battery-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="Jumper lead clamps on a car battery" loading="lazy" decoding="async"><span class="wid" aria-hidden="true"><span class="g"><span class="batt"><i></i><i></i><i></i><i></i></span></span>Batteries</span><figcaption class="ai">AI illustration</figcaption></figure>
+          <figure class="shot"><img src="assets/img/battery-640.webp" srcset="assets/img/battery-640.webp 640w, assets/img/battery-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="Jumper lead clamps on a car battery" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
           <div class="sbody"><p class="sno">07 / 07</p><h3>Batteries</h3><p>Slow to start, or the battery light is on? Call us.</p></div>
         </div>
         <div class="sdots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -967,7 +965,7 @@ html:not(.js) .hero__img img:first-child{opacity:1}
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="ins-h">Walk around a pink slip</h2>
-      <p>Turn the car and tap a point to see what a pink slip inspection looks at.</p>
+      <p>Tap a point to see what the inspection looks at.</p>
     </div>
     <div class="bay rv" id="bay3d">
       <div class="bay-stage" tabindex="0" aria-label="3D car. Drag or use the arrow keys to turn it.">
@@ -986,14 +984,14 @@ html:not(.js) .hero__img img:first-child{opacity:1}
       </div>
       <div class="bay-side">
         <div class="pt-card" aria-live="polite">
-          <div class="pt-info" data-pt="tyres"><span class="k">Pink slip check</span><h3>Tyres</h3><p>Tread depth, cuts, bulges and damage, and that the tyres suit the car.</p></div>
+          <div class="pt-info" data-pt="tyres"><span class="k">Pink slip check</span><h3>Tyres</h3><p>Tread depth, cuts, bulges and damage, and matching tyres on each axle.</p></div>
           <div class="pt-info" data-pt="brakes" hidden><span class="k">Pink slip check</span><h3>Brakes</h3><p>That the car pulls up straight, and the brakes and handbrake work as they should.</p></div>
           <div class="pt-info" data-pt="steering" hidden><span class="k">Pink slip check</span><h3>Steering and suspension</h3><p>Play in the steering, worn joints, leaking shocks and anything else that affects how the car handles.</p></div>
-          <div class="pt-info" data-pt="lights" hidden><span class="k">Pink slip check</span><h3>Lights and indicators</h3><p>Headlights, brake lights, indicators and reversing lights all working, with lenses intact.</p></div>
-          <div class="pt-info" data-pt="windscreen" hidden><span class="k">Pink slip check</span><h3>Windscreen and wipers</h3><p>Cracks or chips in the driver's view, and wipers and washers that clear the glass.</p></div>
+          <div class="pt-info" data-pt="lights" hidden><span class="k">Pink slip check</span><h3>Lights and indicators</h3><p>Headlights, park, tail, brake, indicator and number plate lights all working, with lenses intact.</p></div>
+          <div class="pt-info" data-pt="windscreen" hidden><span class="k">Pink slip check</span><h3>Windscreen and wipers</h3><p>Cracks or chips in the driver's view, and wipers that clear the glass.</p></div>
           <div class="pt-info" data-pt="seatbelts" hidden><span class="k">Pink slip check</span><h3>Seatbelts</h3><p>Every belt latches, retracts and isn't frayed or cut.</p></div>
           <div class="pt-info" data-pt="body" hidden><span class="k">Pink slip check</span><h3>Body and rust</h3><p>Rust or damage that weakens the body or leaves sharp edges.</p></div>
-          <div class="pt-info" data-pt="exhaust" hidden><span class="k">Pink slip check</span><h3>Exhaust</h3><p>Leaks, loose mounts and too much smoke or noise.</p></div>
+          <div class="pt-info" data-pt="exhaust" hidden><span class="k">Pink slip check</span><h3>Exhaust</h3><p>Leaks, loose mounts and where the pipe comes out.</p></div>
           <div class="pt-info" data-pt="lpg" hidden><span class="k">Pink slip check</span><h3>LPG system</h3><p>On LPG cars, the tank, lines and fittings.</p></div>
         </div>
         <p class="bay-lbl" id="pt-lbl">What gets checked</p>
@@ -1066,20 +1064,6 @@ html:not(.js) .hero__img img:first-child{opacity:1}
   </div>
 </section>
 
-<section class="sec" id="how" aria-labelledby="how-h">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <h2 id="how-h">How a job goes</h2>
-    </div>
-    <ol class="card steps rv">
-      <li><span class="sn" aria-hidden="true">1</span><h3>Call</h3><p>Ring the workshop or Balli. Tell us the car and what it's doing.</p></li>
-      <li><span class="sn" aria-hidden="true">2</span><h3>Drop it at Unit 4B</h3><p>Bring it in during opening hours.</p></li>
-      <li><span class="sn" aria-hidden="true">3</span><h3>We do the work</h3><p>Repairs, servicing or the inspection you booked in for.</p></li>
-      <li><span class="sn" aria-hidden="true">4</span><h3>Pick it up</h3><p>Collect your keys and drive home.</p></li>
-    </ol>
-  </div>
-</section>
-
 <section class="sec" id="visit" aria-labelledby="visit-h">
   <div class="wrap">
     <div class="sec__head rv">
@@ -1094,7 +1078,6 @@ html:not(.js) .hero__img img:first-child{opacity:1}
           <li data-days="6"><span class="d">Saturday<span class="today-tag">Today</span></span><span class="t">9am to 2pm</span></li>
           <li data-days="0" class="closed"><span class="d">Sunday<span class="today-tag">Today</span></span><span class="t">Closed</span></li>
         </ul>
-        <div class="tbar" aria-hidden="true"><p class="tbar__t"></p><div class="tbar__wrap"><div class="tbar__track"><i class="tbar__open"></i></div><span class="tbar__now"><b></b></span></div><div class="tbar__lbl"><span>7am</span><span>1pm</span><span>7pm</span></div></div>
       </div>
       <div class="card b-place lift rv">
         <h3>Find the workshop</h3>
@@ -1117,7 +1100,7 @@ html:not(.js) .hero__img img:first-child{opacity:1}
           <h3 class="vh">Rating</h3>
           <p class="rbig">4.8<span> / 5</span></p>
           <p>From 57 reviews on Birdeye, as at 15 November 2026.</p>
-          <a class="tl" href="https://search.google.com/local/reviews?placeid=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Read the reviews</a>
+          <a class="tl" href="https://reviews.birdeye.com/shine-auto-repairs-167828409186722" rel="noopener">Read the reviews</a>
         </div>
       </div>
     </div>
@@ -1156,7 +1139,7 @@ html:not(.js) .hero__img img:first-child{opacity:1}
     <nav class="foot__ph" aria-label="Phone numbers"><a href="tel:+61287985715">Workshop (02) 8798 5715</a><a href="tel:+61433597181">Balli 0433 597 181</a></nav>
     <p>Mon to Fri 9am to 5pm, Sat 9am to 2pm, Sun closed</p>
     <div class="foot__small">
-      <p>Photos on this website are AI-generated illustrations, not pictures of our workshop.</p>
+      <p>Photos on this website are AI-generated illustrations, not pictures of our workshop. We're an independent workshop, not linked to any car maker. Our guarantee is in addition to your rights under the Australian Consumer Law.</p>
       <p>© 2026 Shine Auto Repairs</p>
       <p><a href="/privacy">Privacy</a> · Proudly designed by AMBS Solutions</p>
     </div>
@@ -1447,7 +1430,7 @@ f.addEventListener("submit",function(e){e.preventDefault();var q=f.q.value.trim(
  if(document.readyState==="complete")setup();else addEventListener("load",setup);
 })();
 </script>
-<!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=b2b2c7f1" data-label="Ask Shine" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-nudge="Hi, I'm the Shine Auto Repairs assistant. Got a question about a pink slip, a repair or a warning light?" data-nudge-after="15" data-nudge-open="1" data-avoid=".qbar" defer></script><!--/chat-->
+<!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=3ad63f9e" data-label="Ask Shine" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-nudge="Hi, I'm the Shine Auto Repairs assistant. Got a question about a pink slip, a repair or a warning light?" data-nudge-after="15" data-nudge-open="1" data-avoid=".qbar" defer></script><!--/chat-->
 
 </body>
 </html>

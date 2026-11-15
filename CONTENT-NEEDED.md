@@ -2,6 +2,11 @@
 
 | Need | Goes in |
 |---|---|
+| **Before launch (NSW):** Motor Vehicle Repairer Licence number (MVRL), to show as "Lic. No. MVRL…" in the footer. NSW Fair Trading: a repair business must hold a current licence | Footer |
+| **Before launch (NSW):** confirm Shine is an Authorised Inspection Station for light vehicle pink slips, blue slips (AUVIS) and LPG (AGIS), as the site advertises all three | Services, fees, LPG guide |
+| Do they service electric cars (Tesla, BYD)? Removed from the makes strip until confirmed | Makes strip, chat |
+| Confirm the soft claims in the guides with Balli (e.g. common reasons cars fail) | Guides |
+| If Shine gives customers a written warranty, it must include the ACL mandatory text (Competition and Consumer Regulations 2010, reg 90) | Paperwork, not the website |
 | Confirm opening hours (only seen on an unclaimed directory listing) | `assets/content.js` hours, hero week strip, Hours table, JSON-LD |
 | Vector logo, or permission to redraw the card's logo | Header, footer, favicon |
 | Email address for enquiries (form stays hidden until set) | `assets/content.js` email |
@@ -17,4 +22,4 @@
 | Domain name | canonical, og:url, sitemap.xml, robots.txt |
 | Re-check the fees each 1 July (NSW updates them yearly) | Fees panel, FAQ, JSON-LD |
 | Choose a rego lookup provider and pay for a key (Shine or AMBS account) | Vercel environment variables, then `regoLookup: true` in `assets/content.js` |
-| Confirm the makes listed in the "Servicing all makes, including" carousel (Toyota, Mazda, Kia, Nissan, Volkswagen, BMW, Mercedes-Benz, Audi, Lexus, Volvo, Jeep, Tesla, BYD, taken from a reference site), and whether Shine has permission to show manufacturer logos | 06 Your Mix, MAKES list |
+| Confirm the makes listed in the "Servicing all makes, including" carousel (Toyota, Mazda, Kia, Nissan, Volkswagen, BMW, Mercedes-Benz, Audi, Lexus, Volvo, Jeep, taken from a reference site), and whether Shine has permission to show manufacturer logos | 06 Your Mix, MAKES list |
