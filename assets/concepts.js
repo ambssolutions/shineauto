@@ -27,22 +27,22 @@
     '<style>' +
     ':host{all:initial}' +
     '.bar{position:fixed;left:16px;bottom:16px;z-index:2147483000;display:flex;align-items:center;gap:2px;' +
-    'font:500 13px/1 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#fff;background:rgba(14,22,17,.9);' +
+    'font:500 13px/1 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#fff;background:rgba(18,20,23,.92);' +
     'backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:999px;' +
     'padding:4px;box-shadow:0 12px 32px -12px rgba(0,0,0,.5);transition:opacity .3s,transform .3s}' +
     '.bar.tuck{opacity:.35}.bar:hover,.bar:focus-within{opacity:1}' +
     '.bar.gone{opacity:0;pointer-events:none;transform:translate(-50%,24px)}' +
     'a,button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:999px;color:#fff;white-space:nowrap}' +
     'a:hover,button:hover{background:rgba(255,255,255,.12)}' +
-    'a:focus-visible,button:focus-visible{outline:2px solid #8BC75A;outline-offset:1px}' +
+    'a:focus-visible,button:focus-visible{outline:2px solid #f39a36;outline-offset:1px}' +
     '.arrow{width:34px;padding:0;justify-content:center;font-size:16px}' +
-    '.tag{color:#8BC75A;font-weight:700}' +
+    '.tag{color:#f39a36;font-weight:700}' +
     '.menu{position:absolute;left:0;bottom:calc(100% + 8px);min-width:260px;background:#0e1611;border:1px solid rgba(255,255,255,.14);' +
     'border-radius:16px;padding:6px;box-shadow:0 20px 40px -16px rgba(0,0,0,.6);display:none;max-height:70vh;overflow:auto}' +
     '.menu.open{display:block}' +
     '.menu a{display:flex;width:100%;box-sizing:border-box;height:auto;padding:9px 12px;border-radius:10px;justify-content:space-between;gap:16px}' +
-    '.menu a[aria-current]{background:rgba(109,171,60,.22)}' +
-    '.menu small{color:#A9B8AE;font-weight:400}' +
+    '.menu a[aria-current]{background:rgba(243,154,54,.22)}' +
+    '.menu small{color:#b4b0a8;font-weight:400}' +
     '.menu hr{border:0;border-top:1px solid rgba(255,255,255,.12);margin:6px 4px}' +
     '.fav{width:34px;padding:0;justify-content:center}.fav svg{width:17px;height:17px}' +
     '.fav[aria-pressed="true"]{color:#F5C518}.fav[aria-pressed="true"] svg{fill:currentColor}' +

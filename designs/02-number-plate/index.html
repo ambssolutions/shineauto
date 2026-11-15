@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en-AU" data-concept="02-number-plate">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Shine Auto Repairs | Mechanic, pink and blue slips, Warwick Farm NSW</title>
+<meta name="description" content="Mechanical repairs, pink slips for petrol, diesel and LPG vehicles, blue slips, logbook servicing, air con, tyres and batteries at Unit 4B, 4 Homepride Avenue, Warwick Farm. Call (02) 8798 5715.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f3efe7">
+<link rel="preload" href="../../assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js")</script>
+<style>
+@font-face{font-family:"Archivo";font-style:normal;font-weight:700;font-stretch:75% 90%;font-display:swap;src:url(../../assets/fonts/archivo-latin.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400 600;font-display:swap;src:url(../../assets/fonts/plex-sans-latin.woff2) format("woff2")}
+:root{
+  --paper:#f3efe7;--paper-2:#ebe5d9;--steel:#e4e6e5;--steel-2:#d3d7d8;
+  --ink:#17140f;--ink-2:#4b453c;--line:#d6cebf;
+  --plate:#f39a36;--plate-hi:#f8ad55;--plate-lo:#e48a25;--plate-edge:#b7631a;--plate-wall:#a65612;
+  --red:#d9342b;--focus:#b8590b;
+  --head:64px;
+  --display:"Archivo","Arial Narrow",sans-serif;
+  --text:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.22,.8,.2,1);
+  --fold:1.4s;
+  --h1:clamp(1.75rem,min(3.5vw,5.6vh),3rem);
+  --h2:clamp(1.9rem,min(3.8vw,6.4vh),3.1rem);
+  --h3:clamp(1.25rem,1.6vw,1.5rem);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(var(--head) + 16px);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--text);overflow-x:clip}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:700;font-stretch:80%;line-height:1.05;letter-spacing:0;margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+.sec{padding:clamp(64px,9vw,112px) 0}
+.sec-head{text-align:center;max-width:720px;margin:0 auto clamp(36px,5vw,56px)}
+.sec-head h2{font-size:var(--h2)}
+.sec-head p{margin-top:14px;color:var(--ink-2);font-size:1.06rem}
+.steel{background:var(--steel);background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 1px,transparent 1px 3px,rgba(0,0,0,.018) 3px 4px)}
+
+/* ---------- plate ---------- */
+.plate{container-type:inline-size;display:block;width:100%}
+.pf{position:relative;display:grid;place-items:center;aspect-ratio:var(--ar,2.7);border-radius:4.6cqw;
+  background:linear-gradient(180deg,var(--plate-hi),var(--plate) 38%,var(--plate-lo));
+  box-shadow:inset 0 .35cqw 0 rgba(255,236,206,.7),inset 0 -.45cqw 0 rgba(140,70,8,.28),0 .55cqw 0 var(--plate-edge),0 .95cqw 0 #8e4a0f,0 2.6cqw 3.2cqw -1cqw rgba(50,28,4,.42);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.pf::before{content:"";position:absolute;inset:2.3cqw;border-radius:3cqw;border:.6cqw solid var(--ink);
+  box-shadow:-.12cqw -.12cqw 0 rgba(255,222,176,.75),.2cqw .3cqw 0 var(--plate-wall),.3cqw .6cqw .5cqw rgba(60,30,0,.3),inset .15cqw .25cqw 0 rgba(0,0,0,.25);pointer-events:none}
+.bolt{position:absolute;top:50%;width:3.8cqw;aspect-ratio:1;border-radius:50%;margin-top:-1.9cqw;
+  background:linear-gradient(45deg,transparent 43%,#3c4044 43% 57%,transparent 57%),linear-gradient(-45deg,transparent 43%,#3c4044 43% 57%,transparent 57%),radial-gradient(circle at 35% 30%,#fbfbfb 0 10%,#c9cdd0 32%,#858b90 70%,#555a5f);
+  box-shadow:0 .25cqw .35cqw rgba(0,0,0,.45),inset 0 -.2cqw .15cqw rgba(0,0,0,.3)}
+.bolt.l{left:5.2cqw}.bolt.r{right:5.2cqw}
+.pc{position:relative;font-family:var(--display);font-weight:700;font-stretch:75%;font-size:var(--fs,24cqw);line-height:1;letter-spacing:.03em;color:var(--ink);white-space:nowrap;
+  text-shadow:-.14cqw -.14cqw 0 rgba(255,222,176,.8),.22cqw .32cqw 0 var(--plate-wall),.4cqw .75cqw .55cqw rgba(60,30,0,.32);
+  transform:translateY(var(--cy,-3%))}
+.ps{position:absolute;left:0;right:0;bottom:var(--sb,6.4cqw);text-align:center;font-family:var(--display);font-weight:700;font-stretch:80%;font-size:var(--ss,3.6cqw);letter-spacing:.2em;color:var(--ink);line-height:1;
+  text-shadow:.1cqw .14cqw 0 var(--plate-wall)}
+/* black plate variant */
+.plate.dark .pf{background:linear-gradient(180deg,#34302a,#1d1a15 45%,#12100c);
+  box-shadow:inset 0 .35cqw 0 rgba(255,255,255,.16),inset 0 -.45cqw 0 rgba(0,0,0,.4),0 .55cqw 0 #000,0 .95cqw 0 #000,0 2.6cqw 3.2cqw -1cqw rgba(20,12,2,.5)}
+.plate.dark .pf::before{border-color:var(--plate);box-shadow:-.12cqw -.12cqw 0 rgba(255,255,255,.18),.2cqw .3cqw 0 #000,inset .15cqw .25cqw 0 rgba(0,0,0,.4)}
+.plate.dark .pc,.plate.dark .ps{color:var(--plate);text-shadow:-.14cqw -.14cqw 0 rgba(255,255,255,.22),.22cqw .32cqw 0 #6b3a0b,.4cqw .75cqw .55cqw rgba(0,0,0,.55)}
+
+/* ---------- buttons ---------- */
+.key{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:12px;border:0;cursor:pointer;
+  background:linear-gradient(180deg,var(--plate-hi),var(--plate) 45%,var(--plate-lo));color:var(--ink);font:600 1.02rem/1 var(--text);text-decoration:none;
+  box-shadow:inset 0 1px 0 rgba(255,238,212,.8),inset 0 -2px 0 rgba(140,70,8,.25),0 3px 0 var(--plate-edge),0 9px 16px -8px rgba(60,30,0,.5);
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.key::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:30%;background:linear-gradient(100deg,transparent,rgba(255,246,230,.55),transparent);transform:translateX(-120%) skewX(-18deg);pointer-events:none}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.key:hover::after{transform:translateX(560%) skewX(-18deg);transition:transform 1.1s var(--ease)}}
+.key:active{transform:translateY(3px);box-shadow:inset 0 1px 0 rgba(255,238,212,.6),inset 0 -1px 0 rgba(140,70,8,.25),0 0 0 var(--plate-edge),0 3px 6px -4px rgba(60,30,0,.5)}
+.key.sm{min-height:44px;padding:0 18px;font-size:.95rem;border-radius:10px}
+.key.ink{background:linear-gradient(180deg,#3a352e,#1d1a15);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 3px 0 #000,0 9px 16px -8px rgba(0,0,0,.5)}
+.key.ink::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.16),transparent)}
+.tlink{display:inline-flex;align-items:center;min-height:44px;font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:var(--plate)}
+.tlink:hover{text-decoration-color:var(--ink)}
+
+/* ---------- header ---------- */
+.top{position:fixed;inset:0 0 auto;z-index:50;height:var(--head);background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{height:100%;display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;min-height:44px}
+.brand .plate{width:74px}
+.brand .pc{--fs:30cqw}
+.brand .pf{box-shadow:inset 0 1px 0 rgba(255,236,206,.7),0 2px 0 var(--plate-edge),0 4px 6px -3px rgba(50,28,4,.45)}
+.brand .pf::before{inset:3px;border-width:1.5px;border-radius:5px;box-shadow:none}
+.brand .bolt{display:none}
+.brand b{font:700 1.18rem/1 var(--display);font-stretch:80%;letter-spacing:.01em}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a:not(.key){display:inline-flex;align-items:center;min-height:44px;padding:0 12px;text-decoration:none;font-weight:500;font-size:.96rem;border-radius:8px}
+.nav a:not(.key):hover{background:var(--paper-2)}
+.hcall{margin-left:8px}
+.menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:var(--paper);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;padding:0}
+.menu-btn span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:transform .4s var(--ease)}
+.menu-btn span+span{margin-top:5px}
+.menu-btn[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+@media (max-width:900px){
+  .menu-btn{display:flex}
+  .nav-links{position:fixed;left:0;right:0;top:var(--head);background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:8px 16px 20px;gap:2px;box-shadow:0 20px 30px -20px rgba(40,25,5,.35)}
+  html.js .nav-links{display:none}
+  html.js .nav-links.open{display:flex}
+  .nav-links a{justify-content:center;font-size:1.08rem!important;min-height:52px!important;border-bottom:1px solid var(--line);border-radius:0!important}
+  .nav-links a:last-child{border-bottom:0}
+  .top .wrap{gap:10px}
+}
+@media (max-width:420px){.hcall .long{display:none}.brand b{font-size:1.05rem}}
+@media (min-width:421px){.hcall .short{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:clip;min-height:min(100svh,1000px);padding:calc(var(--head) + 20px) 0 28px;display:grid;place-items:center;text-align:center;
+  background:radial-gradient(ellipse 70% 55% at 50% 44%,#faf7f1,transparent 70%),var(--paper)}
+.hero-in{display:flex;flex-direction:column;align-items:center}
+.status{display:inline-flex;align-items:center;gap:9px;font-size:.92rem;font-weight:500;color:var(--ink-2);min-height:28px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--ink-2)}
+.status.open i{background:var(--plate);box-shadow:0 0 0 2px rgba(23,20,15,.2)}
+.status.shut i{background:var(--red)}
+.press{position:relative;width:min(92vw,800px,calc((100svh - var(--head)) * 1.02));margin:clamp(14px,3vh,30px) 0 clamp(26px,5vh,48px);container-type:inline-size}
+.press .pf{--ar:2.55;border-radius:4.4cqw}
+.press .pc{--fs:27cqw;--cy:-6%;letter-spacing:.04em}
+.press .ps{--ss:3.5cqw;--sb:6.2cqw;letter-spacing:.24em}
+.press .ink-l{position:absolute;inset:0;display:grid;place-items:center}
+.press .ink-l .pc{text-shadow:none}
+.press .ink-l .ps{text-shadow:none}
+.relief>.pc,.relief>.ps{color:transparent}
+.die{display:none}
+.hero h1{font-size:var(--h1);max-width:22ch}
+.lede{margin-top:clamp(10px,1.8vh,16px);color:var(--ink-2);max-width:44ch;font-size:clamp(1rem,1.2vw,1.12rem)}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 26px;margin-top:clamp(18px,3vh,28px)}
+@media (max-width:520px){.hero-cta .key{width:100%}}
+
+@media (prefers-reduced-motion:no-preference){
+  html.js .press .pf{animation:slideIn 1.5s var(--ease) both}
+  html.js .relief>.pc,html.js .relief>.ps{animation:rise 1.5s linear both}
+  html.js .ink-l{animation:inkOn 1.5s var(--ease) both}
+  html.js .die{display:block;position:absolute;left:-3.5%;right:-3.5%;top:-7%;bottom:-7%;z-index:3;border-radius:3cqw;
+    background:linear-gradient(180deg,#666b70,#3b3f43 30%,#2a2d30 80%,#55595d);
+    box-shadow:inset 0 .4cqw 0 rgba(255,255,255,.28),inset 0 -.6cqw 0 rgba(0,0,0,.35),0 1.2cqw 2.4cqw rgba(0,0,0,.35);
+    animation:die 1.5s cubic-bezier(.5,0,.3,1) both}
+  html.js .die::before,html.js .die::after{content:"";position:absolute;bottom:100%;width:4cqw;height:120svh;left:16%;
+    background:linear-gradient(90deg,#7d8287,#d7dadc 40%,#8b9095 70%,#5e6367)}
+  html.js .die::after{left:auto;right:16%}
+  html.js .rise-in{animation:fadeUp .7s var(--ease) both;animation-delay:var(--d,1.15s)}
+}
+@keyframes slideIn{
+  0%{transform:translateX(-105vw)}
+  30%{transform:translateX(0)}
+  44%{transform:translateX(0) scale(1)}
+  48%{transform:scale(1.012,.965)}
+  56%,100%{transform:none}
+}
+@keyframes die{
+  0%,28%{transform:translateY(calc(-100% - 65svh))}
+  45%{transform:translateY(0)}
+  52%{transform:translateY(0)}
+  84%,100%{transform:translateY(calc(-100% - 75svh))}
+}
+@keyframes rise{
+  0%,46%{color:transparent;text-shadow:0 0 0 transparent,0 0 0 transparent,0 0 0 transparent}
+  47%{color:var(--plate);text-shadow:0 0 0 transparent,.05cqw .08cqw 0 var(--plate-wall),0 0 0 transparent}
+  72%,100%{color:var(--plate);text-shadow:-.14cqw -.14cqw 0 rgba(255,222,176,.8),.22cqw .32cqw 0 var(--plate-wall),.4cqw .75cqw .55cqw rgba(60,30,0,.32)}
+}
+@keyframes inkOn{0%,66%{clip-path:inset(0 100% 0 0)}96%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ---------- services ---------- */
+.svcs{list-style:none;margin:0 auto;padding:0;max-width:1000px;display:grid;gap:14px}
+.svc{background:var(--paper);border-radius:18px;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 0 0 1px rgba(23,20,15,.07),0 10px 24px -18px rgba(30,20,5,.5)}
+.svc h3{font-size:inherit}
+.svc-btn{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:clamp(132px,26vw,250px) 1fr auto;align-items:center;gap:clamp(14px,3vw,32px);padding:clamp(14px,2vw,20px) clamp(14px,2.6vw,28px);border-radius:18px;text-align:left}
+.svc-btn:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.svc-btn .pc{--fs:19cqw}
+.svc-btn .ps{--ss:4cqw;--sb:6cqw}
+.svc-name{display:block;font:700 clamp(1.3rem,2.4vw,2rem)/1.05 var(--display);font-stretch:80%}
+.svc-hint{display:block;color:var(--ink-2);font-size:clamp(.9rem,1.2vw,1rem);margin-top:6px;font-family:var(--text);font-weight:400}
+.svc-ico{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--paper-2);box-shadow:inset 0 1px 2px rgba(0,0,0,.12)}
+.svc-ico::before,.svc-ico::after{content:"";grid-area:1/1;width:14px;height:2px;background:var(--ink);border-radius:2px;transition:transform .6s var(--ease)}
+.svc-ico::after{transform:rotate(90deg)}
+.svc-btn[aria-expanded="true"] .svc-ico::after{transform:rotate(0)}
+@media (hover:hover){.svc-btn:hover .pf{transform:translateY(.55cqw);box-shadow:inset 0 .35cqw 0 rgba(255,236,206,.7),inset 0 -.45cqw 0 rgba(140,70,8,.28),0 .2cqw 0 var(--plate-edge),0 .35cqw 0 #8e4a0f,0 1cqw 1.4cqw -1cqw rgba(50,28,4,.42)}}
+.svc-btn:active .pf,.svc-btn[aria-expanded="true"] .pf{transform:translateY(.7cqw);box-shadow:inset 0 .35cqw 0 rgba(255,236,206,.6),inset 0 -.3cqw 0 rgba(140,70,8,.28),0 .15cqw 0 var(--plate-edge),0 .25cqw 0 #8e4a0f,0 .6cqw 1cqw -1cqw rgba(50,28,4,.42)}
+.fold{display:grid;grid-template-rows:1fr}
+.fold-in{min-height:0;overflow:hidden}
+html.js .fold{grid-template-rows:0fr;transition:grid-template-rows var(--fold) var(--ease)}
+html.js .fold .fold-in{opacity:0;visibility:hidden;transition:opacity .9s var(--ease),visibility 0s linear var(--fold)}
+html.js .fold.open{grid-template-rows:1fr}
+html.js .fold.open .fold-in{opacity:1;visibility:visible;transition:opacity 1s var(--ease) .25s,visibility 0s}
+.svc-body{display:grid;grid-template-columns:1fr minmax(0,420px);gap:clamp(18px,3vw,40px);align-items:center;padding:4px clamp(14px,2.6vw,28px) clamp(20px,2.6vw,28px)}
+.svc-body p{max-width:52ch}
+.svc-body p+p{margin-top:10px}
+.svc-body .more{font-size:.95rem;color:var(--ink-2)}
+@media (max-width:700px){.svc-body{grid-template-columns:1fr}.svc-btn{grid-template-columns:clamp(112px,31vw,170px) 1fr 40px;gap:12px}.svc-btn .svc-ico{width:40px;height:40px}}
+
+/* photo in a plate frame */
+.frame{position:relative;margin:0;padding:clamp(8px,1.2vw,12px);border-radius:18px;background:linear-gradient(180deg,#2b2823,#15130f);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 3px 0 #000,0 16px 30px -18px rgba(20,12,2,.6)}
+.frame img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px;background:#2b2823}
+.frame::before,.frame::after{content:"";position:absolute;top:3px;width:7px;height:7px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#eee,#8a8f93 70%);left:22%}
+.frame::after{left:auto;right:22%}
+.ai{position:absolute;right:calc(clamp(8px,1.2vw,12px) + 8px);bottom:calc(clamp(8px,1.2vw,12px) + 8px);background:rgba(15,13,10,.82);color:#fff;font:600 .72rem/1 var(--text);letter-spacing:.02em;padding:6px 9px;border-radius:6px}
+
+/* ---------- slips ---------- */
+.slips{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);max-width:1040px;margin:0 auto}
+.slip .plate{max-width:440px;margin:0 auto}
+.slip .pc{--fs:25cqw;--cy:-11%}
+.slip .ps{--ss:4.4cqw;--sb:6.4cqw}
+.slip h3{font-size:var(--h3);text-align:center;margin:30px 0 14px}
+.ticks{list-style:none;margin:0 auto;padding:0;max-width:430px;display:grid;gap:10px}
+.ticks li{position:relative;padding-left:30px}
+.ticks li::before{content:"";position:absolute;left:2px;top:.42em;width:16px;height:16px;border-radius:4px;background:var(--plate);box-shadow:inset 0 1px 0 rgba(255,236,206,.8),0 2px 0 var(--plate-edge)}
+.ticks li::after{content:"";position:absolute;left:7px;top:calc(.42em + 3px);width:5px;height:8px;border:solid var(--ink);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.recheck{max-width:720px;margin:clamp(36px,5vw,56px) auto 0;text-align:center;font-size:1.08rem}
+.recheck b{font-family:var(--display);font-stretch:80%;font-size:1.25em}
+.src{max-width:720px;margin:14px auto 0;text-align:center;font-size:.88rem;color:var(--ink-2)}
+.src a{text-underline-offset:3px}
+@media (max-width:760px){.slips{grid-template-columns:1fr;gap:48px}}
+
+/* helper */
+.helper{display:none}
+html.js .helper{display:block;max-width:760px;margin:clamp(40px,6vw,64px) auto 0;padding:clamp(22px,4vw,40px);border-radius:22px;background:var(--steel);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 0 0 1px rgba(23,20,15,.08),0 20px 40px -28px rgba(30,20,5,.6);position:relative}
+.helper::before,.helper::after{content:"";position:absolute;top:14px;left:14px;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#9aa0a4 60%,#6d7277);box-shadow:0 1px 1px rgba(0,0,0,.35)}
+.helper::after{left:auto;right:14px}
+.helper h3{font-size:var(--h3);text-align:center}
+.helper .intro{text-align:center;color:var(--ink-2);margin-top:6px}
+.q{margin-top:24px}
+.q p{font-weight:600}
+.q small{display:block;color:var(--ink-2);font-size:.9rem;margin-top:4px}
+.yn{display:flex;gap:12px;margin-top:12px}
+.yn button{min-width:110px}
+.yn button[aria-pressed="true"]{transform:translateY(3px);box-shadow:inset 0 2px 4px rgba(120,60,0,.35),0 0 0 var(--plate-edge)}
+.yn button[aria-pressed="false"].dim{opacity:.55}
+.q[hidden],.result[hidden]{display:none}
+.result{margin-top:28px;display:grid;grid-template-columns:minmax(150px,240px) 1fr;gap:22px;align-items:center}
+.result .pc{--fs:22cqw}
+.result .ps{--ss:4.2cqw;--sb:6cqw}
+.result .again{margin-top:8px}
+.result .again button{all:unset;cursor:pointer;min-height:44px;display:inline-flex;align-items:center;font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--plate);text-decoration-thickness:2px}
+.result .again button:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+@media (prefers-reduced-motion:no-preference){.result.stamp .pf{animation:stamp .9s var(--ease) both}.result.stamp .pc{animation:chars .9s var(--ease) both}}
+@keyframes stamp{0%{transform:translateY(-10px);opacity:0}35%{transform:translateY(4px) scaleY(.97);opacity:1}60%,100%{transform:none}}
+@keyframes chars{0%,30%{opacity:0;transform:translateY(-3%) scale(.96)}70%,100%{opacity:1;transform:translateY(-3%)}}
+@media (max-width:560px){.result{grid-template-columns:1fr}.result .plate{max-width:240px;margin:0 auto}}
+
+/* ---------- job ---------- */
+.job{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center;max-width:1100px;margin:0 auto}
+.steps{list-style:none;margin:0;padding:0;position:relative}
+.steps::before{content:"";position:absolute;left:31px;top:40px;bottom:40px;border-left:2px dashed #a9aeb1}
+.steps li{position:relative;display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:start;padding:14px 0}
+.num{width:64px;height:64px;border-radius:14px;display:grid;place-items:center;position:relative;z-index:1;
+  background:linear-gradient(180deg,#eef0f0,#c9cdcf);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 0 rgba(0,0,0,.12),0 2px 0 #9ea3a6,0 8px 14px -8px rgba(0,0,0,.4);
+  font:700 2.4rem/1 var(--display);font-stretch:75%;color:#9aa0a4;text-shadow:0 1px 0 #fff,0 -1px 0 rgba(0,0,0,.4)}
+.steps li:first-child .num{background:linear-gradient(180deg,var(--plate-hi),var(--plate) 45%,var(--plate-lo));color:var(--plate-lo);text-shadow:0 1px 0 rgba(255,236,206,.9),0 -1px 0 rgba(110,50,0,.55);box-shadow:inset 0 1px 0 rgba(255,236,206,.8),0 2px 0 var(--plate-edge),0 8px 14px -8px rgba(60,30,0,.5)}
+.steps h3{font-size:var(--h3);padding-top:6px}
+.steps p{color:var(--ink-2);margin-top:6px;max-width:44ch}
+.steps a{font-weight:600;white-space:nowrap}
+@media (max-width:820px){.job{grid-template-columns:1fr}.job .frame{max-width:560px;margin:0 auto;width:100%}}
+
+/* ---------- rating ---------- */
+.rating{text-align:center}
+.rating .plate{width:min(420px,78vw);margin:0 auto}
+.rating .pc{--fs:31cqw;--cy:-11%}
+.rating .ps{--ss:4.2cqw;--sb:6cqw}
+.rating h2{font-size:var(--h2);margin-top:40px}
+.rating p{color:var(--ink-2);margin-top:10px}
+.rating .tlink{margin-top:10px}
+
+/* ---------- visit ---------- */
+.visit{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);max-width:1080px;margin:0 auto;align-items:start}
+.hours{display:grid;gap:22px;justify-items:center;margin:0;padding:0}
+.hours li{list-style:none;width:min(380px,100%);position:relative}
+.hours .pc{--fs:24cqw;--cy:-12%}
+.hours .ps{--ss:4.6cqw;--sb:6.2cqw}
+.hours .closed .pc{--fs:21cqw}
+.today-tag{position:absolute;left:50%;top:-12px;transform:translateX(-50%);z-index:2;background:var(--ink);color:#fff;font:600 .78rem/1 var(--text);padding:6px 10px;border-radius:6px;display:none}
+.hours li.today .today-tag{display:block}
+.hours .status{margin-bottom:4px}
+.place{background:var(--paper);border-radius:22px;padding:clamp(22px,3vw,34px);box-shadow:inset 0 1px 0 #fff,0 0 0 1px rgba(23,20,15,.08),0 20px 40px -30px rgba(30,20,5,.6)}
+.place h3{font-size:var(--h3)}
+.place address{font-style:normal;margin-top:10px;font-size:1.1rem}
+.place .key{margin-top:18px}
+.phones{list-style:none;margin:26px 0 0;padding:22px 0 0;border-top:1px solid var(--line);display:grid;gap:14px}
+.phones span{display:block;font-size:.9rem;color:var(--ink-2)}
+.phones a{font:700 1.5rem/1.2 var(--display);font-stretch:80%;text-decoration:none;display:inline-flex;min-height:44px;align-items:center}
+.phones a:hover{text-decoration:underline;text-decoration-color:var(--plate);text-underline-offset:5px}
+@media (max-width:820px){.visit{grid-template-columns:1fr}}
+
+/* ---------- faq ---------- */
+.faq{max-width:820px;margin:0 auto;border-top:1px solid var(--line)}
+.qa{border-bottom:1px solid var(--line)}
+.qa h3{font-size:inherit}
+.qa button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:1fr 44px;gap:16px;align-items:center;padding:16px 0;min-height:64px;text-align:left;font:700 clamp(1.15rem,1.7vw,1.35rem)/1.25 var(--display);font-stretch:80%}
+.qa button:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
+.qa .fold-in p{padding:0 56px 22px 0;color:var(--ink-2);max-width:64ch}
+
+/* ---------- call band ---------- */
+.band{background:var(--ink);color:#fff;text-align:center;padding:clamp(70px,10vw,120px) 0}
+.band h2{font-size:var(--h2)}
+.band p{color:#d9d3c8;margin-top:12px}
+.band .call-plate{display:block;width:min(680px,100%);margin:clamp(32px,5vw,52px) auto 0;text-decoration:none;border-radius:4%}
+.band .call-plate .pc{--fs:13.4cqw;letter-spacing:.02em;--cy:-8%}
+.band .call-plate .ps{--ss:3.6cqw;--sb:6cqw}
+@media (hover:hover){.band .call-plate:hover .pf{transform:translateY(.55cqw);box-shadow:inset 0 .35cqw 0 rgba(255,236,206,.7),inset 0 -.45cqw 0 rgba(140,70,8,.28),0 .2cqw 0 var(--plate-edge),0 .35cqw 0 #8e4a0f,0 1cqw 1.4cqw -1cqw rgba(0,0,0,.5)}}
+.band .call-plate:active .pf{transform:translateY(.7cqw)}
+.band .call-plate:focus-visible{outline-color:var(--plate);outline-offset:6px}
+.band .alt{margin-top:28px}
+.band .alt a{color:#fff;text-decoration-color:var(--plate)}
+.band .alt a:focus-visible{outline-color:var(--plate)}
+
+/* ---------- footer ---------- */
+.foot{padding:56px 0 40px;text-align:center;font-size:.95rem;color:var(--ink-2)}
+.foot .brand{justify-content:center;margin:0 auto 18px;width:max-content;color:var(--ink)}
+.foot p+p{margin-top:8px}.foot p{text-wrap:balance}
+.foot a{text-underline-offset:3px}
+.foot .fine{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);font-size:.86rem}
+
+/* ---------- quick bar ---------- */
+.qbar{display:none}
+@media (max-width:760px){
+  .qbar{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:45;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-radius:16px;background:var(--ink);box-shadow:0 16px 30px -12px rgba(0,0,0,.55);transition:transform .6s var(--ease),opacity .6s var(--ease)}
+  .qbar .key{min-height:48px;width:100%}
+  .qbar .key.ink{background:#2c2822}
+  html.js .qbar{transform:translateY(140%);opacity:0;pointer-events:none}
+  html.js .qbar.show{transform:none;opacity:1;pointer-events:auto}
+  .foot{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Shine Auto Repairs, back to top">
+      <span class="plate" aria-hidden="true"><span class="pf" style="--ar:2.6"><span class="pc">SHINE</span></span></span>
+      <b>Auto Repairs</b>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav nav-links" id="nav-links">
+        <a href="#services">Services</a>
+        <a href="#slips">Pink and blue slips</a>
+        <a href="#visit">Hours</a>
+        <a href="#faq">Questions</a>
+      </div>
+    </nav>
+    <a class="key sm hcall" href="tel:+61287985715" aria-label="Call (02) 8798 5715"><span class="long">Call (02) 8798 5715</span><span class="short">Call</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="h1">
+    <div class="hero-in wrap">
+      <p class="status rise-in" style="--d:1.05s" data-status><i aria-hidden="true"></i><span>Mon to Fri 9am to 5pm, Sat 9am to 2pm</span></p>
+      <div class="press" role="img" aria-label="Number plate reading Shine, Auto Repairs, Warwick Farm">
+        <div class="pf relief">
+          <i class="bolt l"></i><i class="bolt r"></i>
+          <span class="pc">SHINE</span>
+          <span class="ps">AUTO REPAIRS · WARWICK FARM</span>
+          <span class="ink-l"><span class="pc">SHINE</span><span class="ps">AUTO REPAIRS · WARWICK FARM</span></span>
+        </div>
+        <span class="die" aria-hidden="true"></span>
+      </div>
+      <h1 id="h1" class="rise-in">Car repairs and rego checks in Warwick Farm</h1>
+      <p class="lede rise-in" style="--d:1.25s">Mechanical repairs, pink and blue slips, logbook servicing, air con, tyres and batteries. Open Monday to Saturday.</p>
+      <div class="hero-cta rise-in" style="--d:1.35s">
+        <a class="key" href="tel:+61287985715">Call (02) 8798 5715</a>
+        <a class="tlink" href="#slips">Which slip do I need?</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec steel" id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="services-h">What we work on</h2>
+        <p>Everything on our business card, from a pink slip to a full repair. Tap a plate for the details. Quality work guaranteed.</p>
+      </div>
+      <ul class="svcs">
+        <li class="svc">
+          <h3><button class="svc-btn" type="button" aria-expanded="false" aria-controls="s1" id="s1b" aria-label="Mechanical repairs">
+            <span class="plate" aria-hidden="true"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">REPAIR</span><span class="ps">SHINE AUTO</span></span></span>
+            <span><span class="svc-name">Mechanical repairs</span><span class="svc-hint">Engine, brakes, steering, suspension</span></span>
+            <span class="svc-ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="fold" id="s1" role="region" aria-labelledby="s1b"><div class="fold-in"><div class="svc-body">
+            <div><p>All mechanical repairs, including engine, brakes, steering and suspension work. We also do defect clearances.</p><p class="more">Call and tell us what the car is doing. We'll book it in.</p></div>
+            <figure class="frame"><img src="../../assets/img/repairs-640.webp" srcset="../../assets/img/repairs-640.webp 640w, ../../assets/img/repairs-1200.webp 1200w" sizes="(min-width:760px) 420px, calc(100vw - 64px)" width="640" height="427" loading="lazy" decoding="async" alt="A mechanic working on an engine under a work lamp"><span class="ai">AI illustration</span></figure>
+          </div></div></div>
+        </li>
+        <li class="svc">
+          <h3><button class="svc-btn" type="button" aria-expanded="false" aria-controls="s2" id="s2b" aria-label="Pink slips">
+            <span class="plate" aria-hidden="true"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">PNK SLP</span><span class="ps">SHINE AUTO</span></span></span>
+            <span><span class="svc-name">Pink slips</span><span class="svc-hint">Rego safety checks, petrol, diesel and LPG</span></span>
+            <span class="svc-ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="fold" id="s2" role="region" aria-labelledby="s2b"><div class="fold-in"><div class="svc-body">
+            <div><p>The safety check most light vehicles need to renew rego once they are more than 5 years old, counted from the compliance plate date. A pink slip is valid for 6 months.</p><p>We check petrol, diesel and LPG vehicles. The most a station can charge for a light vehicle is $52.</p></div>
+            <figure class="frame"><img src="../../assets/img/pinkslip-640.webp" srcset="../../assets/img/pinkslip-640.webp 640w, ../../assets/img/pinkslip-1200.webp 1200w" sizes="(min-width:760px) 420px, calc(100vw - 64px)" width="640" height="427" loading="lazy" decoding="async" alt="A tread depth gauge pressed into a tyre"><span class="ai">AI illustration</span></figure>
+          </div></div></div>
+        </li>
+        <li class="svc">
+          <h3><button class="svc-btn" type="button" aria-expanded="false" aria-controls="s3" id="s3b" aria-label="Blue slips">
+            <span class="plate" aria-hidden="true"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">BLU SLP</span><span class="ps">SHINE AUTO</span></span></span>
+            <span><span class="svc-name">Blue slips</span><span class="svc-hint">Safety and identity checks</span></span>
+            <span class="svc-ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="fold" id="s3" role="region" aria-labelledby="s3b"><div class="fold-in"><div class="svc-body">
+            <div><p>A blue slip checks a vehicle's safety and identity. You need one when the rego expired more than 3 months ago, the vehicle is from interstate or overseas, it has no plates, or a written-off vehicle is being re-registered.</p><p>It's valid for 42 days. The most a station can charge for a light vehicle is $82.</p></div>
+            <figure class="frame"><img src="../../assets/img/blueslip-640.webp" srcset="../../assets/img/blueslip-640.webp 640w, ../../assets/img/blueslip-1200.webp 1200w" sizes="(min-width:760px) 420px, calc(100vw - 64px)" width="640" height="427" loading="lazy" decoding="async" alt="A stamped metal identification plate on a vehicle"><span class="ai">AI illustration</span></figure>
+          </div></div></div>
+        </li>
+        <li class="svc">
+          <h3><button class="svc-btn" type="button" aria-expanded="false" aria-controls="s4" id="s4b" aria-label="Logbook servicing">
+            <span class="plate" aria-hidden="true"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">LOGBK</span><span class="ps">SHINE AUTO</span></span></span>
+            <span><span class="svc-name">Logbook servicing</span><span class="svc-hint">Servicing to your car's schedule</span></span>
+            <span class="svc-ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="fold" id="s4" role="region" aria-labelledby="s4b"><div class="fold-in"><div class="svc-body">
+            <div><p>Servicing to the schedule in your car's logbook.</p><p class="more">Bring the logbook with you when you drop the car off.</p></div>
+            <figure class="frame"><img src="../../assets/img/logbook-640.webp" srcset="../../assets/img/logbook-640.webp 640w, ../../assets/img/logbook-1200.webp 1200w" sizes="(min-width:760px) 420px, calc(100vw - 64px)" width="640" height="427" loading="lazy" decoding="async" alt="Fresh engine oil being poured into an engine"><span class="ai">AI illustration</span></figure>
+          </div></div></div>
+        </li>
+        <li class="svc">
+          <h3><button class="svc-btn" type="button" aria-expanded="false" aria-controls="s5" id="s5b" aria-label="Air con regas and repairs">
+            <span class="plate" aria-hidden="true"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">AIRCON</span><span class="ps">SHINE AUTO</span></span></span>
+            <span><span class="svc-name">Air con</span><span class="svc-hint">Regas and repairs</span></span>
+            <span class="svc-ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="fold" id="s5" role="region" aria-labelledby="s5b"><div class="fold-in"><div class="svc-body">
+            <div><p>Air conditioning regas and repairs.</p><p class="more">If the air isn't blowing cold, call and book the car in.</p></div>
+            <figure class="frame"><img src="../../assets/img/aircon-640.webp" srcset="../../assets/img/aircon-640.webp 640w, ../../assets/img/aircon-1200.webp 1200w" sizes="(min-width:760px) 420px, calc(100vw - 64px)" width="640" height="427" loading="lazy" decoding="async" alt="Air conditioning pressure gauges connected to a car"><span class="ai">AI illustration</span></figure>
+          </div></div></div>
+        </li>
+        <li class="svc">
+          <h3><button class="svc-btn" type="button" aria-expanded="false" aria-controls="s6" id="s6b" aria-label="Tyres">
+            <span class="plate" aria-hidden="true"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">TYRES</span><span class="ps">SHINE AUTO</span></span></span>
+            <span><span class="svc-name">Tyres</span><span class="svc-hint">New tyres for your car</span></span>
+            <span class="svc-ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="fold" id="s6" role="region" aria-labelledby="s6b"><div class="fold-in"><div class="svc-body">
+            <div><p>Tyres for your car.</p><p class="more">Call the workshop with your tyre size, or ask us to check it when the car is in.</p></div>
+            <figure class="frame"><img src="../../assets/img/tyres-640.webp" srcset="../../assets/img/tyres-640.webp 640w, ../../assets/img/tyres-1200.webp 1200w" sizes="(min-width:760px) 420px, calc(100vw - 64px)" width="640" height="427" loading="lazy" decoding="async" alt="A new tyre standing on a workshop floor"><span class="ai">AI illustration</span></figure>
+          </div></div></div>
+        </li>
+        <li class="svc">
+          <h3><button class="svc-btn" type="button" aria-expanded="false" aria-controls="s7" id="s7b" aria-label="Batteries">
+            <span class="plate" aria-hidden="true"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">BATTRY</span><span class="ps">SHINE AUTO</span></span></span>
+            <span><span class="svc-name">Batteries</span><span class="svc-hint">Car batteries</span></span>
+            <span class="svc-ico" aria-hidden="true"></span>
+          </button></h3>
+          <div class="fold" id="s7" role="region" aria-labelledby="s7b"><div class="fold-in"><div class="svc-body">
+            <div><p>Car batteries.</p><p class="more">If the car is slow to start in the morning, call the workshop.</p></div>
+            <figure class="frame"><img src="../../assets/img/battery-640.webp" srcset="../../assets/img/battery-640.webp 640w, ../../assets/img/battery-1200.webp 1200w" sizes="(min-width:760px) 420px, calc(100vw - 64px)" width="640" height="427" loading="lazy" decoding="async" alt="Jumper lead clamps on a car battery"><span class="ai">AI illustration</span></figure>
+          </div></div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec lower" id="slips" aria-labelledby="slips-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="slips-h">Pink slip or blue slip</h2>
+        <p>The NSW Government sets the most a station can charge. These are the limits for a light vehicle from 1 July 2026.</p>
+      </div>
+      <div class="slips">
+        <div class="slip">
+          <div class="plate" role="img" aria-label="Pink slip, up to $52"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">$52</span><span class="ps">PINK SLIP · MAX FEE</span></span></div>
+          <h3>Pink slip</h3>
+          <ul class="ticks">
+            <li>A safety check to renew rego</li>
+            <li>For most light vehicles over 5 years old, counted from the compliance plate date</li>
+            <li>Valid for 6 months</li>
+            <li>We do them for petrol, diesel and LPG vehicles</li>
+          </ul>
+        </div>
+        <div class="slip">
+          <div class="plate dark" role="img" aria-label="Blue slip, up to $82"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">$82</span><span class="ps">BLUE SLIP · MAX FEE</span></span></div>
+          <h3>Blue slip</h3>
+          <ul class="ticks">
+            <li>A safety and identity check</li>
+            <li>When the rego expired more than 3 months ago</li>
+            <li>For a vehicle from interstate or overseas, or with no plates</li>
+            <li>For a written-off vehicle being re-registered</li>
+            <li>Valid for 42 days</li>
+          </ul>
+        </div>
+      </div>
+      <p class="recheck">Didn't pass? Have it fixed and rechecked here within <b>14 days</b> and there's no second inspection fee.</p>
+
+      <div class="helper" id="helper">
+        <h3>Which slip do I need?</h3>
+        <p class="intro">Two questions about your car.</p>
+        <div class="q" id="q1">
+          <p id="q1t">Is it registered in NSW now, or did the rego expire less than 3 months ago?</p>
+          <small>Answer no if it's from interstate or overseas, has no plates, or was written off.</small>
+          <div class="yn" role="group" aria-labelledby="q1t">
+            <button class="key sm" type="button" data-q="1" data-a="y" aria-pressed="false">Yes</button>
+            <button class="key sm" type="button" data-q="1" data-a="n" aria-pressed="false">No</button>
+          </div>
+        </div>
+        <div class="q" id="q2" hidden>
+          <p id="q2t">Is it more than 5 years old, counted from the compliance plate date?</p>
+          <div class="yn" role="group" aria-labelledby="q2t">
+            <button class="key sm" type="button" data-q="2" data-a="y" aria-pressed="false">Yes</button>
+            <button class="key sm" type="button" data-q="2" data-a="n" aria-pressed="false">No</button>
+          </div>
+        </div>
+        <div aria-live="polite">
+          <div class="result" id="result" hidden>
+            <div class="plate" aria-hidden="true"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc" id="rplate">PNK SLP</span><span class="ps">YOUR ANSWER</span></span></div>
+            <div><p id="rtext"></p><p class="again"><button type="button" id="again">Start again</button></p></div>
+          </div>
+        </div>
+      </div>
+      <p class="src">Source: NSW Government, <a href="https://www.nsw.gov.au/driving-boating-and-transport/vehicle-registration/renewing-vehicle-registration/safety-checks-and-vehicle-inspections" rel="noopener">safety checks and vehicle inspections</a> and <a href="https://www.nsw.gov.au/driving-boating-and-transport/vehicle-registration/fees-concessions-and-forms/vehicle-safety-check-and-inspection-fees" rel="noopener">inspection fees</a>. Checked 15 November 2026.</p>
+    </div>
+  </section>
+
+  <section class="sec steel lower" id="job" aria-labelledby="job-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="job-h">How a job goes</h2>
+      </div>
+      <div class="job">
+        <ol class="steps">
+          <li><span class="num" aria-hidden="true">1</span><div><h3>Call us</h3><p>Ring the workshop on <a href="tel:+61287985715">(02) 8798 5715</a> and tell us what the car needs.</p></div></li>
+          <li><span class="num" aria-hidden="true">2</span><div><h3>Drop it at Unit 4B</h3><p>Bring the car to 4 Homepride Avenue, Warwick Farm, during opening hours.</p></div></li>
+          <li><span class="num" aria-hidden="true">3</span><div><h3>We do the work</h3><p>The repair, the service or the inspection you booked. Quality work guaranteed.</p></div></li>
+          <li><span class="num" aria-hidden="true">4</span><div><h3>Pick it up</h3><p>Collect the car when it's done. If a pink slip check finds a fault, you have 14 days to fix it for a recheck with no second fee.</p></div></li>
+        </ol>
+        <figure class="frame"><img src="../../assets/img/hero-800.webp" srcset="../../assets/img/hero-800.webp 800w, ../../assets/img/hero-1536.webp 1536w" sizes="(min-width:820px) 520px, calc(100vw - 32px)" width="800" height="450" loading="lazy" decoding="async" alt="A red car raised on a hoist in a workshop at night" style="aspect-ratio:16/9"><span class="ai">AI illustration</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec rating lower" id="rating" aria-labelledby="rating-h">
+    <div class="wrap">
+      <div class="plate" aria-hidden="true"><span class="pf" style="--ar:2.4"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">4.8</span><span class="ps">OUT OF 5 · 57 REVIEWS</span></span></div>
+      <h2 id="rating-h">Rated 4.8 from 57 reviews</h2>
+      <p>On Birdeye, as at 15 November 2026.</p>
+      <a class="tlink" href="https://search.google.com/local/reviews?placeid=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Read our reviews on Google</a>
+    </div>
+  </section>
+
+  <section class="sec steel lower" id="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="visit-h">Hours and address</h2>
+        <p class="status" data-status style="justify-content:center;display:flex"><i aria-hidden="true"></i><span>Open six days, closed Sundays</span></p>
+      </div>
+      <div class="visit">
+        <ul class="hours" aria-label="Opening hours">
+          <li data-days="1,2,3,4,5"><span class="today-tag">Today</span><div class="plate" role="img" aria-label="Monday to Friday, 9am to 5pm"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">9 – 5</span><span class="ps">MONDAY TO FRIDAY</span></span></div></li>
+          <li data-days="6"><span class="today-tag">Today</span><div class="plate" role="img" aria-label="Saturday, 9am to 2pm"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">9 – 2</span><span class="ps">SATURDAY</span></span></div></li>
+          <li data-days="0" class="closed"><span class="today-tag">Today</span><div class="plate dark" role="img" aria-label="Sunday, closed"><span class="pf"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">CLOSED</span><span class="ps">SUNDAY</span></span></div></li>
+        </ul>
+        <div class="place">
+          <h3>Find the workshop</h3>
+          <address>Unit 4B, 4 Homepride Avenue<br>Warwick Farm NSW 2170</address>
+          <a class="key" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Get directions</a>
+          <ul class="phones">
+            <li><span>Workshop</span><a href="tel:+61287985715">(02) 8798 5715</a></li>
+            <li><span>Balli, mobile</span><a href="tel:+61433597181">0433 597 181</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec lower" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="faq-h">Common questions</h2></div>
+      <div class="faq">
+        <div class="qa"><h3><button type="button" aria-expanded="false" aria-controls="f1" id="f1b">Do you do pink slips for LPG cars?<span class="svc-ico" aria-hidden="true"></span></button></h3>
+          <div class="fold" id="f1" role="region" aria-labelledby="f1b"><div class="fold-in"><p>Yes. We do pink slips for petrol, diesel and LPG vehicles.</p></div></div></div>
+        <div class="qa"><h3><button type="button" aria-expanded="false" aria-controls="f2" id="f2b">How much is a pink slip or a blue slip?<span class="svc-ico" aria-hidden="true"></span></button></h3>
+          <div class="fold" id="f2" role="region" aria-labelledby="f2b"><div class="fold-in"><p>The NSW Government sets the most a station can charge. For a light vehicle, from 1 July 2026, that's $52 for a pink slip and $82 for a blue slip.</p></div></div></div>
+        <div class="qa"><h3><button type="button" aria-expanded="false" aria-controls="f3" id="f3b">How long is a slip valid for?<span class="svc-ico" aria-hidden="true"></span></button></h3>
+          <div class="fold" id="f3" role="region" aria-labelledby="f3b"><div class="fold-in"><p>A pink slip is valid for 6 months. A blue slip is valid for 42 days.</p></div></div></div>
+        <div class="qa"><h3><button type="button" aria-expanded="false" aria-controls="f4" id="f4b">What if my car doesn't pass?<span class="svc-ico" aria-hidden="true"></span></button></h3>
+          <div class="fold" id="f4" role="region" aria-labelledby="f4b"><div class="fold-in"><p>Have it fixed and bring it back to us within 14 days. There's no second inspection fee for the recheck.</p></div></div></div>
+        <div class="qa"><h3><button type="button" aria-expanded="false" aria-controls="f5" id="f5b">Are you open on Saturdays?<span class="svc-ico" aria-hidden="true"></span></button></h3>
+          <div class="fold" id="f5" role="region" aria-labelledby="f5b"><div class="fold-in"><p>Yes, from 9am to 2pm. On weekdays we're open from 9am to 5pm. We're closed on Sundays.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="band-h">
+    <div class="wrap">
+      <h2 id="band-h">Call to book a pink slip or a repair</h2>
+      <p>The workshop phone is answered during opening hours.</p>
+      <a class="call-plate plate" href="tel:+61287985715" aria-label="Call the workshop on (02) 8798 5715"><span class="pf" aria-hidden="true"><i class="bolt l"></i><i class="bolt r"></i><span class="pc">(02) 8798 5715</span><span class="ps">SHINE AUTO REPAIRS · WORKSHOP</span></span></a>
+      <p class="alt">Or call Balli on <a class="tlink" href="tel:+61433597181">0433 597 181</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Shine Auto Repairs, back to top">
+      <span class="plate" aria-hidden="true"><span class="pf" style="--ar:2.6"><span class="pc">SHINE</span></span></span>
+      <b>Auto Repairs</b>
+    </a>
+    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Unit 4B, 4 Homepride Avenue, Warwick Farm NSW 2170</a></p>
+    <p>Workshop <a href="tel:+61287985715">(02) 8798 5715</a> · Balli <a href="tel:+61433597181">0433 597 181</a></p>
+    <p>Mon to Fri 9am to 5pm · Sat 9am to 2pm · Sun closed</p>
+    <div class="fine">
+      <p>Photos on this website are AI-generated illustrations, not pictures of our workshop.</p>
+      <p>© 2026 Shine Auto Repairs · Proudly designed by AMBS Solutions</p>
+    </div>
+  </div>
+</footer>
+
+<nav class="qbar" aria-label="Quick contact">
+  <a class="key" href="tel:+61287985715" aria-label="Call (02) 8798 5715">Call</a>
+  <a class="key ink" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Directions</a>
+</nav>
+
+<script>
+(function(){
+  /* menu */
+  var mb=document.querySelector('.menu-btn'),nl=document.getElementById('nav-links');
+  function closeMenu(){mb.setAttribute('aria-expanded','false');nl.classList.remove('open')}
+  mb.addEventListener('click',function(){var o=mb.getAttribute('aria-expanded')==='true';mb.setAttribute('aria-expanded',String(!o));nl.classList.toggle('open',!o)});
+  nl.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mb.getAttribute('aria-expanded')==='true'){closeMenu();mb.focus()}});
+
+  /* folds */
+  document.querySelectorAll('[aria-controls]').forEach(function(b){
+    var f=document.getElementById(b.getAttribute('aria-controls'));
+    if(!f||!f.classList.contains('fold'))return;
+    b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(o));f.classList.toggle('open',o)});
+  });
+
+  /* live status, Australia/Sydney */
+  var HRS={1:[9,17],2:[9,17],3:[9,17],4:[9,17],5:[9,17],6:[9,14],0:null};
+  var NAMES=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  function fmt(h){return (h>12?h-12:h)+(h>=12?'pm':'am')}
+  function now(){
+    var p={};new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Sydney',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+    return {d:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday),m:(+p.hour%24)*60+(+p.minute)};
+  }
+  function status(){
+    var n=now(),t=HRS[n.d],open=t&&n.m>=t[0]*60&&n.m<t[1]*60,txt;
+    if(open){txt='Open now, until '+fmt(t[1])}
+    else if(t&&n.m<t[0]*60){txt='Closed, opens today at '+fmt(t[0])}
+    else{for(var i=1;i<8;i++){var d=(n.d+i)%7;if(HRS[d]){txt='Closed, opens '+(i===1?'tomorrow':NAMES[d])+' at '+fmt(HRS[d][0]);break}}}
+    document.querySelectorAll('[data-status]').forEach(function(el){el.classList.toggle('open',!!open);el.classList.toggle('shut',!open);el.querySelector('span').textContent=txt});
+    document.querySelectorAll('.hours li').forEach(function(li){li.classList.toggle('today',li.dataset.days.split(',').indexOf(String(n.d))>-1)});
+  }
+  try{status();setInterval(status,60000)}catch(e){}
+
+  /* slip helper */
+  var q2=document.getElementById('q2'),res=document.getElementById('result'),rp=document.getElementById('rplate'),rt=document.getElementById('rtext');
+  var OUT={
+    pink:['PNK SLP','You need a pink slip. We do them for petrol, diesel and LPG vehicles, and the most a station can charge for a light vehicle is $52.'],
+    blue:['BLU SLP','You need a blue slip. It checks safety and identity, and the most a station can charge for a light vehicle is $82.'],
+    none:['NO SLIP','You most likely don’t need a slip. Light vehicles up to 5 years old usually renew rego without an inspection. Your renewal notice will say if one is needed.']
+  };
+  function show(k){rp.textContent=OUT[k][0];rt.textContent=OUT[k][1];res.hidden=false;res.classList.remove('stamp');void res.offsetWidth;res.classList.add('stamp')}
+  function press(q,a){document.querySelectorAll('[data-q="'+q+'"]').forEach(function(b){var on=b.dataset.a===a;b.setAttribute('aria-pressed',String(on));b.classList.toggle('dim',a!==''&&!on)})}
+  document.querySelectorAll('[data-q]').forEach(function(b){b.addEventListener('click',function(){
+    var q=b.dataset.q,a=b.dataset.a;press(q,a);
+    if(q==='1'){press('2','');if(a==='n'){q2.hidden=true;show('blue')}else{q2.hidden=false;res.hidden=true}}
+    else{show(a==='y'?'pink':'none')}
+  })});
+  document.getElementById('again').addEventListener('click',function(){press('1','');press('2','');q2.hidden=true;res.hidden=true;document.querySelector('[data-q="1"]').focus()});
+
+  /* phone quick bar: hidden while the hero is on screen */
+  var bar=document.querySelector('.qbar'),hero=document.querySelector('.hero');
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){bar.classList.toggle('show',!e[0].isIntersecting)},{threshold:0}).observe(hero)}else{bar.classList.add('show')}
+})();
+</script>
+<script src="../../assets/concepts.js" defer></script>
+</body>
+</html>
