@@ -261,9 +261,9 @@
    "id": "reviews",
    "q": "What do your customers say?",
    "also": "reviews, rating, stars, google reviews, good mechanic",
-   "a": "We have a 4.8 rating from 57 reviews on Birdeye, as at 15 November 2026.",
-   "link": "https://reviews.birdeye.com/shine-auto-repairs-167828409186722",
-   "link_label": "Read the reviews"
+   "a": "93% of our reviewers give us 5 stars: 53 of 57 reviews on Birdeye, as at 15 November 2026.",
+   "link": "https://search.google.com/local/reviews?placeid=ChIJ-YbkfgOVEmsRFlQ4039uDYI",
+   "link_label": "Read our Google reviews"
   },
   {
    "id": "mobile",
