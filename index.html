@@ -270,8 +270,6 @@ html:not(.js) .spanel + .spanel{margin-top:18px}
 .bay-stage{position:relative;min-height:clamp(320px,60vh,540px);overflow:hidden;border-radius:20px;background:radial-gradient(80% 90% at 50% 72%,#2b2d34,#141519 70%);touch-action:pan-y;cursor:grab;outline-offset:4px}
 .bay-stage.grab{cursor:grabbing}
 .bay-stage canvas{position:absolute;inset:0;width:100%;height:100%}
-.giant{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;font:800 clamp(5rem,13vw,11rem)/.8 var(--display);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px rgba(243,154,54,.28)}
-.no-gl .giant{display:none}
 .bay-fallback{position:absolute;inset:0;opacity:0;transition:opacity .6s}
 .bay-fallback img{width:100%;height:100%;object-fit:cover}
 .no-gl .bay-fallback,html:not(.js) .bay-fallback{opacity:1}
@@ -637,12 +635,6 @@ html:not(.js) .hero__img img:first-child{opacity:1}
 @media (max-width:759px){.hero__dots{bottom:auto;top:calc(var(--hh,64px) + 18px);right:16px}.hero__body{padding-bottom:calc(124px + env(safe-area-inset-bottom))}}
 
 /* warning lights: on laptops the panel holds still while scrolling steps through the lights (native sticky, scroll only read) */
-.lights.scrolly .duo{position:sticky;top:calc(var(--sticky-top,84px));}
-.lights.scrolly .lrun::after{content:"";display:block;height:var(--scrolly-extra,0px)}
-.lights .lsteps{display:none}
-.lights.scrolly .lsteps{display:flex;gap:5px;justify-content:center;margin-top:14px}
-.lights .lsteps i{width:22px;height:3px;border-radius:3px;background:rgba(18,20,23,.14)}
-.lights .lsteps i.on{background:#f39a36}
 
 /* phones: the header Call button and the bottom Call bar already carry the number */
 .n-short{display:none}
@@ -719,6 +711,37 @@ body .ac-nudge{bottom:calc(env(safe-area-inset-bottom,0px) + 84px + var(--tk))}
   .sc{height:auto;aspect-ratio:4/5;max-height:50vh;min-height:340px}
 }
 @media (prefers-reduced-motion:reduce){.sc,.sc-btn{transition:none}}
+
+/* Services on laptops: photo on the left, write-up on the right */
+@media (min-width:761px){
+  .sc-bars{width:76%}
+  .sc-track{padding:4px 12% 16px}
+  .sc{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);background:#fff;opacity:.5;box-shadow:0 0 0 1px rgba(21,23,28,.06),0 22px 50px -30px rgba(21,23,28,.5)}
+  .sc.on{opacity:1}
+  .sc__img{position:relative;inset:auto;height:100%}
+  .sc__img::after{display:none}
+  .sc__body{position:static;color:var(--ink);align-content:center;gap:10px;padding:clamp(24px,3vw,44px)}
+  .sc__no{color:#8a8d94}
+  .sc h3{color:var(--ink);font-size:clamp(1.5rem,2.3vw,2rem)}
+  .sc p{color:var(--ink-2);font-size:1.02rem;line-height:1.6}
+  .sc .tl{color:var(--orange-d)}
+}
+
+/* Service write-up: centred, roomy, easy to read */
+.sc__body{justify-items:center;text-align:center}
+.sc__top{justify-content:center;margin-bottom:2px}
+.sc .tl{justify-self:center}
+.sc p{max-width:38ch;text-wrap:pretty}
+@media (min-width:761px){
+  .sc__body{padding:clamp(32px,4.2vw,64px) clamp(28px,3.6vw,56px);gap:14px;align-content:center}
+  .sc h3{font-size:clamp(1.6rem,2.4vw,2.1rem);line-height:1.12;text-wrap:balance;max-width:16ch}
+  .sc p{font-size:clamp(1rem,1.15vw,1.08rem);line-height:1.7;max-width:34ch}
+  .sc .tl{margin-top:8px}
+}
+@media (max-width:760px){
+  .sc__body{padding:0 22px 26px;gap:8px}
+  .sc p{line-height:1.6}
+}
 /* Ask Shine, branded: a little Shine-orange car. Body = the button, cabin and wheels are drawn with CSS. */
 body .ac-launch{overflow:visible;height:46px;padding:0 22px 0 10px;gap:9px;margin-bottom:10px;border-radius:16px 26px 12px 12px;background:linear-gradient(180deg,#ffb35c,#f39a36 55%,#e0831f);color:#15171c;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),0 14px 26px -14px rgba(0,0,0,.55)}
 body .ac-launch::before{content:"";position:absolute;left:30%;width:44%;top:-15px;height:17px;border-radius:14px 22px 0 0;background:linear-gradient(90deg,#15171c 0 46%,#f39a36 46% 54%,#15171c 54%);border:3px solid #f39a36;border-bottom:0;pointer-events:none}
@@ -727,6 +750,8 @@ body .ac-launch::after{content:"";position:absolute;inset:auto 0 -10px 0;height:
 body .ac-launch .ac-dot{width:30px;height:30px;border-radius:50%;background:#fff url(/assets/logo-mark.svg) center/26px no-repeat;box-shadow:none;animation:none}
 body .ac-launch span:last-child{font-weight:800;letter-spacing:-.01em}
 body .ac-launch:focus-visible{outline:3px solid #15171c;outline-offset:6px}
+body .ac-launch .ac-dot{position:relative}
+body .ac-launch .ac-dot::after{content:"";position:absolute;right:-9px;top:-11px;width:20px;height:17px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 17'%3E%3Cpath d='M4 1h12a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H9l-4 4v-4H4a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3z' fill='%2315171c'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.3' fill='%23fff'/%3E%3Ccircle cx='10' cy='6.5' r='1.3' fill='%23fff'/%3E%3Ccircle cx='13.5' cy='6.5' r='1.3' fill='%23fff'/%3E%3C/svg%3E") center/contain no-repeat}
 body .ac-av{background:url(/assets/logo-mark.svg) center/cover no-repeat;border-radius:50%}
 body .ac-av svg{display:none}
 
@@ -989,31 +1014,31 @@ body .ac-av svg{display:none}
       <ul class="sc-track" aria-label="Services">
       <li class="sc" id="s-repairs" aria-roledescription="slide" aria-label="1 of 7: All mechanical repairs">
         <figure class="sc__img"><img src="assets/img/repairs-640.webp" srcset="assets/img/repairs-640.webp 640w, assets/img/repairs-1200.webp 1200w" sizes="(max-width:760px) 86vw, 760px" width="1200" height="800" alt="A mechanic tightening a bolt on an engine under a work lamp" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-engine"/></svg></span><span class="sc__no">01</span></p><h3>All mechanical repairs</h3><p>Engine, brakes, steering and suspension work on all makes. We also do defect clearances, so a defect notice can be cleared and you're back on the road.</p></div>
+        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-engine"/></svg></span></p><h3>All mechanical repairs</h3><p>Engine, brakes, steering and suspension work on all makes. We also do defect clearances, so a defect notice can be cleared and you're back on the road.</p></div>
       </li>
       <li class="sc" id="s-pink" aria-roledescription="slide" aria-label="2 of 7: Pink slips">
         <figure class="sc__img"><img src="assets/img/pinkslip-640.webp" srcset="assets/img/pinkslip-640.webp 640w, assets/img/pinkslip-1200.webp 1200w" sizes="(max-width:760px) 86vw, 760px" width="1200" height="800" alt="A tread depth gauge pressed into a tyre" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg></span><span class="sc__no">02</span></p><h3>Pink slips</h3><p>The safety check most light vehicles over five years old need to renew rego. We inspect petrol, diesel and LPG vehicles, and the result goes to Transport for NSW electronically.</p><a class="tl" href="#slips">Fees and when you need one</a></div>
+        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg></span></p><h3>Pink slips</h3><p>The safety check most light vehicles over five years old need to renew rego. We inspect petrol, diesel and LPG vehicles, and the result goes to Transport for NSW electronically.</p><a class="tl" href="#slips">Fees and when you need one</a></div>
       </li>
       <li class="sc" id="s-blue" aria-roledescription="slide" aria-label="3 of 7: Blue slips">
         <figure class="sc__img"><img src="assets/img/blueslip-640.webp" srcset="assets/img/blueslip-640.webp 640w, assets/img/blueslip-1200.webp 1200w" sizes="(max-width:760px) 86vw, 760px" width="1200" height="800" alt="A stamped vehicle identification plate" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-plate"/></svg></span><span class="sc__no">03</span></p><h3>Blue slips</h3><p>A safety and identity check to register a vehicle in NSW. You need one when rego expired more than three months ago, for a car from interstate or overseas, or a written-off vehicle approved for re-registration.</p><a class="tl" href="#slips">Fees and when you need one</a></div>
+        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-plate"/></svg></span></p><h3>Blue slips</h3><p>A safety and identity check to register a vehicle in NSW. You need one when rego expired more than three months ago, for a car from interstate or overseas, or a written-off vehicle approved for re-registration.</p><a class="tl" href="#slips">Fees and when you need one</a></div>
       </li>
       <li class="sc" id="s-logbook" aria-roledescription="slide" aria-label="4 of 7: Logbook servicing">
         <figure class="sc__img"><img src="assets/img/logbook-640.webp" srcset="assets/img/logbook-640.webp 640w, assets/img/logbook-1200.webp 1200w" sizes="(max-width:760px) 86vw, 760px" width="1200" height="800" alt="Fresh oil being poured into an engine" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-spanner"/></svg></span><span class="sc__no">04</span></p><h3>Logbook servicing</h3><p>Servicing to the schedule set by your car's maker. Bring your logbook so the service can be recorded in it.</p></div>
+        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-spanner"/></svg></span></p><h3>Logbook servicing</h3><p>Servicing to the schedule set by your car's maker. Bring your logbook so the service can be recorded in it.</p></div>
       </li>
       <li class="sc" id="s-aircon" aria-roledescription="slide" aria-label="5 of 7: Air con regas and repairs">
         <figure class="sc__img"><img src="assets/img/aircon-640.webp" srcset="assets/img/aircon-640.webp 640w, assets/img/aircon-1200.webp 1200w" sizes="(max-width:760px) 86vw, 760px" width="1200" height="800" alt="Air conditioning pressure gauges connected to a car" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-snow"/></svg></span><span class="sc__no">05</span></p><h3>Air con regas and repairs</h3><p>Regas and repairs for air con that blows warm or doesn't cool like it used to. A slow gas leak or a faulty part such as the compressor are common causes.</p></div>
+        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-snow"/></svg></span></p><h3>Air con regas and repairs</h3><p>Regas and repairs for air con that blows warm or doesn't cool like it used to. A slow gas leak or a faulty part such as the compressor are common causes.</p></div>
       </li>
       <li class="sc" id="s-tyres" aria-roledescription="slide" aria-label="6 of 7: Tyres">
         <figure class="sc__img"><img src="assets/img/tyres-640.webp" srcset="assets/img/tyres-640.webp 640w, assets/img/tyres-1200.webp 1200w" sizes="(max-width:760px) 86vw, 760px" width="1200" height="800" alt="A new tyre standing on the workshop floor" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-wheel"/></svg></span><span class="sc__no">06</span></p><h3>Tyres</h3><p>Worn, damaged or losing air? Have your tyre size handy when you call. It's printed on the side of the tyre.</p></div>
+        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-wheel"/></svg></span></p><h3>Tyres</h3><p>Worn, damaged or losing air? Have your tyre size handy when you call. It's printed on the side of the tyre.</p></div>
       </li>
       <li class="sc" id="s-battery" aria-roledescription="slide" aria-label="7 of 7: Batteries">
         <figure class="sc__img"><img src="assets/img/battery-640.webp" srcset="assets/img/battery-640.webp 640w, assets/img/battery-1200.webp 1200w" sizes="(max-width:760px) 86vw, 760px" width="1200" height="800" alt="Jumper lead clamps on a car battery" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-battery"/></svg></span><span class="sc__no">07</span></p><h3>Batteries</h3><p>Slow to start, or the battery light is on? We look at the battery and the charging system, and replace the battery if it needs it.</p></div>
+        <div class="sc__body"><p class="sc__top"><span class="sc__ic"><svg class="ic" aria-hidden="true"><use href="#i-battery"/></svg></span></p><h3>Batteries</h3><p>Slow to start, or the battery light is on? We look at the battery and the charging system, and replace the battery if it needs it.</p></div>
       </li>
       </ul>
       <div class="sc-ctl">
@@ -1027,15 +1052,6 @@ body .ac-av svg{display:none}
 </section>
 
 
-<div class="sec">
-  <div class="wrap">
-    <div class="break rv" id="break" role="img" aria-label="A new tyre on an alloy wheel on a workshop floor. Quality work guaranteed.">
-      <img src="assets/img/tyres-1200.webp" srcset="assets/img/tyres-640.webp 640w, assets/img/tyres-1200.webp 1200w" sizes="(max-width:1228px) calc(100vw - 32px), 1180px" width="1200" height="800" loading="lazy" decoding="async" alt="">
-      <p class="break-line" aria-hidden="true"><span>Quality work</span> <span>guaranteed</span></p>
-      <span class="ai">AI illustration</span>
-    </div>
-  </div>
-</div>
 
 <section class="sec" id="inspect" aria-labelledby="ins-h">
   <div class="wrap">
@@ -1045,7 +1061,6 @@ body .ac-av svg{display:none}
     </div>
     <div class="bay rv" id="bay3d">
       <div class="bay-stage" tabindex="0" aria-label="3D car. Drag or use the arrow keys to turn it.">
-        <span class="giant" aria-hidden="true">PINK SLIP</span>
         <div class="bay-fallback"><img data-src="assets/img/pinkslip-1200.webp" data-srcset="assets/img/pinkslip-640.webp 640w, assets/img/pinkslip-1200.webp 1200w" sizes="(max-width:980px) 92vw, 700px" width="1200" height="800" decoding="async" alt="A tread depth gauge checking a tyre during a safety inspection"><span class="ai">AI illustration</span></div>
         <button class="pin" type="button" data-pt="tyres" aria-label="Tyres"><span>Tyres</span></button>
         <button class="pin" type="button" data-pt="brakes" aria-label="Brakes"><span>Brakes</span></button>
@@ -1186,7 +1201,7 @@ body .ac-av svg{display:none}
   <div class="wrap">
     <div class="foot__top">
       <a class="brand" href="#top" aria-label="Shine Auto Repairs, back to top"><img src="assets/logo-mark.svg" width="34" height="34" alt=""><span class="brand__w" aria-hidden="true"><b>SHINE</b><small>AUTO REPAIRS</small></span></a>
-      <p class="foot__tag">Independent mechanic and pink slip station in Warwick Farm, near Liverpool NSW.</p>
+      <p class="foot__tag">Independent mechanic and pink slip station in Warwick Farm, near Liverpool NSW. Quality work guaranteed.</p>
     </div>
     <div class="foot__cols">
       <nav aria-labelledby="f-svc"><h2 id="f-svc">Services</h2><ul>
@@ -1240,9 +1255,6 @@ body .ac-av svg{display:none}
     var ws=h.textContent.trim().split(/\s+/);
     h.innerHTML=ws.map(function(w,i){return '<span class="w" style="--i:'+i+'"><span>'+w.replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})+'</span></span>'}).join(" ");
     h.classList.add("split");seen(h,addIn,0)})}
-  // Photo card: one slow sheen across "Quality work guaranteed"
-  seen($("#break"),addIn,.45);
-
   // Header: dark while over the hero, light over the page
   var hero=$(".hero"),tick=false;
   function hdr(){tick=false;root.classList.toggle("lit",hero.getBoundingClientRect().bottom<90)}
@@ -1284,18 +1296,9 @@ body .ac-av svg{display:none}
       if(k==="ArrowDown")j=i+cols;if(k==="ArrowUp")j=i-cols;if(k==="ArrowRight")j=i+1;if(k==="ArrowLeft")j=i-1;if(k==="Home")j=0;if(k==="End")j=lb.length-1;
       if(j!==null){e.preventDefault();j=(j+lb.length)%lb.length;light(lb[j]);placeL();lb[j].focus()}});
   });
-  // Lights: on first view, step through a few lights slowly until the visitor touches the panel
-  var lsec=$(".lights .duo"),lt=null,lstep=0,lhover=false;
-  function lstop(){clearInterval(lt);lt=null;lstep=99}
-  if(!reduce&&hasIO){
-    seen(lsec,function(){if(lstep)return;lt=setInterval(function(){if(lhover||document.hidden)return;lstep++;var cur=lb.findIndex(function(x){return x.getAttribute("aria-pressed")==="true"});light(lb[(cur+1)%lb.length]);placeL();if(lstep>=4)lstop()},3400)},.5);
-    ["pointerdown","focusin","keydown"].forEach(function(ev){lsec.addEventListener(ev,lstop)});
-    lsec.addEventListener("pointerenter",function(){lhover=true});lsec.addEventListener("pointerleave",function(){lhover=false});
-    new IntersectionObserver(function(es){if(!es[0].isIntersecting&&lt)lstop()}).observe(lsec);
-  }
 
   // Services: one at a time like a status. Bars fill, then the next service slides to the centre.
-  // Previous / next / pause; holds while hovered, focused, touched or off screen; native sideways scroll, no autoplay under reduced motion.
+  // Previous / next / pause; keeps moving until paused with the button, rests while off screen; native sideways scroll, no autoplay under reduced motion.
   (function(){
     var car=$(".scar");if(!car)return;
     var tr=$(".sc-track",car),cards=$$(".sc",car),cnt=$(".sc-count b",car),play=$(".sc-play",car),bars=[],cur=0,prog=0,user=reduce,why={};
@@ -1318,10 +1321,6 @@ body .ac-av svg{display:none}
     var raf=0;tr.addEventListener("scroll",function(){if(raf||prog)return;raf=requestAnimationFrame(function(){raf=0;if(prog)return;
       var mid=tr.scrollLeft+tr.clientWidth/2,best=0,d=1e9;cards.forEach(function(c,k){var x=Math.abs(c.offsetLeft+c.offsetWidth/2-mid);if(x<d){d=x;best=k}});
       if(best!==cur){cur=best;paint()}})},{passive:true});
-    car.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse"){why.h=1;hold()}});car.addEventListener("pointerleave",function(){why.h=0;hold()});
-    car.addEventListener("focusin",function(){why.f=1;hold()});car.addEventListener("focusout",function(e){if(!car.contains(e.relatedTarget)){why.f=0;hold()}});
-    tr.addEventListener("touchstart",function(){why.t=1;hold();clearTimeout(car._t)},{passive:true});
-    tr.addEventListener("touchend",function(){car._t=setTimeout(function(){why.t=0;hold()},5000)},{passive:true});
     document.addEventListener("visibilitychange",hold);
     if(hasIO)new IntersectionObserver(function(es){why.o=!es[0].isIntersecting;hold()},{threshold:.35}).observe(car);else why.o=0;
     if(reduce)car.classList.add("still");
@@ -1443,7 +1442,7 @@ body .ac-av svg{display:none}
   update();setInterval(function(){if(!document.hidden)update()},60000);
 })();
 </script>
-<script type="module" src="assets/inspect.js"></script>
+<script type="module" src="assets/inspect.js?v=5"></script>
 
 <script>
 /* Ask Shine: open the website assistant with the visitor's question */
@@ -1480,29 +1479,8 @@ f.addEventListener("submit",function(e){e.preventDefault();var q=f.q.value.trim(
  addEventListener("load",function(){setTimeout(function(){load(imgs[1]);load(bl[1]);start();},2600);});
  if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;},{threshold:.15}).observe(box);
 })();
-/* Warning lights: on laptops, scrolling down through the section steps through the lights */
-(function(){var sec=document.querySelector(".lights"),duo=sec&&sec.querySelector(".duo"),btns=sec?[].slice.call(sec.querySelectorAll(".lbtn")):[];
- if(!duo||!btns.length)return;var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
- var run=document.createElement("div");run.className="lrun";duo.parentNode.insertBefore(run,duo);run.appendChild(duo);
- var steps=document.createElement("div");steps.className="lsteps";steps.setAttribute("aria-hidden","true");btns.forEach(function(){steps.appendChild(document.createElement("i"));});duo.appendChild(steps);
- var on=false,last=-1,raf=0,STEP=0,mark=document.createElement("div");mark.setAttribute("aria-hidden","true");duo.parentNode.insertBefore(mark,duo);
- function fits(){var hdr=document.querySelector("body > header");var top=(hdr?hdr.getBoundingClientRect().bottom:70)+14;sec.style.setProperty("--sticky-top",top+"px");
-  return innerWidth>=981&&!reduce&&duo.offsetHeight<innerHeight-top-12;}
- function setup(){var want=fits();sec.classList.toggle("scrolly",want);on=want;STEP=Math.round(innerHeight*0.3);
-  sec.style.setProperty("--scrolly-extra",want?(STEP*(btns.length-1))+"px":"0px");last=-1;
-  if(want)duo.dispatchEvent(new Event("pointerdown"));/* stop the timed auto-cycle: scrolling drives it now */
-  tick();}
- function tick(){raf=0;if(!on)return;var r=duo.getBoundingClientRect(),secr=sec.getBoundingClientRect();
-  var top=parseFloat(getComputedStyle(sec).getPropertyValue("--sticky-top"))||84;
-  var progressed=Math.max(0,top-mark.getBoundingClientRect().top);
-  var i=Math.min(btns.length-1,Math.floor(progressed/STEP));
-  if(i!==last){last=i;btns[i].click();[].forEach.call(steps.children,function(d,k){d.classList.toggle("on",k===i);});}}
- addEventListener("scroll",function(){if(on&&!raf)raf=requestAnimationFrame(tick);},{passive:true});
- addEventListener("resize",function(){clearTimeout(setup._t);setup._t=setTimeout(setup,200);});
- if(document.readyState==="complete")setup();else addEventListener("load",setup);
-})();
 </script>
-<!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=c315a28e" data-label="Ask Shine" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-nudge="Hi, I'm the Shine Auto Repairs assistant. Got a question about a pink slip, a repair or a warning light?" data-nudge-after="15" data-nudge-open="1" data-avoid=".qbar" defer></script><!--/chat-->
+<!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=c315a28e" data-label="Chat with us" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-nudge="Hi, I'm the Shine Auto Repairs assistant. Got a question about a pink slip, a repair or a warning light?" data-nudge-after="15" data-nudge-open="1" data-avoid=".qbar" defer></script><!--/chat-->
 
 </body>
 </html>

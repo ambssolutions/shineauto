@@ -151,7 +151,7 @@ if (bay) {
     for (const z of [-1.25, 1.25]) { const b = bar.clone(); b.position.set(0, 0.85, z); gate.add(b); }
     const top = new THREE.Mesh(new THREE.BoxGeometry(0.012, 0.012, 2.5), gateMat); top.position.y = 1.7; gate.add(top);
     const line = new THREE.Mesh(new THREE.PlaneGeometry(0.02, 2.5), gateMat); line.rotation.x = -Math.PI / 2; line.position.y = 0.004; gate.add(line);
-    car.add(gate);
+    // the light gate is kept out of the scene so nothing crosses the car
 
     const key = new THREE.DirectionalLight(0xffffff, 1.4); key.position.set(4, 6, 3); scene.add(key);
     const rim = new THREE.DirectionalLight(0xffb469, 0.9); rim.position.set(-5, 2, -4); scene.add(rim);
@@ -181,7 +181,7 @@ if (bay) {
     function size() {
       const w = stage.clientWidth, h = stage.clientHeight;
       renderer.setSize(w, h, false); camera.aspect = w / h;
-      const far = w / h < 1.2 ? 13.2 / Math.max(w / h, 0.6) * 0.95 : 10.6;
+      const far = w / h < 1.2 ? 13.2 / Math.max(w / h, 0.6) * 1.12 : 12.4;
       camera.position.set(far * 0.6, far * 0.2, far * 0.8); camera.lookAt(target); camera.updateProjectionMatrix();
     }
     size(); new ResizeObserver(size).observe(stage);
