@@ -4,99 +4,143 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0c0c0e">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#111216">
 <title>Shine Auto Repairs | Mechanic, pink and blue slips, Warwick Farm NSW</title>
 <meta name="description" content="Mechanical repairs, pink slips for petrol, diesel and LPG vehicles, blue slips, logbook servicing, air con, tyres and batteries at Unit 4B, 4 Homepride Avenue, Warwick Farm NSW.">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="image" href="../../assets/img/hero-1536.webp" imagesrcset="../../assets/img/hero-800.webp 800w, ../../assets/img/hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high">
-<link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/archivo-latin.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="../../assets/fonts/plex-sans-latin.woff2" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500..800&family=Inter:wght@400..600&display=swap">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"Shine Auto Repairs","telephone":"+61287985715","address":{"@type":"PostalAddress","streetAddress":"Unit 4B, 4 Homepride Avenue","addressLocality":"Warwick Farm","addressRegion":"NSW","postalCode":"2170","addressCountry":"AU"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}]}</script>
 <style>
-@font-face{font-family:"Archivo";src:url(../../assets/fonts/archivo-latin.woff2) format("woff2");font-weight:700;font-stretch:75% 90%;font-display:swap}
-@font-face{font-family:"Plex";src:url(../../assets/fonts/plex-sans-latin.woff2) format("woff2");font-weight:400 600;font-display:swap}
-
 :root{
-  --night:#0c0c0e; --bay:#121215; --steel:#1b1b1f; --steel-2:#232328; --rule:rgba(242,237,230,.13); --rule-2:rgba(242,237,230,.26);
-  --ink:#f2ede6; --soft:#ddd6cc; --mute:#aca59b; --unlit:#4a4a52;
-  --orange:#f39a36; --red:#d9342b; --on-orange:#16120d;
-  --paper:#ece6db; --paper-ink:#1a1714; --paper-mute:#5a534b;
-  --plate-hi:#f8ad55; --plate-lo:#e48a25; --plate-edge:#b7631a; --plate-wall:#a65612;
+  --bg:#f6f5f2; --cool:#eef1f5; --card:#fff; --ink:#15171c; --ink-2:#4f5560; --ink-3:#656b76; --line:#e6e5e1; --line-2:#d9d8d3;
+  --night:#0f1013; --dash:#16181d;
+  --orange:#f39a36; --orange-hi:#f8ae58; --orange-lo:#e88a22; --orange-d:#a65a0a; --orange-soft:#fff3e4; --on-orange:#1a1209; --red:#d9342b;
   --g:clamp(16px,4vw,48px);
-  --head:64px;
-  --display:"Archivo","Arial Narrow",Arial,sans-serif;
-  --body:"Plex",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --h1:clamp(2.75rem,min(7vw,10.5vh),5.75rem);
-  --h2:clamp(2rem,min(4.4vw,7.2vh),3.4rem);
-  --h3:clamp(1.55rem,min(2.6vw,4.4vh),2.15rem);
-  --lede:clamp(1.06rem,min(1.5vw,2.6vh),1.25rem);
+  --head:60px; --head-top:12px; --head-b:calc(var(--head) + var(--head-top));
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --h1:clamp(2.4rem,min(5.6vw,8.4vh),4.6rem);
+  --h2:clamp(1.85rem,min(3.3vw,5.8vh),2.7rem);
+  --h3:clamp(1.25rem,min(1.8vw,3.1vh),1.55rem);
+  --lede:clamp(1rem,min(1.25vw,2.2vh),1.125rem);
+  --r-lg:28px; --r:22px; --r-sm:14px;
+  --sh-sm:0 1px 2px rgba(21,23,28,.05),0 6px 16px -8px rgba(21,23,28,.12);
+  --sh:0 1px 2px rgba(21,23,28,.04),0 20px 44px -22px rgba(21,23,28,.2),0 44px 90px -50px rgba(21,23,28,.16);
   --slow:cubic-bezier(.2,.7,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + 16px);-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--night);color:var(--ink);font:400 1.0625rem/1.6 var(--body);overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head-b) + 16px);-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font:400 1rem/1.6 var(--sans);overflow-x:clip;
+  background:linear-gradient(180deg,#f7f5f1 0,#eef1f5 22%,#f6f4f0 44%,#eef1f5 66%,#f6f4f0 88%,#f7f5f1 100%)}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-button{font:inherit}
-h1,h2,h3{font-family:var(--display);font-weight:700;font-stretch:82%;line-height:1.02;letter-spacing:-.005em;margin:0;text-wrap:balance}
+button,input,select{font:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.022em;margin:0;text-wrap:balance}
 p{margin:0}
-:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
-.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--orange);color:var(--on-orange);padding:12px 18px;font-weight:600;text-decoration:none}
+:focus-visible{outline:2.5px solid var(--orange-d);outline-offset:3px}
+.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--ink);color:#fff;padding:12px 18px;border-radius:999px;font-weight:600;text-decoration:none}
 .skip:focus{top:12px}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .wrap{width:min(1180px,100% - 2*var(--g));margin-inline:auto}
-.ic{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
-/* one label style for every small stamped caption on the page */
-.lbl{font:700 .95rem/1.1 var(--display);font-stretch:80%;letter-spacing:.14em;text-transform:uppercase}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
 
-/* Buttons: square, flat, a slow light sweep on hover */
-.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:0 1.6rem;border:0;border-radius:2px;background:var(--orange);color:var(--on-orange);font:600 1.0625rem/1 var(--body);text-decoration:none;letter-spacing:.005em;cursor:pointer}
-.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.38) 50%,transparent 70%);transform:translateX(-120%);transition:transform 1.1s var(--slow)}
+/* Buttons: pills with a soft embossed gradient and a slow light sweep */
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.4rem;border:0;border-radius:999px;
+  background:linear-gradient(180deg,var(--orange-hi),var(--orange) 55%,var(--orange-lo));color:var(--on-orange);font:600 1rem/1 var(--sans);text-decoration:none;cursor:pointer;white-space:nowrap;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(120,60,0,.18),0 8px 18px -10px rgba(60,30,0,.55);transition:transform .5s var(--slow)}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform 1.1s var(--slow)}
 .btn:hover::after{transform:translateX(120%)}
-.btn svg{width:18px;height:18px;flex:none}
-.btn--dark{background:var(--steel);color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule)}
-.tl{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);text-decoration:underline;text-decoration-color:rgba(243,154,54,.7);text-underline-offset:5px;text-decoration-thickness:1.5px}
-.tl:hover{text-decoration-color:var(--orange)}
+.btn:hover{transform:translateY(-1px)}
+.btn .ic{width:18px;height:18px}
+.btn--ink{background:linear-gradient(180deg,#2a2d34,#15171c);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 8px 18px -10px rgba(0,0,0,.6)}
+.btn--ghost{background:linear-gradient(180deg,#fff,#f3f2ef);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-2),inset 0 1px 0 #fff,0 4px 10px -6px rgba(21,23,28,.2)}
+.tl{display:inline-flex;align-items:center;min-height:44px;font-weight:600;text-decoration:underline;text-decoration-color:rgba(166,90,10,.45);text-underline-offset:5px;text-decoration-thickness:1.5px}
+.tl:hover{text-decoration-color:currentColor}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font:500 .85rem/1.3 var(--sans);color:var(--ink-2)}
+.dot{width:8px;height:8px;border-radius:50%;background:#9aa0aa;flex:none}
+.is-open .dot{background:#2f9e5b}
 
-/* Header */
-.head{position:fixed;inset:0 0 auto;z-index:50;height:var(--head);background:#0e0e11;border-bottom:1px solid var(--rule)}
-.head__in{height:100%;display:flex;align-items:center;gap:20px;width:min(1320px,100% - 2*var(--g));margin-inline:auto}
-.plate{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;background:var(--orange);color:#0f0c08;text-decoration:none;font:700 1.12rem/1 var(--display);font-stretch:78%;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+/* Header: a floating pill, dark over the hero and light over the page */
+.head{position:fixed;left:0;right:0;top:var(--head-top);z-index:50;pointer-events:none}
+.head__in{pointer-events:auto;height:var(--head);display:flex;align-items:center;gap:14px;width:min(1180px,100% - 2*var(--g));margin-inline:auto;padding:0 8px 0 20px;border-radius:999px;
+  background:#fff;box-shadow:0 0 0 1px rgba(21,23,28,.06),0 12px 30px -16px rgba(21,23,28,.28);transition:background .6s var(--slow),box-shadow .6s var(--slow)}
+.brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;font:700 1.08rem/1 var(--display);letter-spacing:-.01em;white-space:nowrap;color:var(--ink)}
+.brand i{width:12px;height:12px;border-radius:4px;background:linear-gradient(180deg,var(--orange-hi),var(--orange-lo))}
+.brand span{font-weight:500;color:var(--ink-3)}
 .nav{margin-left:auto;display:flex;align-items:center;gap:6px}
 .nav__links{display:flex;gap:2px;list-style:none;margin:0;padding:0}
-.nav__links a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;text-decoration:none;color:var(--mute);font-size:.98rem;white-space:nowrap}
-.nav__links a:hover{color:var(--ink)}
-.head .btn{min-height:44px;padding:0 1.1rem;font-size:1rem}
-.menu-btn{display:none;min-width:44px;min-height:44px;background:transparent;border:1px solid var(--rule);color:var(--ink);border-radius:2px;font:600 .95rem var(--body);padding:0 12px;cursor:pointer}
-@media (max-width:999px){
+.nav__links a{display:inline-flex;align-items:center;min-height:44px;padding:0 13px;border-radius:999px;text-decoration:none;color:var(--ink-2);font:500 .94rem/1 var(--sans);white-space:nowrap;transition:background .4s,color .4s}
+.nav__links a:hover{color:var(--ink);background:rgba(21,23,28,.05)}
+.head .btn{min-height:44px;padding:0 1.1rem;font-size:.95rem}
+.menu-btn{display:none;min-width:44px;min-height:44px;padding:0 14px;border:0;border-radius:999px;background:rgba(21,23,28,.06);color:var(--ink);font:600 .92rem var(--sans);cursor:pointer}
+html.js:not(.lit) .head__in{background:#17181c;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 12px 30px -16px rgba(0,0,0,.6)}
+html.js:not(.lit) .brand{color:#fff}
+html.js:not(.lit) .brand span{color:#b9bdc6}
+html.js:not(.lit) .menu-btn{background:rgba(255,255,255,.1);color:#fff}
+@media (min-width:1061px){html.js:not(.lit) .nav__links a{color:#c9ccd3}html.js:not(.lit) .nav__links a:hover{color:#fff;background:rgba(255,255,255,.08)}}
+@media (max-width:1060px){
   .head .btn .long{display:none}
   .menu-btn{display:inline-flex;align-items:center}
-  html.js .nav__links{position:fixed;left:0;right:0;top:var(--head);flex-direction:column;align-items:stretch;text-align:center;background:#0e0e11;border-bottom:1px solid var(--rule);padding:8px var(--g) 20px;visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .5s var(--slow),transform .5s var(--slow),visibility 0s .5s}
+  html.js .nav__links{position:fixed;left:var(--g);right:var(--g);top:calc(var(--head-b) + 8px);flex-direction:column;align-items:stretch;padding:10px;background:#fff;border-radius:var(--r);box-shadow:var(--sh);
+    visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .5s var(--slow),transform .5s var(--slow),visibility 0s .5s}
   html.js .nav.open .nav__links{visibility:visible;opacity:1;transform:none;transition:opacity .5s var(--slow),transform .5s var(--slow)}
-  .nav__links a{justify-content:center;min-height:52px;font-size:1.1rem;color:var(--ink);border-bottom:1px solid var(--rule)}
+  .nav__links a{justify-content:center;min-height:50px;font-size:1.05rem;color:var(--ink)}
   html:not(.js) .nav__links{display:none}
 }
-@media (min-width:1000px){.head .btn .short{display:none}}
-@media (max-width:480px){.head__in{gap:8px}.nav{gap:8px}.plate{font-size:1rem;padding:0 10px;letter-spacing:.05em}.head .btn{padding:0 12px;gap:.45em}.menu-btn{padding:0 10px}}
+@media (min-width:1061px){.head .btn .short{display:none}}
+@media (max-width:480px){.head__in{padding:0 6px 0 14px;gap:6px}.nav{gap:6px}.brand{font-size:1rem;gap:8px}.brand i{width:10px;height:10px}.head .btn{padding:0 14px}.menu-btn{padding:0 12px}}
+@media (max-width:370px){.brand span{display:none}}
 
-/* Hero */
-.hero{position:relative;height:100svh;min-height:520px;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;text-align:center;background:#09090b}
+/* Hero: the roller door rolls up on the night workshop */
+.hero{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;text-align:center;background:var(--night);color:#fff;padding-top:calc(var(--head-b) + 20px)}
 .hero__img{position:absolute;inset:0;z-index:-2}
-.hero__img img{width:100%;height:100%;object-fit:cover;object-position:58% 50%}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(9,9,11,.7) 0,rgba(9,9,11,.12) 26%,rgba(9,9,11,.1) 44%,rgba(9,9,11,.72) 68%,rgba(12,12,14,.96) 90%,var(--night) 100%)}
-.hero__body{padding:0 var(--g) clamp(28px,7vh,80px);display:grid;justify-items:center;gap:clamp(12px,2.2vh,22px)}
-.hero h1{font-size:var(--h1);max-width:16ch}
-.hero__lede{font-size:var(--lede);color:var(--soft);max-width:40rem;text-wrap:balance}
-.hero__acts{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 26px;margin-top:clamp(2px,1vh,10px)}
-.hero__status{font-size:.95rem;color:var(--mute);display:flex;align-items:center;gap:10px;min-height:24px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--mute);flex:none}
-.is-open .dot{background:var(--orange)}
-.ai{position:absolute;z-index:2;right:10px;top:10px;padding:3px 8px;font:500 .72rem/1.3 var(--body);letter-spacing:.02em;color:#e9e4dc;background:rgba(10,10,12,.72);border-radius:2px;pointer-events:none}
-.hero .ai{top:calc(var(--head) + 12px);right:var(--g)}
+.hero__img img{width:100%;height:100%;object-fit:cover;object-position:58% 45%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,10,12,.55) 0,rgba(10,10,12,.1) 24%,rgba(10,10,12,.18) 40%,rgba(10,10,12,.74) 62%,rgba(12,12,14,.94) 84%,#0f1013 100%)}
+.hero__body{padding:0 var(--g) clamp(22px,5vh,64px);display:grid;justify-items:center;gap:clamp(10px,1.8vh,18px)}
+.hero h1{font-size:var(--h1);font-weight:700;letter-spacing:-.035em;line-height:1.02;max-width:16ch}
+.hero__lede{font-size:var(--lede);color:#d9dce2;max-width:38rem;text-wrap:balance}
+.hero__more{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2px 22px;font-size:.95rem}
+.hero__more a{color:#fff;text-decoration-color:rgba(243,154,54,.7)}
+.hero__status{display:inline-flex;align-items:center;gap:9px;min-height:30px;padding:4px 14px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);font-size:.88rem;color:#d9dce2}
+.hero__status.is-open .dot{background:#4cc77d}
+.ai{position:absolute;z-index:2;right:12px;top:12px;padding:4px 10px;border-radius:999px;font:500 .72rem/1.3 var(--sans);color:#eef0f3;background:rgba(14,15,18,.72);pointer-events:none}
+.hero .ai{top:calc(var(--head-b) + 12px);right:var(--g)}
 
-/* The roller door */
+/* Rego plate: the hero's main action */
+.rego{width:min(660px,100%);display:grid;gap:10px;text-align:left}
+.rego__row{display:flex;gap:10px;align-items:stretch}
+.plate{flex:1;min-width:0;display:flex;align-items:stretch;height:64px;border-radius:12px;padding:4px;cursor:text;
+  background:linear-gradient(180deg,#ffffff,#f1f1ee 60%,#e4e4e0);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 0 rgba(0,0,0,.08),0 14px 30px -14px rgba(0,0,0,.75);transition:box-shadow .4s}
+.plate__in{flex:1;min-width:0;display:flex;align-items:stretch;border:2px solid #1b1d22;border-radius:9px}
+.plate__st{display:grid;place-items:center;min-width:46px;padding:0 6px;background:#1b1d22;color:#fff;font:700 .74rem/1 var(--display);letter-spacing:.08em;border-radius:5px 0 0 5px}
+.plate input{flex:1;min-width:0;width:100%;border:0;background:transparent;padding:0 12px;text-align:center;color:#17181c;
+  font:800 clamp(1.5rem,min(4.6vw,4.4vh),2rem)/1 var(--display);letter-spacing:.12em;text-transform:uppercase;
+  text-shadow:0 1px 0 #fff,0 -1px 0 rgba(0,0,0,.28),0 2px 2px rgba(0,0,0,.12)}
+.plate input::placeholder{color:#a3a6ad;text-shadow:none;letter-spacing:.1em}
+.plate input:focus{outline:none}
+.plate:focus-within{box-shadow:inset 0 1px 0 #fff,0 0 0 3px #0f1013,0 0 0 6px var(--orange),0 14px 30px -14px rgba(0,0,0,.75)}
+.rego__sel{position:relative;flex:none}
+.rego__sel select{appearance:none;-webkit-appearance:none;height:100%;min-height:48px;padding:0 38px 0 18px;border:0;border-radius:999px;background:#fff;color:var(--ink);font:600 1rem/1 var(--sans);cursor:pointer;box-shadow:inset 0 0 0 1px var(--line-2)}
+.rego__sel::after{content:"";position:absolute;right:17px;top:50%;width:8px;height:8px;margin-top:-6px;border-right:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:rotate(45deg);pointer-events:none}
+.rego__sel select:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.rego .btn{height:auto;min-height:48px}
+.rego .btn:disabled{opacity:.7;cursor:progress}
+.rego__priv{font-size:.82rem;color:#b9bdc6;text-align:center}
+.rego__out:empty{display:none}
+.rres{background:#fff;color:var(--ink);border-radius:18px;padding:14px 16px;box-shadow:0 18px 40px -18px rgba(0,0,0,.8);display:grid;gap:4px;font-size:.92rem;animation:swap .6s var(--slow) both}
+.rres strong{font:700 1.08rem/1.25 var(--display);letter-spacing:-.01em}
+.rres .m{color:var(--ink-3);font-size:.86rem}
+.rres a:not(.btn){color:var(--orange-d);font-weight:600;text-underline-offset:3px}
+.rres .verd{display:flex;align-items:center;gap:8px;font-weight:600;margin-top:4px}
+.rres .verd::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--vc,var(--orange));flex:none}
+.rres .btn{justify-self:start;min-height:44px;margin-top:6px;font-size:.92rem}
+.rres--msg{display:block}
+
 .door{--s:clamp(22px,3.5vh,34px);position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden;
   background:
     linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,0) 16%,rgba(0,0,0,0) 84%,rgba(0,0,0,.5)),
@@ -105,352 +149,449 @@ p{margin:0}
     repeating-linear-gradient(180deg,#2a2d32 0,#50545a calc(var(--s)*.14),#7a7e85 calc(var(--s)*.3),#61656b calc(var(--s)*.5),#43464c calc(var(--s)*.78),#1c1e22 calc(var(--s)*.94),#111216 var(--s));
   animation:door-up 1.7s .55s both}
 .door::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,rgba(0,0,0,.42) 0,rgba(255,255,255,.1) calc(var(--s)*.3),rgba(255,255,255,0) calc(var(--s)*.5),rgba(0,0,0,.18) calc(var(--s)*.8),rgba(0,0,0,.55) var(--s))}
-.door__paint{position:absolute;inset:var(--head) 0 0;display:grid;place-content:center;justify-items:center;text-align:center;padding-bottom:6vh}
-.door__name{font-family:var(--display);font-weight:700;font-stretch:76%;text-transform:uppercase;color:var(--orange);line-height:.84;text-shadow:.035em .045em 0 #120d07}
-.door__name b{display:block;font-size:clamp(4.2rem,min(25vw,27vh),15rem);letter-spacing:.02em}
-.door__name span{display:block;font-size:clamp(1.7rem,min(8.6vw,8.4vh),4.9rem);letter-spacing:.11em;margin-top:.22em}
-.door__phone{margin-top:clamp(14px,3vh,30px);font:700 clamp(1.1rem,min(4.6vw,4vh),2rem)/1 var(--display);font-stretch:80%;letter-spacing:.12em;color:#efe9df;text-shadow:.05em .06em 0 #0b0b0d}
-.door__unit{position:absolute;left:clamp(16px,5vw,64px);top:calc(var(--head) + clamp(16px,4vh,40px));font:700 clamp(1rem,min(3vw,3.4vh),1.6rem)/1 var(--display);font-stretch:76%;letter-spacing:.14em;color:#efe9df;opacity:.88;text-shadow:.05em .06em 0 #0b0b0d}
+.door__paint{position:absolute;inset:var(--head-b) 0 0;display:grid;place-content:center;justify-items:center;text-align:center;padding-bottom:6vh}
+.door__name{font-family:var(--display);font-weight:800;text-transform:uppercase;color:var(--orange);line-height:.86;text-shadow:.03em .04em 0 #120d07}
+.door__name b{display:block;font-size:clamp(4rem,min(22vw,24vh),13rem);letter-spacing:-.02em}
+.door__name span{display:block;font-size:clamp(1.3rem,min(6.4vw,6.4vh),3.6rem);letter-spacing:.16em;margin-top:.3em;font-weight:700}
+.door__phone{margin-top:clamp(14px,3vh,30px);font:700 clamp(1.05rem,min(4.4vw,3.8vh),1.8rem)/1 var(--display);letter-spacing:.1em;color:#efe9df;text-shadow:.05em .06em 0 #0b0b0d}
+.door__unit{position:absolute;left:clamp(16px,5vw,64px);top:calc(var(--head-b) + clamp(16px,4vh,40px));font:700 clamp(.95rem,min(2.6vw,3vh),1.4rem)/1 var(--display);letter-spacing:.16em;color:#efe9df;opacity:.88}
 .door__rail{position:absolute;left:0;right:0;bottom:0;height:30px;z-index:2;background:linear-gradient(180deg,#a3a7ad 0,#6b6f75 30%,#3d4045 70%,#16171a 100%);box-shadow:0 -2px 0 rgba(0,0,0,.45)}
 .door__rail::before,.door__rail::after{content:"";position:absolute;top:7px;width:62px;height:12px;border-radius:6px;background:linear-gradient(180deg,#1b1c1f,#4a4d52);box-shadow:inset 0 1px 0 rgba(0,0,0,.6),0 1px 0 rgba(255,255,255,.25)}
 .door__rail::before{left:22%}.door__rail::after{right:22%}
 .door__lock{position:absolute;left:50%;bottom:9px;width:14px;height:14px;margin-left:-7px;border-radius:50%;z-index:3;background:radial-gradient(circle at 40% 35%,#d9dbde,#7d8187 55%,#2b2d31)}
-@keyframes door-up{
-  0%{transform:translateY(0);animation-timing-function:cubic-bezier(.4,0,.6,1)}
-  10%{transform:translateY(1.4%);animation-timing-function:cubic-bezier(.6,0,.22,1)}
-  100%{transform:translateY(-104%)}
-}
+@keyframes door-up{0%{transform:translateY(0);animation-timing-function:cubic-bezier(.4,0,.6,1)}10%{transform:translateY(1.4%);animation-timing-function:cubic-bezier(.6,0,.22,1)}100%{transform:translateY(-104%)}}
 .hero__body > *{animation:lift-in 1.1s var(--slow) both}
 .hero__body > :nth-child(1){animation-delay:1.35s}
-.hero__body > :nth-child(2){animation-delay:1.5s}
-.hero__body > :nth-child(3){animation-delay:1.65s}
-.hero__body > :nth-child(4){animation-delay:1.8s}
+.hero__body > :nth-child(2){animation-delay:1.45s}
+.hero__body > :nth-child(3){animation-delay:1.55s}
+.hero__body > :nth-child(4){animation-delay:1.65s}
+.hero__body > :nth-child(5){animation-delay:1.75s}
 @keyframes lift-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes swap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-/* Sections: one rhythm, one heading style */
+/* Sections */
 section{position:relative}
-.sec{padding:clamp(72px,12vh,140px) 0}
-.alt{background:var(--bay)}
-.sec__head{text-align:center;display:grid;justify-items:center;gap:16px;margin-bottom:clamp(40px,7vh,80px)}
-.sec__head h2{font-size:var(--h2);max-width:20ch}
-.sec__head p{color:var(--mute);font-size:var(--lede);max-width:38rem;text-wrap:balance}
-.note{margin-top:28px;text-align:center;font-size:.95rem;color:var(--mute)}
-.facts{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
-.facts li{padding:11px 0 11px 26px;border-bottom:1px solid var(--rule);position:relative;color:#e2dcd2}
-.facts li::before{content:"";position:absolute;left:0;top:1.3em;width:12px;height:2px;background:var(--orange)}
+.sec{padding:clamp(56px,9vh,104px) 0 0}
+.sec--last{padding-bottom:clamp(56px,9vh,104px)}
+.sec__head{text-align:center;display:grid;justify-items:center;gap:12px;margin-bottom:clamp(26px,4.4vh,48px)}
+.sec__head h2{font-size:var(--h2);max-width:22ch}
+.sec__head p{color:var(--ink-2);font-size:var(--lede);max-width:40rem;text-wrap:balance}
+.card{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--sh)}
+.note{margin:22px auto 0;max-width:46rem;text-align:center;font-size:.92rem;color:var(--ink-3);text-wrap:balance}
+.ticks{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px 18px}
+.ticks li{position:relative;padding-left:30px;color:var(--ink-2)}
+.ticks li::before{content:"";position:absolute;left:0;top:.18em;width:20px;height:20px;border-radius:50%;
+  background:var(--orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3l2.2 2.2 4.6-5' fill='none' stroke='%231a1209' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
 
-/* Warning lights: the instrument panel */
-.lights{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:stretch}
-.lgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px;background:#08080a;box-shadow:inset 0 0 0 1px var(--rule);align-content:start}
-.lbtn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:124px;padding:14px 8px;border:0;border-radius:2px;background:var(--steel);box-shadow:inset 0 0 0 1px var(--rule);color:var(--mute);font:600 .98rem/1.25 var(--body);text-align:center;cursor:pointer}
-.lbtn svg{width:46px;height:46px;color:var(--unlit)}
-.lbtn:hover{color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule-2)}
-.lbtn[aria-pressed="true"]{color:var(--ink);background:var(--steel-2);box-shadow:inset 0 0 0 1px var(--c),inset 0 -3px 0 var(--c)}
-.lbtn[aria-pressed="true"] svg{color:var(--c)}
-.lpanel{background:var(--steel);box-shadow:inset 0 0 0 1px var(--rule);padding:clamp(22px,3vw,38px)}
-.lp-intro p{color:var(--soft)}
-.legend{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--rule)}
-.legend li{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule);color:var(--soft)}
+/* List-left, detail-right panels (lights and services) */
+.duo{display:grid;grid-template-columns:290px minmax(0,1fr);gap:clamp(18px,2.6vw,32px);align-items:start}
+.list{display:grid;gap:4px}
+.item{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:5px 14px 5px 6px;border:0;border-radius:var(--r-sm);background:transparent;color:var(--ink-2);font:500 .97rem/1.25 var(--sans);text-align:left;text-decoration:none;cursor:pointer;transition:background .45s var(--slow),box-shadow .45s var(--slow),color .45s}
+.item .ib{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#fff;color:#8a909a;box-shadow:inset 0 0 0 1px var(--line);flex:none;transition:background .45s,color .45s}
+.item:hover{background:rgba(255,255,255,.7);color:var(--ink)}
+.item[aria-pressed="true"],.item[aria-selected="true"]{background:#fff;color:var(--ink);font-weight:600;box-shadow:var(--sh-sm)}
+.item[aria-pressed="true"] .ib,.item[aria-selected="true"] .ib{background:var(--dash);color:var(--c,var(--orange));box-shadow:none}
+.legend{list-style:none;margin:14px 0 0;padding:14px 6px 0;border-top:1px solid var(--line-2);display:grid;gap:8px;font-size:.9rem;color:var(--ink-2)}
+.legend li{display:flex;gap:10px;align-items:baseline}
 .legend strong{color:var(--ink)}
-.sw{display:inline-block;width:12px;height:12px;background:var(--c);flex:none;transform:translateY(1px)}
-.lp{padding-top:24px;margin-top:24px;border-top:1px solid var(--rule)}
-.lp-tag{display:flex;align-items:center;gap:10px;color:var(--c)}
-.lp h3{font-size:var(--h3);margin:12px 0 18px}
-.lp dl{margin:0;border-top:1px solid var(--rule)}
-.lp dl>div{padding:12px 0;border-bottom:1px solid var(--rule)}
-.lp dt{color:var(--mute);font-size:.85rem}
-.lp dd{margin:6px 0 0;color:var(--soft)}
-.lp .btn{margin-top:22px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);flex:none}
+
+/* Warning light detail */
+.lpanel{overflow:hidden}
+.lp-intro{padding:clamp(22px,3vw,34px);color:var(--ink-2)}
+.lp-dash{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:18px;margin:10px;padding:18px 20px;border-radius:20px;color:#fff;background:radial-gradient(120% 160% at 0 0,#262931,#121318 70%)}
+.lamp{display:grid;place-items:center;width:76px;height:76px;border-radius:18px;background:#0a0b0e;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.lamp svg{width:48px;height:48px;color:var(--c)}
+.lp-tag{display:flex;align-items:center;gap:8px;font-size:.84rem;color:#cfd3da}
+.lp-dash h3{font-size:var(--h3);margin-top:6px}
+.lp dl{margin:0;padding:8px clamp(20px,2.6vw,30px) clamp(20px,2.6vw,28px);display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
+.lp dl>div:last-child{grid-column:1/-1;padding-top:14px;border-top:1px solid var(--line)}
+.lp dt{font:600 .8rem/1.3 var(--sans);letter-spacing:.02em;color:var(--orange-d)}
+.lp dd{margin:5px 0 0;color:var(--ink-2)}
 html.js .lp{display:none}
-html.js .lp.on{display:block;border-top:0;margin-top:0;padding-top:0;animation:swap .7s var(--slow) both}
+html.js .lp.on{display:block;animation:swap .7s var(--slow) both}
 html.js .lpanel.has .lp-intro{display:none}
-@keyframes swap{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+html:not(.js) .lp + .lp{border-top:1px solid var(--line)}
 
-/* Services: tabbed, dash-style icons */
-.svc{display:grid;grid-template-columns:290px minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
-.tabs{display:flex;flex-direction:column;border-top:1px solid var(--rule)}
-.tab{position:relative;display:flex;align-items:center;gap:14px;min-height:56px;padding:0 14px 0 18px;border-bottom:1px solid var(--rule);color:var(--mute);text-decoration:none;font:600 1.02rem/1.2 var(--body)}
-.tab svg{color:var(--unlit)}
-.tab:hover{color:var(--ink)}
-.tab[aria-selected="true"]{color:var(--ink);background:var(--steel)}
-.tab[aria-selected="true"] svg{color:var(--orange)}
-.tab[aria-selected="true"]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange)}
-.spanel{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(22px,3.4vw,44px);align-items:center}
-.spanel+.spanel{margin-top:48px}
-.shot{position:relative;margin:0;aspect-ratio:3/2;background:#17171a}
+/* Service detail */
+.shot{position:relative;margin:10px 10px 0;border-radius:20px;overflow:hidden;aspect-ratio:2/1;background:#e9e8e4}
 .shot img{width:100%;height:100%;object-fit:cover}
-.sno{color:var(--orange);margin-bottom:14px}
-.sno small{font-size:1em;color:var(--mute)}
-.sbody h3{font-size:var(--h3);margin-bottom:12px}
-.sbody p{color:#d8d1c7;font-size:1.1rem;margin-bottom:18px}
+.sbody{padding:20px clamp(20px,2.6vw,30px) clamp(22px,2.6vw,30px)}
+.sno{display:inline-block;font:600 .8rem/1 var(--sans);color:var(--orange-d);background:var(--orange-soft);padding:6px 10px;border-radius:999px;margin-bottom:10px}
+.sbody h3{font-size:var(--h3);margin-bottom:8px}
+.sbody p{color:var(--ink-2)}
 html.js .spanel:not(.on){display:none}
-html.js .spanel+.spanel{margin-top:0}
-html.js .spanel.on{animation:swap .8s var(--slow) both}
+html.js .spanel.on{animation:swap .7s var(--slow) both}
+html:not(.js) .spanel + .spanel{margin-top:18px}
 
-/* Photo break */
-.break{position:relative;height:clamp(420px,72vh,760px);overflow:hidden;background:#0c0d10;display:grid;place-items:center;isolation:isolate}
+/* Photo break: a rounded image card inside the page width */
+.break{position:relative;height:clamp(240px,46vh,440px);border-radius:var(--r-lg);overflow:hidden;isolation:isolate;display:grid;place-items:center;background:#1a1b1f;box-shadow:var(--sh)}
 .break img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;z-index:-2}
-.break::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--bay) 0,rgba(12,12,14,.45) 22%,rgba(12,12,14,.2) 50%,rgba(12,12,14,.6) 80%,var(--bay) 100%)}
-.break-line{text-align:center;font:700 clamp(3.4rem,min(11vw,15vh),9.5rem)/.86 var(--display);font-stretch:76%;text-transform:uppercase;letter-spacing:.02em;padding:0 var(--g)}
-.break-line span{display:block;color:#e6e8ec;background:linear-gradient(180deg,#ffffff,#c4c7cd 60%,#8d9198);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(.035em .045em 0 #0b0b0d)}
-.break-line span+span{background:none;-webkit-text-fill-color:var(--orange);color:var(--orange);filter:drop-shadow(.035em .045em 0 #120d07)}
-.break .ai{top:auto;bottom:12px;right:12px}
+.break::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(70% 90% at 50% 55%,rgba(12,12,14,.62),rgba(12,12,14,.25) 75%)}
+.break-line{text-align:center;color:#fff;font:700 clamp(2.2rem,min(5.4vw,9vh),4.4rem)/1.02 var(--display);letter-spacing:-.035em;padding:0 var(--g)}
+.break-line span{display:block}
+.break-line span+span{color:var(--orange)}
 
 /* 3D pink slip bay (module: ../../assets/inspect.js) */
-.bay{max-width:1180px;margin:0 auto}
-.bay-well{padding:10px;background:#08080a;box-shadow:inset 0 0 0 1px var(--rule)}
-.bay-stage{position:relative;aspect-ratio:16/8;max-height:calc(100svh - var(--head) - 56px);width:100%;overflow:hidden;background:radial-gradient(80% 90% at 50% 72%,#26272c,#121215 70%);touch-action:pan-y;cursor:grab;outline-offset:4px}
+.bay{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px;padding:12px;border-radius:var(--r-lg);color:#eef0f3;background:linear-gradient(160deg,#1d1f25,#101114 60%);box-shadow:var(--sh)}
+.bay-stage{position:relative;min-height:clamp(320px,60vh,540px);overflow:hidden;border-radius:20px;background:radial-gradient(80% 90% at 50% 72%,#2b2d34,#141519 70%);touch-action:pan-y;cursor:grab;outline-offset:4px}
 .bay-stage.grab{cursor:grabbing}
 .bay-stage canvas{position:absolute;inset:0;width:100%;height:100%}
-.giant{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;
-  font:700 clamp(9rem,27vw,25rem)/.8 var(--display);font-stretch:76%;letter-spacing:.02em;color:transparent;-webkit-text-stroke:1.5px rgba(243,154,54,.3)}
+.giant{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;font:800 clamp(5rem,13vw,11rem)/.8 var(--display);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px rgba(243,154,54,.28)}
 .no-gl .giant{display:none}
 .bay-fallback{position:absolute;inset:0;opacity:0;transition:opacity .6s}
 .bay-fallback img{width:100%;height:100%;object-fit:cover}
 .no-gl .bay-fallback,html:not(.js) .bay-fallback{opacity:1}
-.bay-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font-size:.85rem;color:var(--soft);background:rgba(12,12,14,.8);padding:6px 12px;border-radius:2px;pointer-events:none;white-space:nowrap}
+.bay-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font-size:.82rem;color:#e3e5ea;background:rgba(14,15,18,.8);padding:6px 14px;border-radius:999px;pointer-events:none;white-space:nowrap}
 .no-gl .bay-hint,.no-gl .pin{display:none}
-.pin{position:absolute;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:0;border-radius:50%;cursor:pointer;padding:0;opacity:0;background:#1b1b1f;box-shadow:inset 0 0 0 1.5px var(--rule-2),0 6px 14px -6px rgba(0,0,0,.9);transition:opacity .5s}
+.pin{position:absolute;left:0;top:0;width:32px;height:32px;margin:-16px 0 0 -16px;border:0;border-radius:50%;cursor:pointer;padding:0;opacity:0;background:#fff;box-shadow:0 6px 14px -6px rgba(0,0,0,.9);transition:opacity .5s}
 .gl-on .pin{opacity:1}
-.pin::before{content:"";position:absolute;inset:11px;border-radius:50%;background:var(--orange)}
-.pin span{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%) translateY(4px);white-space:nowrap;font:600 .82rem/1 var(--body);color:var(--ink);background:#0e0e11;box-shadow:inset 0 0 0 1px var(--rule);padding:7px 10px;border-radius:2px;opacity:0;transition:opacity .4s,transform .4s var(--slow);pointer-events:none}
+.pin::before{content:"";position:absolute;inset:10px;border-radius:50%;background:var(--orange)}
+.pin span{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%) translateY(4px);white-space:nowrap;font:600 .8rem/1 var(--sans);color:var(--ink);background:#fff;padding:7px 11px;border-radius:999px;box-shadow:var(--sh-sm);opacity:0;transition:opacity .4s,transform .4s var(--slow);pointer-events:none}
 .pin:hover span,.pin:focus-visible span,.pin.on span{opacity:1;transform:translateX(-50%)}
-.pin.on{background:var(--orange);box-shadow:0 6px 14px -6px rgba(0,0,0,.9)}
-.pin.on::before{inset:12px;background:var(--on-orange)}
+.pin.on{background:var(--orange)}
+.pin.on::before{inset:11px;background:var(--on-orange)}
 .gl-on .pin.far{opacity:.2}
-.bay-panel{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(16px,2.4vw,28px);margin-top:clamp(16px,2.4vw,28px)}
-.pt-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-content:start}
-.pt-keys button{min-height:52px;border:0;border-radius:2px;cursor:pointer;color:var(--soft);background:var(--steel);box-shadow:inset 0 0 0 1px var(--rule);font:600 .95rem/1.2 var(--body);padding:8px 10px}
-.pt-keys button:hover{color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule-2)}
-.pt-keys button[aria-pressed="true"]{background:var(--orange);color:var(--on-orange);box-shadow:none}
-.pt-card{background:var(--steel);box-shadow:inset 0 0 0 1px var(--rule);border-top:3px solid var(--orange)}
-.pt-info{padding:clamp(22px,2.6vw,34px)}
-.pt-info .lbl{color:var(--orange)}
-.pt-info h3{font-size:var(--h3);margin:12px 0 10px}
-.pt-info p{color:var(--soft)}
+.bay-side{display:grid;gap:12px;align-content:start}
+.pt-card{background:#fff;color:var(--ink);border-radius:20px;min-height:150px}
+.pt-info{padding:20px 22px}
+.pt-info .k{font:600 .8rem/1 var(--sans);color:var(--orange-d)}
+.pt-info h3{font-size:var(--h3);margin:8px 0 6px}
+.pt-info p{color:var(--ink-2)}
 .js .pt-info[hidden]{display:none}
-
-/* Pink slip checklist: a lit sheet on a clipboard */
-.lamp{background:radial-gradient(70% 55% at 50% 0,#1c1b1e 0,var(--night) 75%)}
-.board{position:relative;max-width:1000px;margin:0 auto;padding:44px clamp(10px,1.6vw,16px) clamp(10px,1.6vw,16px);background:linear-gradient(180deg,#2c2f34,#1c1e22);box-shadow:inset 0 0 0 1px rgba(255,255,255,.07),0 40px 60px -36px #000}
-.board::before{content:"";position:absolute;z-index:2;left:50%;top:12px;width:min(240px,46%);height:50px;transform:translateX(-50%);border-radius:3px;background:linear-gradient(180deg,#a3a7ad 0,#7a7e85 30%,#43464c 75%,#1c1e22 100%);box-shadow:0 3px 0 rgba(0,0,0,.5)}
-.board::after{content:"";position:absolute;z-index:3;left:50%;top:26px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#d9dbde,#7d8187 55%,#2b2d31)}
-.ps{position:relative;background:linear-gradient(180deg,#fbf3ee,#f3e8e3 60%,#eadfd9);color:var(--paper-ink);padding:clamp(40px,5vw,56px) clamp(18px,4vw,52px) clamp(26px,4vw,44px)}
-.ps-top{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;border-bottom:2px solid var(--paper-ink);padding-bottom:12px;font-size:.88rem}
-.ps-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(24px,4vw,56px)}
-.ps-list li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:14px 0 12px;border-bottom:1px solid rgba(26,23,20,.18)}
-.ps-list b{display:block;font-weight:600}
-.ps-list span{display:block;font-size:.95rem;color:var(--paper-mute);line-height:1.45}
-.cb{position:relative;width:18px;height:18px;margin-top:3px;border:1.5px solid var(--paper-ink);background:#fffaf6;flex:none}
-.tick{position:absolute;left:-3px;top:-10px;width:28px;height:28px;overflow:visible;pointer-events:none}
-.tick path{fill:none;stroke:var(--red);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0}
-.ps-foot{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:26px}
-.ps-foot p{color:var(--paper-mute);max-width:46ch}
-.ps-stamp{width:210px}
-.ps-stamp svg{display:block;width:100%;height:auto;color:var(--red);transform:rotate(6deg);overflow:visible}
+.bay-lbl{font:600 .8rem/1 var(--sans);color:#aeb3bc;padding:4px 4px 0}
+.pt-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.pt-keys button{display:flex;align-items:center;gap:8px;min-height:46px;padding:6px 10px;border:0;border-radius:12px;cursor:pointer;text-align:left;color:#d7dae0;background:#24262d;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);font:500 .84rem/1.2 var(--sans);transition:background .4s,color .4s}
+.pt-keys button::before{content:"";width:16px;height:16px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1.5px #6c717b}
+.pt-keys button:hover{color:#fff;background:#2b2e36}
+.pt-keys button[aria-pressed="true"]{background:linear-gradient(180deg,var(--orange-hi),var(--orange) 55%,var(--orange-lo));color:var(--on-orange);box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+.pt-keys button[aria-pressed="true"]::before{box-shadow:none;background:var(--on-orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3l2.2 2.2 4.6-5' fill='none' stroke='%23f39a36' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat}
+.ps{display:grid;grid-template-columns:minmax(0,1fr) 128px;gap:14px;align-items:center;padding:14px 16px;border-radius:20px;background:linear-gradient(180deg,#fdf5f1,#f5e9e4);color:var(--ink)}
+.ps p{font-size:.88rem;color:var(--ink-2)}
+.ps .k{display:block;font:600 .74rem/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.ps svg{display:block;width:100%;height:auto;color:var(--red);transform:rotate(6deg);overflow:visible}
 .stamp-in{mix-blend-mode:multiply;transform-origin:50% 50%;transform-box:fill-box}
-@keyframes draw{to{stroke-dashoffset:0}}
 @keyframes thump{0%{opacity:0;transform:scale(1.15)}55%{opacity:1;transform:scale(.985)}100%{opacity:1;transform:scale(1)}}
 @media (prefers-reduced-motion:no-preference){
-  html.js .ps:not(.in) .tick path{stroke-dashoffset:1}
-  html.js .ps .tick path{transition:stroke-dashoffset .45s cubic-bezier(.5,0,.3,1) var(--d,0s)}
   html.js .ps:not(.in) .stamp-in{opacity:0}
-  html.js .ps.in .stamp-in{animation:thump .6s cubic-bezier(.3,0,.2,1) both 2.3s}
-}
-@media (max-width:700px){
-  .ps-list{grid-template-columns:1fr}
-  .ps-foot{grid-template-columns:1fr;justify-items:center;text-align:center}
-  .ps-stamp{width:180px}
+  html.js .ps.in .stamp-in{animation:thump .6s cubic-bezier(.3,0,.2,1) both .4s}
 }
 
-/* Slip comparison: the one light section, like an inspection report */
-.paper{background:var(--paper);color:var(--paper-ink)}
-.paper :focus-visible{outline-color:var(--paper-ink)}
-.paper .sec__head p{color:var(--paper-mute)}
-.slips{width:min(1000px,100%);margin-inline:auto;border-collapse:collapse;text-align:left}
-.slips th,.slips td{padding:18px 20px;vertical-align:top;border-top:1px solid rgba(26,23,20,.18)}
-.slips thead th{border-top:0;font:700 clamp(1.5rem,min(2.6vw,4.4vh),2.1rem)/1 var(--display);font-stretch:82%;padding-bottom:16px}
-.slips thead th:first-child{width:24%}
-.slips tbody th{font-weight:600;color:var(--paper-mute);font-size:.98rem}
-.slips td{font-size:1.04rem}
-.slips .fee td{font:700 clamp(2.6rem,min(5vw,8vh),4rem)/1 var(--display);font-stretch:80%}
-.slips .fee td small{display:block;margin-top:8px;font:400 .95rem/1.4 var(--body);color:var(--paper-mute)}
-.slips tbody tr:last-child > *{border-bottom:2px solid var(--paper-ink)}
-.slips thead tr{border-bottom:2px solid var(--paper-ink)}
-.recheck{width:min(1000px,100%);margin:28px auto 0;display:grid;gap:12px;text-align:left}
-.recheck p:first-child{font-size:1.15rem;max-width:44rem}
-.recheck .src{color:var(--paper-mute);font-size:.95rem}
-.recheck .src a{color:var(--paper-ink);text-underline-offset:4px}
-@media (max-width:699px){
-  .slips,.slips tbody,.slips tr,.slips th,.slips td{display:block;width:100%}
-  .slips thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  .slips tbody tr{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;padding:18px 0;border-top:1px solid rgba(26,23,20,.18)}
-  .slips tbody tr:last-child{border-bottom:2px solid var(--paper-ink)}
-  .slips tbody th{grid-column:1/-1;padding:0 0 8px;border:0}
-  .slips td,.slips tbody tr:last-child > *{padding:0;border:0}
-  .slips td::before{content:attr(data-l);display:block;font:700 1rem/1.2 var(--display);font-stretch:82%;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
-}
+/* Pink or blue slip: two comparison cards */
+.slip-verdict{width:min(980px,100%);margin:0 auto 18px;padding:16px 20px;border-radius:var(--r);background:var(--orange-soft);box-shadow:inset 0 0 0 1px #f5d7b2;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px}
+.slip-verdict[hidden]{display:none}
+.slip-verdict strong{font:700 1.1rem/1.3 var(--display)}
+.slip-verdict p{color:var(--ink-2);font-size:.9rem;margin-top:2px}
+.slips{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);width:min(980px,100%);margin:0 auto}
+.slip{position:relative;padding:clamp(20px,2.6vw,30px);transition:box-shadow .6s var(--slow)}
+.slip.is-car{box-shadow:0 0 0 3px var(--orange),var(--sh)}
+.slip__car{position:absolute;top:-13px;left:50%;transform:translateX(-50%);display:none;padding:5px 12px;border-radius:999px;background:var(--ink);color:#fff;font:600 .78rem/1.2 var(--sans);white-space:nowrap}
+.slip.is-car .slip__car{display:block}
+.slip__top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.slip__name{display:flex;align-items:center;gap:12px}
+.slip__ic{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:var(--t);color:var(--tc)}
+.slip--pink{--t:#fde7ec;--tc:#a2304d}
+.slip--blue{--t:#e4ecfb;--tc:#2a4f9c}
+.slip h3{font-size:var(--h3)}
+.slip__what{color:var(--ink-3);font-size:.9rem}
+.fee{text-align:right;flex:none}
+.fee b{display:block;font:700 clamp(2.4rem,min(4.2vw,7vh),3.2rem)/1 var(--display);letter-spacing:-.04em}
+.fee small{display:block;font-size:.78rem;color:var(--ink-3);max-width:21ch;margin-left:auto;line-height:1.3;margin-top:4px}
+.slip dl{margin:14px 0 0;display:grid;gap:12px}
+.slip dt{font:600 .8rem/1.3 var(--sans);color:var(--orange-d)}
+.slip dd{margin:3px 0 0;color:var(--ink-2)}
+.slip-foot{width:min(980px,100%);margin:20px auto 0;text-align:center;display:grid;gap:8px;justify-items:center}
+.slip-foot .re{font-weight:600;max-width:44rem;text-wrap:balance}
+.slip-foot .src{color:var(--ink-3);font-size:.88rem;max-width:52rem;text-wrap:balance}
+.slip-foot a{color:var(--orange-d);text-underline-offset:3px}
 
-/* How a job goes: four legs of a route */
-.route{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;list-style:none;margin:0 auto;padding:0;max-width:1100px}
-.route li{position:relative;text-align:left}
-.route li:not(:last-child)::after{content:"";position:absolute;left:66px;right:-14px;top:25px;height:2px;background:repeating-linear-gradient(90deg,var(--rule-2) 0 14px,transparent 14px 24px)}
-.node{display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:var(--steel);box-shadow:inset 0 0 0 1px var(--rule-2);color:var(--orange)}
-.route li:last-child .node{background:var(--orange);color:var(--on-orange);box-shadow:none}
-.leg{display:block;margin-top:20px;color:var(--orange)}
-.route h3{font-size:1.5rem;font-stretch:80%;text-transform:uppercase;letter-spacing:.04em;margin:10px 0 8px}
-.route p{color:var(--soft)}
-.route a{text-underline-offset:3px;font-weight:600}
+/* How a job goes: one strip of four steps */
+.steps{list-style:none;margin:0 auto;padding:8px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1100px}
+.steps li{padding:18px 20px 20px;position:relative}
+.steps li+li::before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:1px;background:var(--line)}
+.sn{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(180deg,var(--orange-hi),var(--orange-lo));color:var(--on-orange);font:700 .95rem/1 var(--display);box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+.steps h3{font-size:1.15rem;margin:12px 0 6px;letter-spacing:-.015em}
+.steps p{color:var(--ink-2);font-size:.95rem}
+.steps a{color:var(--orange-d);font-weight:600;text-underline-offset:3px;white-space:nowrap}
 
-/* Rating gauge */
-.rate{display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,80px);flex-wrap:wrap;text-align:center}
-.rgauge{width:min(340px,82vw);height:auto;display:block}
-.rgauge .ring{fill:none;stroke:var(--rule-2);stroke-width:2}
-.rgauge .band{fill:none;stroke:var(--orange);stroke-width:6}
-.rgauge .tk{fill:none;stroke:#7d776e;stroke-width:2}
-.rgauge .tk-maj{stroke:var(--ink);stroke-width:3.2}
-.rgauge .nums text{fill:var(--ink);font:700 28px var(--display);font-stretch:80%;text-anchor:middle}
+/* Visit: one bento grid with hours, address, rating and fuels */
+.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto;gap:clamp(14px,1.8vw,20px)}
+.bento .card{padding:clamp(20px,2.4vw,28px)}
+.b-hours,.b-place{grid-row:span 2}
+.bento h3{font-size:var(--h3)}
+.status{display:inline-flex;align-items:center;gap:9px;margin-top:10px;padding:5px 12px;border-radius:999px;background:var(--cool);font-size:.9rem;color:var(--ink)}
+.hours{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:6px}
+.hours li{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:52px;padding:8px 14px;border-radius:14px;background:#f6f5f2}
+.hours .d{font-weight:500}
+.hours .t{font:700 1.05rem/1 var(--display);letter-spacing:-.01em;white-space:nowrap}
+.hours .closed .t{color:var(--ink-3)}
+.today-tag{display:none;margin-left:8px;padding:3px 8px;border-radius:999px;background:var(--ink);color:#fff;font:600 .72rem/1.2 var(--sans);vertical-align:2px}
+.hours li.today{background:var(--orange-soft);box-shadow:inset 0 0 0 1.5px var(--orange)}
+.hours li.today .today-tag{display:inline-block}
+.b-place address{font-style:normal;margin-top:10px;font-size:1.08rem;color:var(--ink-2)}
+.b-place .btn{margin-top:16px}
+.phones{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:6px}
+.phones li{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0 12px;padding:6px 14px;border-radius:14px;background:#f6f5f2}
+.phones span{color:var(--ink-3);font-size:.9rem}
+.phones a{font:700 1.2rem/1.1 var(--display);letter-spacing:-.01em;text-decoration:none;display:inline-flex;min-height:44px;align-items:center}
+.phones a:hover{color:var(--orange-d)}
+.b-rate{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:center}
+.rgauge{width:100%;height:auto;display:block}
+.rgauge .ring{fill:none;stroke:#e3e4e8;stroke-width:3}
+.rgauge .band{fill:none;stroke:var(--orange);stroke-width:10;stroke-linecap:round}
+.rgauge .tk{fill:none;stroke:#b9bcc3;stroke-width:3}
+.rgauge .tk-maj{stroke:var(--ink);stroke-width:4}
 .needle{transform-box:view-box;transform-origin:200px 200px}
-.needle path{fill:var(--orange)}
-.needle .cap{fill:var(--night);stroke:#6b6f75;stroke-width:2}
-.rbig{font:700 clamp(4.6rem,min(11vw,16vh),8rem)/.85 var(--display);font-stretch:78%}
-.rbig span{font-size:.38em;color:var(--mute);letter-spacing:.04em}
-.rate__t p{color:var(--mute);max-width:30ch;margin:16px auto 4px;text-wrap:balance}
+.needle path{fill:var(--ink)}
+.needle .cap{fill:#fff;stroke:var(--ink);stroke-width:5}
+.rbig{font:700 2.6rem/1 var(--display);letter-spacing:-.04em}
+.rbig span{font-size:.45em;color:var(--ink-3);letter-spacing:0}
+.b-rate .rbig{font-size:2.6rem;margin:0}
+.b-rate p{font-size:.88rem;color:var(--ink-2);margin-top:4px}
+.b-rate .tl{min-height:36px;font-size:.92rem;color:var(--orange-d)}
+.b-fuel .fi{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.b-fuel .chip{background:var(--orange-soft);box-shadow:none;color:var(--on-orange);font-weight:600}
+.b-fuel p{color:var(--ink-2);margin-top:10px;font-size:.95rem}
 
-/* FAQ */
-.faq{width:min(780px,100%);margin:0 auto;text-align:left;border-top:1px solid var(--rule)}
-.faq__item{border-bottom:1px solid var(--rule)}
-.faq h3{font:600 1.12rem/1.4 var(--body);font-stretch:100%;letter-spacing:0}
-.faq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:64px;padding:16px 0;background:none;border:0;color:var(--ink);font:inherit;text-align:left;cursor:pointer}
-.pm{position:relative;width:16px;height:16px;flex:none}
-.pm::before,.pm::after{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:var(--orange);transition:transform 1.4s var(--slow)}
+/* FAQ: two columns, slow native fold */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;max-width:1080px;margin:0 auto}
+.faq__col{display:grid;gap:12px}
+.faq__item{background:#fff;border-radius:18px;box-shadow:var(--sh-sm)}
+.faq h3{font:600 1.02rem/1.4 var(--sans);letter-spacing:0}
+.faq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;padding:14px 18px 14px 22px;background:none;border:0;border-radius:18px;color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.pm{position:relative;width:30px;height:30px;border-radius:50%;background:#f3f2ef;flex:none;transition:background .6s}
+.pm::before,.pm::after{content:"";position:absolute;left:9px;right:9px;top:14px;height:2px;border-radius:2px;background:var(--ink);transition:transform 1.4s var(--slow)}
 .pm::after{transform:rotate(90deg)}
+.open-q .pm{background:var(--orange)}
 .open-q .pm::after{transform:rotate(0)}
 .faq__a{display:grid;grid-template-rows:1fr}
 .faq__a > div{overflow:hidden}
-.faq__a p{padding:0 0 22px;color:#d6cfc5;max-width:40rem}
+.faq__a p{padding:0 22px 20px;color:var(--ink-2)}
 html.js .faq__a{grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows 1.4s var(--slow),visibility 0s 1.4s}
 html.js .faq__a p{opacity:0;transition:opacity 1s var(--slow)}
 html.js .open-q .faq__a{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows 1.4s var(--slow)}
 html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
 
-/* Hours as number plates, plus the address card */
-.status{display:inline-flex;align-items:center;gap:10px;font-size:1.1rem;color:var(--ink);min-height:28px}
-.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);max-width:1060px;margin:0 auto;align-items:center}
-.hours{display:grid;gap:26px;justify-items:center;margin:0;padding:0;list-style:none}
-.hours li{width:min(360px,100%);position:relative}
-.np{container-type:inline-size;display:block;width:100%}
-.np-f{position:relative;display:grid;place-items:center;aspect-ratio:2.7;border-radius:4.6cqw;
-  background:linear-gradient(180deg,var(--plate-hi),var(--orange) 38%,var(--plate-lo));
-  box-shadow:inset 0 .35cqw 0 rgba(255,236,206,.7),inset 0 -.45cqw 0 rgba(140,70,8,.28),0 .55cqw 0 var(--plate-edge),0 .95cqw 0 #6b3a0b,0 2.6cqw 3.2cqw -1cqw rgba(0,0,0,.6)}
-.np-f::before{content:"";position:absolute;inset:2.3cqw;border-radius:3cqw;border:.6cqw solid var(--on-orange);box-shadow:-.12cqw -.12cqw 0 rgba(255,222,176,.75),.2cqw .3cqw 0 var(--plate-wall);pointer-events:none}
-.bolt{position:absolute;top:50%;width:3.8cqw;aspect-ratio:1;border-radius:50%;margin-top:-1.9cqw;
-  background:linear-gradient(45deg,transparent 43%,#3c4044 43% 57%,transparent 57%),linear-gradient(-45deg,transparent 43%,#3c4044 43% 57%,transparent 57%),radial-gradient(circle at 35% 30%,#fbfbfb 0 10%,#c9cdd0 32%,#858b90 70%,#555a5f);
-  box-shadow:0 .25cqw .35cqw rgba(0,0,0,.45)}
-.bolt.l{left:5.2cqw}.bolt.r{right:5.2cqw}
-.np-c{position:relative;font:700 24cqw/1 var(--display);font-stretch:75%;letter-spacing:.03em;color:var(--on-orange);white-space:nowrap;transform:translateY(-12%);
-  text-shadow:-.14cqw -.14cqw 0 rgba(255,222,176,.8),.22cqw .32cqw 0 var(--plate-wall),.4cqw .75cqw .55cqw rgba(60,30,0,.32)}
-.np-s{position:absolute;left:0;right:0;bottom:6.2cqw;text-align:center;font:700 4.6cqw/1 var(--display);font-stretch:80%;letter-spacing:.2em;color:var(--on-orange);text-shadow:.1cqw .14cqw 0 var(--plate-wall)}
-.closed .np-c{font-size:21cqw}
-.np.dark .np-f{background:linear-gradient(180deg,#2c2f34,#1b1c20 45%,#111216);box-shadow:inset 0 .35cqw 0 rgba(255,255,255,.14),inset 0 -.45cqw 0 rgba(0,0,0,.4),0 .55cqw 0 #000,0 .95cqw 0 #000,0 2.6cqw 3.2cqw -1cqw rgba(0,0,0,.6)}
-.np.dark .np-f::before{border-color:var(--orange);box-shadow:none}
-.np.dark .np-c,.np.dark .np-s{color:var(--orange);text-shadow:.22cqw .32cqw 0 #000}
-.today-tag{position:absolute;left:50%;top:-13px;transform:translateX(-50%);z-index:2;background:var(--ink);color:var(--on-orange);font:700 .8rem/1 var(--display);font-stretch:82%;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;border-radius:2px;display:none}
-.hours li.today .today-tag{display:block}
-.place{background:var(--steel);box-shadow:inset 0 0 0 1px var(--rule);border-top:3px solid var(--orange);padding:clamp(24px,3.2vw,40px)}
-.place h3{font-size:var(--h3)}
-.place address{font-style:normal;margin-top:12px;font-size:1.15rem;color:var(--soft)}
-.place .btn{margin-top:22px}
-.phones{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--rule)}
-.phones li{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:2px 14px;padding:8px 0;border-bottom:1px solid var(--rule)}
-.phones span{color:var(--mute);font-size:.95rem}
-.phones a{font:700 1.55rem/1.1 var(--display);font-stretch:80%;letter-spacing:.03em;text-decoration:none;display:inline-flex;min-height:44px;align-items:center}
-.phones a:hover{color:var(--orange)}
-
-/* Final call: the door comes back down */
-.callsec{padding:0 0 clamp(72px,12vh,140px)}
-.shutter{--s:26px;height:clamp(90px,16vh,150px);position:relative;margin-bottom:clamp(56px,9vh,96px);
-  background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,0) 16%,rgba(0,0,0,0) 84%,rgba(0,0,0,.5)),repeating-linear-gradient(180deg,#2a2d32 0,#50545a calc(var(--s)*.14),#7a7e85 calc(var(--s)*.3),#61656b calc(var(--s)*.5),#43464c calc(var(--s)*.78),#1c1e22 calc(var(--s)*.94),#111216 var(--s))}
-.shutter::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:16px;background:linear-gradient(180deg,#a3a7ad 0,#6b6f75 30%,#3d4045 70%,#16171a 100%)}
-.final{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
-.final .shot{aspect-ratio:16/9}
-.final-t{text-align:center;display:grid;justify-items:center}
-.final-t h2{font-size:var(--h2)}
-.final-t p{color:var(--mute);font-size:var(--lede);margin:16px auto 26px;max-width:30rem;text-wrap:balance}
-.final-t .tl{margin-top:8px}
+/* Final call: one compact orange card */
+.callcard{display:grid;justify-items:center;text-align:center;gap:12px;padding:clamp(30px,5vh,52px) clamp(20px,4vw,48px);border-radius:var(--r-lg);color:var(--on-orange);
+  background:radial-gradient(90% 140% at 50% 0,#f9b665,var(--orange) 55%,#e9881f);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),var(--sh)}
+.callcard h2{font-size:var(--h2)}
+.callcard p{max-width:32rem;color:#3a2610;text-wrap:balance}
+.callcard__acts{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 18px;margin-top:6px}
+.callcard .tl{text-decoration-color:rgba(26,18,9,.5)}
 
 /* Footer */
-.foot{border-top:1px solid var(--rule);padding:56px 0 40px;text-align:center;color:var(--mute);font-size:.95rem;background:#09090b}
-.foot .plate{margin-bottom:22px}
-.foot address{font-style:normal;margin-bottom:8px;text-wrap:balance}
-.foot address a{color:var(--ink);text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px}
-.foot__ph{display:flex;flex-wrap:wrap;justify-content:center;gap:0 22px;margin-bottom:8px}
-.foot__ph a{min-height:44px;display:inline-flex;align-items:center;color:var(--ink);text-underline-offset:4px}
-.foot__small{margin-top:26px;padding-top:22px;border-top:1px solid var(--rule);display:grid;gap:6px;font-size:.88rem}
+.foot{margin-top:clamp(56px,9vh,104px);background:var(--night);color:#b9bdc6;padding:48px 0 36px;text-align:center;font-size:.94rem}
+.foot .brand{color:#fff;margin-bottom:14px}
+.foot .brand span{color:#b9bdc6}
+.foot address{font-style:normal}
+.foot a{color:#fff;text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px}
+.foot__ph{display:flex;flex-wrap:wrap;justify-content:center;gap:0 24px}
+.foot__small{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:grid;gap:4px;font-size:.84rem;color:#9ea3ad}
 
 /* Phone quick bar */
 .qbar{display:none}
 @media (max-width:759px){
-  .qbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:#0e0e11;border-top:1px solid var(--rule);transition:transform .7s var(--slow)}
-  .qbar .btn{min-height:48px;padding:0 12px}
-  html.js .qbar{transform:translateY(110%)}
+  .qbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;padding:8px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px rgba(21,23,28,.06),0 16px 34px -14px rgba(21,23,28,.45);transition:transform .7s var(--slow)}
+  .qbar .btn{min-height:46px;padding:0 12px}
+  html.js .qbar{transform:translateY(140%)}
   html.js.past-hero .qbar{transform:none}
   .foot{padding-bottom:110px}
 }
 
 /* Responsive */
 @media (max-width:980px){
-  .lights,.svc,.final,.bay-panel{grid-template-columns:1fr}
-  .tabs{display:grid;grid-template-columns:1fr 1fr;column-gap:8px}
-  .tab{min-height:52px;font-size:.98rem;padding:0 10px 0 14px;gap:10px}
-  .route{grid-template-columns:1fr 1fr;row-gap:44px}
-  .route li:nth-child(2)::after{display:none}
+  .duo,.bay{grid-template-columns:1fr}
+  .bento{grid-template-columns:1fr 1fr}
+  .b-hours,.b-place{grid-row:auto}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps li:nth-child(3)::before{display:none}
 }
-@media (max-width:820px){.visit{grid-template-columns:1fr}}
 @media (max-width:760px){
-  .spanel{grid-template-columns:1fr}
-  .lgrid{gap:6px;padding:8px}
-  .lbtn{min-height:104px;font-size:.88rem;padding:12px 4px;gap:8px}
-  .lbtn svg{width:38px;height:38px}
-  .route{grid-template-columns:1fr;row-gap:30px;max-width:30rem}
-  .route li{display:grid;grid-template-columns:52px 1fr;column-gap:18px}
-  .route li .node{grid-row:span 3}
-  .route li:not(:last-child)::after,.route li:nth-child(2)::after{display:block;left:25px;right:auto;top:64px;bottom:-22px;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--rule-2) 0 12px,transparent 12px 20px)}
-  .leg{margin-top:4px}
-  .route h3{margin-top:6px}
+  .lights .list{grid-template-columns:repeat(3,1fr);gap:6px}
+  .lights .item{flex-direction:column;justify-content:center;text-align:center;gap:6px;min-height:92px;padding:10px 4px;font-size:.8rem;background:rgba(255,255,255,.55)}
+  .svc .list{grid-template-columns:1fr 1fr;gap:4px}
+  .svc .item{font-size:.9rem;gap:10px;padding-right:8px}
+  .svc .item .ib{width:34px;height:34px}
+  .lp-dash{grid-template-columns:auto minmax(0,1fr);gap:14px;padding:16px}
+  .lp-dash .btn{grid-column:1/-1;justify-self:start}
+  .lamp{width:60px;height:60px;border-radius:15px}.lamp svg{width:38px;height:38px}
+  .lp dl{grid-template-columns:1fr}
+  .shot{aspect-ratio:3/2}
+  .slips,.faq{grid-template-columns:1fr}
+  .slips{gap:24px}
+  .bento{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr;padding:4px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;column-gap:14px;padding:14px 16px}
+  .steps li .sn{grid-row:span 2}
+  .steps h3{margin-top:4px}
+  .steps li+li::before,.steps li:nth-child(3)::before{display:block;left:16px;right:16px;top:0;bottom:auto;width:auto;height:1px}
 }
 @media (max-width:640px){
-  .bay-stage{aspect-ratio:1/1}
-  .pt-keys{grid-template-columns:repeat(2,1fr)}
+  .bay-stage{min-height:0;aspect-ratio:1/1}
+  .bay{padding:8px}
+  .pt-keys button{font-size:.78rem;padding:6px 8px;gap:6px}
+  .pt-keys button::before{width:13px;height:13px}
   .pin span{display:none}
   .pin{width:28px;height:28px;margin:-14px 0 0 -14px}
-  .pin::before{inset:9px}
-  .pin.on::before{inset:10px}
+  .pin::before{inset:9px}.pin.on::before{inset:10px}
+  .ps{grid-template-columns:minmax(0,1fr) 96px}
+  .rego__row{flex-wrap:wrap}
+  .plate{flex:1 1 100%;height:60px}
+  .rego__sel{flex:0 0 auto}
+  .rego .btn{flex:1}
+  .slip__top{flex-wrap:wrap}
+}
+
+/* ---------- Interactive layer ---------- */
+.btn:active{transform:translateY(1px) scale(.98);box-shadow:inset 0 2px 4px rgba(120,60,0,.25)}
+.btn--ink:active{box-shadow:inset 0 2px 5px rgba(0,0,0,.5)}
+.tl{position:relative;text-decoration:none}
+.tl::before,.tl::after{content:"";position:absolute;left:0;right:0;bottom:9px;height:1.5px;border-radius:2px;background:currentColor;transform-origin:left}
+.tl::before{opacity:.35}
+.tl::after{background:var(--orange);transform:scaleX(0);transition:transform .7s var(--slow)}
+.tl:hover::after,.tl:focus-visible::after{transform:scaleX(1)}
+.callcard .tl::after{background:var(--on-orange)}
+.head{transition:transform .6s var(--slow)}
+html.lit .head{transform:translateY(-4px)}
+html.lit .head__in{box-shadow:0 0 0 1px rgba(21,23,28,.06),0 16px 34px -18px rgba(21,23,28,.3)}
+.nav__links a.on{color:var(--ink);background:rgba(21,23,28,.06)}
+.plate__st.flip{animation:flip .36s var(--slow)}
+@keyframes flip{50%{transform:rotateX(90deg)}}
+/* moving indicator behind the chosen item */
+.list{position:relative}
+.list .item{position:relative;z-index:1}
+.ind{position:absolute;left:0;top:0;z-index:0;border-radius:var(--r-sm);background:#fff;box-shadow:var(--sh-sm);pointer-events:none;transition:transform .7s var(--slow),opacity .4s}
+.has-ind .item[aria-pressed="true"],.has-ind .item[aria-selected="true"]{background:transparent;box-shadow:none}
+.lp.on .lamp{animation:lamp-in .8s var(--slow) both}
+.lp.on .lamp svg{animation:lit 1.1s .25s both}
+.lp.on dl{animation:swap .8s .18s var(--slow) both}
+@keyframes lamp-in{from{transform:scale(.7);opacity:0}to{transform:none;opacity:1}}
+@keyframes lit{from{opacity:.15;transform:scale(.8)}to{opacity:1;transform:none}}
+/* service story: progress on the active item, a small live widget on the photo, dots */
+.tab .prog{position:absolute;left:56px;right:14px;bottom:5px;height:2px;border-radius:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;opacity:0}
+.svc.auto .tab[aria-selected="true"] .prog{opacity:1;animation:prog 6.5s linear forwards}
+.svc.paused .tab .prog,.svc.paused .wid *,.svc.paused .scanw{animation-play-state:paused!important}
+@keyframes prog{to{transform:scaleX(1)}}
+.sdots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+.sdots i{width:8px;height:8px;border-radius:99px;background:#cfd1d6;transform-origin:center;transition:transform .6s var(--slow),background .6s}
+.sdots i.on{background:var(--orange);transform:scaleX(2.4)}
+.sdots i{margin:0 5px}
+.wid{position:absolute;left:14px;bottom:14px;z-index:2;display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:16px;background:#fff;color:var(--ink);box-shadow:0 10px 26px -12px rgba(0,0,0,.55);font:600 .82rem/1.3 var(--sans);max-width:calc(100% - 28px)}
+.wid .g{position:relative;flex:none;width:46px;height:30px;display:grid;place-items:center}
+.wl{display:grid;gap:3px}
+.wl span{display:flex;align-items:center;gap:7px}
+.wl span::before{content:"";width:14px;height:14px;border-radius:50%;flex:none;background:var(--orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3l2.2 2.2 4.6-5' fill='none' stroke='%231a1209' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/9px no-repeat;animation:tk 5s var(--slow) infinite both}
+.wl span:nth-child(2)::before{animation-delay:.6s}.wl span:nth-child(3)::before{animation-delay:1.2s}
+@keyframes tk{0%,6%{opacity:0;transform:scale(.3)}16%,88%{opacity:1;transform:none}100%{opacity:0;transform:scale(.6)}}
+.scanw{position:absolute;inset:0;z-index:1;pointer-events:none;animation:scan 3.8s ease-in-out infinite alternate}
+.scanw::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.8) 30%,rgba(255,255,255,.8) 70%,transparent)}
+@keyframes scan{from{transform:translateY(4%)}to{transform:translateY(92%)}}
+.frame{position:absolute;left:50%;top:44%;width:34%;height:46%;z-index:1;margin:-12% 0 0 -17%;pointer-events:none;animation:breathe 3s ease-in-out infinite}
+.frame::before,.frame::after{content:"";position:absolute;width:26px;height:26px;border:3px solid #fff}
+.frame::before{left:0;top:0;border-right:0;border-bottom:0;border-radius:10px 0 0 0}
+.frame::after{right:0;bottom:0;border-left:0;border-top:0;border-radius:0 0 10px 0}
+@keyframes breathe{50%{transform:scale(1.06);opacity:.75}}
+.fbar{width:46px;height:8px;border-radius:9px;background:#eceae5;overflow:hidden}
+.fbar i{display:block;height:100%;background:var(--orange);transform-origin:left;animation:fill 4s var(--slow) infinite}
+@keyframes fill{0%{transform:scaleX(.05)}70%,100%{transform:scaleX(1)}}
+.flow{width:46px;overflow:hidden;display:grid;gap:4px}
+.flow i{display:block;width:calc(100% + 14px);height:2px;background:repeating-linear-gradient(90deg,#4f8fd6 0 8px,transparent 8px 14px);animation:flow 1.1s linear infinite}
+.flow i:nth-child(2){animation-duration:1.5s}.flow i:nth-child(3){animation-duration:1.25s}
+@keyframes flow{from{transform:translateX(-14px)}to{transform:none}}
+.gauge{width:46px;height:28px;overflow:visible}
+.gauge .nd{transform-origin:23px 25px;animation:needle 3.2s ease-in-out infinite alternate}
+@keyframes needle{from{transform:rotate(-60deg)}to{transform:rotate(45deg)}}
+.batt{display:flex;gap:2px;padding:3px;border:2px solid var(--ink);border-radius:5px;position:relative}
+.batt::after{content:"";position:absolute;right:-5px;top:6px;width:3px;height:6px;border-radius:0 2px 2px 0;background:var(--ink)}
+.batt i{width:6px;height:10px;border-radius:1.5px;background:#2f9e5b;animation:bar 3.2s infinite both}
+.batt i:nth-child(2){animation-delay:.4s}.batt i:nth-child(3){animation-delay:.8s}.batt i:nth-child(4){animation-delay:1.2s}
+@keyframes bar{0%,8%{opacity:.12}20%,85%{opacity:1}100%{opacity:.12}}
+/* makes carousel */
+.makes .sec__head{margin-bottom:clamp(18px,3vh,28px)}
+.makes .sec__head h2{font-size:clamp(1.4rem,min(2.2vw,4vh),1.85rem)}
+.marquee{display:flex;overflow:hidden;padding:12px 0 22px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.mq{display:flex;gap:12px;flex:none;list-style:none;margin:0;padding:0 12px 0 0;animation:mq 46s linear infinite}
+.marquee:hover .mq,.marquee:focus-within .mq{animation-play-state:paused}
+.marquee:focus-visible{outline-offset:-3px}
+@keyframes mq{to{transform:translateX(-100%)}}
+.mk{display:grid;place-items:center;min-width:150px;height:64px;padding:0 28px;border-radius:999px;background:linear-gradient(180deg,#fff,#fafaf8);box-shadow:inset 0 0 0 1px rgba(21,23,28,.05),0 1px 2px rgba(21,23,28,.04),0 12px 26px -16px rgba(21,23,28,.24);font:700 1.12rem/1 var(--display);letter-spacing:-.01em;color:#2a2d34;white-space:nowrap}
+.mk.short{letter-spacing:.16em;padding-left:calc(28px + .16em)}
+/* 3D bay drag cue */
+.bay-hint{display:inline-flex;align-items:center;gap:8px}
+.bay-hint svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(-5px)}50%{transform:translateX(5px)}}
+.bay-stage.dragged .bay-hint{opacity:0;transition:opacity .6s}
+/* slip cards react */
+.slip{transition:transform .6s var(--slow),box-shadow .6s var(--slow)}
+.slip:hover,.slip:focus-within{transform:translateY(-3px);box-shadow:0 0 0 1.5px rgba(243,154,54,.55),var(--sh)}
+.slip.is-car{animation:ring-in .9s var(--slow) both}
+.slip.is-car .slip__car{animation:chip-in .7s .25s var(--slow) both}
+@keyframes ring-in{from{box-shadow:0 0 0 0 rgba(243,154,54,0),var(--sh)}to{box-shadow:0 0 0 3px var(--orange),var(--sh)}}
+@keyframes chip-in{from{opacity:0;transform:translateX(-50%) translateY(8px) scale(.85)}to{opacity:1;transform:translateX(-50%)}}
+/* steps: a line draws through, numbers pop in turn */
+.steps{position:relative}
+.steps::after{content:"";position:absolute;left:45px;right:calc(25% - 33px);top:43px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--orange),#f7c48a);transform-origin:left;pointer-events:none}
+.steps li{transition:background .5s var(--slow);border-radius:20px}
+.steps li:hover{background:#fbf8f3}
+.steps li .sn{position:relative;z-index:1}
+html.js .steps:not(.in)::after{transform:scaleX(0)}
+html.js .steps::after{transition:transform 1.8s .2s var(--slow)}
+html.js .steps:not(.in) .sn{transform:scale(.3);opacity:0}
+html.js .steps .sn{transition:transform .7s var(--slow),opacity .5s}
+.steps li:nth-child(2) .sn{transition-delay:.5s}.steps li:nth-child(3) .sn{transition-delay:1s}.steps li:nth-child(4) .sn{transition-delay:1.5s}
+.steps li:first-child .sn{transition-delay:.05s}
+/* hours: today's opening hours on a small day bar with a marker for now */
+.tbar{margin-top:16px;padding:14px;border-radius:14px;background:#f6f5f2}
+html:not(.js) .tbar{display:none}
+.tbar__t{font-size:.86rem;color:var(--ink-2);margin-bottom:10px}
+.tbar__t b{color:var(--ink);font-weight:600}
+.tbar__track{position:relative;height:10px;border-radius:9px;background:#e4e3df;overflow:hidden}
+.tbar__open{position:absolute;inset:0;border-radius:9px;background:linear-gradient(90deg,var(--orange-hi),var(--orange));transform-origin:left;transform:scaleX(0)}
+.tbar__now{position:absolute;inset:-4px 0;pointer-events:none}
+.tbar__now b{position:absolute;left:-2px;top:0;bottom:0;width:4px;border-radius:3px;background:var(--ink)}
+.tbar__wrap{position:relative}
+.tbar__wrap .tbar__now{inset:-4px 0}
+.tbar__lbl{display:flex;justify-content:space-between;margin-top:6px;font-size:.74rem;color:var(--ink-3)}
+html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
+.needle{transform:rotate(82.8deg);transition:transform 2s .2s cubic-bezier(.3,.8,.25,1)}
+/* soft pointer light on cards (laptops) */
+.lift{isolation:isolate;overflow:hidden}
+@media (hover:hover) and (pointer:fine){
+  .lift::after{content:"";position:absolute;z-index:-1;left:-180px;top:-180px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(243,154,54,.12),rgba(243,154,54,0) 65%);transform:translate(var(--mx,-999px),var(--my,-999px));opacity:0;transition:opacity .5s;pointer-events:none}
+  .lift:hover::after{opacity:1}
+}
+@media (max-width:760px){
+  .steps::after{left:37px;right:auto;top:36px;bottom:36px;width:2px;height:auto;transform-origin:top;background:linear-gradient(180deg,var(--orange),#f7c48a)}
+  html.js .steps:not(.in)::after{transform:scaleY(0)}
+  .tab .prog{left:52px;right:10px}
+  .mk{min-width:120px;height:56px;font-size:1rem;padding:0 22px}
+}
+@media (prefers-reduced-motion:reduce){
+  .marquee{-webkit-mask-image:none;mask-image:none}
+  .mq{animation:none;flex-wrap:wrap;justify-content:center;flex:1;padding:0}
+  .mq[aria-hidden]{display:none}
+  .wid *,.scanw,.frame,.bay-hint svg{animation:none!important}
+  .scanw{display:none}
 }
 
 /* Reveals: native scroll-driven where supported, observer fallback otherwise */
 @media (prefers-reduced-motion:no-preference){
   @supports (animation-timeline:view()){
-    .rv{animation:rv-in linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
-    .ph{animation:roll-up linear both;animation-timeline:view();animation-range:entry 5% cover 40%}
+    html.js .rv{animation:rv-in linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
   }
-  html.io .rv{opacity:0;transform:translateY(24px);transition:opacity 1.1s var(--slow),transform 1.1s var(--slow)}
-  html.io .ph{clip-path:inset(100% 0 0 0);transition:clip-path 1.5s var(--slow)}
-  html.io .in{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
-  html.js .break-line span{clip-path:inset(0 0 100% 0);transform:translateY(18%);transition:clip-path 1.4s var(--slow),transform 1.4s var(--slow)}
-  html.js .break-line span+span{transition-delay:.2s}
-  html.js .break.in .break-line span{clip-path:inset(-10% -5% -15% -5%);transform:none}
+  html.io .rv{opacity:0;transform:translateY(22px);transition:opacity 1.1s var(--slow),transform 1.1s var(--slow)}
+  html.io .rv.in{opacity:1;transform:none}
+  .lift{transition:transform .6s var(--slow),box-shadow .6s var(--slow)}
+  .lift:hover{transform:translateY(-3px)}
 }
-@keyframes rv-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-@keyframes roll-up{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
-
+@keyframes rv-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .door{display:none}
-  .hero__body > *,html.js .lp.on,html.js .spanel.on{animation:none}
+  .hero__body > *,html.js .lp.on,html.js .spanel.on,.rres{animation:none}
   *,*::before,*::after{transition-duration:.01ms!important}
 }
-.cv{content-visibility:auto;contain-intrinsic-size:auto 900px}
 </style>
 </head>
 <body>
@@ -462,7 +603,7 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
 <symbol id="i-battery" viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="12" rx="1.2"/><path d="M6.5 7.5v-2h3v2M14.5 7.5v-2h3v2M6.5 13.5H10M14 13.5h3.5M15.75 11.75v3.5"/></symbol>
 <symbol id="i-oil" viewBox="0 0 24 24"><path d="M5.5 10h9.5l6-2-6.5 7.5H5.5zM8.5 10V8h3v2M7.5 8h5M5.5 11 2.5 9.8v2.6l3 1.4"/><path d="M20.6 12.2c.7 1 1 1.6 1 2a1 1 0 0 1-2 0c0-.4.3-1 1-2z"/></symbol>
 <symbol id="i-brake" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6.5"/><path d="M5.3 5.5a9.6 9.6 0 0 0 0 13M18.7 5.5a9.6 9.6 0 0 1 0 13M12 8.6v4.4M12 15.4v.2"/></symbol>
-<symbol id="i-abs" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6.5"/><path d="M5.3 5.5a9.6 9.6 0 0 0 0 13M18.7 5.5a9.6 9.6 0 0 1 0 13"/><text x="12" y="14.3" fill="currentColor" stroke="none" font-size="6.2" font-weight="700" text-anchor="middle" font-family="Archivo, Arial Narrow, sans-serif">ABS</text></symbol>
+<symbol id="i-abs" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6.5"/><path d="M5.3 5.5a9.6 9.6 0 0 0 0 13M18.7 5.5a9.6 9.6 0 0 1 0 13"/><text x="12" y="14.3" fill="currentColor" stroke="none" font-size="6" font-weight="700" text-anchor="middle" font-family="Inter Tight, Arial, sans-serif">ABS</text></symbol>
 <symbol id="i-tyre" viewBox="0 0 24 24"><path d="M7.3 4C4.6 7.8 4.4 13.6 6.3 18h11.4c1.9-4.4 1.7-10.2-1-14M5.5 20.5h13M12 8v5M12 15.3v.2"/></symbol>
 <symbol id="i-airbag" viewBox="0 0 24 24"><circle cx="7.5" cy="4.8" r="2"/><circle cx="16.8" cy="9" r="4"/><path d="M7.2 8.5 8.3 14h5l1.8 5.5M5 8l1.2 8.5H11M8.3 14 6.3 20"/></symbol>
 <symbol id="i-temp" viewBox="0 0 24 24"><path d="M10.6 13.2V4.6a1.4 1.4 0 0 1 2.8 0v8.6"/><circle cx="12" cy="15.6" r="2.6"/><path d="M13.4 7h2.6M13.4 10h2.6M3.5 21c1.4-1 2.8-1 4.2 0s2.8 1 4.2 0 2.8-1 4.2 0 2.8 1 4.2 0"/></symbol>
@@ -473,7 +614,7 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
 <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/></symbol>
 <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3.5h3.5l1.6 4.4-2.2 1.4a11 11 0 0 0 6.8 6.8l1.4-2.2 4.4 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.6 20.1 3.9 13.4 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></symbol>
 <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></symbol>
-<symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M17.5 12v3M20.5 12v2.2"/></symbol>
+<symbol id="i-fuel" viewBox="0 0 24 24"><path d="M5 20V5.5A1.5 1.5 0 0 1 6.5 4h6A1.5 1.5 0 0 1 14 5.5V20M3.5 20h12M7 8h5M14 11h1.5a1.5 1.5 0 0 1 1.5 1.5v3.5a1.5 1.5 0 0 0 3 0V9l-2.5-2.5"/></symbol>
 <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
   <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="n"/>
   <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -7 5.2" result="m"/>
@@ -484,16 +625,17 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
 
 <header class="head">
   <div class="head__in">
-    <a class="plate" href="#top" aria-label="Shine Auto Repairs, back to top">Shine Auto Repairs</a>
+    <a class="brand" href="#top" aria-label="Shine Auto Repairs, back to top"><i aria-hidden="true"></i>Shine <span>Auto Repairs</span></a>
     <nav class="nav" id="nav" aria-label="Main">
       <ul class="nav__links" id="menu">
         <li><a href="#lights">Warning lights</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#inspect">Pink slip check</a></li>
+        <li><a href="#slips">Fees</a></li>
         <li><a href="#visit">Hours</a></li>
       </ul>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
-      <a class="btn" href="tel:+61287985715"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="long">(02) 8798 5715</span><span class="short">Call</span></a>
+      <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="long">(02) 8798 5715</span><span class="short">Call</span></a>
     </nav>
   </div>
 </header>
@@ -506,7 +648,7 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
   <span class="ai">AI illustration</span>
 
   <div class="door" aria-hidden="true">
-    <p class="door__unit">Unit 4B</p>
+    <p class="door__unit">UNIT 4B</p>
     <div class="door__paint">
       <p class="door__name"><b>Shine</b><span>Auto Repairs</span></p>
       <p class="door__phone">(02) 8798 5715</p>
@@ -517,228 +659,247 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
   <div class="hero__body">
     <h1 id="hero-h">Bring it to Unit 4B</h1>
     <p class="hero__lede">Mechanical repairs, pink and blue slips and logbook servicing in Warwick Farm, six days a week.</p>
-    <div class="hero__acts">
-      <a class="btn" href="tel:+61287985715"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call (02) 8798 5715</a>
-      <a class="tl" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Get directions</a>
-    </div>
+    <form class="rego" id="rego" novalidate>
+      <div class="rego__row">
+        <label class="plate" for="rego-plate">
+          <span class="vh">Rego number</span>
+          <span class="plate__in"><span class="plate__st" id="rego-badge" aria-hidden="true">NSW</span><input id="rego-plate" name="plate" type="text" maxlength="9" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="YOUR REGO" inputmode="text"></span>
+        </label>
+        <span class="rego__sel"><label class="vh" for="rego-state">State</label><select id="rego-state" name="state">
+          <option>NSW</option><option>ACT</option><option>VIC</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>NT</option>
+        </select></span>
+        <button class="btn" type="submit" id="rego-go">Look up my car</button>
+      </div>
+      <p class="rego__priv">We use your rego only to look up the car. It isn't stored.</p>
+      <div class="rego__out" id="rego-out" role="status" aria-live="polite"></div>
+    </form>
+    <p class="hero__more"><a class="tl" href="tel:+61287985715">Or call (02) 8798 5715</a><a class="tl" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Get directions</a></p>
     <p class="hero__status" data-status><span class="dot" aria-hidden="true"></span><span data-status-text>Mon to Fri 9am to 5pm, Sat 9am to 2pm</span></p>
   </div>
 </section>
 
-<section class="sec" id="lights" aria-labelledby="lights-h">
+<section class="sec lights" id="lights" aria-labelledby="lights-h">
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="lights-h">What's that light on your dash?</h2>
       <p>Tap the one you can see. You'll get what it usually means, whether it's generally safe to keep driving, and who at Shine looks after it.</p>
     </div>
-    <div class="lights">
-      <div class="lgrid rv" role="group" aria-label="Warning lights">
-        <button class="lbtn" type="button" aria-pressed="false" aria-controls="lp-engine" data-l="engine" style="--c:var(--orange)"><svg class="ic" aria-hidden="true"><use href="#i-engine"/></svg>Check engine</button>
-        <button class="lbtn" type="button" aria-pressed="false" aria-controls="lp-battery" data-l="battery" style="--c:var(--red)"><svg class="ic" aria-hidden="true"><use href="#i-battery"/></svg>Battery or charging</button>
-        <button class="lbtn" type="button" aria-pressed="false" aria-controls="lp-oil" data-l="oil" style="--c:var(--red)"><svg class="ic" aria-hidden="true"><use href="#i-oil"/></svg>Oil pressure</button>
-        <button class="lbtn" type="button" aria-pressed="false" aria-controls="lp-brake" data-l="brake" style="--c:var(--red)"><svg class="ic" aria-hidden="true"><use href="#i-brake"/></svg>Brake system</button>
-        <button class="lbtn" type="button" aria-pressed="false" aria-controls="lp-abs" data-l="abs" style="--c:var(--orange)"><svg class="ic" aria-hidden="true"><use href="#i-abs"/></svg>ABS</button>
-        <button class="lbtn" type="button" aria-pressed="false" aria-controls="lp-tyre" data-l="tyre" style="--c:var(--orange)"><svg class="ic" aria-hidden="true"><use href="#i-tyre"/></svg>Tyre pressure</button>
-        <button class="lbtn" type="button" aria-pressed="false" aria-controls="lp-airbag" data-l="airbag" style="--c:var(--red)"><svg class="ic" aria-hidden="true"><use href="#i-airbag"/></svg>Airbag (SRS)</button>
-        <button class="lbtn" type="button" aria-pressed="false" aria-controls="lp-temp" data-l="temp" style="--c:var(--red)"><svg class="ic" aria-hidden="true"><use href="#i-temp"/></svg>Engine temperature</button>
-        <button class="lbtn" type="button" aria-pressed="false" aria-controls="lp-aircon" data-l="aircon" style="--c:#dfe7f1"><svg class="ic" aria-hidden="true"><use href="#i-snow"/></svg>Air con not cooling</button>
+    <div class="duo">
+      <div class="rv">
+        <div class="list" role="group" aria-label="Warning lights">
+          <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-engine" data-l="engine" style="--c:var(--orange)"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-engine"/></svg></span>Check engine</button>
+          <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-battery" data-l="battery" style="--c:var(--red)"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-battery"/></svg></span>Battery or charging</button>
+          <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-oil" data-l="oil" style="--c:var(--red)"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-oil"/></svg></span>Oil pressure</button>
+          <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-brake" data-l="brake" style="--c:var(--red)"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-brake"/></svg></span>Brake system</button>
+          <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-abs" data-l="abs" style="--c:var(--orange)"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-abs"/></svg></span>ABS</button>
+          <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-tyre" data-l="tyre" style="--c:var(--orange)"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-tyre"/></svg></span>Tyre pressure</button>
+          <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-airbag" data-l="airbag" style="--c:var(--red)"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-airbag"/></svg></span>Airbag (SRS)</button>
+          <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-temp" data-l="temp" style="--c:var(--red)"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-temp"/></svg></span>Engine temperature</button>
+          <button class="item lbtn" type="button" aria-pressed="false" aria-controls="lp-aircon" data-l="aircon" style="--c:#dfe7f1"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-snow"/></svg></span>Air con not cooling</button>
+        </div>
+        <ul class="legend" aria-label="How to read a warning light">
+          <li><span class="sw" style="--c:var(--red)"></span><span><strong>Red</strong> usually means stop when it's safe, or act now.</span></li>
+          <li><span class="sw" style="--c:var(--orange)"></span><span><strong>Amber</strong> usually means get it checked soon.</span></li>
+        </ul>
       </div>
-      <div class="lpanel rv" id="lpanel" aria-live="polite">
+      <div class="card lpanel rv" id="lpanel" aria-live="polite">
         <div class="lp-intro">
           <h3 class="vh">How to read a warning light</h3>
-          <p>Choose a light to see what it usually means. As a rule of thumb:</p>
-          <ul class="legend">
-            <li><span class="sw" style="--c:var(--red)"></span><span><strong>Red</strong> usually means stop when it's safe, or act now.</span></li>
-            <li><span class="sw" style="--c:var(--orange)"></span><span><strong>Amber</strong> usually means get it checked soon.</span></li>
-          </ul>
-          <p style="margin-top:20px">If a light comes on with a noise, smell, smoke or the car feels different, pull over somewhere safe and call.</p>
+          <p>Choose a light to see what it usually means.</p>
         </div>
 
         <article class="lp" id="lp-engine" style="--c:var(--orange)">
-          <p class="lp-tag lbl"><span class="sw"></span>Amber light: get it checked soon</p>
-          <h3>Check engine</h3>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-engine"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Amber light: get it checked soon</p><h3>Check engine</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
           <dl>
-            <div><dt class="lbl">What it usually means</dt><dd>The engine computer has found a fault. It can be small, like a loose fuel cap, or something that needs fixing, like a sensor or ignition problem.</dd></div>
-            <div><dt class="lbl">Can I keep driving?</dt><dd>If it stays on steadily, you can usually drive on gently and book it in soon. If it flashes, the engine may be misfiring badly: slow down, stop somewhere safe as soon as you can and call, as driving on can damage the exhaust system. Your owner's manual has the details for your car.</dd></div>
-            <div><dt class="lbl">Who handles it at Shine</dt><dd>All mechanical repairs (engine).</dd></div>
+            <div><dt>What it usually means</dt><dd>The engine computer has found a fault. It can be small, like a loose fuel cap, or something that needs fixing, like a sensor or ignition problem.</dd></div>
+            <div><dt>Can I keep driving?</dt><dd>If it stays on steadily, you can usually drive on gently and book it in soon. If it flashes, the engine may be misfiring badly: slow down, stop somewhere safe as soon as you can and call, as driving on can damage the exhaust system. Your owner's manual has the details for your car.</dd></div>
+            <div><dt>Who handles it at Shine</dt><dd>All mechanical repairs (engine).</dd></div>
           </dl>
-          <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
         </article>
 
         <article class="lp" id="lp-battery" style="--c:var(--red)">
-          <p class="lp-tag lbl"><span class="sw"></span>Red light: act now</p>
-          <h3>Battery or charging</h3>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-battery"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: act now</p><h3>Battery or charging</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
           <dl>
-            <div><dt class="lbl">What it usually means</dt><dd>The battery isn't being charged. Common causes are a worn alternator, a loose or broken drive belt, or a battery or wiring fault.</dd></div>
-            <div><dt class="lbl">Can I keep driving?</dt><dd>Not far. The car is running on what's left in the battery and may stop. Switch off what you don't need, like the air con and radio, and get somewhere safe. If other lights come on too, stop.</dd></div>
-            <div><dt class="lbl">Who handles it at Shine</dt><dd>Batteries, and all mechanical repairs for the charging system.</dd></div>
+            <div><dt>What it usually means</dt><dd>The battery isn't being charged. Common causes are a worn alternator, a loose or broken drive belt, or a battery or wiring fault.</dd></div>
+            <div><dt>Can I keep driving?</dt><dd>Not far. The car is running on what's left in the battery and may stop. Switch off what you don't need, like the air con and radio, and get somewhere safe. If other lights come on too, stop.</dd></div>
+            <div><dt>Who handles it at Shine</dt><dd>Batteries, and all mechanical repairs for the charging system.</dd></div>
           </dl>
-          <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
         </article>
 
         <article class="lp" id="lp-oil" style="--c:var(--red)">
-          <p class="lp-tag lbl"><span class="sw"></span>Red light: stop safely</p>
-          <h3>Oil pressure</h3>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-oil"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: stop safely</p><h3>Oil pressure</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
           <dl>
-            <div><dt class="lbl">What it usually means</dt><dd>Oil pressure is too low. The engine may be low on oil, or there may be a fault with the oil pump or a sensor.</dd></div>
-            <div><dt class="lbl">Can I keep driving?</dt><dd>No. Stop as soon as it's safe and switch the engine off. An engine without oil pressure can be damaged quickly. Check the oil level once it has cooled, and call before driving on.</dd></div>
-            <div><dt class="lbl">Who handles it at Shine</dt><dd>All mechanical repairs, and logbook servicing to keep the oil changed on time.</dd></div>
+            <div><dt>What it usually means</dt><dd>Oil pressure is too low. The engine may be low on oil, or there may be a fault with the oil pump or a sensor.</dd></div>
+            <div><dt>Can I keep driving?</dt><dd>No. Stop as soon as it's safe and switch the engine off. An engine without oil pressure can be damaged quickly. Check the oil level once it has cooled, and call before driving on.</dd></div>
+            <div><dt>Who handles it at Shine</dt><dd>All mechanical repairs, and logbook servicing to keep the oil changed on time.</dd></div>
           </dl>
-          <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
         </article>
 
         <article class="lp" id="lp-brake" style="--c:var(--red)">
-          <p class="lp-tag lbl"><span class="sw"></span>Red light: stop safely</p>
-          <h3>Brake system</h3>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-brake"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: stop safely</p><h3>Brake system</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
           <dl>
-            <div><dt class="lbl">What it usually means</dt><dd>On most cars it lights up when the park brake is on. If it stays on with the park brake off, the brake fluid may be low or there may be a fault in the brakes.</dd></div>
-            <div><dt class="lbl">Can I keep driving?</dt><dd>Check the park brake first. If the light stays on, stop somewhere safe and don't drive on until the brakes have been checked.</dd></div>
-            <div><dt class="lbl">Who handles it at Shine</dt><dd>All mechanical repairs (brakes).</dd></div>
+            <div><dt>What it usually means</dt><dd>On most cars it lights up when the park brake is on. If it stays on with the park brake off, the brake fluid may be low or there may be a fault in the brakes.</dd></div>
+            <div><dt>Can I keep driving?</dt><dd>Check the park brake first. If the light stays on, stop somewhere safe and don't drive on until the brakes have been checked.</dd></div>
+            <div><dt>Who handles it at Shine</dt><dd>All mechanical repairs (brakes).</dd></div>
           </dl>
-          <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
         </article>
 
         <article class="lp" id="lp-abs" style="--c:var(--orange)">
-          <p class="lp-tag lbl"><span class="sw"></span>Amber light: get it checked soon</p>
-          <h3>ABS</h3>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-abs"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Amber light: get it checked soon</p><h3>ABS</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
           <dl>
-            <div><dt class="lbl">What it usually means</dt><dd>The anti-lock braking system has a fault. Your normal brakes should still work, but the wheels can lock under hard braking.</dd></div>
-            <div><dt class="lbl">Can I keep driving?</dt><dd>Usually yes, carefully. Leave extra room in front and book it in soon. If the red brake light is on as well, stop safely.</dd></div>
-            <div><dt class="lbl">Who handles it at Shine</dt><dd>All mechanical repairs (brakes).</dd></div>
+            <div><dt>What it usually means</dt><dd>The anti-lock braking system has a fault. Your normal brakes should still work, but the wheels can lock under hard braking.</dd></div>
+            <div><dt>Can I keep driving?</dt><dd>Usually yes, carefully. Leave extra room in front and book it in soon. If the red brake light is on as well, stop safely.</dd></div>
+            <div><dt>Who handles it at Shine</dt><dd>All mechanical repairs (brakes).</dd></div>
           </dl>
-          <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
         </article>
 
         <article class="lp" id="lp-tyre" style="--c:var(--orange)">
-          <p class="lp-tag lbl"><span class="sw"></span>Amber light: get it checked soon</p>
-          <h3>Tyre pressure</h3>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-tyre"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Amber light: get it checked soon</p><h3>Tyre pressure</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
           <dl>
-            <div><dt class="lbl">What it usually means</dt><dd>One or more tyres is below its set pressure. Only cars with tyre pressure monitoring have this light.</dd></div>
-            <div><dt class="lbl">Can I keep driving?</dt><dd>Gently, to the nearest air pump. Inflate the tyres to the pressures on the tyre placard, often inside the driver's door. If a tyre looks flat or the car pulls to one side, stop somewhere safe.</dd></div>
-            <div><dt class="lbl">Who handles it at Shine</dt><dd>Tyres.</dd></div>
+            <div><dt>What it usually means</dt><dd>One or more tyres is below its set pressure. Only cars with tyre pressure monitoring have this light.</dd></div>
+            <div><dt>Can I keep driving?</dt><dd>Gently, to the nearest air pump. Inflate the tyres to the pressures on the tyre placard, often inside the driver's door. If a tyre looks flat or the car pulls to one side, stop somewhere safe.</dd></div>
+            <div><dt>Who handles it at Shine</dt><dd>Tyres.</dd></div>
           </dl>
-          <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
         </article>
 
         <article class="lp" id="lp-airbag" style="--c:var(--red)">
-          <p class="lp-tag lbl"><span class="sw"></span>Red on many cars: don't put it off</p>
-          <h3>Airbag (SRS)</h3>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-airbag"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red on many cars: don't put it off</p><h3>Airbag (SRS)</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
           <dl>
-            <div><dt class="lbl">What it usually means</dt><dd>The airbag system has found a fault. The airbags, and on some cars the seatbelt pretensioners, may not work in a crash.</dd></div>
-            <div><dt class="lbl">Can I keep driving?</dt><dd>The car will usually drive normally, but you and your passengers are less protected. Have it checked soon.</dd></div>
-            <div><dt class="lbl">Who handles it at Shine</dt><dd>Call the workshop and describe what the light is doing. We'll tell you what to do next.</dd></div>
+            <div><dt>What it usually means</dt><dd>The airbag system has found a fault. The airbags, and on some cars the seatbelt pretensioners, may not work in a crash.</dd></div>
+            <div><dt>Can I keep driving?</dt><dd>The car will usually drive normally, but you and your passengers are less protected. Have it checked soon.</dd></div>
+            <div><dt>Who handles it at Shine</dt><dd>Call the workshop and describe what the light is doing. We'll tell you what to do next.</dd></div>
           </dl>
-          <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
         </article>
 
         <article class="lp" id="lp-temp" style="--c:var(--red)">
-          <p class="lp-tag lbl"><span class="sw"></span>Red light: stop safely</p>
-          <h3>Engine temperature</h3>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-temp"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Red light: stop safely</p><h3>Engine temperature</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
           <dl>
-            <div><dt class="lbl">What it usually means</dt><dd>The engine is running too hot. Common causes are low coolant, a leak, or a fault with the fan, thermostat or water pump.</dd></div>
-            <div><dt class="lbl">Can I keep driving?</dt><dd>No. Stop as soon as it's safe and switch off. Let the engine cool, and never open the radiator cap while it's hot. Call before driving on.</dd></div>
-            <div><dt class="lbl">Who handles it at Shine</dt><dd>All mechanical repairs (engine).</dd></div>
+            <div><dt>What it usually means</dt><dd>The engine is running too hot. Common causes are low coolant, a leak, or a fault with the fan, thermostat or water pump.</dd></div>
+            <div><dt>Can I keep driving?</dt><dd>No. Stop as soon as it's safe and switch off. Let the engine cool, and never open the radiator cap while it's hot. Call before driving on.</dd></div>
+            <div><dt>Who handles it at Shine</dt><dd>All mechanical repairs (engine).</dd></div>
           </dl>
-          <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
         </article>
 
         <article class="lp" id="lp-aircon" style="--c:#dfe7f1">
-          <p class="lp-tag lbl"><span class="sw"></span>Something you notice, not a warning light</p>
-          <h3>Air con not cooling</h3>
+          <div class="lp-dash"><span class="lamp"><svg class="ic" aria-hidden="true"><use href="#i-snow"/></svg></span><div><p class="lp-tag"><span class="sw"></span>Something you notice, not a warning light</p><h3>Air con not cooling</h3></div><a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a></div>
           <dl>
-            <div><dt class="lbl">What it usually means</dt><dd>The system may be low on gas from a slow leak, or a part such as the compressor or a fan may have a fault.</dd></div>
-            <div><dt class="lbl">Can I keep driving?</dt><dd>Yes. The air con also helps clear a fogged windscreen, so take more care in wet weather until it's fixed.</dd></div>
-            <div><dt class="lbl">Who handles it at Shine</dt><dd>Air con regas and repairs.</dd></div>
+            <div><dt>What it usually means</dt><dd>The system may be low on gas from a slow leak, or a part such as the compressor or a fan may have a fault.</dd></div>
+            <div><dt>Can I keep driving?</dt><dd>Yes. The air con also helps clear a fogged windscreen, so take more care in wet weather until it's fixed.</dd></div>
+            <div><dt>Who handles it at Shine</dt><dd>Air con regas and repairs.</dd></div>
           </dl>
-          <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
         </article>
       </div>
     </div>
-    <p class="note">General guidance only. Cars differ, so check your owner's manual. If you're unsure, stop somewhere safe and call.</p>
+    <p class="note">If a light comes on with a noise, smell, smoke or the car feels different, pull over somewhere safe and call. General guidance only. Cars differ, so check your owner's manual. If you're unsure, stop somewhere safe and call.</p>
   </div>
 </section>
 
-<section class="sec alt" id="services" aria-labelledby="svc-h">
+<section class="sec svc" id="services" aria-labelledby="svc-h">
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="svc-h">What we work on</h2>
       <p>Everything on our card, from engine and brake work to rego checks.</p>
     </div>
-    <div class="svc">
-      <div class="tabs rv" role="tablist" aria-label="Services" aria-orientation="vertical">
-        <a class="tab" role="tab" href="#s-repairs" id="t-repairs" aria-controls="s-repairs" aria-selected="true"><svg class="ic" aria-hidden="true"><use href="#i-engine"/></svg>Mechanical repairs</a>
-        <a class="tab" role="tab" href="#s-pink" id="t-pink" aria-controls="s-pink" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Pink slips</a>
-        <a class="tab" role="tab" href="#s-blue" id="t-blue" aria-controls="s-blue" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="#i-plate"/></svg>Blue slips</a>
-        <a class="tab" role="tab" href="#s-logbook" id="t-logbook" aria-controls="s-logbook" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="#i-spanner"/></svg>Logbook servicing</a>
-        <a class="tab" role="tab" href="#s-aircon" id="t-aircon" aria-controls="s-aircon" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="#i-snow"/></svg>Air con</a>
-        <a class="tab" role="tab" href="#s-tyres" id="t-tyres" aria-controls="s-tyres" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="#i-wheel"/></svg>Tyres</a>
-        <a class="tab" role="tab" href="#s-battery" id="t-battery" aria-controls="s-battery" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="#i-battery"/></svg>Batteries</a>
+    <div class="duo">
+      <div class="list tabs rv" role="tablist" aria-label="Services" aria-orientation="vertical">
+        <a class="item tab" role="tab" href="#s-repairs" id="t-repairs" aria-controls="s-repairs" aria-selected="true"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-engine"/></svg></span>Mechanical repairs</a>
+        <a class="item tab" role="tab" href="#s-pink" id="t-pink" aria-controls="s-pink" aria-selected="false" tabindex="-1"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg></span>Pink slips</a>
+        <a class="item tab" role="tab" href="#s-blue" id="t-blue" aria-controls="s-blue" aria-selected="false" tabindex="-1"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-plate"/></svg></span>Blue slips</a>
+        <a class="item tab" role="tab" href="#s-logbook" id="t-logbook" aria-controls="s-logbook" aria-selected="false" tabindex="-1"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-spanner"/></svg></span>Logbook servicing</a>
+        <a class="item tab" role="tab" href="#s-aircon" id="t-aircon" aria-controls="s-aircon" aria-selected="false" tabindex="-1"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-snow"/></svg></span>Air con</a>
+        <a class="item tab" role="tab" href="#s-tyres" id="t-tyres" aria-controls="s-tyres" aria-selected="false" tabindex="-1"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-wheel"/></svg></span>Tyres</a>
+        <a class="item tab" role="tab" href="#s-battery" id="t-battery" aria-controls="s-battery" aria-selected="false" tabindex="-1"><span class="ib"><svg class="ic" aria-hidden="true"><use href="#i-battery"/></svg></span>Batteries</a>
       </div>
       <div class="spanels rv">
-        <div class="spanel on" role="tabpanel" id="s-repairs" aria-labelledby="t-repairs">
-          <figure class="shot"><img src="../../assets/img/repairs-640.webp" srcset="../../assets/img/repairs-640.webp 640w, ../../assets/img/repairs-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:980px) 55vw, 480px" width="1200" height="800" alt="A mechanic tightening a bolt on an engine under a work lamp" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-          <div class="sbody"><p class="sno lbl">01 <small>/ 07</small></p><h3>All mechanical repairs</h3><p>If it's mechanical, bring it in. We also do defect clearances.</p><ul class="facts"><li>Engine</li><li>Brakes</li><li>Steering</li><li>Suspension</li><li>Defect clearances</li></ul></div>
+        <div class="card spanel on" role="tabpanel" id="s-repairs" aria-labelledby="t-repairs">
+          <figure class="shot"><img src="../../assets/img/repairs-640.webp" srcset="../../assets/img/repairs-640.webp 640w, ../../assets/img/repairs-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A mechanic tightening a bolt on an engine under a work lamp" loading="lazy" decoding="async"><span class="scanw"></span><span class="wid" aria-hidden="true"><span class="wl"><span>Engine</span><span>Brakes</span><span>Steering</span></span></span><figcaption class="ai">AI illustration</figcaption></figure>
+          <div class="sbody"><p class="sno">01 / 07</p><h3>All mechanical repairs</h3><p>If it's mechanical, bring it in. We also do defect clearances.</p><ul class="ticks"><li>Engine</li><li>Brakes</li><li>Steering</li><li>Suspension</li><li>Defect clearances</li></ul></div>
         </div>
-        <div class="spanel" role="tabpanel" id="s-pink" aria-labelledby="t-pink">
-          <figure class="shot"><img src="../../assets/img/pinkslip-640.webp" srcset="../../assets/img/pinkslip-640.webp 640w, ../../assets/img/pinkslip-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:980px) 55vw, 480px" width="1200" height="800" alt="A tread depth gauge pressed into a tyre" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-          <div class="sbody"><p class="sno lbl">02 <small>/ 07</small></p><h3>Pink slips</h3><p>The safety check you need to renew rego on most light vehicles over 5 years old.</p><ul class="facts"><li>Petrol, diesel and LPG vehicles</li><li>NSW maximum fee $52 for a light vehicle</li><li>Valid for 6 months</li></ul></div>
+        <div class="card spanel" role="tabpanel" id="s-pink" aria-labelledby="t-pink">
+          <figure class="shot"><img src="../../assets/img/pinkslip-640.webp" srcset="../../assets/img/pinkslip-640.webp 640w, ../../assets/img/pinkslip-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A tread depth gauge pressed into a tyre" loading="lazy" decoding="async"><span class="wid" aria-hidden="true"><span class="wl"><span>Tyres</span><span>Brakes</span><span>Lights</span></span></span><figcaption class="ai">AI illustration</figcaption></figure>
+          <div class="sbody"><p class="sno">02 / 07</p><h3>Pink slips</h3><p>The safety check you need to renew rego on most light vehicles over 5 years old.</p><ul class="ticks"><li>Petrol, diesel and LPG vehicles</li><li>NSW maximum fee $52 for a light vehicle</li><li>Valid for 6 months</li></ul></div>
         </div>
-        <div class="spanel" role="tabpanel" id="s-blue" aria-labelledby="t-blue">
-          <figure class="shot"><img src="../../assets/img/blueslip-640.webp" srcset="../../assets/img/blueslip-640.webp 640w, ../../assets/img/blueslip-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:980px) 55vw, 480px" width="1200" height="800" alt="A stamped vehicle identification plate" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-          <div class="sbody"><p class="sno lbl">03 <small>/ 07</small></p><h3>Blue slips</h3><p>A safety and identity check, for example when rego has been expired for more than 3 months or the car is from interstate.</p><ul class="facts"><li>NSW maximum fee $82 for a light vehicle</li><li>Valid for 42 days</li></ul></div>
+        <div class="card spanel" role="tabpanel" id="s-blue" aria-labelledby="t-blue">
+          <figure class="shot"><img src="../../assets/img/blueslip-640.webp" srcset="../../assets/img/blueslip-640.webp 640w, ../../assets/img/blueslip-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A stamped vehicle identification plate" loading="lazy" decoding="async"><span class="frame"></span><span class="wid" aria-hidden="true">Safety and identity check</span><figcaption class="ai">AI illustration</figcaption></figure>
+          <div class="sbody"><p class="sno">03 / 07</p><h3>Blue slips</h3><p>A safety and identity check, for example when rego has been expired for more than 3 months or the car is from interstate.</p><ul class="ticks"><li>NSW maximum fee $82 for a light vehicle</li><li>Valid for 42 days</li></ul></div>
         </div>
-        <div class="spanel" role="tabpanel" id="s-logbook" aria-labelledby="t-logbook">
-          <figure class="shot"><img src="../../assets/img/logbook-640.webp" srcset="../../assets/img/logbook-640.webp 640w, ../../assets/img/logbook-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:980px) 55vw, 480px" width="1200" height="800" alt="Fresh oil being poured into an engine" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-          <div class="sbody"><p class="sno lbl">04 <small>/ 07</small></p><h3>Logbook servicing</h3><p>Servicing to the schedule in your car's logbook. Bring the logbook with you.</p></div>
+        <div class="card spanel" role="tabpanel" id="s-logbook" aria-labelledby="t-logbook">
+          <figure class="shot"><img src="../../assets/img/logbook-640.webp" srcset="../../assets/img/logbook-640.webp 640w, ../../assets/img/logbook-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="Fresh oil being poured into an engine" loading="lazy" decoding="async"><span class="wid" aria-hidden="true"><span class="g"><span class="fbar"><i></i></span></span>To your logbook schedule</span><figcaption class="ai">AI illustration</figcaption></figure>
+          <div class="sbody"><p class="sno">04 / 07</p><h3>Logbook servicing</h3><p>Servicing to the schedule in your car's logbook. Bring the logbook with you.</p></div>
         </div>
-        <div class="spanel" role="tabpanel" id="s-aircon" aria-labelledby="t-aircon">
-          <figure class="shot"><img src="../../assets/img/aircon-640.webp" srcset="../../assets/img/aircon-640.webp 640w, ../../assets/img/aircon-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:980px) 55vw, 480px" width="1200" height="800" alt="Air conditioning pressure gauges connected to a car" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-          <div class="sbody"><p class="sno lbl">05 <small>/ 07</small></p><h3>Air con regas and repairs</h3><p>For air con that blows warm or doesn't cool like it used to.</p><ul class="facts"><li>Regas</li><li>Repairs</li></ul></div>
+        <div class="card spanel" role="tabpanel" id="s-aircon" aria-labelledby="t-aircon">
+          <figure class="shot"><img src="../../assets/img/aircon-640.webp" srcset="../../assets/img/aircon-640.webp 640w, ../../assets/img/aircon-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="Air conditioning pressure gauges connected to a car" loading="lazy" decoding="async"><span class="wid" aria-hidden="true"><span class="g"><span class="flow"><i></i><i></i><i></i></span></span>Regas and repairs</span><figcaption class="ai">AI illustration</figcaption></figure>
+          <div class="sbody"><p class="sno">05 / 07</p><h3>Air con regas and repairs</h3><p>For air con that blows warm or doesn't cool like it used to.</p><ul class="ticks"><li>Regas</li><li>Repairs</li></ul></div>
         </div>
-        <div class="spanel" role="tabpanel" id="s-tyres" aria-labelledby="t-tyres">
-          <figure class="shot"><img src="../../assets/img/tyres-640.webp" srcset="../../assets/img/tyres-640.webp 640w, ../../assets/img/tyres-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:980px) 55vw, 480px" width="1200" height="800" alt="A new tyre standing on the workshop floor" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-          <div class="sbody"><p class="sno lbl">06 <small>/ 07</small></p><h3>Tyres</h3><p>Have your tyre size handy when you call. It's printed on the side of the tyre.</p></div>
+        <div class="card spanel" role="tabpanel" id="s-tyres" aria-labelledby="t-tyres">
+          <figure class="shot"><img src="../../assets/img/tyres-640.webp" srcset="../../assets/img/tyres-640.webp 640w, ../../assets/img/tyres-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="A new tyre standing on the workshop floor" loading="lazy" decoding="async"><span class="wid" aria-hidden="true"><span class="g"><svg class="gauge" viewBox="0 0 46 28"><path d="M4 25a19 19 0 0 1 38 0" fill="none" stroke="#e4e3df" stroke-width="5" stroke-linecap="round"/><path d="M4 25a19 19 0 0 1 9-16" fill="none" stroke="#d9342b" stroke-width="5" stroke-linecap="round"/><path d="M33 9a19 19 0 0 1 9 16" fill="none" stroke="#2f9e5b" stroke-width="5" stroke-linecap="round"/><g class="nd"><path d="M22 25 23 9l1 16z" fill="#15171c"/><circle cx="23" cy="25" r="3" fill="#15171c"/></g></svg></span>Your tyre size</span><figcaption class="ai">AI illustration</figcaption></figure>
+          <div class="sbody"><p class="sno">06 / 07</p><h3>Tyres</h3><p>Have your tyre size handy when you call. It's printed on the side of the tyre.</p></div>
         </div>
-        <div class="spanel" role="tabpanel" id="s-battery" aria-labelledby="t-battery">
-          <figure class="shot"><img src="../../assets/img/battery-640.webp" srcset="../../assets/img/battery-640.webp 640w, ../../assets/img/battery-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:980px) 55vw, 480px" width="1200" height="800" alt="Jumper lead clamps on a car battery" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-          <div class="sbody"><p class="sno lbl">07 <small>/ 07</small></p><h3>Batteries</h3><p>Slow to start, or the battery light is on? Call us.</p></div>
+        <div class="card spanel" role="tabpanel" id="s-battery" aria-labelledby="t-battery">
+          <figure class="shot"><img src="../../assets/img/battery-640.webp" srcset="../../assets/img/battery-640.webp 640w, ../../assets/img/battery-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 52px), (max-width:980px) 90vw, 840px" width="1200" height="800" alt="Jumper lead clamps on a car battery" loading="lazy" decoding="async"><span class="wid" aria-hidden="true"><span class="g"><span class="batt"><i></i><i></i><i></i><i></i></span></span>Batteries</span><figcaption class="ai">AI illustration</figcaption></figure>
+          <div class="sbody"><p class="sno">07 / 07</p><h3>Batteries</h3><p>Slow to start, or the battery light is on? Call us.</p></div>
         </div>
+        <div class="sdots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="break" id="break" role="img" aria-label="A new tyre on an alloy wheel on a workshop floor. Quality work guaranteed.">
-  <img src="../../assets/img/tyres-1200.webp" srcset="../../assets/img/tyres-640.webp 640w, ../../assets/img/tyres-1200.webp 1200w" sizes="100vw" width="1200" height="800" loading="lazy" decoding="async" alt="">
-  <p class="break-line" aria-hidden="true"><span>Quality work</span> <span>guaranteed</span></p>
-  <span class="ai">AI illustration</span>
+<section class="sec makes" id="makes" aria-labelledby="makes-h" hidden>
+  <div class="sec__head rv">
+    <h2 id="makes-h">Servicing all makes, including</h2>
+  </div>
+  <div class="marquee" tabindex="0" aria-label="Makes we service. Hover or focus to pause.">
+    <ul class="mq" id="mq" aria-label="Makes"></ul>
+    <ul class="mq" id="mq2" aria-hidden="true"></ul>
+  </div>
+</section>
+
+<div class="sec">
+  <div class="wrap">
+    <div class="break rv" id="break" role="img" aria-label="A new tyre on an alloy wheel on a workshop floor. Quality work guaranteed.">
+      <img src="../../assets/img/tyres-1200.webp" srcset="../../assets/img/tyres-640.webp 640w, ../../assets/img/tyres-1200.webp 1200w" sizes="(max-width:1228px) calc(100vw - 32px), 1180px" width="1200" height="800" loading="lazy" decoding="async" alt="">
+      <p class="break-line" aria-hidden="true"><span>Quality work</span> <span>guaranteed</span></p>
+      <span class="ai">AI illustration</span>
+    </div>
+  </div>
 </div>
 
-<section class="sec alt" id="inspect" aria-labelledby="ins-h">
+<section class="sec" id="inspect" aria-labelledby="ins-h">
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="ins-h">Walk around a pink slip</h2>
-      <p>Turn the car and tap a point to see what a pink slip inspection looks at.</p>
+      <p>Turn the car and tap a point to see what a pink slip inspection looks at. It checks that the car is safe to stay on the road.</p>
     </div>
-    <div class="bay" id="bay3d">
-      <div class="bay-well">
-        <div class="bay-stage" tabindex="0" aria-label="3D car. Drag or use the arrow keys to turn it.">
-          <span class="giant" aria-hidden="true">PINK SLIP</span>
-          <div class="bay-fallback"><img data-src="../../assets/img/pinkslip-1200.webp" data-srcset="../../assets/img/pinkslip-640.webp 640w, ../../assets/img/pinkslip-1200.webp 1200w" sizes="(max-width:1000px) 92vw, 1150px" width="1200" height="800" decoding="async" alt="A tread depth gauge checking a tyre during a safety inspection"><span class="ai">AI illustration</span></div>
-          <button class="pin" type="button" data-pt="tyres" aria-label="Tyres"><span>Tyres</span></button>
-          <button class="pin" type="button" data-pt="brakes" aria-label="Brakes"><span>Brakes</span></button>
-          <button class="pin" type="button" data-pt="steering" aria-label="Steering and suspension"><span>Steering and suspension</span></button>
-          <button class="pin" type="button" data-pt="lights" aria-label="Lights and indicators"><span>Lights and indicators</span></button>
-          <button class="pin" type="button" data-pt="windscreen" aria-label="Windscreen and wipers"><span>Windscreen and wipers</span></button>
-          <button class="pin" type="button" data-pt="seatbelts" aria-label="Seatbelts"><span>Seatbelts</span></button>
-          <button class="pin" type="button" data-pt="body" aria-label="Body and rust"><span>Body and rust</span></button>
-          <button class="pin" type="button" data-pt="exhaust" aria-label="Exhaust"><span>Exhaust</span></button>
-          <button class="pin" type="button" data-pt="lpg" aria-label="LPG system"><span>LPG system</span></button>
-          <span class="bay-hint">Drag to turn the car</span>
-        </div>
+    <div class="bay rv" id="bay3d">
+      <div class="bay-stage" tabindex="0" aria-label="3D car. Drag or use the arrow keys to turn it.">
+        <span class="giant" aria-hidden="true">PINK SLIP</span>
+        <div class="bay-fallback"><img data-src="../../assets/img/pinkslip-1200.webp" data-srcset="../../assets/img/pinkslip-640.webp 640w, ../../assets/img/pinkslip-1200.webp 1200w" sizes="(max-width:980px) 92vw, 700px" width="1200" height="800" decoding="async" alt="A tread depth gauge checking a tyre during a safety inspection"><span class="ai">AI illustration</span></div>
+        <button class="pin" type="button" data-pt="tyres" aria-label="Tyres"><span>Tyres</span></button>
+        <button class="pin" type="button" data-pt="brakes" aria-label="Brakes"><span>Brakes</span></button>
+        <button class="pin" type="button" data-pt="steering" aria-label="Steering and suspension"><span>Steering and suspension</span></button>
+        <button class="pin" type="button" data-pt="lights" aria-label="Lights and indicators"><span>Lights and indicators</span></button>
+        <button class="pin" type="button" data-pt="windscreen" aria-label="Windscreen and wipers"><span>Windscreen and wipers</span></button>
+        <button class="pin" type="button" data-pt="seatbelts" aria-label="Seatbelts"><span>Seatbelts</span></button>
+        <button class="pin" type="button" data-pt="body" aria-label="Body and rust"><span>Body and rust</span></button>
+        <button class="pin" type="button" data-pt="exhaust" aria-label="Exhaust"><span>Exhaust</span></button>
+        <button class="pin" type="button" data-pt="lpg" aria-label="LPG system"><span>LPG system</span></button>
+        <span class="bay-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1-6 6h-.6a5 5 0 0 1-4.2-2.3L4.5 15a1.5 1.5 0 0 1 2.4-1.8L9 15"/></svg>Drag to turn the car</span>
       </div>
-      <div class="bay-panel">
-        <div class="pt-keys" role="group" aria-label="Check points">
+      <div class="bay-side">
+        <div class="pt-card" aria-live="polite">
+          <div class="pt-info" data-pt="tyres"><span class="k">Pink slip check</span><h3>Tyres</h3><p>Tread depth, cuts, bulges and damage, and that the tyres suit the car.</p></div>
+          <div class="pt-info" data-pt="brakes" hidden><span class="k">Pink slip check</span><h3>Brakes</h3><p>That the car pulls up straight, and the brakes and handbrake work as they should.</p></div>
+          <div class="pt-info" data-pt="steering" hidden><span class="k">Pink slip check</span><h3>Steering and suspension</h3><p>Play in the steering, worn joints, leaking shocks and anything else that affects how the car handles.</p></div>
+          <div class="pt-info" data-pt="lights" hidden><span class="k">Pink slip check</span><h3>Lights and indicators</h3><p>Headlights, brake lights, indicators and reversing lights all working, with lenses intact.</p></div>
+          <div class="pt-info" data-pt="windscreen" hidden><span class="k">Pink slip check</span><h3>Windscreen and wipers</h3><p>Cracks or chips in the driver's view, and wipers and washers that clear the glass.</p></div>
+          <div class="pt-info" data-pt="seatbelts" hidden><span class="k">Pink slip check</span><h3>Seatbelts</h3><p>Every belt latches, retracts and isn't frayed or cut.</p></div>
+          <div class="pt-info" data-pt="body" hidden><span class="k">Pink slip check</span><h3>Body and rust</h3><p>Rust or damage that weakens the body or leaves sharp edges.</p></div>
+          <div class="pt-info" data-pt="exhaust" hidden><span class="k">Pink slip check</span><h3>Exhaust</h3><p>Leaks, loose mounts and too much smoke or noise.</p></div>
+          <div class="pt-info" data-pt="lpg" hidden><span class="k">Pink slip check</span><h3>LPG system</h3><p>On LPG cars, the tank, lines and fittings. We do pink slips for petrol, diesel and LPG.</p></div>
+        </div>
+        <p class="bay-lbl" id="pt-lbl">What gets checked</p>
+        <div class="pt-keys" role="group" aria-labelledby="pt-lbl">
           <button type="button" data-pt="tyres" aria-pressed="true">Tyres</button>
           <button type="button" data-pt="brakes" aria-pressed="false">Brakes</button>
           <button type="button" data-pt="steering" aria-pressed="false">Steering and suspension</button>
@@ -749,148 +910,98 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
           <button type="button" data-pt="exhaust" aria-pressed="false">Exhaust</button>
           <button type="button" data-pt="lpg" aria-pressed="false">LPG system</button>
         </div>
-        <div class="pt-card" aria-live="polite">
-          <div class="pt-info" data-pt="tyres"><span class="lbl">Pink slip check</span><h3>Tyres</h3><p>Tread depth, cuts, bulges and damage, and that the tyres suit the car.</p></div>
-          <div class="pt-info" data-pt="brakes" hidden><span class="lbl">Pink slip check</span><h3>Brakes</h3><p>That the car pulls up straight, and the brakes and handbrake work as they should.</p></div>
-          <div class="pt-info" data-pt="steering" hidden><span class="lbl">Pink slip check</span><h3>Steering and suspension</h3><p>Play in the steering, worn joints, leaking shocks and anything else that affects how the car handles.</p></div>
-          <div class="pt-info" data-pt="lights" hidden><span class="lbl">Pink slip check</span><h3>Lights and indicators</h3><p>Headlights, brake lights, indicators and reversing lights all working, with lenses intact.</p></div>
-          <div class="pt-info" data-pt="windscreen" hidden><span class="lbl">Pink slip check</span><h3>Windscreen and wipers</h3><p>Cracks or chips in the driver's view, and wipers and washers that clear the glass.</p></div>
-          <div class="pt-info" data-pt="seatbelts" hidden><span class="lbl">Pink slip check</span><h3>Seatbelts</h3><p>Every belt latches, retracts and isn't frayed or cut.</p></div>
-          <div class="pt-info" data-pt="body" hidden><span class="lbl">Pink slip check</span><h3>Body and rust</h3><p>Rust or damage that weakens the body or leaves sharp edges.</p></div>
-          <div class="pt-info" data-pt="exhaust" hidden><span class="lbl">Pink slip check</span><h3>Exhaust</h3><p>Leaks, loose mounts and too much smoke or noise.</p></div>
-          <div class="pt-info" data-pt="lpg" hidden><span class="lbl">Pink slip check</span><h3>LPG system</h3><p>On LPG cars, the tank, lines and fittings. We do pink slips for petrol, diesel and LPG.</p></div>
+        <div class="ps" id="ps">
+          <p><span class="k">Safety check · light vehicle</span>If something fails, we tell you what it was. Have it fixed and checked again here within 14 days and there's no second inspection fee.</p>
+          <svg viewBox="0 0 240 120" role="img" aria-label="Example stamp reading Passed, example only">
+            <g class="stamp-in"><g filter="url(#ink)">
+              <rect x="5" y="5" width="230" height="110" rx="14" fill="none" stroke="currentColor" stroke-width="6"/>
+              <g fill="currentColor" style="font-family:'Inter Tight',Arial,sans-serif;font-weight:800" text-anchor="middle">
+                <text x="120" y="70" font-size="50" letter-spacing="3">PASSED</text>
+                <rect x="30" y="82" width="180" height="2.5"/>
+                <text x="120" y="103" font-size="15" letter-spacing="4">EXAMPLE ONLY</text>
+              </g>
+            </g></g>
+          </svg>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec lamp" id="pink" aria-labelledby="pink-h">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <h2 id="pink-h">What a pink slip looks at</h2>
-      <p>The inspection checks that the car is safe to stay on the road. The sheet below is an example of what gets checked, not a result for your car.</p>
-    </div>
-    <div class="board rv">
-      <div class="ps" id="ps">
-        <div class="ps-top lbl"><span>Safety check · light vehicle</span><span>Example only</span></div>
-        <ul class="ps-list">
-          <li><span class="cb"><svg class="tick" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" style="--d:.1s" d="M4 15c3 2 5 5 7 8 4-8 9-15 15-21"/></svg></span><div><b>Tyres</b><span>Tread depth, cuts, bulges and damage.</span></div></li>
-          <li><span class="cb"><svg class="tick" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" style="--d:.32s" d="M4 15c3 2 5 5 7 8 4-8 9-15 15-21"/></svg></span><div><b>Brakes</b><span>The car pulls up straight, and the handbrake holds.</span></div></li>
-          <li><span class="cb"><svg class="tick" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" style="--d:.54s" d="M4 15c3 2 5 5 7 8 4-8 9-15 15-21"/></svg></span><div><b>Steering and suspension</b><span>Play in the steering, worn joints and leaking shocks.</span></div></li>
-          <li><span class="cb"><svg class="tick" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" style="--d:.76s" d="M4 15c3 2 5 5 7 8 4-8 9-15 15-21"/></svg></span><div><b>Lights</b><span>Headlights, brake lights, indicators and reversing lights.</span></div></li>
-          <li><span class="cb"><svg class="tick" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" style="--d:.98s" d="M4 15c3 2 5 5 7 8 4-8 9-15 15-21"/></svg></span><div><b>Windscreen and wipers</b><span>Damage in the driver's view, and wipers that clear the glass.</span></div></li>
-          <li><span class="cb"><svg class="tick" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" style="--d:1.2s" d="M4 15c3 2 5 5 7 8 4-8 9-15 15-21"/></svg></span><div><b>Seatbelts</b><span>Every belt latches, retracts and isn't frayed.</span></div></li>
-          <li><span class="cb"><svg class="tick" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" style="--d:1.42s" d="M4 15c3 2 5 5 7 8 4-8 9-15 15-21"/></svg></span><div><b>Body and rust</b><span>Rust or damage that weakens the body.</span></div></li>
-          <li><span class="cb"><svg class="tick" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" style="--d:1.64s" d="M4 15c3 2 5 5 7 8 4-8 9-15 15-21"/></svg></span><div><b>Exhaust</b><span>Leaks, loose mounts and too much smoke or noise.</span></div></li>
-          <li><span class="cb"><svg class="tick" viewBox="0 0 28 28" aria-hidden="true"><path pathLength="1" style="--d:1.86s" d="M4 15c3 2 5 5 7 8 4-8 9-15 15-21"/></svg></span><div><b>LPG system</b><span>On LPG cars only: the tank, lines and fittings.</span></div></li>
-        </ul>
-        <div class="ps-foot">
-          <p>If something fails, we tell you what it was. Have it fixed and checked again here within 14 days and there's no second inspection fee.</p>
-          <div class="ps-stamp">
-            <svg viewBox="0 0 240 120" role="img" aria-label="Example stamp reading Passed, example only">
-              <g class="stamp-in"><g filter="url(#ink)">
-                <rect x="5" y="5" width="230" height="110" rx="12" fill="none" stroke="currentColor" stroke-width="6"/>
-                <g fill="currentColor" style="font-family:Archivo,'Arial Narrow',sans-serif;font-weight:700;font-stretch:80%" text-anchor="middle">
-                  <text x="120" y="72" font-size="56" letter-spacing="5">PASSED</text>
-                  <rect x="30" y="82" width="180" height="2.5"/>
-                  <text x="120" y="103" font-size="15" letter-spacing="4">EXAMPLE ONLY</text>
-                </g>
-              </g></g>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec paper cv" id="slips" aria-labelledby="slip-h">
+<section class="sec" id="slips" aria-labelledby="slip-h">
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="slip-h">Pink slip or blue slip</h2>
       <p>Both are NSW inspections for rego. Here's which one you need and the most a station can charge.</p>
     </div>
-    <table class="slips rv">
-      <caption class="vh">Pink slip and blue slip compared</caption>
-      <thead><tr><th scope="col"><span class="vh">Question</span></th><th scope="col">Pink slip</th><th scope="col">Blue slip</th></tr></thead>
-      <tbody>
-        <tr><th scope="row">What it is</th><td data-l="Pink slip">A safety check</td><td data-l="Blue slip">A safety and identity check</td></tr>
-        <tr><th scope="row">When you need it</th><td data-l="Pink slip">Renewing rego on most light vehicles over five years old, counted from the compliance plate date</td><td data-l="Blue slip">Rego expired more than three months ago, a vehicle from interstate or overseas, no plates, or a written-off vehicle being re-registered</td></tr>
-        <tr><th scope="row">Report valid for</th><td data-l="Pink slip">6 months</td><td data-l="Blue slip">42 days</td></tr>
-        <tr class="fee"><th scope="row">Most a station can charge</th><td data-l="Pink slip">$52<small>Light vehicle, from 1 July 2026</small></td><td data-l="Blue slip">$82<small>Light vehicle, from 1 July 2026</small></td></tr>
-      </tbody>
-    </table>
-    <div class="recheck rv">
-      <p>If the car doesn't pass, have it fixed and checked again here within 14 days and there's no second inspection fee.</p>
+    <div class="slip-verdict" id="slip-verdict" hidden>
+      <div><strong id="slip-verdict-t"></strong><p>A guide only. Your rego renewal notice says whether you need an inspection.</p></div>
+      <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call to book</a>
+    </div>
+    <div class="slips">
+      <article class="card slip slip--pink rv" id="slip-pink">
+        <span class="slip__car">Your car</span>
+        <div class="slip__top">
+          <div class="slip__name"><span class="slip__ic"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg></span><div><h3>Pink slip</h3><p class="slip__what">A safety check</p></div></div>
+          <p class="fee"><b>$52</b><small>Most a station can charge. Light vehicle, from 1 July 2026</small></p>
+        </div>
+        <dl>
+          <div><dt>When you need it</dt><dd>Renewing rego on most light vehicles over five years old, counted from the compliance plate date</dd></div>
+          <div><dt>Report valid for</dt><dd>6 months</dd></div>
+        </dl>
+      </article>
+      <article class="card slip slip--blue rv" id="slip-blue">
+        <span class="slip__car">Your car</span>
+        <div class="slip__top">
+          <div class="slip__name"><span class="slip__ic"><svg class="ic" aria-hidden="true"><use href="#i-plate"/></svg></span><div><h3>Blue slip</h3><p class="slip__what">A safety and identity check</p></div></div>
+          <p class="fee"><b>$82</b><small>Most a station can charge. Light vehicle, from 1 July 2026</small></p>
+        </div>
+        <dl>
+          <div><dt>When you need it</dt><dd>Rego expired more than three months ago, a vehicle from interstate or overseas, no plates, or a written-off vehicle being re-registered</dd></div>
+          <div><dt>Report valid for</dt><dd>42 days</dd></div>
+        </dl>
+      </article>
+    </div>
+    <div class="slip-foot rv">
+      <p class="re">If the car doesn't pass, have it fixed and checked again here within 14 days and there's no second inspection fee.</p>
       <p class="src">Source: NSW Government, <a href="https://www.nsw.gov.au/driving-boating-and-transport/vehicle-registration/renewing-vehicle-registration/safety-checks-and-vehicle-inspections" rel="noopener">safety checks and vehicle inspections</a> and <a href="https://www.nsw.gov.au/driving-boating-and-transport/vehicle-registration/fees-concessions-and-forms/vehicle-safety-check-and-inspection-fees" rel="noopener">inspection fees</a>. Fees as set from 1 July 2026. Your rego renewal notice says whether you need an inspection.</p>
     </div>
   </div>
 </section>
 
-<section class="sec cv" id="how" aria-labelledby="how-h">
+<section class="sec" id="how" aria-labelledby="how-h">
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="how-h">How a job goes</h2>
       <p>Most jobs follow the same four legs.</p>
     </div>
-    <ol class="route rv">
-      <li><span class="node" aria-hidden="true"><svg class="ic"><use href="#i-phone"/></svg></span><span class="leg lbl">Leg 1</span><h3>Call</h3><p>Ring <a href="tel:+61287985715">(02) 8798 5715</a> or Balli on <a href="tel:+61433597181">0433 597 181</a>. Tell us the car and what it's doing.</p></li>
-      <li><span class="node" aria-hidden="true"><svg class="ic"><use href="#i-pin"/></svg></span><span class="leg lbl">Leg 2</span><h3>Drop it at Unit 4B</h3><p>4 Homepride Avenue, Warwick Farm, during opening hours.</p></li>
-      <li><span class="node" aria-hidden="true"><svg class="ic"><use href="#i-spanner"/></svg></span><span class="leg lbl">Leg 3</span><h3>We do the work</h3><p>Repairs, servicing or the inspection you booked in for.</p></li>
-      <li><span class="node" aria-hidden="true"><svg class="ic"><use href="#i-key"/></svg></span><span class="leg lbl">Leg 4</span><h3>Pick it up</h3><p>Collect your keys from Unit 4B and drive home.</p></li>
+    <ol class="card steps rv">
+      <li><span class="sn" aria-hidden="true">1</span><h3>Call</h3><p>Ring <a href="tel:+61287985715">(02) 8798 5715</a> or Balli on <a href="tel:+61433597181">0433 597 181</a>. Tell us the car and what it's doing.</p></li>
+      <li><span class="sn" aria-hidden="true">2</span><h3>Drop it at Unit 4B</h3><p>4 Homepride Avenue, Warwick Farm, during opening hours.</p></li>
+      <li><span class="sn" aria-hidden="true">3</span><h3>We do the work</h3><p>Repairs, servicing or the inspection you booked in for.</p></li>
+      <li><span class="sn" aria-hidden="true">4</span><h3>Pick it up</h3><p>Collect your keys from Unit 4B and drive home.</p></li>
     </ol>
   </div>
 </section>
 
-<section class="sec alt cv" id="rating" aria-labelledby="rate-h">
-  <div class="wrap rate rv">
-    <svg class="rgauge" viewBox="0 0 400 230" aria-hidden="true" focusable="false">
-      <path class="ring" d="M10.1 206.6A190 190 0 1 1 389.9 206.6"/>
-      <path class="band" d="M20 200A180 180 0 0 1 378.6 177.4"/>
-      <path class="tk tk-maj" d="M30 200L52 200M62.5 100.1L80.3 113M147.5 38.3L154.3 59.2M252.5 38.3L245.7 59.2M337.5 100.1L319.7 113M370 200L348 200"/>
-      <path class="tk" d="M38.3 147.5L47.8 150.6M100.1 62.5L106 70.6M200 30L200 40M299.9 62.5L294 70.6M361.7 147.5L352.2 150.6"/>
-      <g class="nums"><text x="72" y="209">0</text><text x="96.4" y="133.8">1</text><text x="160.4" y="87.3">2</text><text x="239.6" y="87.3">3</text><text x="303.6" y="133.8">4</text><text x="328" y="209">5</text></g>
-      <g class="needle" style="transform:rotate(82.8deg)"><path d="M196.5 214L199 50h2l2.5 164z"/><circle class="cap" cx="200" cy="200" r="15"/></g>
-    </svg>
-    <div class="rate__t">
-      <h2 id="rate-h" class="vh">Rating</h2>
-      <p class="rbig">4.8<span> / 5</span></p>
-      <p>From 57 reviews on Birdeye, as at 15 November 2026.</p>
-      <a class="tl" href="https://search.google.com/local/reviews?placeid=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Read the reviews</a>
-    </div>
-  </div>
-</section>
-
-<section class="sec cv" id="faq" aria-labelledby="faq-h">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <h2 id="faq-h">Common questions</h2>
-    </div>
-    <div class="faq">
-      <div class="faq__item"><h3><button type="button" id="q1" aria-expanded="false" aria-controls="a1">What's the difference between a pink slip and a blue slip?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a1" role="region" aria-labelledby="q1"><div><p>A pink slip is the safety check you need to renew rego on most light vehicles over five years old. A blue slip is a safety and identity check you need to register a vehicle, for example when the rego expired more than three months ago or the vehicle came from interstate.</p></div></div></div>
-      <div class="faq__item"><h3><button type="button" id="q2" aria-expanded="false" aria-controls="a2">Do you do pink slips for LPG cars?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a2" role="region" aria-labelledby="q2"><div><p>Yes. We do pink slips for petrol, diesel and LPG vehicles.</p></div></div></div>
-      <div class="faq__item"><h3><button type="button" id="q3" aria-expanded="false" aria-controls="a3">How much is a pink slip or a blue slip?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a3" role="region" aria-labelledby="q3"><div><p>The NSW Government sets the most a station can charge. For a light vehicle, from 1 July 2026, that's $52 for a pink slip and $82 for a blue slip.</p></div></div></div>
-      <div class="faq__item"><h3><button type="button" id="q4" aria-expanded="false" aria-controls="a4">What happens if the car fails?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a4" role="region" aria-labelledby="q4"><div><p>Get it fixed and checked again here within 14 days and there's no second inspection fee.</p></div></div></div>
-      <div class="faq__item"><h3><button type="button" id="q5" aria-expanded="false" aria-controls="a5">How long is the report valid?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a5" role="region" aria-labelledby="q5"><div><p>A pink slip report is valid for six months. A blue slip report is valid for 42 days.</p></div></div></div>
-      <div class="faq__item"><h3><button type="button" id="q6" aria-expanded="false" aria-controls="a6">Are you open on Saturdays?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a6" role="region" aria-labelledby="q6"><div><p>Yes, from 9am to 2pm. On weekdays we're open from 9am to 5pm. We're closed on Sundays.</p></div></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec alt cv" id="visit" aria-labelledby="visit-h">
+<section class="sec" id="visit" aria-labelledby="visit-h">
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="visit-h">Hours and address</h2>
-      <p class="status" data-status role="status"><span class="dot" aria-hidden="true"></span><span data-status-text>Monday to Friday 9am to 5pm, Saturday 9am to 2pm, closed Sunday</span></p>
+      <p>Six days a week at Unit 4B, 4 Homepride Avenue, Warwick Farm.</p>
     </div>
-    <div class="visit">
-      <ul class="hours rv" aria-label="Opening hours">
-        <li data-days="1,2,3,4,5"><span class="today-tag">Today</span><div class="np" role="img" aria-label="Monday to Friday, 9am to 5pm"><span class="np-f"><i class="bolt l"></i><i class="bolt r"></i><span class="np-c">9 – 5</span><span class="np-s">MONDAY TO FRIDAY</span></span></div></li>
-        <li data-days="6"><span class="today-tag">Today</span><div class="np" role="img" aria-label="Saturday, 9am to 2pm"><span class="np-f"><i class="bolt l"></i><i class="bolt r"></i><span class="np-c">9 – 2</span><span class="np-s">SATURDAY</span></span></div></li>
-        <li data-days="0" class="closed"><span class="today-tag">Today</span><div class="np dark" role="img" aria-label="Sunday, closed"><span class="np-f"><i class="bolt l"></i><i class="bolt r"></i><span class="np-c">CLOSED</span><span class="np-s">SUNDAY</span></span></div></li>
-      </ul>
-      <div class="place rv">
+    <div class="bento">
+      <div class="card b-hours lift rv">
+        <h3>Opening hours</h3>
+        <p class="status" data-status role="status"><span class="dot" aria-hidden="true"></span><span data-status-text>Monday to Friday 9am to 5pm, Saturday 9am to 2pm, closed Sunday</span></p>
+        <ul class="hours" aria-label="Opening hours">
+          <li data-days="1,2,3,4,5"><span class="d">Monday to Friday<span class="today-tag">Today</span></span><span class="t">9am to 5pm</span></li>
+          <li data-days="6"><span class="d">Saturday<span class="today-tag">Today</span></span><span class="t">9am to 2pm</span></li>
+          <li data-days="0" class="closed"><span class="d">Sunday<span class="today-tag">Today</span></span><span class="t">Closed</span></li>
+        </ul>
+        <div class="tbar" aria-hidden="true"><p class="tbar__t"></p><div class="tbar__wrap"><div class="tbar__track"><i class="tbar__open"></i></div><span class="tbar__now"><b></b></span></div><div class="tbar__lbl"><span>7am</span><span>1pm</span><span>7pm</span></div></div>
+      </div>
+      <div class="card b-place lift rv">
         <h3>Find the workshop</h3>
         <address>Unit 4B, 4 Homepride Avenue<br>Warwick Farm NSW 2170</address>
         <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Get directions</a>
@@ -899,19 +1010,60 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
           <li><span>Balli, mobile</span><a href="tel:+61433597181">0433 597 181</a></li>
         </ul>
       </div>
+      <div class="card b-rate lift rv">
+        <svg class="rgauge" viewBox="0 0 400 230" aria-hidden="true" focusable="false">
+          <path class="ring" d="M10.1 206.6A190 190 0 1 1 389.9 206.6"/>
+          <path class="band" d="M20 200A180 180 0 0 1 378.6 177.4"/>
+          <path class="tk tk-maj" d="M30 200L52 200M62.5 100.1L80.3 113M147.5 38.3L154.3 59.2M252.5 38.3L245.7 59.2M337.5 100.1L319.7 113M370 200L348 200"/>
+          <path class="tk" d="M38.3 147.5L47.8 150.6M100.1 62.5L106 70.6M200 30L200 40M299.9 62.5L294 70.6M361.7 147.5L352.2 150.6"/>
+          <g class="needle"><path d="M194 214L199 60h2l5 154z"/><circle class="cap" cx="200" cy="200" r="16"/></g>
+        </svg>
+        <div>
+          <h3 class="vh">Rating</h3>
+          <p class="rbig">4.8<span> / 5</span></p>
+          <p>From 57 reviews on Birdeye, as at 15 November 2026.</p>
+          <a class="tl" href="https://search.google.com/local/reviews?placeid=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Read the reviews</a>
+        </div>
+      </div>
+      <div class="card b-fuel lift rv">
+        <h3>Petrol, diesel and LPG</h3>
+        <p>We do pink slips for petrol, diesel and LPG vehicles.</p>
+        <div class="fi"><span class="chip">Petrol</span><span class="chip">Diesel</span><span class="chip">LPG</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="callsec cv" id="call" aria-labelledby="call-h">
-  <div class="shutter" aria-hidden="true"></div>
-  <div class="wrap final">
-    <figure class="shot ph"><img src="../../assets/img/hero-800.webp" srcset="../../assets/img/hero-800.webp 800w, ../../assets/img/hero-1536.webp 1536w" sizes="(max-width:980px) calc(100vw - 32px), 600px" width="1536" height="864" alt="A red car raised on a hoist in a workshop at night" loading="lazy" decoding="async"><figcaption class="ai">AI illustration</figcaption></figure>
-    <div class="final-t rv">
+<section class="sec" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <h2 id="faq-h">Common questions</h2>
+    </div>
+    <div class="faq rv">
+      <div class="faq__col">
+        <div class="faq__item"><h3><button type="button" id="q1" aria-expanded="false" aria-controls="a1">What's the difference between a pink slip and a blue slip?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a1" role="region" aria-labelledby="q1"><div><p>A pink slip is the safety check you need to renew rego on most light vehicles over five years old. A blue slip is a safety and identity check you need to register a vehicle, for example when the rego expired more than three months ago or the vehicle came from interstate.</p></div></div></div>
+        <div class="faq__item"><h3><button type="button" id="q2" aria-expanded="false" aria-controls="a2">Do you do pink slips for LPG cars?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a2" role="region" aria-labelledby="q2"><div><p>Yes. We do pink slips for petrol, diesel and LPG vehicles.</p></div></div></div>
+        <div class="faq__item"><h3><button type="button" id="q3" aria-expanded="false" aria-controls="a3">How much is a pink slip or a blue slip?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a3" role="region" aria-labelledby="q3"><div><p>The NSW Government sets the most a station can charge. For a light vehicle, from 1 July 2026, that's $52 for a pink slip and $82 for a blue slip.</p></div></div></div>
+      </div>
+      <div class="faq__col">
+        <div class="faq__item"><h3><button type="button" id="q4" aria-expanded="false" aria-controls="a4">What happens if the car fails?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a4" role="region" aria-labelledby="q4"><div><p>Get it fixed and checked again here within 14 days and there's no second inspection fee.</p></div></div></div>
+        <div class="faq__item"><h3><button type="button" id="q5" aria-expanded="false" aria-controls="a5">How long is the report valid?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a5" role="region" aria-labelledby="q5"><div><p>A pink slip report is valid for six months. A blue slip report is valid for 42 days.</p></div></div></div>
+        <div class="faq__item"><h3><button type="button" id="q6" aria-expanded="false" aria-controls="a6">Are you open on Saturdays?<span class="pm" aria-hidden="true"></span></button></h3><div class="faq__a" id="a6" role="region" aria-labelledby="q6"><div><p>Yes, from 9am to 2pm. On weekdays we're open from 9am to 5pm. We're closed on Sundays.</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="call" aria-labelledby="call-h">
+  <div class="wrap">
+    <div class="callcard rv">
       <h2 id="call-h">Light on, or rego due?</h2>
       <p>Call the workshop and tell us what the car is doing. We'll tell you when to bring it in.</p>
-      <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
-      <a class="tl" href="tel:+61433597181">Or Balli's mobile, 0433 597 181</a>
+      <div class="callcard__acts">
+        <a class="btn btn--ink" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call (02) 8798 5715</a>
+        <a class="tl" href="tel:+61433597181">Or Balli's mobile, 0433 597 181</a>
+        <a class="tl" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Get directions</a>
+      </div>
     </div>
   </div>
 </section>
@@ -919,7 +1071,7 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
 
 <footer class="foot">
   <div class="wrap">
-    <a class="plate" href="#top">Shine Auto Repairs</a>
+    <a class="brand" href="#top"><i aria-hidden="true"></i>Shine <span>Auto Repairs</span></a>
     <address><a href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Unit 4B, 4 Homepride Avenue, Warwick Farm NSW 2170</a></address>
     <nav class="foot__ph" aria-label="Phone numbers"><a href="tel:+61287985715">Workshop (02) 8798 5715</a><a href="tel:+61433597181">Balli 0433 597 181</a></nav>
     <p>Mon to Fri 9am to 5pm, Sat 9am to 2pm, Sun closed</p>
@@ -932,35 +1084,43 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
 </footer>
 
 <nav class="qbar" aria-label="Quick contact">
-  <a class="btn" href="tel:+61287985715">Call</a>
-  <a class="btn btn--dark" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener">Directions</a>
+  <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+  <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Directions</a>
 </nav>
 
 <script>
 (function(){
+  // Makes from the client's sign/card: fill in (to be confirmed with Shine before launch). Text only, no logos.
+  const MAKES = ["Toyota","Mazda","Kia","Nissan","Volkswagen","BMW","Mercedes-Benz","Audi","Lexus","Volvo","Jeep","Tesla","BYD"];
   var root=document.documentElement;
   var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
   var $=function(s,c){return (c||document).querySelector(s)};
   var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
   var hasIO="IntersectionObserver" in window;
 
-  // One observer system: seen(el, fn, threshold) runs fn once when el comes into view
-  var obs={};
   function seen(el,fn,thr){
     if(!el)return;
     if(!hasIO){fn(el);return}
-    var k=String(thr||0);
-    if(!obs[k])obs[k]=new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){o.unobserve(e.target);e.target._seen(e.target)}})},{threshold:thr||0,rootMargin:"0px 0px -10% 0px"});
-    el._seen=fn;obs[k].observe(el);
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){o.unobserve(e.target);fn(e.target)}})},{threshold:thr||0,rootMargin:"0px 0px -10% 0px"}).observe(el);
   }
   function addIn(el){el.classList.add("in")}
 
   // Reveals: CSS scroll-driven where supported, observer fallback otherwise
   var hasSDA=window.CSS&&CSS.supports&&CSS.supports("animation-timeline: view()");
-  if(!reduce&&!hasSDA&&hasIO){root.classList.add("io");$$(".rv,.ph").forEach(function(el){seen(el,addIn,0)})}
-  // Photo break line rises in; pink slip ticks draw and the stamp lands
-  seen($(".break"),addIn,.45);
-  seen($("#ps"),addIn,.2);
+  if(!reduce&&!hasSDA&&hasIO){root.classList.add("io");$$(".rv").forEach(function(el){seen(el,addIn,0)})}
+  seen($("#ps"),addIn,.3);
+
+  // Makes carousel: shown only when the list has names
+  var makes=window.__TEST_MAKES||MAKES;
+  if(makes.length){
+    var li=makes.map(function(m){return '<li class="mk'+(m.length<=4?' short':'')+'">'+m.replace(/[<>&]/g,"")+'</li>'}).join("");
+    $("#mq").innerHTML=li;$("#mq2").innerHTML=li;$("#makes").hidden=false;
+  }
+
+  // Header: dark while over the hero, light over the page
+  var hero=$(".hero"),tick=false;
+  function hdr(){tick=false;root.classList.toggle("lit",hero.getBoundingClientRect().bottom<90)}
+  addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(hdr)}},{passive:true});hdr();
 
   // Menu
   var nav=$("#nav"),mb=$(".menu-btn",nav);
@@ -974,32 +1134,157 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
     b.addEventListener("click",function(){var it=b.closest(".faq__item"),o=!it.classList.contains("open-q");it.classList.toggle("open-q",o);b.setAttribute("aria-expanded",String(o))});
   });
 
-  // Warning lights
+  // Warning lights: one selected at a time, the first shown to start
   var panel=$("#lpanel"),lb=$$(".lbtn");
-  lb.forEach(function(b){b.addEventListener("click",function(){
-    var on=b.getAttribute("aria-pressed")!=="true";
-    lb.forEach(function(x){x.setAttribute("aria-pressed","false")});
-    $$(".lp").forEach(function(p){p.classList.remove("on")});
-    if(on){b.setAttribute("aria-pressed","true");$("#lp-"+b.getAttribute("data-l")).classList.add("on")}
-    panel.classList.toggle("has",on);
-    if(on&&innerWidth<=980){var r=panel.getBoundingClientRect();if(r.top>innerHeight*.75||r.top<0)panel.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})}
-  })});
+  function light(b,user){
+    lb.forEach(function(x){x.setAttribute("aria-pressed",String(x===b))});
+    $$(".lp").forEach(function(p){p.classList.toggle("on",p.id==="lp-"+b.getAttribute("data-l"))});
+    panel.classList.add("has");
+    if(user&&innerWidth<=980){var r=panel.getBoundingClientRect();if(r.top>innerHeight*.7||r.top<0)panel.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})}
+  }
+  lb.forEach(function(b){b.addEventListener("click",function(){light(b,true)})});
+  if(lb.length)light(lb[0]);
 
   // Service tabs
   var tabs=$$(".tab");
   function sel(t,focus){tabs.forEach(function(x){var on=x===t;x.setAttribute("aria-selected",String(on));x.tabIndex=on?0:-1;var p=$("#"+x.getAttribute("aria-controls"));p.hidden=!on;p.classList.toggle("on",on)});if(focus)t.focus()}
   tabs.forEach(function(t,i){
-    t.addEventListener("click",function(e){e.preventDefault();sel(t)});
+    t.addEventListener("click",function(e){e.preventDefault()});
     t.addEventListener("keydown",function(e){var k=e.key,j=-1;if(k==="ArrowDown"||k==="ArrowRight")j=(i+1)%tabs.length;if(k==="ArrowUp"||k==="ArrowLeft")j=(i-1+tabs.length)%tabs.length;if(k==="Home")j=0;if(k==="End")j=tabs.length-1;if(j>-1){e.preventDefault();sel(tabs[j],true)}});
   });
   if(tabs.length)sel(tabs[0]);
 
+  // A moving indicator behind the chosen item in a list
+  function indicator(list,sel){
+    var ind=document.createElement("span");ind.className="ind";ind.setAttribute("aria-hidden","true");list.prepend(ind);list.classList.add("has-ind");
+    function place(){var it=$(sel,list);if(!it)return;ind.style.width=it.offsetWidth+"px";ind.style.height=it.offsetHeight+"px";ind.style.transform="translate("+it.offsetLeft+"px,"+it.offsetTop+"px)"}
+    place();addEventListener("resize",place);return place;
+  }
+  var placeL=indicator($(".lights .list"),'[aria-pressed="true"]');
+  var placeS=indicator($(".svc .list"),'[aria-selected="true"]');
+  lb.forEach(function(b,i){
+    b.addEventListener("click",placeL);
+    b.addEventListener("keydown",function(e){var k=e.key,cols=innerWidth<=760?3:1,j=null;
+      if(k==="ArrowDown")j=i+cols;if(k==="ArrowUp")j=i-cols;if(k==="ArrowRight")j=i+1;if(k==="ArrowLeft")j=i-1;if(k==="Home")j=0;if(k==="End")j=lb.length-1;
+      if(j!==null){e.preventDefault();j=(j+lb.length)%lb.length;light(lb[j]);placeL();lb[j].focus()}});
+  });
+  // Lights: on first view, step through a few lights slowly until the visitor touches the panel
+  var lsec=$(".lights .duo"),lt=null,lstep=0,lhover=false;
+  function lstop(){clearInterval(lt);lt=null;lstep=99}
+  if(!reduce&&hasIO){
+    seen(lsec,function(){if(lstep)return;lt=setInterval(function(){if(lhover||document.hidden)return;lstep++;var cur=lb.findIndex(function(x){return x.getAttribute("aria-pressed")==="true"});light(lb[(cur+1)%lb.length]);placeL();if(lstep>=4)lstop()},3400)},.5);
+    ["pointerdown","focusin","keydown"].forEach(function(ev){lsec.addEventListener(ev,lstop)});
+    lsec.addEventListener("pointerenter",function(){lhover=true});lsec.addEventListener("pointerleave",function(){lhover=false});
+    new IntersectionObserver(function(es){if(!es[0].isIntersecting&&lt)lstop()}).observe(lsec);
+  }
+
+  // Services: autoplay through the list with a progress line, pause on hover, focus or off screen, swipe on phones
+  var svc=$(".svc"),dots=$$(".sdots i");
+  function showSvc(i,user){sel(tabs[i]);placeS();dots.forEach(function(d,k){d.classList.toggle("on",k===i)});if(user)svc.classList.remove("auto")}
+  tabs.forEach(function(t,i){var pr=document.createElement("i");pr.className="prog";pr.setAttribute("aria-hidden","true");t.appendChild(pr);
+    pr.addEventListener("animationend",function(){if(svc.classList.contains("auto"))showSvc((i+1)%tabs.length)});
+    t.addEventListener("click",function(){showSvc(i,true)});
+    t.addEventListener("keydown",function(){setTimeout(function(){var c=tabs.findIndex(function(x){return x.getAttribute("aria-selected")==="true"});if(c!==i)showSvc(c,true)})});
+  });
+  if(!reduce)svc.classList.add("auto");
+  var sp=$(".svc .duo");
+  function pause(on,why){svc["_"+why]=on;svc.classList.toggle("paused",!!(svc._h||svc._f||svc._o))}
+  sp.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")pause(true,"h")});sp.addEventListener("pointerleave",function(){pause(false,"h")});
+  sp.addEventListener("focusin",function(){pause(true,"f")});sp.addEventListener("focusout",function(){pause(false,"f")});
+  if(hasIO)new IntersectionObserver(function(es){pause(!es[0].isIntersecting,"o")},{threshold:.25}).observe(sp);
+  var sx=null,spn=$(".spanels");
+  spn.addEventListener("touchstart",function(e){sx=e.touches[0].clientX},{passive:true});
+  spn.addEventListener("touchend",function(e){if(sx==null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)<48)return;var cur=tabs.findIndex(function(x){return x.getAttribute("aria-selected")==="true"});showSvc((cur+(dx<0?1:-1)+tabs.length)%tabs.length,true)},{passive:true});
+
+  // 3D bay: the drag cue goes once the car has been turned
+  var stage=$(".bay-stage");stage.addEventListener("pointerdown",function(){stage.classList.add("dragged")});stage.addEventListener("keydown",function(e){if(/Arrow/.test(e.key))stage.classList.add("dragged")});
+
+  // Steps draw in, the rating needle sweeps once
+  seen($(".steps"),addIn,.35);seen($(".b-rate"),addIn,.5);
+
+  // Soft pointer light on cards (laptops only)
+  if(matchMedia("(hover:hover) and (pointer:fine)").matches)$$(".lift").forEach(function(c){var raf=0,ev;c.addEventListener("pointermove",function(e){ev=e;if(!raf)raf=requestAnimationFrame(function(){raf=0;var r=c.getBoundingClientRect();c.style.setProperty("--mx",(ev.clientX-r.left)+"px");c.style.setProperty("--my",(ev.clientY-r.top)+"px")})})});
+
+  // Nav: mark the section in view
+  if(hasIO){var links={};$$(".nav__links a").forEach(function(a){links[a.getAttribute("href").slice(1)]=a});
+    var navIO=new IntersectionObserver(function(es){es.forEach(function(e){var a=links[e.target.id];if(a)a.classList.toggle("on",e.isIntersecting)})},{rootMargin:"-45% 0px -50% 0px"});
+    Object.keys(links).forEach(function(id){var el=document.getElementById(id);if(el)navIO.observe(el)})}
+
   // Phone quick bar: hidden while the hero is on screen
-  var hero=$(".hero");
   if(hasIO){new IntersectionObserver(function(es){root.classList.toggle("past-hero",es[0].intersectionRatio<0.2)},{threshold:[0,0.2,0.4]}).observe(hero)}
   else root.classList.add("past-hero");
 
-  // Open now, in Sydney time. Hours: Mon to Fri 9 to 5, Sat 9 to 2, Sun closed. Shared by the hero and the hours plates.
+  // Rego lookup: plate and state in, the car and a slip guide out
+  var form=$("#rego"),inp=$("#rego-plate"),st=$("#rego-state"),badge=$("#rego-badge"),go=$("#rego-go"),out=$("#rego-out");
+  var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var TEL='<a href="tel:+61287985715">(02) 8798 5715</a>';
+  var MSG={
+    off:'Car lookup is coming soon. For now, call us on '+TEL+' and we\'ll check it for you.',
+    notfound:'We couldn\'t find that plate. Check it and try again, or just <a href="tel:+61287985715">call us</a>.',
+    busy:'That\'s a lot of lookups. Try again in a few minutes, or <a href="tel:+61287985715">call us</a>.',
+    fail:'The lookup isn\'t working right now. Call us on '+TEL+' and we\'ll help.'
+  };
+  var esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
+  var tc=function(s){return String(s||"").split(/\s+/).map(function(w){return /\d/.test(w)?w.toUpperCase():w.toLowerCase().replace(/(^|[\-\/])([a-z])/g,function(m,a,b){return a+b.toUpperCase()})}).join(" ")};
+  function say(html){out.innerHTML='<div class="rres rres--msg">'+html+'</div>'}
+  function clearSlips(){["slip-pink","slip-blue"].forEach(function(id){$("#"+id).classList.remove("is-car")});$("#slip-verdict").hidden=true}
+  st.addEventListener("change",function(){if(reduce){badge.textContent=st.value;return}badge.classList.remove("flip");void badge.offsetWidth;badge.classList.add("flip");setTimeout(function(){badge.textContent=st.value},180)});
+  // Placeholder types out example plates until the visitor starts
+  if(!reduce){var EX=["ABC12D","SHINE1","YOUR REGO"],wi=0,ci=0,del=false,tw=null;
+    var step=function(){if(document.activeElement===inp||inp.value||root.classList.contains("past-hero")){tw=setTimeout(step,800);return}
+      var w=EX[wi];ci+=del?-1:1;inp.placeholder=w.slice(0,ci)||" ";
+      var d=del?55:120;if(!del&&ci===w.length){del=true;d=1600}else if(del&&ci===0){del=false;wi=(wi+1)%EX.length;d=350}
+      tw=setTimeout(step,d)};
+    tw=setTimeout(step,2600);inp.addEventListener("focus",function(){clearTimeout(tw);inp.placeholder="YOUR REGO";tw=setTimeout(step,800)});}
+  inp.addEventListener("input",function(){var v=inp.value.toUpperCase();if(v!==inp.value)inp.value=v});
+  function today(){var p=new Intl.DateTimeFormat("en-CA",{timeZone:"Australia/Sydney",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date()).split("-");return {y:+p[0],ms:Date.UTC(+p[0],+p[1]-1,+p[2])}}
+  function name(v){
+    var make=v.make||"",model=v.model||"",drop={};
+    (make+" "+model).split(/\s+/).forEach(function(w){if(w)drop[w.toLowerCase()]=1});
+    var variant=(v.description||"").split(/\s+/).filter(function(w){return w&&!drop[w.toLowerCase()]}).join(" ");
+    var parts=make||model?[make,model,variant]:[v.description||""];
+    return [v.year||""].concat(parts).filter(Boolean).map(function(x,i){return i===0&&v.year?x:tc(x)}).join(" ");
+  }
+  function show(v,state){
+    var t=today(),html='<strong>'+esc(name(v)||"Your car")+'</strong>',meta=[v.colour,v.body].filter(Boolean).map(tc).join(" · ");
+    if(meta)html+='<span class="m">'+esc(meta)+'</span>';
+    var days=null;
+    if(v.regoExpiry&&/^\d{4}-\d{2}-\d{2}/.test(v.regoExpiry)){
+      var e=v.regoExpiry.split("-"),ems=Date.UTC(+e[0],+e[1]-1,+e[2]);days=Math.round((ems-t.ms)/864e5);
+      var ds=(+e[2])+" "+MONTHS[+e[1]-1]+" "+e[0];
+      html+='<span>'+(days>=0?"Rego due "+ds+(days<=42?(days===0?", today":", in "+days+" day"+(days===1?"":"s")):""):"Rego ran out "+(-days)+" day"+(days===-1?"":"s")+" ago")+'</span>';
+    }else if(state==="NSW"){
+      html+='<span><a href="https://service.nsw.gov.au/transaction/check-vehicle-registration" target="_blank" rel="noopener">Check your rego due date with Service NSW</a></span>';
+    }
+    var reg=state==="NSW"&&(days===null||days>-90),kind=null;
+    if(!reg)kind="blue";else if(v.year)kind=(t.y-v.year>5)?"pink":"none";
+    var V={pink:["Needs a pink slip to renew","Your car needs a pink slip to renew its rego."],none:["No inspection needed to renew","No inspection needed to renew. A logbook service is still worth booking."],blue:["Needs a blue slip to register in NSW","You'll need a blue slip to register it in NSW."]};
+    clearSlips();
+    if(kind){
+      html+='<span class="verd" style="--vc:'+(kind==="blue"?"#3b6fd8":kind==="pink"?"#d24a6c":"#2f9e5b")+'">'+V[kind][0]+'</span>';
+      if(kind!=="none")$("#slip-"+kind).classList.add("is-car");
+      $("#slip-verdict-t").textContent=V[kind][1];$("#slip-verdict").hidden=false;
+    }
+    html+='<a class="btn btn--ink" href="#slips">See what\'s checked and the fees</a>';
+    out.innerHTML='<div class="rres">'+html+'</div>';
+  }
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var plate=inp.value.toUpperCase().replace(/[^A-Z0-9]/g,""),state=st.value;
+    if(plate.length<2){say("Type the letters and numbers on your plate.");inp.focus();return}
+    go.disabled=true;var lbl=go.textContent;go.textContent="Looking up your car…";say("Looking up your car…");
+    fetch("/api/rego?plate="+encodeURIComponent(plate)+"&state="+encodeURIComponent(state),{headers:{Accept:"application/json"}})
+      .then(function(r){return r.json().catch(function(){return {}}).then(function(b){return {s:r.status,b:b||{}}})})
+      .then(function(x){
+        if(x.s===200&&x.b.ok&&x.b.vehicle)return show(x.b.vehicle,state);
+        clearSlips();
+        var k=x.b.reason;say(MSG[k==="off"&&x.s===503?"off":k==="notfound"?"notfound":k==="busy"?"busy":"fail"]);
+      })
+      .catch(function(){clearSlips();say(MSG.fail)})
+      .then(function(){go.disabled=false;go.textContent=lbl});
+  });
+
+  // Open now, in Sydney time. Hours: Mon to Fri 9 to 5, Sat 9 to 2, Sun closed. Shared by the hero and the hours card.
   var H={0:null,1:[540,1020],2:[540,1020],3:[540,1020],4:[540,1020],5:[540,1020],6:[540,840]};
   var NAMES=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   function fmt(m){var h=Math.floor(m/60),mm=m%60,s=h>=12?"pm":"am",h12=h%12||12;return h12+(mm?":"+String(mm).padStart(2,"0"):"")+s}
@@ -1015,6 +1300,10 @@ html.js .open-q .faq__a p{opacity:1;transition:opacity 1.2s .25s var(--slow)}
     else if(t&&n.m<t[0])msg="Closed, opens today at "+fmt(t[0]);
     else{for(var k=1;k<8;k++){var dd=(n.d+k)%7;if(H[dd]){msg="Closed, opens "+(k===1?"tomorrow":NAMES[dd])+" at "+fmt(H[dd][0]);break}}}
     $$("[data-status]").forEach(function(el){el.classList.toggle("is-open",open);$("[data-status-text]",el).textContent=msg});
+    var tb=$(".tbar");if(tb){var S=420,E=1140,pc=function(m){return Math.max(0,Math.min(1,(m-S)/(E-S)))};
+      $(".tbar__t",tb).innerHTML=t?"Today, <b>"+fmt(t[0])+" to "+fmt(t[1])+"</b>":"<b>Closed today</b>";
+      $(".tbar__open",tb).style.transform=t?"translateX("+pc(t[0])*100+"%) scaleX("+(pc(t[1])-pc(t[0]))+")":"scaleX(0)";
+      var nw=$(".tbar__now",tb);nw.style.transform="translateX("+pc(n.m)*100+"%)";nw.style.opacity=(n.m<S||n.m>E)?0:1;}
     $$(".hours li").forEach(function(li){li.classList.toggle("today",li.getAttribute("data-days").split(",").indexOf(String(n.d))>-1)});
   }
   update();setInterval(function(){if(!document.hidden)update()},60000);
