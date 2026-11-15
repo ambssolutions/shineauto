@@ -37,7 +37,7 @@
     'a:focus-visible,button:focus-visible{outline:2px solid #f39a36;outline-offset:1px}' +
     '.arrow{width:34px;padding:0;justify-content:center;font-size:16px}' +
     '.tag{color:#f39a36;font-weight:700}' +
-    '.menu{position:absolute;left:0;bottom:calc(100% + 8px);min-width:260px;background:#0e1611;border:1px solid rgba(255,255,255,.14);' +
+    '.menu{position:absolute;left:0;bottom:calc(100% + 8px);min-width:260px;background:#16181c;border:1px solid rgba(255,255,255,.14);' +
     'border-radius:16px;padding:6px;box-shadow:0 20px 40px -16px rgba(0,0,0,.6);display:none;max-height:70vh;overflow:auto}' +
     '.menu.open{display:block}' +
     '.menu a{display:flex;width:100%;box-sizing:border-box;height:auto;padding:9px 12px;border-radius:10px;justify-content:space-between;gap:16px}' +
@@ -47,6 +47,10 @@
     '.fav{width:34px;padding:0;justify-content:center}.fav svg{width:17px;height:17px}' +
     '.fav[aria-pressed="true"]{color:#F5C518}.fav[aria-pressed="true"] svg{fill:currentColor}' +
     '@media (max-width:760px){.bar{left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom))}.sub{display:none}}' +
+    '.bar{transition:transform .5s cubic-bezier(.22,.61,.36,1),opacity .4s}' +
+    '.bar.away{transform:translateY(160%);opacity:0}' +
+    '@media (max-width:760px){.bar.away{transform:translateX(-50%) translateY(160%)}}' +
+    '@media (prefers-reduced-motion:reduce){.bar{transition:none}}' +
     '@media print{.bar{display:none}}' +
     '</style>' +
     '<nav class="bar" aria-label="Design concepts">' +
@@ -114,7 +118,16 @@
   }, { passive: true });
 
   // mount after the page has loaded and gone idle so it never competes with the page's own first paint
-  function mount() { document.body.appendChild(host); }
+  function mount() {
+    document.body.appendChild(host);
+    // slide away while scrolling down so it never covers the page; back on scroll up or near the top
+    var lastY = scrollY, bar = root.querySelector('.bar');
+    addEventListener('scroll', function () {
+      var y = scrollY; if (!bar || Math.abs(y - lastY) < 6) return;
+      var menuOpen = root.querySelector('.menu.open');
+      bar.classList.toggle('away', y > lastY && y > 120 && !menuOpen); lastY = y;
+    }, { passive: true });
+  }
   function idle() { ('requestIdleCallback' in window) ? requestIdleCallback(mount, { timeout: 2500 }) : setTimeout(mount, 1200); }
   if (document.readyState === 'complete') idle(); else addEventListener('load', idle);
 })();
