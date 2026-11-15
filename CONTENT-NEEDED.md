@@ -24,4 +24,4 @@
 | Domain name | canonical, og:url, sitemap.xml, robots.txt |
 | Re-check the fees each 1 July (NSW updates them yearly) | Fees panel, FAQ, JSON-LD |
 | Choose a rego lookup provider and pay for a key (Shine or AMBS account) | Vercel environment variables, then `regoLookup: true` in `assets/content.js` |
-| Confirm the makes listed in the "Servicing all makes, including" carousel (Toyota, Mazda, Kia, Nissan, Volkswagen, BMW, Mercedes-Benz, Audi, Lexus, Volvo, Jeep, taken from a reference site) (shown as plain text names, no logos) | 06 Your Mix, MAKES list |
+| Confirm the makes listed in the "Servicing all makes, including" carousel (Toyota, Mazda, Kia, Nissan, Volkswagen, BMW, Mercedes-Benz, Audi, Lexus, Volvo, Jeep, taken from a reference site) (shown as logos in the bottom strip; owner chose logos over plain names, with an "independent, not affiliated" line in the footer) | 06 Your Mix, MAKES list |

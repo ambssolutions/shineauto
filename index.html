@@ -658,13 +658,15 @@ body{padding-bottom:var(--tk)}
 .ticker__lbl{flex:none;height:100%;display:flex;align-items:center;margin:0;padding:0 16px 0 20px;font:700 .72rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#f39a36;background:#15171c;position:relative;z-index:1;box-shadow:12px 0 14px -6px #15171c}
 .ticker__run{display:flex;overflow:hidden;flex:1;min-width:0;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
 .tk{display:flex;flex:none;list-style:none;margin:0;padding:0;animation:tk 40s linear infinite}
-.tk li{display:flex;align-items:center;white-space:nowrap;font:600 .98rem/1 var(--display);letter-spacing:-.005em;padding:0 22px}
-.tk li:nth-child(even){font-style:italic;font-weight:500;color:#cfcac2}
-.tk li::after{content:"";width:5px;height:5px;border-radius:50%;background:#f39a36;margin-left:44px;transform:translateX(-22px)}
+.tk li{display:flex;align-items:center;padding:0 26px}
+.tk img{display:block;height:24px;width:auto;max-width:96px;object-fit:contain;filter:brightness(0) invert(1);opacity:.9}
+.tk img.keep{filter:none;opacity:1}
+.tk img[src*="nissan"]{height:30px}
+.tk li::after{content:"";width:5px;height:5px;border-radius:50%;background:#f39a36;margin-left:52px;transform:translateX(-26px)}
 .ticker:hover .tk{animation-play-state:paused}
 @keyframes tk{to{transform:translateX(-100%)}}
 @media (prefers-reduced-motion:reduce){.tk{animation:none}}
-@media (max-width:759px){:root{--tk:38px}.ticker__lbl{padding:0 12px 0 14px}.tk li{font-size:.9rem;padding:0 18px}}
+@media (max-width:759px){:root{--tk:38px}.ticker__lbl{padding:0 12px 0 14px}.tk li{padding:0 20px}.tk img{height:20px;max-width:78px}}
 @media (max-width:1120px){
   .qbar{bottom:calc(10px + var(--tk) + env(safe-area-inset-bottom))!important}
 }
@@ -1204,9 +1206,9 @@ body .ac-av svg{display:none}
   </div>
 </footer>
 
-<aside class="ticker" aria-label="Makes we service">
+<aside class="ticker" aria-label="Makes we service. Independent workshop, not affiliated with any car maker.">
   <p class="ticker__lbl">All makes</p>
-  <div class="ticker__run"><ul class="tk"><li>Toyota</li><li>Mazda</li><li>Kia</li><li>Nissan</li><li>Volkswagen</li><li>BMW</li><li>Mercedes-Benz</li><li>Audi</li><li>Lexus</li><li>Volvo</li><li>Jeep</li></ul><ul class="tk" aria-hidden="true"><li>Toyota</li><li>Mazda</li><li>Kia</li><li>Nissan</li><li>Volkswagen</li><li>BMW</li><li>Mercedes-Benz</li><li>Audi</li><li>Lexus</li><li>Volvo</li><li>Jeep</li></ul></div>
+  <div class="ticker__run"><ul class="tk"><li><img src="assets/brands/toyota.svg" alt="Toyota" height="26" decoding="async"></li><li><img src="assets/brands/mazda.svg" alt="Mazda" height="26" decoding="async"></li><li><img src="assets/brands/kia.svg" alt="Kia" height="26" decoding="async"></li><li><img src="assets/brands/nissan.svg" alt="Nissan" height="26" decoding="async"></li><li><img src="assets/brands/volkswagen.svg" alt="Volkswagen" height="26" decoding="async"></li><li><img class="keep" src="assets/brands/bmw.svg" alt="BMW" height="26" decoding="async"></li><li><img src="assets/brands/mercedes.svg" alt="Mercedes-Benz" height="26" decoding="async"></li><li><img src="assets/brands/audi.svg" alt="Audi" height="26" decoding="async"></li><li><img src="assets/brands/lexus.svg" alt="Lexus" height="26" decoding="async"></li><li><img src="assets/brands/volvo.svg" alt="Volvo" height="26" decoding="async"></li><li><img src="assets/brands/jeep.svg" alt="Jeep" height="26" decoding="async"></li></ul><ul class="tk" aria-hidden="true"><li><img src="assets/brands/toyota.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/mazda.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/kia.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/nissan.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/volkswagen.svg" alt="" height="26" decoding="async"></li><li><img class="keep" src="assets/brands/bmw.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/mercedes.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/audi.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/lexus.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/volvo.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/jeep.svg" alt="" height="26" decoding="async"></li></ul></div>
 </aside>
 <nav class="qbar" aria-label="Quick contact">
   <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
