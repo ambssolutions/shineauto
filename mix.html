@@ -150,7 +150,7 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;paddin
 <div class="app">
   <aside class="side" aria-label="Sections">
     <h1>Pick a design for each section</h1>
-    <p>Go through the sections, preview each version live, and choose one. Your choices are saved in this browser.</p>
+    <p>Go through the sections and click the version you like. It is chosen straight away and shown live below. Your choices are saved in this browser.</p>
     <ol class="secs" id="secs"></ol>
     <button class="btn accent finish" type="button" id="finish">See your mix</button>
   </aside>
@@ -243,13 +243,13 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;paddin
       else { b.querySelector('img').src = 'designs/' + slug + '/sec-' + (s.thumb || s.key) + '.webp?v=1'; b.querySelector('b').textContent = NAMES[slug]; b.querySelector('small').textContent = 'Design ' + slug.slice(0,2); }
       if (picks[s.key] === slug) { var t = d.createElement('span'); t.className = 'tag'; t.textContent = 'Chosen'; b.querySelector('.cap').appendChild(t) }
       b.setAttribute('aria-label', (s.kind === 'theme' ? THN[slug].name + ' theme' : NAMES[slug] + ' version of ' + s.name) + (picks[s.key] === slug ? ', chosen' : ''));
-      b.addEventListener('click', function(){ viewing = slug; renderOpts(); load() });
+      b.addEventListener('click', function(){ viewing = slug; picks[M.sections[cur].key] = slug; save(); renderSide(); renderOpts(); load() });
       $('opts').appendChild(b);
     });
     if (s.optional) {
       var nb = d.createElement('button'); nb.type = 'button'; nb.className = 'opt none'; nb.setAttribute('aria-pressed', String(viewing === 'none'));
       nb.textContent = picks[s.key] === 'none' ? 'Left out (chosen)' : 'Leave this section out';
-      nb.addEventListener('click', function(){ viewing = 'none'; renderOpts(); load() });
+      nb.addEventListener('click', function(){ viewing = 'none'; picks[M.sections[cur].key] = 'none'; save(); renderSide(); renderOpts(); load() });
       $('opts').appendChild(nb);
     }
     var chosen = picks[s.key] === viewing;
@@ -317,9 +317,10 @@ button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;paddin
   }
   $('toSummary').addEventListener('click', summary); $('finish').addEventListener('click', summary); $('back').addEventListener('click', function(){ go(cur) });
   function shareUrl(){ return location.origin + location.pathname + '?mix=' + encodeURIComponent(mixParam()) }
-  $('copyLink').addEventListener('click', function(){ var u = shareUrl(); (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(function(){ $('status').textContent = 'Link copied. Anyone who opens it sees this mix.' }).catch(function(){ prompt('Copy this link', u) }) });
+  $('copyLink').addEventListener('click', function(){ if (!mixParam()) { $('status').textContent = 'Nothing is chosen yet. Go back to the sections and click a version of each one first.'; return; } var u = shareUrl(); (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(function(){ $('status').textContent = 'Link copied. Anyone who opens it sees this mix.' }).catch(function(){ prompt('Copy this link', u) }) });
   $('reset').addEventListener('click', function(){ if (!confirm('Clear all your choices?')) return; picks = {}; save(); go(0) });
   $('send').addEventListener('submit', function(e){
+    if (!mixParam()) { e.preventDefault(); $('status').textContent = 'Nothing is chosen yet. Go back to the sections and click a version of each one first.'; return; }
     e.preventDefault(); var f = e.target, name = f.name.value.trim(), notes = f.notes.value.trim();
     var body = 'Shine Auto Repairs website: section mix\n\n' + mixText() + '\n\nLink: ' + shareUrl() + (notes ? '\n\nNotes: ' + notes : '') + (name ? '\n\nFrom: ' + name : '');
     if (FORM_ENDPOINT) {
