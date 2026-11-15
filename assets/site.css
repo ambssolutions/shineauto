@@ -175,12 +175,29 @@ section{padding:clamp(84px,11vw,150px) 0;position:relative}
 .show.paused .ctrl .play{display:block}
 .guarantee{display:block;width:max-content;max-width:100%;margin:46px auto 0;padding:20px 40px;font:700 clamp(22px,2.4vw,30px)/1.1 var(--display);font-stretch:82%;text-transform:uppercase;letter-spacing:.04em;text-align:center}
 
+/* full-bleed photo break (after Porsche and BMW): one picture, one line */
+.break{position:relative;height:clamp(420px,72vh,760px);overflow:hidden;background:#0c0d10;display:grid;place-items:center;isolation:isolate}
+.break img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;z-index:-2}
+.break::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,13,16,.55),rgba(12,13,16,.15) 40%,rgba(12,13,16,.75))}
+.break-line{text-align:center;font:700 clamp(54px,9vw,150px)/.86 var(--display);font-stretch:72%;text-transform:uppercase;letter-spacing:-.01em;padding:0 var(--pad);
+  color:#e6e8ec;background:linear-gradient(180deg,#ffffff,#c4c7cd 60%,#8d9198);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 0 rgba(0,0,0,.6)) drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+.break-line span{display:block}
+.break-line span+span{background:var(--key);-webkit-background-clip:text;background-clip:text}
+.js .break-line span{clip-path:inset(0 0 100% 0);transform:translateY(18%);transition:clip-path 1.4s var(--ease),transform 1.4s var(--ease)}
+.js .break-line span+span{transition-delay:.2s}
+.js .break.in .break-line span{clip-path:inset(0 0 -10% 0);transform:none}
+
 /* the 3D inspection bay */
 .bay{max-width:1180px;margin:0 auto}
 .bay-well{border-radius:30px;padding:clamp(10px,1.2vw,16px);box-shadow:var(--demb-in);background:#111317}
 .bay-stage{position:relative;aspect-ratio:16/8;border-radius:22px;overflow:hidden;background:radial-gradient(80% 90% at 50% 70%,#24272d,#121417 70%);touch-action:pan-y;cursor:grab;outline-offset:4px}
 .bay-stage.grab{cursor:grabbing}
 .bay-stage canvas{position:absolute;inset:0;width:100%;height:100%}
+/* giant cropped type behind the car (after Rivian) */
+.giant{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;
+  font:700 clamp(150px,27vw,400px)/.8 var(--display);font-stretch:72%;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.5px rgba(243,154,54,.35);
+  background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.02) 75%);-webkit-background-clip:text;background-clip:text}
+.no-gl .giant{display:none}
 .bay-fallback{position:absolute;inset:0;opacity:0;transition:opacity .6s}
 .bay-fallback img{width:100%;height:100%;object-fit:cover}
 .no-gl .bay-fallback,html:not(.js) .bay-fallback{opacity:1}
@@ -401,6 +418,7 @@ footer.foot{background:var(--brushed),var(--night);color:var(--on-night-2);paddi
 @media (max-height:760px){.card,.stack-head{position:relative;top:auto;max-height:none;min-height:0}}
 @media (prefers-reduced-motion:reduce){
   .js .rv{opacity:1;transform:none;transition:none}
+  .js .break-line span{clip-path:none;transform:none;transition:none}
   .js .hero h1,.js .hero .fade{animation:none}
   .ticker-in,.chip.open i{animation:none!important}
   .key::after{display:none}

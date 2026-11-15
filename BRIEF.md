@@ -41,5 +41,12 @@ Signature pieces:
 - A light that follows the pointer across metal plates (laptops only).
 - Services showcase with story bars and an AI photo per service, the slip helper as pressable keys, sticky stacked steel plates, FAQ rows that press in as they open.
 
+## What we took from industry leaders (15 November 2026)
+Looked at Porsche, Polestar, Rivian, Lucid and BMW, and at the service chains Kwik Fit, Firestone and Jiffy Lube (Tesla and Mercedes block automated visits).
+- Rivian: giant model names set behind the car, cropped by the edges. Used as the "PINK SLIP" type behind the 3D car.
+- Porsche and BMW: full-bleed photo breaks with one short line. Used for "Quality work guaranteed" over the tyre photo.
+- Lucid and Porsche: restraint. Lots of space, little copy, one accent, the product as the hero.
+- The service chains show what to avoid: coupon banners, many competing actions, and a cookie wall on every visit. Shine's site has no tracking, so it needs no cookie banner.
+
 ## Images
 All photos are AI-generated illustrations (Figma image generation, 15 November 2026), labelled "AI illustration" on each image and in the footer. Replace with real workshop photos when the client supplies them. Source file: Figma "Shine Auto Repairs – website imagery".

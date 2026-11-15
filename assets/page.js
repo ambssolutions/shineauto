@@ -128,6 +128,11 @@
     });
   });
 
+  // photo break: its line rises in once, when the break is mostly on screen
+  var brk = document.querySelector(".break");
+  if (brk && "IntersectionObserver" in window) { var bio = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { brk.classList.add("in"); bio.disconnect(); } }, { threshold: 0.45 }); bio.observe(brk); }
+  else if (brk) brk.classList.add("in");
+
   // a light that follows the pointer across metal plates (laptops only, never on touch or reduced motion)
   if (!reduce && matchMedia("(pointer: fine)").matches) {
     var pending = null;
