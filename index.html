@@ -52,13 +52,13 @@ p{margin:0}
 
 /* Buttons: pills with a soft embossed gradient and a slow light sweep */
 .btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:48px;padding:0 1.4rem;border:0;border-radius:999px;
-  background:var(--orange);color:var(--on-orange);font:600 1rem/1 var(--sans);text-decoration:none;cursor:pointer;white-space:nowrap;
+  background:#a9560a;color:#fff;font:600 1rem/1 var(--sans);text-decoration:none;cursor:pointer;white-space:nowrap;
   box-shadow:0 8px 18px -12px rgba(60,30,0,.5);transition:transform .5s var(--slow)}
 .btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform 1.1s var(--slow)}
 .btn:hover::after{transform:translateX(120%)}
-.btn:hover{transform:translateY(-1px);background:var(--orange-lo)}
+.btn:hover{transform:translateY(-1px);background:#934a08}
 .btn .ic{width:18px;height:18px}
-.btn--ink{background:var(--orange);color:var(--on-orange);box-shadow:0 8px 18px -12px rgba(60,30,0,.5)}
+.btn--ink{background:#a9560a;color:#fff;box-shadow:0 8px 18px -12px rgba(60,30,0,.5)}
 .btn--ghost{background:linear-gradient(180deg,#fff,#f3f2ef);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-2),inset 0 1px 0 #fff,0 4px 10px -6px rgba(21,23,28,.2)}
 .tl{display:inline-flex;align-items:center;min-height:44px;font-weight:600;text-decoration:underline;text-decoration-color:rgba(154,82,8,.45);text-underline-offset:5px;text-decoration-thickness:1.5px}
 .tl:hover{text-decoration-color:currentColor}
@@ -749,8 +749,8 @@ body .ac-nudge{bottom:calc(env(safe-area-inset-bottom,0px) + 84px + var(--tk))}
   .sc p{line-height:1.6}
 }
 /* Ask Shine, branded: a little Shine-orange car. Body = the button, cabin and wheels are drawn with CSS. */
-body .ac-launch{overflow:visible;height:46px;padding:0 22px 0 10px;gap:9px;border-radius:16px 26px 12px 12px;background:#f39a36;color:#15171c;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),0 14px 26px -14px rgba(0,0,0,.55)}
-body .ac-launch::before{content:"";position:absolute;left:30%;width:44%;top:-15px;height:17px;border-radius:14px 22px 0 0;background:linear-gradient(90deg,#15171c 0 46%,#f39a36 46% 54%,#15171c 54%);border:3px solid #f39a36;border-bottom:0;pointer-events:none}
+body .ac-launch{overflow:visible;height:46px;padding:0 22px 0 10px;gap:9px;border-radius:16px 26px 12px 12px;background:#a9560a;color:#fff;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12),0 14px 26px -14px rgba(0,0,0,.55)}
+body .ac-launch::before{content:"";position:absolute;left:30%;width:44%;top:-15px;height:17px;border-radius:14px 22px 0 0;background:linear-gradient(90deg,#15171c 0 46%,#a9560a 46% 54%,#15171c 54%);border:3px solid #a9560a;border-bottom:0;pointer-events:none}
 body .ac-launch::after{content:"";position:absolute;inset:auto 0 -10px 0;height:20px;border:0;border-radius:0;opacity:1;animation:none;pointer-events:none;
   background:radial-gradient(circle at 26px 50%,#d9d6d0 0 3px,#2a2d33 3.5px 7px,#15171c 7.5px 10px,transparent 10.5px),radial-gradient(circle at calc(100% - 26px) 50%,#d9d6d0 0 3px,#2a2d33 3.5px 7px,#15171c 7.5px 10px,transparent 10.5px)}
 body .ac-launch .ac-dot{width:30px;height:30px;border-radius:50%;background:#fff url(/assets/logo-mark.svg) center/26px no-repeat;box-shadow:none;animation:none}
