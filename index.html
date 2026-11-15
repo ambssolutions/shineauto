@@ -198,6 +198,17 @@
         <h2 id="slip-h">Pink slip, blue slip or neither?</h2>
         <p class="lead">Answer two questions and we'll tell you which inspection the car needs for its rego.</p>
       </div>
+      <div class="rego rv" id="rego" data-need="regoLookup" hidden>
+        <form class="rego-form" novalidate>
+          <label class="sr" for="rego-plate">Rego number</label>
+          <div class="nplate"><span class="nplate-state" id="rego-badge" aria-hidden="true">NSW</span><input id="rego-plate" name="plate" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="9" placeholder="ABC12D" enterkeyhint="search"></div>
+          <label class="sr" for="rego-state">State</label>
+          <select id="rego-state" class="rego-state"><option>NSW</option><option>ACT</option><option>VIC</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>NT</option></select>
+          <button class="key" type="submit">Look up my car</button>
+        </form>
+        <div class="rego-out" id="rego-out" role="status" aria-live="polite"></div>
+        <p class="rego-note">Start with your rego, or answer the questions below. We use your rego only to look up the car. It isn't stored.</p>
+      </div>
       <div class="slip rv" id="slip">
         <div class="slip-q plate">
           <fieldset data-step="1">

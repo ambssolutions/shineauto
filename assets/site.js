@@ -11,7 +11,7 @@
   var FORM_KEY = SITE.web3formsKey || "";                // Web3Forms access key (public, tied to the client's email)
 
   // 1. hide-if-missing
-  function has(v) { return v != null && v !== "" && !(Array.isArray(v) && !v.length); }
+  function has(v) { return v != null && v !== "" && v !== false && !(Array.isArray(v) && !v.length); }
   [].forEach.call(document.querySelectorAll("[data-need]"), function (el) {
     el.hidden = !el.getAttribute("data-need").split(/\s+/).every(function (k) { return has(SITE[k]); });
   });

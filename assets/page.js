@@ -120,6 +120,60 @@
     });
   }
 
+  // rego lookup (shown only when SITE.regoLookup is on and a provider key is set in Vercel)
+  var rego = document.getElementById("rego");
+  if (rego && S.regoLookup) {
+    var rf = rego.querySelector("form"), rin = document.getElementById("rego-plate"), rst = document.getElementById("rego-state"),
+        rout = document.getElementById("rego-out"), rbadge = document.getElementById("rego-badge"), rbtn = rf.querySelector("button");
+    rst.addEventListener("change", function () { rbadge.textContent = rst.value; });
+    function say(t) { rout.innerHTML = ""; var p = document.createElement("p"); p.className = "rego-msg"; p.textContent = t; rout.appendChild(p); }
+    function answer(q, v) { var b = slip && slip.querySelector('[data-q="' + q + '"][data-v="' + v + '"]'); if (b && !b.disabled) b.click(); }
+    rf.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var plate = rin.value.toUpperCase().replace(/[^A-Z0-9]/g, "");
+      if (plate.length < 2) { say("Type the letters and numbers on your plate."); rin.focus(); return; }
+      rbtn.disabled = true; say("Looking up your car…");
+      fetch("/api/rego?plate=" + encodeURIComponent(plate) + "&state=" + encodeURIComponent(rst.value), { headers: { Accept: "application/json" } })
+        .then(function (r) { return r.json().catch(function () { return { ok: false, reason: "provider" }; }).then(function (b) { b.status = r.status; return b; }); })
+        .then(function (b) {
+          rbtn.disabled = false;
+          if (!b.ok) {
+            say(b.reason === "notfound" ? "We couldn't find that plate. Check it and try again, or just call us."
+              : b.reason === "busy" ? "That's a lot of lookups. Try again in a few minutes, or call us."
+              : "The lookup isn't working right now. Call us on " + (S.phoneDisplay || "the workshop") + " and we'll help.");
+            return;
+          }
+          var v = b.vehicle;
+          function tc(x) { return x ? String(x).toLowerCase().replace(/\b([a-z])/g, function (m) { return m.toUpperCase(); }).replace(/\b(Bmw|Hsv|Fpv|Gt|Gti|Suv|Ute|Lpg|Awd|4wd|Ii|Iii)\b/g, function (m) { return m.toUpperCase(); }) : ""; }
+          var desc = tc(v.description), mm = tc([v.make, v.model].filter(Boolean).join(" "));
+          var name = [v.year, desc && (!mm || desc.indexOf(tc(v.model || "")) > -1) ? desc : mm].filter(Boolean).join(" ");
+          var extra = [tc(v.colour), tc(v.body)].filter(Boolean).join(" · ");
+          rout.innerHTML = "";
+          var card = document.createElement("div"); card.className = "rego-car";
+          var t = document.createElement("strong"); t.textContent = name; card.appendChild(t);
+          if (extra) { var x = document.createElement("span"); x.textContent = extra; card.appendChild(x); }
+          var days = v.regoExpiry ? Math.round((new Date(v.regoExpiry) - new Date()) / 864e5) : null;
+          if (days !== null) {
+            var d = document.createElement("span");
+            d.textContent = days >= 0 ? "Rego due " + new Date(v.regoExpiry).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" }) + (days <= 42 ? ", in " + days + " days." : ".")
+              : "Rego ran out " + (-days) + " days ago.";
+            card.appendChild(d);
+          } else if (rst.value === "NSW") {
+            var l = document.createElement("a"); l.className = "tlink"; l.target = "_blank"; l.rel = "noopener";
+            l.href = "https://service.nsw.gov.au/transaction/check-vehicle-registration"; l.textContent = "Check your rego due date with Service NSW";
+            card.appendChild(l);
+          }
+          rout.appendChild(card);
+          // feed the answers into the slip helper
+          var registered = rst.value === "NSW" && (days === null || days > -90);
+          answer("reg", registered ? "yes" : "no");
+          if (registered && v.year) answer("age", new Date().getFullYear() - v.year > 5 ? "yes" : "no");
+          var car = document.getElementById("f-car"); if (car && !car.value) car.value = plate + " " + name;
+        })
+        .catch(function () { rbtn.disabled = false; say("The lookup isn't working right now. Call us and we'll help."); });
+    });
+  }
+
   // FAQ: slow native folds
   $$(".acc-btn").forEach(function (b) {
     b.addEventListener("click", function () {

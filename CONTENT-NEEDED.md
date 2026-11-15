@@ -16,3 +16,4 @@
 | Real photos of the workshop, the team (Balli) and the sign out front, to replace the AI illustrations | Hero, services showcase (`assets/img/`), then remove the "AI illustration" labels |
 | Domain name | canonical, og:url, sitemap.xml, robots.txt |
 | Re-check the fees each 1 July (NSW updates them yearly) | Fees panel, FAQ, JSON-LD |
+| Choose a rego lookup provider and pay for a key (Shine or AMBS account) | Vercel environment variables, then `regoLookup: true` in `assets/content.js` |

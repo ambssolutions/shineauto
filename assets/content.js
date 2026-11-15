@@ -17,5 +17,6 @@ window.SITE = {
   rating: { value: "4.8", count: 57, source: "Birdeye", asAt: "15 November 2026" },
   testimonials: [],          // NEEDED: 2 real reviews, quoted with the reviewer's permission
   abn: "",                   // NEEDED
+  regoLookup: false,         // true once a plate lookup provider key is set in Vercel (see api/rego.mjs)
   logo: ""                   // NEEDED: vector logo (SVG). Until then the name is set in type.
 };

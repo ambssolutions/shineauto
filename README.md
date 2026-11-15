@@ -18,6 +18,13 @@ Preview: `python3 -m http.server` in the repo root, then open http://localhost:8
 - `assets/site.css`: styles
 - `BRIEF.md`, `CONTENT-NEEDED.md`, `CLAUDE.md`
 
+## Rego lookup (built, switched off)
+Customers type their plate and the site shows the make, model and year (and the rego due date for states that provide it; NSW drivers get a link to Service NSW's free check), then answers the pink or blue slip questions for them.
+- `api/rego.mjs`: Vercel function that calls the provider, so the key stays secret. It returns only the car's description (no VIN or owner details), stores nothing, limits repeat lookups and checks the request comes from this site.
+- Recommended provider: Infinite Loop Reg Check (carregistrationapi.com.au), AUD 0.30 a lookup in blocks of 100, 10 free lookups to test. Confirm with them that their terms allow a public website form.
+- To switch on: in Vercel, set `REGO_PROVIDER` (`regcheck` or `carsxe`) and its key (`REGCHECK_USERNAME` or `CARSXE_KEY`), plus `REGO_ALLOWED_ORIGINS` (the site's addresses). Then set `regoLookup: true` in `assets/content.js`.
+- The privacy page already explains the lookup.
+
 ## Things to finish before launch
 - Everything in `CONTENT-NEEDED.md`, first of all confirming the hours
 - Remove `noindex` (the meta tags, `X-Robots-Tag` in `vercel.json` and `robots.txt`)
