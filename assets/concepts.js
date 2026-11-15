@@ -4,6 +4,7 @@
    leaks a concept's styles. Shortlist is shared with the gallery via localStorage. */
 (function () {
   var CONCEPTS = [
+    ['06-your-mix', 'Your Mix', 'Your picks'],
     ['01-roller-door', 'Roller Door', 'Cinematic'],
     ['02-number-plate', 'Number Plate', 'Typographic'],
     ['03-job-card', 'Job Card', 'Editorial'],

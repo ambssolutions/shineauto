@@ -48,6 +48,11 @@
   ],
   "redirects": [
     {
+      "source": "/your-mix",
+      "destination": "/designs/06-your-mix/",
+      "permanent": false
+    },
+    {
       "source": "/roller-door",
       "destination": "/designs/01-roller-door/",
       "permanent": false
