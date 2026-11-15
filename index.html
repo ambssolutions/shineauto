@@ -548,8 +548,7 @@ html.lit .head__in{box-shadow:0 0 0 1px rgba(21,23,28,.06),0 16px 34px -18px rgb
 .marquee:hover .mq,.marquee:focus-within .mq{animation-play-state:paused}
 .marquee:focus-visible{outline-offset:-3px}
 @keyframes mq{to{transform:translateX(-100%)}}
-.mk{display:grid;place-items:center;flex:none;width:150px;height:84px;padding:14px 18px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px rgba(21,23,28,.05),0 1px 2px rgba(21,23,28,.04),0 12px 26px -16px rgba(21,23,28,.24)}
-.mk img{width:100%;height:100%;max-height:44px;object-fit:contain}
+.mk{display:grid;place-items:center;flex:none;height:64px;padding:0 26px;font:700 1.15rem/1 var(--display);letter-spacing:-.01em;color:#3a3d44;white-space:nowrap;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px rgba(21,23,28,.05),0 1px 2px rgba(21,23,28,.04),0 12px 26px -16px rgba(21,23,28,.24)}
 /* 3D bay drag cue */
 .bay-hint{display:inline-flex;align-items:center;gap:8px}
 .bay-hint svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;animation:nudge 1.8s ease-in-out infinite}
@@ -598,8 +597,7 @@ html.js .b-rate:not(.in) .needle{transform:rotate(-90deg)}
   .steps::after{left:37px;right:auto;top:36px;bottom:36px;width:2px;height:auto;transform-origin:top;background:linear-gradient(180deg,var(--orange),#f7c48a)}
   html.js .steps:not(.in)::after{transform:scaleY(0)}
   .tab .prog{left:52px;right:10px}
-  .mk{width:110px;height:64px;padding:10px 14px;border-radius:16px}
-  .mk img{max-height:34px}
+  .mk{height:52px;padding:0 18px;border-radius:16px;font-size:1rem}
   .mq{gap:10px;padding-right:10px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -777,8 +775,8 @@ html:not(.js) .hero__img img:first-child{opacity:1}
     <p class="makes__note">Independent workshop. Not affiliated with any car maker.</p>
   </div>
   <div class="marquee" role="region" tabindex="0" aria-label="Makes we service. Hover or focus to pause.">
-    <ul class="mq" aria-label="Makes"><li class="mk"><img src="assets/brands/toyota.svg" alt="Toyota" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mazda.svg" alt="Mazda" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/kia.svg" alt="Kia" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/nissan.svg" alt="Nissan" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volkswagen.svg" alt="Volkswagen" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/bmw.svg" alt="BMW" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mercedes.svg" alt="Mercedes-Benz" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/audi.svg" alt="Audi" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/lexus.svg" alt="Lexus" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volvo.svg" alt="Volvo" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/jeep.svg" alt="Jeep" width="120" height="44" loading="lazy" decoding="async"></li></ul>
-    <ul class="mq" aria-hidden="true"><li class="mk"><img src="assets/brands/toyota.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mazda.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/kia.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/nissan.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volkswagen.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/bmw.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/mercedes.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/audi.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/lexus.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/volvo.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li><li class="mk"><img src="assets/brands/jeep.svg" alt="" width="120" height="44" loading="lazy" decoding="async"></li></ul>
+    <ul class="mq" aria-label="Makes"><li class="mk">Toyota</li><li class="mk">Mazda</li><li class="mk">Kia</li><li class="mk">Nissan</li><li class="mk">Volkswagen</li><li class="mk">BMW</li><li class="mk">Mercedes-Benz</li><li class="mk">Audi</li><li class="mk">Lexus</li><li class="mk">Volvo</li><li class="mk">Jeep</li></ul>
+    <ul class="mq" aria-hidden="true"><li class="mk">Toyota</li><li class="mk">Mazda</li><li class="mk">Kia</li><li class="mk">Nissan</li><li class="mk">Volkswagen</li><li class="mk">BMW</li><li class="mk">Mercedes-Benz</li><li class="mk">Audi</li><li class="mk">Lexus</li><li class="mk">Volvo</li><li class="mk">Jeep</li></ul>
   </div>
 </section>
 
