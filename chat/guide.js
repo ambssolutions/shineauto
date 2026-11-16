@@ -111,8 +111,50 @@
     if (!log.children.length) return;
     if (log.querySelector(".ac-me")) { log.dataset.sg = "1"; return; }
     log.dataset.sg = "1";
-    setTimeout(function () { step(log, "start"); }, 500);
+    setTimeout(function () { if (!log.querySelector(".ac-me")) step(log, "start"); }, 500);
   }
+
+  /* Day-aware opening hours: "open tomorrow?", "open now?", "closing time today?", "open Saturday?" */
+  var DAYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+  var HRS = [null, [9, 17], [9, 17], [9, 17], [9, 17], [9, 17], [9, 14]];
+  function fmt(h) { return (h > 12 ? h - 12 : h) + (h >= 12 ? "pm" : "am"); }
+  function sydNow() {
+    var p = {}; new Intl.DateTimeFormat("en-AU", { timeZone: "Australia/Sydney", weekday: "long", hour: "numeric", minute: "numeric", hour12: false }).formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+    return { d: DAYS.indexOf(p.weekday.toLowerCase()), m: (+p.hour % 24) * 60 + (+p.minute) };
+  }
+  function hoursAnswer(q) {
+    q = q.toLowerCase();
+    if (!/\b(open|opened|close|closed|closing|shut|hours|trading|working)\b/.test(q)) return null;
+    var now = sydNow(), d = null, label = "";
+    if (/\b(tomorrow|tmrw|tmr|tomoz)\b/.test(q)) { d = (now.d + 1) % 7; label = "Tomorrow"; }
+    else if (/\b(today|tonight|now|right now|at the moment|currently|still)\b/.test(q)) { d = now.d; label = "Today"; }
+    else if (/\b(weekend)\b/.test(q)) return "This weekend: Saturday 9am to 2pm, and we're closed on Sunday.";
+    else DAYS.forEach(function (n, i) { if (d === null && new RegExp("\\b" + n.slice(0, 3) + "(" + n.slice(3) + ")?s?\\b").test(q)) { d = i; label = "On " + n.charAt(0).toUpperCase() + n.slice(1); } });
+    if (d === null) return null;
+    var h = HRS[d], name = DAYS[d].charAt(0).toUpperCase() + DAYS[d].slice(1), out;
+    if (label !== "Today" && label !== "Tomorrow") label = "On " + name;
+    var lab = /^On /.test(label) ? label : label + " (" + name + ")";
+    out = h ? lab + " we're open " + fmt(h[0]) + " to " + fmt(h[1]) + "." : lab + " we're closed. We're open Monday to Friday 9am to 5pm and Saturday 9am to 2pm.";
+    if (label === "Today" && h) {
+      if (now.m < h[0] * 60) out += " We open at " + fmt(h[0]) + ".";
+      else if (now.m < h[1] * 60) out += " We're open now, until " + fmt(h[1]) + ".";
+      else out += " We've closed for today.";
+    }
+    return out + " On public holidays, call first to check.";
+  }
+  document.addEventListener("submit", function (e) {
+    var f = e.target; if (!f.classList || !f.classList.contains("ac-in")) return;
+    var i = f.querySelector("input"), q = (i && i.value || "").trim(), a = q && hoursAnswer(q); if (!a) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    var log = document.querySelector(".ac-panel.on .ac-log") || document.querySelector(".ac-log"); if (!log) return;
+    i.value = ""; log.dataset.sg = "1"; log.appendChild(el("div", "ac-m ac-me", q)); scroll(log); track("hours_day");
+    typing(log, function () {
+      var b = el("div", "ac-m ac-bot"); b.appendChild(el("div", null, a));
+      var links = el("div", "ac-links"), c = el("a", null, "Call (02) 8798 5715"); c.href = TEL; links.appendChild(c);
+      var v = el("a", null, "Hours and address"); v.href = "/#visit"; links.appendChild(v); b.appendChild(links);
+      log.appendChild(b); scroll(log);
+    });
+  }, true);
   var css = ".sg-typing{display:flex;gap:4px;align-items:center;width:max-content}.sg-typing i{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.35;animation:sg-b 1s infinite}.sg-typing i:nth-child(2){animation-delay:.15s}.sg-typing i:nth-child(3){animation-delay:.3s}@keyframes sg-b{0%,100%{opacity:.25;transform:none}50%{opacity:.8;transform:translateY(-2px)}}" +
     ".sg-chips .ac-chip[disabled]{opacity:.45;cursor:default}.sg-chips .ac-chip.sg-picked{opacity:1;border-color:#e8740c;background:#fff3e4;color:#1a1209}html[data-theme=dark] .sg-chips .ac-chip.sg-picked{background:#2b1f12;color:#fff}" +
     ".sg-tag{display:inline-block;margin-bottom:6px;padding:3px 9px;border-radius:999px;font-size:11.5px;font-weight:700}.sg-book{background:#fde3c8;color:#7a3b04}.sg-none{background:#dcf2e3;color:#1d6b3a}.sg-expert{background:#e3e9f7;color:#2a4f9c}" +
