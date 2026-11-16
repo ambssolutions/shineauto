@@ -376,3 +376,4 @@ html:not(.drive) body .ac-launch{padding-left:16px!important}
 @media (min-width:761px){.toc ol{grid-template-columns:1fr 1fr;column-gap:28px}}
 
 html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-optical-sizing:auto;font-synthesis-weight:none}
+.credit{white-space:nowrap}
