@@ -179,6 +179,22 @@
     };
     SR.prototype.__sg = 1;
   })();
+
+  /* Voice: ask for the microphone first, so the browser always shows its Allow prompt */
+  var micOK = false;
+  function botSay(m) { var log = document.querySelector(".ac-panel.on .ac-log") || document.querySelector(".ac-log"); if (!log) return; log.dataset.sg = "1"; log.appendChild(el("div", "ac-m ac-bot", m)); scroll(log); }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest(".ac-mic"); if (!b || micOK || b.classList.contains("on")) return;
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return; // let the engine try
+    e.preventDefault(); e.stopImmediatePropagation();
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (st) {
+      st.getTracks().forEach(function (t) { t.stop(); }); micOK = true; track("mic_allowed"); b.click();
+    }).catch(function (err) {
+      track("mic_" + (err && err.name));
+      if (err && err.name === "NotFoundError") botSay("I couldn't find a microphone on this device. Please type your question.");
+      else botSay("The microphone is blocked for this site. Tap the padlock or settings icon next to the web address, allow the microphone, then tap the microphone again. Or type your question.");
+    });
+  }, true);
   var css = ".sg-typing{display:flex;gap:4px;align-items:center;width:max-content}.sg-typing i{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.35;animation:sg-b 1s infinite}.sg-typing i:nth-child(2){animation-delay:.15s}.sg-typing i:nth-child(3){animation-delay:.3s}@keyframes sg-b{0%,100%{opacity:.25;transform:none}50%{opacity:.8;transform:translateY(-2px)}}" +
     ".sg-chips .ac-chip[disabled]{opacity:.45;cursor:default}.sg-chips .ac-chip.sg-picked{opacity:1;border-color:#e8740c;background:#fff3e4;color:#1a1209}html[data-theme=dark] .sg-chips .ac-chip.sg-picked{background:#2b1f12;color:#fff}" +
     ".sg-tag{display:inline-block;margin-bottom:6px;padding:3px 9px;border-radius:999px;font-size:11.5px;font-weight:700}.sg-book{background:#fde3c8;color:#7a3b04}.sg-none{background:#dcf2e3;color:#1d6b3a}.sg-expert{background:#e3e9f7;color:#2a4f9c}" +
