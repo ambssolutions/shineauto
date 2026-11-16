@@ -160,7 +160,10 @@
     ".sg-tag{display:inline-block;margin-bottom:6px;padding:3px 9px;border-radius:999px;font-size:11.5px;font-weight:700}.sg-book{background:#fde3c8;color:#7a3b04}.sg-none{background:#dcf2e3;color:#1d6b3a}.sg-expert{background:#e3e9f7;color:#2a4f9c}" +
     "@media (prefers-reduced-motion:reduce){.sg-typing i{animation:none}}";
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
+  function nameLaunch() { var b = document.querySelector(".ac-launch"); if (b && !b.getAttribute("aria-label")) b.setAttribute("aria-label", "Chat with us"); }
+  nameLaunch();
   new MutationObserver(function () {
+    nameLaunch();
     var log = document.querySelector(".ac-log");
     if (log && !log.children.length) delete log.dataset.sg; // the chat was reset
     maybeStart();
