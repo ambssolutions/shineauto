@@ -6,9 +6,16 @@
   var BOOK = { t: "Call to book (02) 8798 5715", h: TEL };
   var EXPERT = { t: "Talk to Balli 0433 597 181", h: BALLI };
   var FLOW = {
-    start: { q: "Want a hand working out what your car needs? Pick one:", o: [
-      ["Pink slip", "pink"], ["Blue slip", "blue"], ["Logbook service", "logbook"], ["Warning light on", "light"],
-      ["Brakes or tyres", "brakes"], ["Air con", "aircon"], ["Battery", "battery"], ["Defect notice", "defect"], ["Something else", "other"]] },
+    start: { q: "What's going on with your car?", o: [
+      ["Warning light on", "light"], ["Strange noise", "noise"], ["Brakes feel wrong", "brakes"], ["Won't start", "battery"],
+      ["Running hot", "hot"], ["Air con not cold", "acYes"], ["Service is due", "logbook"], ["Rego due: pink or blue slip", "slip"],
+      ["Defect notice", "defect"], ["Something else", "other"]] },
+    slip: { q: "Which one do you need?", o: [["Pink slip", "pink"], ["Blue slip", "blue"], ["Not sure", "pinkUnsure"]] },
+    noise: { q: "When do you hear it?", o: [["When I brake", "brakeYes"], ["Over bumps", "bumps"], ["From the engine", "engNoise"], ["Not sure", "engNoise"]] },
+    bumps: { a: "Knocks or clunks over bumps can mean worn steering or suspension parts. Steering and suspension are part of our mechanical repairs, so book it in and we'll take a look.", r: "book", l: [BOOK] },
+    engNoise: { a: "Noises are best heard in person. Call and tell us what it sounds like and when it happens, and we'll find a time to take a look.", r: "expert", l: [EXPERT] },
+    hot: { q: "Is the temperature light on, or the gauge high?", o: [["Yes", "hotYes"], ["No, it just smells or steams", "hotYes"], ["Not sure", "hotYes"]] },
+    hotYes: { a: "Engine temperature is a red light: stop as soon as it's safe and switch off. Let the engine cool, and never open the radiator cap while it's hot. Call before driving on.", r: "expert", l: [{ t: "Call the workshop now", h: TEL }, { t: "What's that light?", h: "/#lights" }] },
     pink: { q: "Is the car registered in NSW and more than five years old?", o: [["Yes", "pinkYes"], ["No", "pinkNo"], ["Not sure", "pinkUnsure"]] },
     pinkYes: { a: "Then it needs a pink slip to renew its rego. We do pink slips for petrol, diesel and LPG cars. The most a station can charge for a light vehicle is $52.", r: "book", l: [BOOK, { t: "What gets checked", h: "/#inspect" }] },
     pinkNo: { a: "Cars five years old or newer usually don't need a pink slip to renew rego. Your renewal notice will say if an inspection is needed.", r: "none", l: [{ t: "Check your rego with Service NSW", h: "https://service.nsw.gov.au/transaction/check-vehicle-registration" }] },
@@ -24,20 +31,21 @@
     lightRed: { a: "A red or flashing warning light can mean act now. Stop somewhere safe as soon as you can and call us before driving on.", r: "expert", l: [{ t: "Call the workshop now", h: TEL }, { t: "What's that light?", h: "/#lights" }] },
     lightAmber: { a: "An amber light usually means get it checked soon. You can usually drive on gently and book it in.", r: "book", l: [BOOK, { t: "What's that light?", h: "/#lights" }] },
     lightUnsure: { a: "Have a look at our warning lights guide, or call and describe the light. We'll tell you what to do next.", r: "expert", l: [{ t: "What's that light?", h: "/#lights" }, EXPERT] },
-    brakes: { q: "Are you noticing any of these?", o: [["Grinding or squealing", "brakeYes"], ["Pulling to one side", "brakeYes"], ["Worn or damaged tyre", "brakeYes"], ["Just want a check", "brakeCheck"]] },
+    brakes: { q: "What are the brakes doing?", o: [["Grinding or squealing", "brakeYes"], ["Pulling to one side", "brakeYes"], ["Pedal feels soft", "brakeSoft"], ["Just want a check", "brakeCheck"]] },
     brakeYes: { a: "That's worth getting checked soon. We do all mechanical repairs, including brakes, steering and suspension, and tyres.", r: "book", l: [BOOK] },
-    brakeCheck: { a: "Happy to take a look. For tyres, have your tyre size handy when you call. It's printed on the side of the tyre.", r: "book", l: [BOOK] },
+    brakeSoft: { a: "A soft or sinking brake pedal needs checking before you drive far. Call us and we'll tell you what to do next.", r: "expert", l: [{ t: "Call the workshop", h: TEL }] },
+    brakeCheck: { a: "Happy to take a look at the brakes and tyres. For tyres, have your tyre size handy when you call. It's printed on the side of the tyre.", r: "book", l: [BOOK] },
     aircon: { q: "Is the air con blowing warm or not cooling like it used to?", o: [["Yes", "acYes"], ["No, something else", "acNo"]] },
     acYes: { a: "We do air con regas and repairs. A slow gas leak or a faulty part such as the compressor are common causes.", r: "book", l: [BOOK] },
     acNo: { a: "Describe what it's doing and our team will tell you if it needs a look.", r: "expert", l: [EXPERT] },
-    battery: { q: "What's happening?", o: [["Car won't start", "batNo"], ["Slow to start", "batSlow"], ["Battery light is on", "batLight"]] },
+    battery: { q: "What happens when you turn the key?", o: [["Nothing at all", "batNo"], ["Slow to crank", "batSlow"], ["Battery light is on", "batLight"]] },
     batNo: { a: "Call us and tell us what happens when you turn the key. We'll let you know the next step.", r: "expert", l: [{ t: "Call the workshop", h: TEL }] },
     batSlow: { a: "We check the battery and the charging system, and replace the battery if it needs it.", r: "book", l: [BOOK] },
     batLight: { a: "The battery may not be charging. Switch off what you don't need, like the air con and radio, get somewhere safe and call us.", r: "expert", l: [{ t: "Call the workshop", h: TEL }, { t: "Battery light explained", h: "/#lights" }] },
     defect: { q: "We do defect clearances. Do you have the defect notice with you?", o: [["Yes", "defYes"], ["No", "defNo"]] },
     defYes: { a: "Call us and tell us what's on the notice. We'll fix the items and clear it.", r: "book", l: [BOOK] },
     defNo: { a: "Give us a call and tell us what the notice was for, and we'll let you know what's needed.", r: "expert", l: [EXPERT] },
-    other: { a: "Type your question below and I'll answer from our website, or talk to our team.", r: "expert", l: [EXPERT], focus: true }
+    other: { a: "Tell me what the car is doing in your own words below, or talk to our team.", r: "expert", l: [EXPERT], focus: true }
   };
   var TAG = { book: "Book it in", none: "Not needed right now", expert: "Check with our expert" };
 
