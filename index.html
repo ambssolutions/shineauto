@@ -1292,7 +1292,7 @@ html:not(.drive) body .ac-launch{padding-left:16px!important}
 .lw.lift .lw-shadow{opacity:.12}
 .lw .lw-door{transform-box:view-box;transform-origin:556px 240px;transition:transform .9s cubic-bezier(.45,0,.25,1)}
 .lw.o-door .lw-door{transform:scaleX(.22)}
-.lw .lw-boot{transform-box:view-box;transform-origin:300px 243px;transition:transform .9s cubic-bezier(.45,0,.25,1)}
+.lw .lw-boot{transform-box:view-box;transform-origin:266px 246px;transition:transform .9s cubic-bezier(.45,0,.25,1)}
 .lw.o-boot .lw-boot{transform:rotate(-38deg)}
 .lw .lw-tank{opacity:0;transition:opacity .5s .3s}.lw.o-boot .lw-tank{opacity:1}
 .lw.s-lights .lw-tail{animation:lw-tail .9s steps(1) infinite}
@@ -1353,7 +1353,7 @@ html:not(.drive) body .ac-launch{padding-left:16px!important}
 .lw.lift .lw-shadow{opacity:.08}
 .lw .lw-door{transform-box:view-box;transform-origin:556px 240px;transition:transform .9s cubic-bezier(.45,0,.25,1)}
 .lw.o-door .lw-door{transform:scaleX(.2)}
-.lw .lw-boot{transform-box:view-box;transform-origin:300px 243px;transition:transform .9s cubic-bezier(.45,0,.25,1)}
+.lw .lw-boot{transform-box:view-box;transform-origin:266px 246px;transition:transform .9s cubic-bezier(.45,0,.25,1)}
 .lw.o-boot .lw-boot{transform:rotate(-38deg)}
 .lw .lw-tank{opacity:0;transition:opacity .5s .3s}.lw.o-boot .lw-tank{opacity:1}
 .lw.s-lights .lw-tail{animation:lw-tail .9s steps(1) infinite}
@@ -1419,6 +1419,50 @@ html[data-theme="dark"] .pt-steps li.on{background:#2b1f12}
 .pt-card>.pt-info{grid-area:1/1;display:block}
 .pt-card>.pt-info[hidden]{display:block!important;visibility:hidden}
 .pt-steps{width:100%;max-width:34ch}
+
+/* Close-up window: shows the step being done */
+.lw .cx{opacity:0;transition:opacity .45s}
+.lw.cu-gauge .cx-gauge,.lw.cu-side .cx-side,.lw.cu-match .cx-match,.lw.cu-disc .cx-disc,.lw.cu-lever .cx-lever,.lw.cu-hoist .cx-hoist,.lw.cu-rock .cx-rock,.lw.cu-shock .cx-shock,.lw.cu-head .cx-head,.lw.cu-tail .cx-tail,.lw.cu-ind .cx-ind,.lw.cu-glass .cx-glass,.lw.cu-wiper .cx-wiper,.lw.cu-belt .cx-belt,.lw.cu-buckle .cx-buckle,.lw.cu-retract .cx-retract,.lw.cu-sill .cx-sill,.lw.cu-arch .cx-arch,.lw.cu-pipe .cx-pipe,.lw.cu-mount .cx-mount,.lw.cu-tank .cx-tank,.lw.cu-spray .cx-spray,.lw.cu-tag .cx-tag{opacity:1}
+.lw .cu-tick{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.3)}
+.lw.cu-go .cu-tick{animation:cu-tick .45s cubic-bezier(.3,1.6,.5,1) 1.9s forwards}
+@keyframes cu-tick{to{opacity:1;transform:none}}
+.lw .cu-probe{animation:cu-probe 2.4s ease-in-out infinite}
+@keyframes cu-probe{0%,15%{transform:translateY(0)}45%,100%{transform:translateY(26px)}}
+.lw .cu-read{opacity:0;animation:cu-in 2.4s steps(1) infinite}
+@keyframes cu-in{0%,50%{opacity:0}51%,100%{opacity:1}}
+.lw .cu-sweep{animation:cu-sw 1.8s ease-in-out infinite alternate}
+@keyframes cu-sw{from{transform:translate(-14px,10px)}to{transform:translate(12px,-8px)}}
+.lw .cu-sweepx{animation:cu-swx 2.2s ease-in-out infinite alternate}
+@keyframes cu-swx{from{transform:translateX(0)}to{transform:translateX(120px)}}
+.lw .cu-eq{transform-box:fill-box;transform-origin:center;animation:cu-pop 1.6s ease-in-out infinite}
+@keyframes cu-pop{0%,100%{transform:scale(1)}50%{transform:scale(1.4)}}
+.lw .cu-lever{transform-box:fill-box;transform-origin:50% 95%;animation:cu-lev 2.2s ease-in-out infinite}
+@keyframes cu-lev{0%,20%{transform:rotate(0)}55%,100%{transform:rotate(38deg)}}
+.lw .cu-lift{animation:cu-lift 2.2s ease-in-out infinite alternate}
+@keyframes cu-lift{from{transform:translateY(12px)}to{transform:translateY(-12px)}}
+.lw .cu-rock{transform-box:fill-box;transform-origin:50% 50%;animation:cu-rk .5s ease-in-out infinite alternate}
+@keyframes cu-rk{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+.lw .cu-spring{transform-box:fill-box;transform-origin:center;animation:cu-spr .6s ease-in-out infinite alternate}
+@keyframes cu-spr{from{transform:scaleY(.8)}to{transform:scaleY(1.05)}}
+.lw .cu-glow,.lw .cu-beam2{animation:cu-gl 1.4s ease-in-out infinite alternate}
+@keyframes cu-gl{from{opacity:.35}to{opacity:1}}
+.lw .cu-blink,.lw .cu-amber{animation:cu-bl .8s steps(1) infinite}
+@keyframes cu-bl{0%{opacity:1}50%{opacity:.2}}
+.lw .cu-mag{animation:cu-mg 2.4s ease-in-out infinite}
+@keyframes cu-mg{0%,100%{transform:translate(-30px,-24px)}50%{transform:translate(0,0)}}
+.lw .cu-wipe{transform-box:fill-box;transform-origin:50% 100%;animation:cu-wp 1.4s ease-in-out infinite alternate}
+@keyframes cu-wp{from{transform:rotate(-55deg)}to{transform:rotate(55deg)}}
+.lw .cu-strap{transform-box:fill-box;transform-origin:100% 50%;animation:cu-out 2.4s ease-in-out infinite}
+@keyframes cu-out{0%{transform:scaleX(.25)}60%,100%{transform:scaleX(1)}}
+.lw .cu-strap2{transform-box:fill-box;transform-origin:100% 50%;animation:cu-back 2.4s ease-in-out infinite}
+@keyframes cu-back{0%,20%{transform:scaleX(1)}80%,100%{transform:scaleX(.25)}}
+.lw .cu-tongue{animation:cu-tg 2s ease-in-out infinite}
+@keyframes cu-tg{0%,15%{transform:translateX(0)}45%,65%{transform:translateX(26px)}95%,100%{transform:translateX(0)}}
+.lw .cu-wobble{transform-box:fill-box;transform-origin:50% 0;animation:cu-wb .35s ease-in-out infinite alternate}
+@keyframes cu-wb{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+.lw .cu-drops{animation:cu-dr 1.6s ease-out infinite}
+@keyframes cu-dr{0%{opacity:0;transform:translate(-20px,-10px)}30%{opacity:1}100%{opacity:0;transform:translate(10px,14px)}}
+@media (prefers-reduced-motion:reduce){.lw .cu-tick{opacity:1;transform:none}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens if the car fails its inspection?", "acceptedAnswer": {"@type": "Answer", "text": "We tell you what failed. Have it fixed and checked again here within 14 days and there's no second inspection fee."}}, {"@type": "Question", "name": "How do I know if my car needs an inspection?", "acceptedAnswer": {"@type": "Answer", "text": "Your rego renewal notice says whether you need one. You can check when your rego is due with Service NSW."}}, {"@type": "Question", "name": "How much is a pink slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle pink slip is $52, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How much is a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle blue slip is $82, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How long is a pink slip valid?", "acceptedAnswer": {"@type": "Answer", "text": "A pink slip report is valid for 6 months. A blue slip is valid for 42 days."}}, {"@type": "Question", "name": "Do you do pink slips for LPG and diesel cars?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do pink slips for petrol, diesel and LPG vehicles."}}, {"@type": "Question", "name": "Do I need a pink slip or a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "Most light vehicles over five years old need a pink slip to renew rego. You need a blue slip if the rego expired more than three months ago, the car is from interstate or overseas, it has no plates, or it's a written-off vehicle approved for re-registration."}}, {"@type": "Question", "name": "What are your opening hours?", "acceptedAnswer": {"@type": "Answer", "text": "Monday to Friday 9am to 5pm, and Saturday 9am to 2pm. We're closed on Sunday."}}, {"@type": "Question", "name": "How do I book?", "acceptedAnswer": {"@type": "Answer", "text": "Call the workshop on (02) 8798 5715, or Balli on 0433 597 181, and tell us the car and what it needs."}}, {"@type": "Question", "name": "Do you service all makes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We service all makes. We're an independent workshop, not linked to any car maker."}}, {"@type": "Question", "name": "Will a logbook service here keep my new car warranty?", "acceptedAnswer": {"@type": "Answer", "text": "Under the Australian Consumer Law, a new car warranty can't be voided just because an independent workshop did the servicing, as long as it's done to the maker's specifications. Bring your logbook so the service can be recorded."}}, {"@type": "Question", "name": "Do you regas air con?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do air con regas and repairs, for air con that blows warm or doesn't cool like it used to."}}]}</script>
 </head>
@@ -1704,6 +1748,7 @@ html[data-theme="dark"] .pt-steps li.on{background:#2b1f12}
           <g transform="translate(28 120)"><rect width="90" height="110" rx="4" fill="#e3dbcd" stroke="#cfc5b4"/><g fill="#7d838c"><rect x="12" y="14" width="6" height="34" rx="2"/><rect x="26" y="14" width="6" height="26" rx="2"/><rect x="40" y="14" width="6" height="38" rx="2"/><circle cx="68" cy="28" r="10" fill="none" stroke="#7d838c" stroke-width="4"/><rect x="14" y="66" width="60" height="6" rx="3"/><rect x="14" y="80" width="44" height="6" rx="3"/></g></g>
           <g transform="translate(700 226)"><rect width="76" height="106" rx="4" fill="#c4372d"/><g fill="#9e2a22"><rect x="6" y="8" width="64" height="18" rx="2"/><rect x="6" y="32" width="64" height="18" rx="2"/><rect x="6" y="56" width="64" height="18" rx="2"/><rect x="6" y="80" width="64" height="18" rx="2"/></g><g fill="#e6e1d8"><rect x="30" y="15" width="16" height="3" rx="1.5"/><rect x="30" y="39" width="16" height="3" rx="1.5"/><rect x="30" y="63" width="16" height="3" rx="1.5"/><rect x="30" y="87" width="16" height="3" rx="1.5"/></g></g>
           <g transform="translate(36 290)" fill="#26282d"><ellipse cx="22" cy="36" rx="22" ry="6"/><rect x="0" y="24" width="44" height="12" rx="6"/><ellipse cx="22" cy="24" rx="22" ry="6" fill="#3a3d44"/><rect x="0" y="10" width="44" height="12" rx="6"/><ellipse cx="22" cy="10" rx="22" ry="6" fill="#3a3d44"/></g>
+          <g font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="800" letter-spacing="2" fill="#8d877d"><text x="168" y="360">◀ BACK</text><text x="612" y="360">FRONT ▶</text></g>
           <!-- hoist -->
           <g fill="#2f6fd0"><rect x="212" y="150" width="14" height="182" rx="3"/><rect x="614" y="150" width="14" height="182" rx="3"/><rect x="212" y="144" width="416" height="9" rx="3" fill="#2a63bb"/></g>
           <!-- car -->
@@ -1711,13 +1756,13 @@ html[data-theme="dark"] .pt-steps li.on{background:#2b1f12}
             <ellipse cx="420" cy="334" rx="232" ry="7" fill="#000" opacity=".18" class="lw-shadow"/>
             <g fill="#f2c230"><rect x="250" y="312" width="70" height="6" rx="2"/><rect x="520" y="312" width="70" height="6" rx="2"/></g>
             <g class="lw-tank"><rect x="214" y="222" width="70" height="26" rx="13" fill="#a7adb5"/><rect x="232" y="216" width="10" height="8" rx="2" fill="#6b7078"/><rect x="238" y="214" width="16" height="4" rx="2" fill="#d33"/></g>
-            <path d="M190 300 L191 268 Q194 250 216 247 L300 240 L350 200 Q362 191 382 191 L500 191 Q522 191 538 205 L578 240 L630 247 Q651 251 652 270 L652 300 Z" fill="url(#dPaint)"/>
+            <path d="M198 300 Q190 296 191 284 Q190 266 199 257 Q210 249 236 246 C268 241 298 208 342 195 Q398 180 458 182 C498 184 526 204 560 228 Q598 240 628 246 Q650 250 654 266 L654 286 Q652 298 640 300 Z" fill="url(#dPaint)"/>
             <path d="M190 300 L652 300 L652 288 L190 288 Z" fill="#2a2d33"/>
-            <path d="M330 238 L357 207 Q366 199 380 199 L436 199 L436 238 Z" fill="url(#dGlass)"/>
-            <path d="M444 199 L496 199 Q514 199 527 210 L556 238 L444 238 Z" fill="url(#dGlass)"/>
-            <rect x="436" y="199" width="8" height="40" fill="#e8740c"/>
-            <path d="M362 205 L372 205 L352 232 L344 232 Z" fill="#fff" opacity=".18"/>
-            <path d="M216 252 Q420 246 642 256" fill="none" stroke="#ffd3a1" stroke-opacity=".7" stroke-width="2"/>
+            <path d="M296 238 Q318 212 350 202 Q392 190 432 190 L432 238 Z" fill="url(#dGlass)"/>
+            <path d="M440 190 Q482 190 506 199 Q528 210 548 236 L440 238 Z" fill="url(#dGlass)"/>
+            <rect x="432" y="189" width="8" height="50" fill="#d06a08"/>
+            <path d="M352 204 L364 201 L336 234 L324 234 Z" fill="#fff" opacity=".18"/>
+            <path d="M206 256 Q420 247 648 258" fill="none" stroke="#ffd3a1" stroke-opacity=".7" stroke-width="2"/>
             <line x1="336" y1="240" x2="336" y2="290" stroke="#9a4a05" stroke-width="1.5"/><line x1="440" y1="240" x2="440" y2="290" stroke="#9a4a05" stroke-width="1.5"/>
             <rect x="410" y="252" width="16" height="4" rx="2" fill="#7a3b04"/>
             <path d="M548 222 L562 224 Q566 226 564 232 L552 232 Z" fill="#e8740c" stroke="#9a4a05" stroke-width="1"/>
@@ -1725,6 +1770,16 @@ html[data-theme="dark"] .pt-steps li.on{background:#2b1f12}
             <rect x="639" y="254" width="13" height="10" rx="3" fill="#fff4cf"/>
             <rect x="196" y="296" width="80" height="6" rx="3" fill="#4b4f57"/>
             <path d="M240 300 A38 38 0 0 1 316 300 Z" fill="#17191d"/><path d="M524 300 A38 38 0 0 1 600 300 Z" fill="#17191d"/>
+
+            <!-- front: grille, big headlight, bumper -->
+            <rect x="640" y="270" width="14" height="14" rx="3" fill="#1d2025"/><g stroke="#4b4f57" stroke-width="1.2"><line x1="642" y1="274" x2="652" y2="274"/><line x1="642" y1="278" x2="652" y2="278"/></g>
+            <path d="M628 252 L651 256 Q655 258 654 264 L630 262 Q624 258 628 252 Z" fill="#fff4cf" stroke="#9a4a05" stroke-width="1"/>
+            <rect x="606" y="286" width="50" height="8" rx="4" fill="#2a2d33"/>
+            <!-- back: big tail light, number plate, bumper, exhaust tip -->
+            <path d="M190 254 L206 252 L206 274 L191 276 Z" fill="#c4231a" class="lw-tail"/>
+            <rect x="184" y="286" width="46" height="8" rx="4" fill="#2a2d33"/>
+            <rect x="196" y="276" width="26" height="10" rx="2" fill="#fff" stroke="#1d2025" stroke-width="1.2"/><rect x="200" y="279" width="18" height="4" rx="1" fill="#1d2025"/>
+            <rect x="182" y="297" width="18" height="7" rx="3" fill="#7d838c"/>
             <g class="lw-door"><path d="M444 199 L496 199 Q514 199 527 210 L556 238 L556 288 L444 288 Z" fill="#e8740c" stroke="#9a4a05" stroke-width="1.5"/><path d="M450 205 L494 205 Q510 205 521 214 L544 236 L450 236 Z" fill="url(#dGlass)"/><rect x="520" y="252" width="16" height="4" rx="2" fill="#7a3b04"/></g>
             <g class="lw-boot"><path d="M216 247 L300 240 L300 246 L214 254 Z" fill="#d86a0a"/></g>
             <g class="lw-wf"><use href="#dWheel" x="562" y="300"/></g>
@@ -1732,6 +1787,59 @@ html[data-theme="dark"] .pt-steps li.on{background:#2b1f12}
           </g></g>
           <!-- the part being checked: a marching dashed outline (Delta style) -->
           <rect class="lw-hl" x="524" y="262" width="76" height="76" rx="38" fill="none" stroke="#e8740c" stroke-width="3" stroke-dasharray="7 6"/>
+
+          <!-- close-up of the step being done -->
+          <defs><clipPath id="cuClip"><circle r="70"/></clipPath></defs>
+          <g class="cu" transform="translate(704 90)">
+            <circle r="76" fill="#fff" stroke="#e8740c" stroke-width="5"/>
+            <g clip-path="url(#cuClip)">
+              <rect x="-70" y="-70" width="140" height="140" fill="#eef0f2"/>
+              <!-- tread gauge -->
+              <g class="cx cx-gauge"><rect x="-70" y="-10" width="140" height="80" fill="#24262b"/><g fill="#3d4047"><rect x="-58" y="-10" width="14" height="80"/><rect x="-26" y="-10" width="14" height="80"/><rect x="6" y="-10" width="14" height="80"/><rect x="38" y="-10" width="14" height="80"/></g>
+                <g class="cu-probe"><rect x="-23" y="-62" width="8" height="40" fill="#c7ccd2"/><rect x="-36" y="-70" width="34" height="14" rx="3" fill="#ee7a10"/></g>
+                <g class="cu-read"><rect x="6" y="-58" width="54" height="26" rx="5" fill="#1d2025"/><text x="33" y="-40" text-anchor="middle" fill="#7dff9a" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800">4 mm</text></g></g>
+              <!-- sidewall with a torch sweep -->
+              <g class="cx cx-side"><circle cx="-10" cy="0" r="64" fill="#24262b"/><circle cx="-10" cy="0" r="34" fill="#b9bec5"/><circle cx="-10" cy="0" r="26" fill="#6b717a"/><path class="cu-sweep" d="M70 -70 L-40 -18 L-40 18 Z" fill="#fff6c2" opacity=".75"/></g>
+              <!-- tyres match -->
+              <g class="cx cx-match"><g fill="#24262b"><circle cx="-30" cy="0" r="26"/><circle cx="30" cy="0" r="26"/></g><g fill="#9aa0a8"><circle cx="-30" cy="0" r="12"/><circle cx="30" cy="0" r="12"/></g><g class="cu-eq" fill="#2f9e5b"><rect x="-8" y="-6" width="16" height="4" rx="2"/><rect x="-8" y="3" width="16" height="4" rx="2"/></g><text x="0" y="48" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="700" fill="#4f5560">Same size and type</text></g>
+              <!-- brake disc and pads -->
+              <g class="cx cx-disc"><circle r="50" fill="#9aa0a8"/><circle r="44" fill="none" stroke="#7d838c" stroke-width="2" stroke-dasharray="3 6"/><circle r="16" fill="#6b717a"/><rect x="-22" y="-62" width="44" height="30" rx="6" fill="#ee7a10"/><rect x="-16" y="-36" width="32" height="7" rx="2" fill="#3a3d44"/><path class="cu-sweep" d="M70 70 L-10 -10 L10 -30 Z" fill="#fff6c2" opacity=".75"/></g>
+              <!-- handbrake -->
+              <g class="cx cx-lever"><rect x="-60" y="30" width="120" height="40" fill="#2a2d33"/><g class="cu-lever"><rect x="-24" y="-30" width="10" height="66" rx="5" fill="#1b1d22"/><rect x="-26" y="-40" width="14" height="22" rx="6" fill="#3a3d44"/></g><text x="30" y="0" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="800" fill="#2f9e5b">Holds</text></g>
+              <!-- hoist up -->
+              <g class="cx cx-hoist"><g class="cu-lift"><path d="M-50 10 L-46 -4 Q-44 -10 -36 -10 L-18 -10 L-6 -24 Q-2 -28 6 -28 L26 -28 Q34 -28 40 -22 L50 -10 L52 10 Z" fill="#ee7a10"/><circle cx="-30" cy="12" r="9" fill="#1b1d22"/><circle cx="34" cy="12" r="9" fill="#1b1d22"/></g><g fill="#2f6fd0"><rect x="-60" y="22" width="8" height="48"/><rect x="52" y="22" width="8" height="48"/></g><path d="M0 60 L0 34 M-8 42 L0 34 L8 42" stroke="#e8740c" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+              <!-- rock the wheel -->
+              <g class="cx cx-rock"><g class="cu-rock"><circle r="44" fill="#1b1d22"/><circle r="26" fill="#b9bec5"/><circle r="8" fill="#6b717a"/></g><path d="M-58 -30 A60 60 0 0 1 -30 -58 M58 30 A60 60 0 0 1 30 58" stroke="#e8740c" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+              <!-- shock absorber -->
+              <g class="cx cx-shock"><rect x="-10" y="-64" width="20" height="40" rx="4" fill="#6b717a"/><g class="cu-spring"><path d="M-22 -24 L22 -16 L-22 -8 L22 0 L-22 8 L22 16 L-22 24" stroke="#ee7a10" stroke-width="5" fill="none" stroke-linejoin="round"/></g><rect x="-6" y="-24" width="12" height="56" fill="#9aa0a8"/><rect x="-14" y="30" width="28" height="12" rx="4" fill="#3a3d44"/><path class="cu-sweep" d="M70 -60 L0 -10 L10 10 Z" fill="#fff6c2" opacity=".7"/></g>
+              <!-- head light -->
+              <g class="cx cx-head"><path d="M-60 -30 L40 -30 Q60 -20 60 0 Q60 20 40 30 L-60 30 Z" fill="#ee7a10"/><ellipse class="cu-glow" cx="10" cy="0" rx="34" ry="18" fill="#fff4cf"/><path class="cu-beam2" d="M44 -16 L70 -50 L70 50 L44 16 Z" fill="#fff6c2" opacity=".8"/></g>
+              <!-- tail light -->
+              <g class="cx cx-tail"><rect x="-70" y="-40" width="140" height="80" fill="#ee7a10"/><rect class="cu-blink" x="-36" y="-22" width="72" height="44" rx="10" fill="#ff2a1a"/></g>
+              <!-- indicators and plate -->
+              <g class="cx cx-ind"><rect x="-70" y="-40" width="140" height="80" fill="#ee7a10"/><rect class="cu-amber" x="-56" y="-26" width="32" height="20" rx="6" fill="#ffb300"/><rect x="-26" y="10" width="52" height="24" rx="3" fill="#fff" stroke="#1d2025" stroke-width="2"/><rect x="-16" y="18" width="32" height="7" rx="2" fill="#1d2025"/><circle class="cu-plate" cx="0" cy="6" r="4" fill="#fff6c2"/></g>
+              <!-- windscreen chip -->
+              <g class="cx cx-glass"><rect x="-70" y="-70" width="140" height="140" fill="#5a6372"/><path d="M-40 -60 L60 40" stroke="#fff" stroke-opacity=".18" stroke-width="18"/><g class="cu-mag"><circle cx="-6" cy="-6" r="22" fill="none" stroke="#e8740c" stroke-width="5"/><path d="M10 10 L28 28" stroke="#e8740c" stroke-width="6" stroke-linecap="round"/></g><path d="M-6 -12 L-6 0 M-12 -6 L0 -6 M-10 -10 L-2 -2 M-10 -2 L-2 -10" stroke="#fff" stroke-width="1.5"/></g>
+              <!-- wipers -->
+              <g class="cx cx-wiper"><rect x="-70" y="-70" width="140" height="140" fill="#5a6372"/><g class="cu-wipe"><rect x="-42" y="-40" width="5" height="100" rx="2" fill="#1b1d22"/></g><path d="M-40 60 m-90 0 a90 90 0 0 1 180 0" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="2"/></g>
+              <!-- seatbelt out, buckle, back in -->
+              <g class="cx cx-belt"><rect x="-70" y="-70" width="140" height="140" fill="#9aa0a8"/><rect x="40" y="-60" width="22" height="40" rx="5" fill="#1b1d22"/><rect class="cu-strap" x="-60" y="-36" width="104" height="16" fill="#3b4250"/></g>
+              <g class="cx cx-buckle"><rect x="-70" y="-70" width="140" height="140" fill="#9aa0a8"/><rect x="10" y="-14" width="44" height="28" rx="6" fill="#c42b23"/><g class="cu-tongue"><rect x="-70" y="-7" width="40" height="14" fill="#3b4250"/><rect x="-30" y="-8" width="26" height="16" rx="3" fill="#c7ccd2"/></g></g>
+              <g class="cx cx-retract"><rect x="-70" y="-70" width="140" height="140" fill="#9aa0a8"/><rect x="40" y="-60" width="22" height="40" rx="5" fill="#1b1d22"/><rect class="cu-strap2" x="-60" y="-36" width="104" height="16" fill="#3b4250"/></g>
+              <!-- sill and arches -->
+              <g class="cx cx-sill"><rect x="-70" y="-70" width="140" height="90" fill="#ee7a10"/><rect x="-70" y="20" width="140" height="18" fill="#2a2d33"/><path class="cu-sweepx" d="M-70 50 L-30 18 L-10 18 Z" fill="#fff6c2" opacity=".8"/></g>
+              <g class="cx cx-arch"><rect x="-70" y="-70" width="140" height="140" fill="#ee7a10"/><path d="M-50 70 A50 50 0 0 1 50 70 Z" fill="#17191d"/><path class="cu-sweep" d="M70 -60 L10 20 L30 30 Z" fill="#fff6c2" opacity=".75"/></g>
+              <!-- exhaust and mounts -->
+              <g class="cx cx-pipe"><rect x="-70" y="-70" width="140" height="140" fill="#2a2d33"/><rect x="-70" y="-10" width="140" height="20" rx="10" fill="#7d838c"/><rect x="-10" y="-18" width="34" height="36" rx="8" fill="#5d636c"/><path class="cu-sweepx" d="M-70 60 L-20 -6 L0 -6 Z" fill="#fff6c2" opacity=".75"/></g>
+              <g class="cx cx-mount"><rect x="-70" y="-70" width="140" height="140" fill="#2a2d33"/><rect x="-70" y="14" width="140" height="18" rx="9" fill="#7d838c"/><g class="cu-wobble"><rect x="-4" y="-50" width="8" height="34" fill="#9aa0a8"/><circle cy="-10" r="12" fill="#17191d"/><circle cy="-10" r="5" fill="#3a3d44"/></g></g>
+              <!-- LPG -->
+              <g class="cx cx-tank"><rect x="-70" y="-70" width="140" height="140" fill="#2a2d33"/><rect x="-56" y="-26" width="112" height="52" rx="26" fill="#a7adb5"/><rect x="-10" y="-38" width="20" height="14" rx="3" fill="#6b717a"/><path class="cu-sweep" d="M70 -70 L-20 -20 L0 10 Z" fill="#fff6c2" opacity=".6"/></g>
+              <g class="cx cx-spray"><rect x="-70" y="-70" width="140" height="140" fill="#2a2d33"/><rect x="-70" y="10" width="140" height="60" rx="10" fill="#a7adb5"/><rect x="-14" y="-24" width="28" height="36" rx="4" fill="#6b717a"/><rect x="-40" y="-8" width="30" height="8" fill="#c9a227"/><g class="cu-drops" fill="#cfe6ff"><circle cx="-18" cy="-30" r="4"/><circle cx="-8" cy="-40" r="3"/><circle cx="4" cy="-34" r="3.5"/></g><text x="0" y="50" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="800" fill="#1d6b3a">No bubbles</text></g>
+              <g class="cx cx-tag"><rect x="-70" y="-70" width="140" height="140" fill="#a7adb5"/><rect x="-46" y="-26" width="92" height="52" rx="6" fill="#fff" stroke="#1d2025" stroke-width="2"/><text x="0" y="-6" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="700" fill="#1d2025">Tank test date</text><text x="0" y="12" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="800" fill="#1d6b3a">In date</text></g>
+            </g>
+            <g class="cu-tick"><circle cx="54" cy="-54" r="16" fill="#2f9e5b" stroke="#fff" stroke-width="3"/><path d="M46 -54 L52 -48 L62 -60" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+            <text class="cu-ex" x="0" y="-84" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="700" fill="#6b6459">Close-up · example</text>
+          </g>
           <!-- the mechanic -->
           <g class="lw-man" style="transform:translate(860px,332px)"><g class="lw-face">
             <g class="lw-stand">
@@ -1928,7 +2036,7 @@ html[data-theme="dark"] .pt-steps li.on{background:#2b1f12}
   <a class="btn btn--ghost q-dir" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener" aria-label="Directions to the workshop"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span class="q-t">Directions</span></a>
 </nav>
 
-<script src="assets/site.js?v=35d42720"></script>
+<script src="assets/site.js?v=51379fd7"></script>
 <!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=45f05ee3" data-label="Chat with us" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-avoid=".qbar" defer></script><!--/chat-->
 <script>(function(){if(matchMedia("(max-width:760px)").matches){var c=document.querySelector('script[src*="chat.js"]');if(c){c.removeAttribute("data-nudge");c.removeAttribute("data-nudge-open")}}})();</script>
 
