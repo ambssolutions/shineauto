@@ -69,6 +69,23 @@
     });
     log.appendChild(box); scroll(log);
   }
+  var ASK = ["How much is a pink slip?", "Are you open on Saturday?", "Where are you?", "Is your work guaranteed?"];
+  function ask(q) {
+    var f = document.querySelector(".ac-panel.on .ac-in") || document.querySelector(".ac-in"); if (!f) return;
+    var i = f.querySelector("input"); i.value = q;
+    if (f.requestSubmit) f.requestSubmit(); else f.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true }));
+  }
+  function askOther(log) {
+    var i = document.querySelector(".ac-in input"); if (i) i.focus({ preventScroll: true });
+    typing(log, function () {
+      log.appendChild(el("div", "ac-m ac-bot", "Sure. Type your question below, or pick one of these:"));
+      chips(log, ASK.map(function (q) { return [q, q]; }).concat([["Back to the start", "start"]]), function (v) {
+        if (v === "start") { step(log, "start"); return; }
+        var last = log.lastChild; if (last && last.classList.contains("ac-me")) last.remove(); // the engine shows the question itself
+        ask(v);
+      });
+    });
+  }
   function step(log, id) {
     var n = FLOW[id]; if (!n) return; track(id);
     typing(log, function () {
@@ -83,7 +100,7 @@
       }
       log.appendChild(b);
       chips(log, [["Start again", "start"], ["Ask something else", "type"]], function (next) {
-        if (next === "type") { var i = document.querySelector(".ac-in input"); if (i) i.focus(); return; }
+        if (next === "type") { askOther(log); return; }
         step(log, next);
       });
       if (n.focus) { var i = document.querySelector(".ac-in input"); if (i) i.focus(); }
