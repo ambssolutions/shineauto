@@ -246,10 +246,10 @@ f.addEventListener("submit",function(e){e.preventDefault();var q=f.q.value.trim(
  if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;},{threshold:.15}).observe(box);
 })();
 
-/* Warning lights on phones: step to the next light every 7s while the panel is on screen; a tap holds it for 15s */
+/* Warning lights: step to the next light every 7s (phones and laptops) while the panel is on screen; a tap holds it for 15s */
 (function(){var sec=document.querySelector(".lights");if(!sec)return;var btns=[].slice.call(sec.querySelectorAll(".lbtn")),list=sec.querySelector(".list");
  if(!btns.length||!list||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
- var mq=matchMedia("(max-width:760px)"),bar=document.createElement("div");bar.className="lprog";bar.setAttribute("aria-hidden","true");bar.innerHTML="<i></i>";list.parentNode.insertBefore(bar,list.nextSibling);
+ var mq=matchMedia("all"),bar=document.createElement("div");bar.className="lprog";bar.setAttribute("aria-hidden","true");bar.innerHTML="<i></i>";list.parentNode.insertBefore(bar,list.nextSibling);
  var vis=false,holdUntil=0,auto=false;
  function restart(){var i=bar.firstChild;i.style.animation="none";void i.offsetWidth;i.style.animation=""}
  function cur(){return btns.findIndex(function(b){return b.getAttribute("aria-pressed")==="true"})}
