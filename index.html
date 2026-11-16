@@ -938,6 +938,19 @@ html[data-theme="dark"].drive body .ac-launch{background-image:url(/assets/chat-
 .lights.hold .lbtn[aria-pressed="true"] .ib::after{animation-play-state:paused}
 @keyframes lring{to{--lp:100}}
 @media (max-width:760px){.lights.auto .lbtn[aria-pressed="true"] .ib::after{inset:-5px;border-radius:12px}}
+
+/* Phones: a slim Call / Directions bar on the left and a small SUV beside it, so more of the page is readable */
+@media (max-width:759px){
+  .qbar{left:10px;right:auto;gap:4px;padding:4px;grid-template-columns:auto auto}
+  .qbar .btn{min-height:38px;padding:0 14px;font-size:.88rem;gap:6px}
+  .qbar .btn .ic{width:15px;height:15px}
+}
+@media (max-width:760px){
+  body .ac-launch{width:80px;height:38px;right:calc(env(safe-area-inset-right,0px) + 10px)}
+  body .ac-launch .ac-dot{display:none}
+  body .ac-launch::before{right:4px;top:-11px;width:17px;height:15px}
+  body.ac-qbar-on .ac-launch,body .ac-launch{bottom:calc(env(safe-area-inset-bottom,0px) + 12px + var(--tk))!important}
+}
 </style>
 </head>
 <body>
