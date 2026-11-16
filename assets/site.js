@@ -331,3 +331,14 @@ document.addEventListener("animationend",function(e){if(e.animationName==="suv-i
  if(reduce||!("IntersectionObserver" in window))lw.classList.add("in");
  else new IntersectionObserver(function(es,o){if(es[0].isIntersecting){go();o.disconnect()}},{threshold:.4}).observe(lw);
 })();
+
+/* Pink slip scenes: each check shows the mechanic doing it, with a live caption */
+(function(){var bay=document.getElementById("bay3d");if(!bay||!bay.querySelector(".ps-scene img"))return;var keys=[].slice.call(bay.querySelectorAll(".pt-keys [data-pt]")),imgs=[].slice.call(bay.querySelectorAll(".ps-scene img")),cap=bay.querySelector(".ps-live b");
+ function load(im){if(im&&im.dataset.src){im.srcset=im.dataset.srcset;im.src=im.dataset.src;im.removeAttribute("data-src")}}
+ function pick(id,k){keys.forEach(function(x){x.setAttribute("aria-pressed",String(x.dataset.pt===id))});
+  [].forEach.call(bay.querySelectorAll(".pt-info"),function(d){d.hidden=d.dataset.pt!==id});
+  imgs.forEach(function(im,i){var on=im.dataset.pt===id;if(on){load(im);load(imgs[(i+1)%imgs.length])}im.classList.toggle("on",on)});
+  if(cap&&k)cap.textContent="Checking: "+k.textContent.trim()}
+ keys.forEach(function(k){k.addEventListener("click",function(){pick(k.dataset.pt,k)})});
+ if("IntersectionObserver" in window)new IntersectionObserver(function(es,o){if(es[0].isIntersecting){load(imgs[1]);o.disconnect()}},{rootMargin:"300px 0px"}).observe(bay);
+})();

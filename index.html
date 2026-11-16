@@ -1309,6 +1309,10 @@ html:not(.drive) body .ac-launch{padding-left:16px!important}
 @media (prefers-reduced-motion:reduce){.lw *{animation:none!important;transition:none!important}.lw:not(.in) .lw-carwrap{transform:none}.lw:not(.in) .lw-man,.lw:not(.in) .lw-ring{opacity:1}}
 @media (min-width:761px){.lw-stage{display:flex;align-items:center}}
 @media (max-width:760px){.lw-stage{height:auto!important;aspect-ratio:2/1}}
+
+/* Pink slip photos: a live caption over the scene */
+.ps-live{position:absolute;left:12px;top:12px;z-index:2;display:flex;align-items:center;gap:8px;margin:0;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font:700 .8rem/1 var(--sans)}
+.ps-live span{width:8px;height:8px;border-radius:50%;background:#2fd15a;animation:led 1.4s ease-in-out infinite}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens if the car fails its inspection?", "acceptedAnswer": {"@type": "Answer", "text": "We tell you what failed. Have it fixed and checked again here within 14 days and there's no second inspection fee."}}, {"@type": "Question", "name": "How do I know if my car needs an inspection?", "acceptedAnswer": {"@type": "Answer", "text": "Your rego renewal notice says whether you need one. You can check when your rego is due with Service NSW."}}, {"@type": "Question", "name": "How much is a pink slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle pink slip is $52, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How much is a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle blue slip is $82, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How long is a pink slip valid?", "acceptedAnswer": {"@type": "Answer", "text": "A pink slip report is valid for 6 months. A blue slip is valid for 42 days."}}, {"@type": "Question", "name": "Do you do pink slips for LPG and diesel cars?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do pink slips for petrol, diesel and LPG vehicles."}}, {"@type": "Question", "name": "Do I need a pink slip or a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "Most light vehicles over five years old need a pink slip to renew rego. You need a blue slip if the rego expired more than three months ago, the car is from interstate or overseas, it has no plates, or it's a written-off vehicle approved for re-registration."}}, {"@type": "Question", "name": "What are your opening hours?", "acceptedAnswer": {"@type": "Answer", "text": "Monday to Friday 9am to 5pm, and Saturday 9am to 2pm. We're closed on Sunday."}}, {"@type": "Question", "name": "How do I book?", "acceptedAnswer": {"@type": "Answer", "text": "Call the workshop on (02) 8798 5715, or Balli on 0433 597 181, and tell us the car and what it needs."}}, {"@type": "Question", "name": "Do you service all makes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We service all makes. We're an independent workshop, not linked to any car maker."}}, {"@type": "Question", "name": "Will a logbook service here keep my new car warranty?", "acceptedAnswer": {"@type": "Answer", "text": "Under the Australian Consumer Law, a new car warranty can't be voided just because an independent workshop did the servicing, as long as it's done to the maker's specifications. Bring your logbook so the service can be recorded."}}, {"@type": "Question", "name": "Do you regas air con?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do air con regas and repairs, for air con that blows warm or doesn't cool like it used to."}}]}</script>
 </head>
@@ -1569,86 +1573,21 @@ html:not(.drive) body .ac-launch{padding-left:16px!important}
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="ins-h">What a pink slip checks, and how to pass first time</h2>
-      <p>Watch the inspector work through each check, or tap one. You can also see what to check at home before you book.</p>
+      <p>Watch the inspector work through each check, or tap one, and see what you can check at home before you book.</p>
     </div>
     <div class="bay rv" id="bay3d">
-      <div class="bay-stage ps-scene lw-stage">
-        <svg class="lw" id="lw" viewBox="0 -120 800 560" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Animated drawing: a Shine mechanic doing the tyre check on an orange sedan">
-          <defs>
-            <linearGradient id="lwWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2e36"/><stop offset="1" stop-color="#1c1f25"/></linearGradient>
-            <linearGradient id="lwFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3d44"/><stop offset="1" stop-color="#26292f"/></linearGradient>
-            <linearGradient id="lwPaint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffa24a"/><stop offset=".5" stop-color="#ee7a10"/><stop offset="1" stop-color="#c25e05"/></linearGradient>
-            <linearGradient id="lwGlass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5260"/><stop offset="1" stop-color="#1b1e24"/></linearGradient>
-            <radialGradient id="lwBeam" cx="0" cy=".5" r="1"><stop offset="0" stop-color="#fff3b0" stop-opacity=".85"/><stop offset="1" stop-color="#fff3b0" stop-opacity="0"/></radialGradient>
-            <g id="lwWheel"><circle r="31" fill="#15171b"/><circle r="19" fill="#9aa0a8"/><circle r="15" fill="#5d636c"/><g class="lw-spoke" fill="#c7ccd2"><rect x="-2" y="-15" width="4" height="12"/><rect x="-2" y="-15" width="4" height="12" transform="rotate(72)"/><rect x="-2" y="-15" width="4" height="12" transform="rotate(144)"/><rect x="-2" y="-15" width="4" height="12" transform="rotate(216)"/><rect x="-2" y="-15" width="4" height="12" transform="rotate(288)"/></g><circle r="4" fill="#d6d9dd"/></g>
-          </defs>
-          <!-- workshop -->
-          <rect y="-120" width="800" height="450" fill="url(#lwWall)"/>
-          <rect y="330" width="800" height="110" fill="url(#lwFloor)"/>
-          <rect y="328" width="800" height="3" fill="#4a4e57"/>
-          <g fill="#f6f2e6" opacity=".9"><rect x="110" y="26" width="150" height="6" rx="3"/><rect x="330" y="26" width="150" height="6" rx="3"/><rect x="550" y="26" width="150" height="6" rx="3"/></g>
-          <g opacity=".5"><rect x="30" y="120" width="70" height="90" rx="4" fill="#33373f"/><g fill="#8a9099"><rect x="40" y="132" width="6" height="30" rx="2"/><rect x="52" y="132" width="6" height="22" rx="2"/><rect x="64" y="132" width="6" height="34" rx="2"/><circle cx="84" cy="146" r="9" fill="none" stroke="#8a9099" stroke-width="3"/></g></g>
-          <g opacity=".55"><rect x="700" y="230" width="70" height="100" rx="4" fill="#b8352c"/><g fill="#8f2820"><rect x="706" y="240" width="58" height="16" rx="2"/><rect x="706" y="262" width="58" height="16" rx="2"/><rect x="706" y="284" width="58" height="16" rx="2"/><rect x="706" y="306" width="58" height="16" rx="2"/></g></g>
-          <ellipse cx="420" cy="388" rx="40" ry="5" fill="#000" opacity=".25"/>
-          <!-- hoist -->
-          <g class="lw-hoist" fill="#2c64b8"><rect x="214" y="150" width="14" height="182" rx="3"/><rect x="612" y="150" width="14" height="182" rx="3"/><rect x="214" y="146" width="412" height="9" rx="3" opacity=".9"/></g>
-          <!-- car (drives in, rises on the hoist) -->
-          <g class="lw-carwrap"><g class="lw-car">
-            <ellipse cx="420" cy="332" rx="230" ry="7" fill="#000" opacity=".35" class="lw-shadow"/>
-            <g class="lw-arms" fill="#f2c230"><rect x="250" y="312" width="70" height="6" rx="2"/><rect x="520" y="312" width="70" height="6" rx="2"/></g>
-            <!-- LPG tank in the boot -->
-            <g class="lw-tank"><rect x="214" y="222" width="70" height="26" rx="13" fill="#a7adb5"/><rect x="232" y="216" width="10" height="8" rx="2" fill="#6b7078"/><rect x="238" y="214" width="16" height="4" rx="2" fill="#d33"/></g>
-            <path d="M190 300 L191 268 Q194 250 216 247 L300 240 L350 200 Q362 191 382 191 L500 191 Q522 191 538 205 L578 240 L630 247 Q651 251 652 270 L652 300 Z" fill="url(#lwPaint)"/>
-            <path d="M190 300 L652 300 L652 288 L190 288 Z" fill="#23262c"/>
-            <path d="M330 238 L357 207 Q366 199 380 199 L436 199 L436 238 Z" fill="url(#lwGlass)"/>
-            <path d="M444 199 L496 199 Q514 199 527 210 L556 238 L444 238 Z" fill="url(#lwGlass)"/>
-            <rect x="438" y="199" width="6" height="40" fill="#1b1e24"/>
-            <path d="M216 252 Q420 246 642 256" fill="none" stroke="#ffcf96" stroke-opacity=".55" stroke-width="2"/>
-            <line x1="440" y1="240" x2="440" y2="290" stroke="#9a4a05" stroke-width="1.5"/>
-            <line x1="336" y1="240" x2="336" y2="290" stroke="#9a4a05" stroke-width="1.5"/>
-            <rect x="410" y="252" width="16" height="4" rx="2" fill="#7a3b04"/><rect x="520" y="252" width="16" height="4" rx="2" fill="#7a3b04"/>
-            <rect x="192" y="256" width="9" height="16" rx="3" class="lw-tail" fill="#7a1410"/>
-            <rect x="640" y="254" width="12" height="10" rx="3" fill="#fff4cf"/>
-            <rect x="196" y="296" width="80" height="6" rx="3" fill="#4b4f57" class="lw-exhaust"/>
-            <path d="M240 300 A38 38 0 0 1 316 300 Z" fill="#111317"/>
-            <path d="M524 300 A38 38 0 0 1 600 300 Z" fill="#111317"/>
-            <!-- opening parts -->
-            <g class="lw-door"><path d="M444 199 L496 199 Q514 199 527 210 L556 238 L556 288 L444 288 Z" fill="#e8740c" stroke="#9a4a05" stroke-width="1.5"/><rect x="520" y="252" width="16" height="4" rx="2" fill="#7a3b04"/></g>
-            <g class="lw-boot"><path d="M216 247 L300 240 L300 246 L214 254 Z" fill="#d86a0a"/></g>
-            <g class="lw-wf"><use href="#lwWheel" x="562" y="300"/></g>
-            <g class="lw-wr"><use href="#lwWheel" x="278" y="300"/></g>
-          </g></g>
-          <!-- what is being checked -->
-          <g class="lw-ring"><circle r="20" fill="none" stroke="#ffb35c" stroke-width="3"/><circle r="20" fill="none" stroke="#ffb35c" stroke-width="2" class="lw-ping"/></g>
-          <!-- the mechanic -->
-          <g class="lw-man"><g class="lw-face">
-            <g class="lw-stand">
-              <rect x="-11" y="-54" width="9" height="54" rx="3" fill="#1d2a44"/><rect x="2" y="-54" width="9" height="54" rx="3" fill="#1d2a44"/>
-              <rect x="-13" y="-4" width="13" height="5" rx="2" fill="#111"/><rect x="2" y="-4" width="13" height="5" rx="2" fill="#111"/>
-              <rect x="-14" y="-100" width="28" height="50" rx="8" fill="#22345a"/>
-              <rect x="-14" y="-72" width="28" height="4" fill="#e8740c"/>
-              <circle cy="-112" r="11" fill="#c98b62"/><path d="M-11 -114 Q-10 -126 0 -126 Q11 -126 11 -114 Q4 -119 -11 -114 Z" fill="#20160f"/>
-              <g class="lw-arm" style="transform-origin:0px -92px"><rect x="-4" y="-94" width="8" height="40" rx="4" fill="#22345a"/><circle cy="-52" r="5" fill="#111"/><g transform="translate(0 -50)">
-                <g class="tl tl-gauge"><rect x="-2" y="0" width="4" height="16" rx="1" fill="#c7ccd2"/></g>
-                <g class="tl tl-torch"><rect x="-3" y="-2" width="6" height="14" rx="2" fill="#f2c230"/><path d="M0 12 L-34 120 L34 120 Z" fill="url(#lwBeam)" opacity=".8"/></g>
-                <g class="tl tl-clip"><rect x="-10" y="-2" width="20" height="26" rx="2" fill="#f4f1ea"/><rect x="-6" y="5" width="12" height="2" fill="#9aa"/><rect x="-6" y="10" width="12" height="2" fill="#9aa"/><rect x="-6" y="15" width="8" height="2" fill="#9aa"/></g>
-                <g class="tl tl-spray"><rect x="-5" y="-4" width="10" height="18" rx="3" fill="#3b82d6"/><g class="lw-mist" fill="#d9ecff"><circle cx="4" cy="22" r="3"/><circle cx="-4" cy="28" r="2.5"/><circle cx="6" cy="32" r="2"/></g></g>
-              </g></g>
-            </g>
-            <g class="lw-crouch">
-              <path d="M-12 -30 L-24 -4 L-12 0 L0 -26 Z" fill="#1d2a44"/><path d="M2 -30 L18 -12 L10 0 L-2 -22 Z" fill="#1d2a44"/>
-              <rect x="-26" y="-4" width="14" height="5" rx="2" fill="#111"/><rect x="8" y="-4" width="13" height="5" rx="2" fill="#111"/>
-              <rect x="-15" y="-72" width="28" height="46" rx="8" fill="#22345a" transform="rotate(14 0 -48)"/>
-              <circle cx="8" cy="-82" r="11" fill="#c98b62"/><path d="M-3 -84 Q-2 -96 8 -96 Q19 -96 19 -84 Q12 -89 -3 -84 Z" fill="#20160f"/>
-              <g class="lw-arm" style="transform-origin:4px -64px"><rect x="0" y="-66" width="8" height="38" rx="4" fill="#22345a"/><circle cx="4" cy="-26" r="5" fill="#111"/><g transform="translate(4 -24)">
-                <g class="tl tl-gauge"><rect x="-2" y="0" width="4" height="16" rx="1" fill="#c7ccd2"/></g>
-                <g class="tl tl-torch"><rect x="-3" y="-2" width="6" height="14" rx="2" fill="#f2c230"/><path d="M0 12 L-34 120 L34 120 Z" fill="url(#lwBeam)" opacity=".8"/></g>
-              </g></g>
-            </g>
-          </g></g>
-          <!-- caption -->
-          <g class="lw-cap"><rect x="120" y="-40" width="250" height="34" rx="17" fill="#000" opacity=".55"/><circle cx="140" cy="-23" r="5" fill="#2fd15a" class="lw-live"/><text x="154" y="-18" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" class="lw-capt">Checking: Tyres</text></g>
-        </svg>
+      <div class="bay-stage ps-scene">
+        <img class="on" data-pt="tyres" src="assets/img/ps-tyres-1200.webp?v=2" srcset="assets/img/ps-tyres-640.webp?v=2 640w, assets/img/ps-tyres-1200.webp?v=2 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic presses a tread depth gauge into the front tyre of an orange sedan" loading="lazy" decoding="async">
+        <img data-pt="brakes" data-src="assets/img/ps-brakes-1200.webp?v=2" data-srcset="assets/img/ps-brakes-640.webp?v=2 640w, assets/img/ps-brakes-1200.webp?v=2 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic measures the brake disc of an orange sedan with its wheel off" decoding="async">
+        <img data-pt="steering" data-src="assets/img/ps-steering-1200.webp?v=2" data-srcset="assets/img/ps-steering-640.webp?v=2 640w, assets/img/ps-steering-1200.webp?v=2 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic rocks the front wheel of an orange sedan on a hoist to check the steering and suspension" decoding="async">
+        <img data-pt="lights" data-src="assets/img/ps-lights-1200.webp?v=2" data-srcset="assets/img/ps-lights-640.webp?v=2 640w, assets/img/ps-lights-1200.webp?v=2 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic sits in an orange sedan working the indicator and brake lights" decoding="async">
+        <img data-pt="windscreen" data-src="assets/img/ps-windscreen-1200.webp?v=2" data-srcset="assets/img/ps-windscreen-640.webp?v=2 640w, assets/img/ps-windscreen-1200.webp?v=2 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic lifts a wiper arm and checks the windscreen of an orange sedan for chips" decoding="async">
+        <img data-pt="seatbelts" data-src="assets/img/ps-seatbelts-1200.webp?v=2" data-srcset="assets/img/ps-seatbelts-640.webp?v=2 640w, assets/img/ps-seatbelts-1200.webp?v=2 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic pulls the driver's seatbelt out to check the webbing and buckle in an orange sedan" decoding="async">
+        <img data-pt="body" data-src="assets/img/ps-body-1200.webp?v=2" data-srcset="assets/img/ps-body-640.webp?v=2 640w, assets/img/ps-body-1200.webp?v=2 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic on a creeper board checks the door sill of an orange sedan for rust" decoding="async">
+        <img data-pt="exhaust" data-src="assets/img/ps-exhaust-1200.webp?v=2" data-srcset="assets/img/ps-exhaust-640.webp?v=2 640w, assets/img/ps-exhaust-1200.webp?v=2 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic pulls on the exhaust under an orange sedan on a hoist to check the mounts" decoding="async">
+        <img data-pt="lpg" data-src="assets/img/ps-lpg-1200.webp?v=2" data-srcset="assets/img/ps-lpg-640.webp?v=2 640w, assets/img/ps-lpg-1200.webp?v=2 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic checks the LPG tank fittings in the boot of an orange sedan with leak detection spray" decoding="async">
+        <p class="ps-live"><span></span><b>Checking: Tyres</b></p>
+        <span class="ai">AI illustration</span>
       </div>
       <div class="bay-side">
         <div class="pt-card" aria-live="polite">
@@ -1819,7 +1758,7 @@ html:not(.drive) body .ac-launch{padding-left:16px!important}
   <a class="btn btn--ghost q-dir" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener" aria-label="Directions to the workshop"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span class="q-t">Directions</span></a>
 </nav>
 
-<script src="assets/site.js?v=0162043e"></script>
+<script src="assets/site.js?v=e8fa6f62"></script>
 <script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&scrollY<80&&!location.hash){document.documentElement.classList.add("drive")}}catch(e){}</script>
 <!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=9d77badc" data-label="Chat with us" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-avoid=".qbar" defer></script><!--/chat-->
 <script>(function(){if(matchMedia("(max-width:760px)").matches){var c=document.querySelector('script[src*="chat.js"]');if(c){c.removeAttribute("data-nudge");c.removeAttribute("data-nudge-open")}}})();</script>
