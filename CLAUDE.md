@@ -23,7 +23,7 @@ Built by AMBS Solutions. Follow the **ambs-website-design** skill (and **website
 
 ## This site
 - Design: "Your Mix", modernised. The client picked sections from a five-concept gallery, then asked for a modern, interactive feel like the AMBS site. Dark cinematic roller-door hero with the rego plate lookup; everything below is light and airy: Inter Tight + Inter, white rounded cards, soft shadows, pill buttons, Shine orange #f39a36 (deeper #c4700f/#9a5208 for text on light), red only for warning lights.
-- Signature pieces: roller door intro with the SUV drive-in that turns into the chat button, rego plate lookup, warning-lights panel (ring timer), Delta-style live pink slip diagram (SVG in index.html, steps in `assets/site.js`; real clips can be added, see FILMING.md), Google reviews carousel, Ask Shine assistant (`chat/`). Page script lives in `assets/site.js` (bump `?v=`).
+- Signature pieces: roller door intro with the SUV drive-in that turns into the chat button, rego plate lookup, warning-lights panel (ring timer), Delta-style live pink slip diagram (SVG in index.html, steps in `assets/site.js`; real clips can be added, see FILMING.md), Google reviews carousel, Ask Shine assistant (`chat/`) with a guided "Help me choose" flow in `chat/guide.js` (add-on; `chat.js` stays the shared engine; facts in guide.js must match the site). Page script lives in `assets/site.js` (bump `?v=`).
 - Photos are AI illustrations, labelled on the page. Swap for real photos when supplied.
 - NSW fees and rules are sourced from nsw.gov.au and dated. Re-check every 1 July.
 - Warning-light wording was safety-reviewed: change it only with care, in the page and in `chat/chat-config.json` together.

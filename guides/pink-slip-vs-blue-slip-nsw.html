@@ -198,6 +198,7 @@ addEventListener("scroll",function(){if(!raf)raf=requestAnimationFrame(upd)},{pa
  function fix(n){if(!n.querySelectorAll)return;[].forEach.call(n.querySelectorAll(".ac-note"),function(d){if(d.dataset.map||d.textContent.indexOf("\uD83D\uDCCD")!==0)return;d.dataset.map=1;var t=d.textContent.replace(/^\uD83D\uDCCD\s*/,"");d.textContent="\uD83D\uDCCD ";var a=document.createElement("a");a.href=M;a.target="_blank";a.rel="noopener";a.textContent=t;a.style.color="inherit";a.style.textDecoration="underline";d.appendChild(a)})}
  new MutationObserver(function(ms){ms.forEach(function(m){[].forEach.call(m.addedNodes,fix)})}).observe(document.body,{childList:true,subtree:true})})();</script>
 <!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=b66cd6f6" data-label="Chat with us" data-langs="en" data-key="shineauto-chat" data-color="#c4700f"  defer></script><!--/chat-->
+<script src="/chat/guide.js?v=9fd2d268" defer></script>
 <script>(function(){if(matchMedia("(max-width:760px)").matches){var c=document.querySelector('script[src*="chat.js"]');if(c){c.removeAttribute("data-nudge");c.removeAttribute("data-nudge-open")}}})();</script>
 </body>
 </html>
