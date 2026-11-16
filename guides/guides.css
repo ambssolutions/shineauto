@@ -40,7 +40,7 @@ p{margin:0}
 
 /* Header: a white floating pill that stays in view */
 .head{position:sticky;top:var(--head-top);z-index:50;padding-inline:var(--g)}
-.head__in{height:var(--head);display:flex;align-items:center;gap:12px;max-width:1180px;margin:var(--head-top) auto 0;padding:0 8px 0 14px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px rgba(21,23,28,.06),0 12px 30px -16px rgba(21,23,28,.28)}
+.head__in{height:var(--head);display:flex;align-items:center;gap:12px;max-width:1180px;margin:var(--head-top) auto 0;padding:0 8px 0 14px;border-radius:999px;background:var(--card);box-shadow:0 0 0 1px rgba(21,23,28,.06),0 12px 30px -16px rgba(21,23,28,.28)}
 .brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;color:var(--ink)}
 .brand img{width:32px;height:32px;border-radius:9px}
 .brand__w{display:grid;line-height:1}
@@ -86,20 +86,20 @@ p{margin:0}
 .prose li::marker{color:var(--orange-d)}
 .prose strong{font-weight:600}
 
-.answer{background:#fff;border-radius:var(--r);padding:clamp(20px,3.4vw,30px);box-shadow:var(--sh-sm),inset 0 0 0 1px var(--line)}
+.answer{background:var(--card);border-radius:var(--r);padding:clamp(20px,3.4vw,30px);box-shadow:var(--sh-sm),inset 0 0 0 1px var(--line)}
 .answer .k{display:block;font:600 .8rem/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--orange-d);margin-bottom:10px}
 .answer p+p{margin-top:.7em}
 
-.tbl{overflow-x:auto;border-radius:var(--r-sm);background:#fff;box-shadow:var(--sh-sm),inset 0 0 0 1px var(--line)}
+.tbl{overflow-x:auto;border-radius:var(--r-sm);background:var(--card);box-shadow:var(--sh-sm),inset 0 0 0 1px var(--line)}
 .tbl table{width:100%;border-collapse:collapse;font-size:.95rem;line-height:1.5}
 .tbl caption{text-align:left;padding:14px 16px 0;font:600 .95rem/1.3 var(--display);color:var(--ink)}
 .tbl th,.tbl td{text-align:left;vertical-align:top;padding:12px 16px;border-bottom:1px solid var(--line)}
 .tbl tr:last-child>*{border-bottom:0}
-.tbl thead th{font:600 .85rem/1.3 var(--sans);color:var(--ink-3);background:#faf9f7}
+.tbl thead th{font:600 .85rem/1.3 var(--sans);color:var(--ink-3);background:var(--soft,#faf9f7)}
 .tbl tbody th{font-weight:600;color:var(--ink);width:30%}
 @media (max-width:520px){.tbl th,.tbl td{padding:10px 12px}.tbl table{font-size:.9rem}}
 
-.light{background:#fff;border-radius:var(--r);padding:clamp(18px,3vw,26px);box-shadow:var(--sh-sm),inset 0 0 0 1px var(--line)}
+.light{background:var(--card);border-radius:var(--r);padding:clamp(18px,3vw,26px);box-shadow:var(--sh-sm),inset 0 0 0 1px var(--line)}
 .light h3{margin:0;display:flex;align-items:center;gap:10px}
 .light h3 .sw{width:12px;height:12px;border-radius:50%;flex:none;background:var(--c,var(--orange))}
 .light .tag{margin-top:4px;font-size:.88rem;color:var(--ink-3)}
@@ -108,11 +108,11 @@ p{margin:0}
 .light dd{margin:2px 0 0}
 .prose .light{margin-top:16px}
 
-.note{font-size:.93rem;color:var(--ink-2);background:#fbfaf8;border-radius:var(--r-sm);padding:14px 16px;box-shadow:inset 0 0 0 1px var(--line)}
+.note{font-size:.93rem;color:var(--ink-2);background:var(--soft2,#fbfaf8);border-radius:var(--r-sm);padding:14px 16px;box-shadow:inset 0 0 0 1px var(--line)}
 
 /* FAQ: native details with a slow open */
 .faq{margin-top:12px;display:grid;gap:10px}
-.faq details{background:#fff;border-radius:var(--r-sm);box-shadow:var(--sh-sm),inset 0 0 0 1px var(--line)}
+.faq details{background:var(--card);border-radius:var(--r-sm);box-shadow:var(--sh-sm),inset 0 0 0 1px var(--line)}
 .faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:56px;padding:12px 18px;font:600 1.02rem/1.35 var(--display);color:var(--ink)}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"";width:10px;height:10px;flex:none;border-right:2px solid var(--orange-d);border-bottom:2px solid var(--orange-d);transform:translateY(-3px) rotate(45deg);transition:transform 1.1s var(--slow)}
@@ -146,7 +146,7 @@ p{margin:0}
 
 /* Guide cards (hub and related) */
 .cards{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
-.gcard{position:relative;height:100%;display:flex;flex-direction:column;background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-sm),inset 0 0 0 1px var(--line);transition:transform .7s var(--slow),box-shadow .7s var(--slow)}
+.gcard{position:relative;height:100%;display:flex;flex-direction:column;background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-sm),inset 0 0 0 1px var(--line);transition:transform .7s var(--slow),box-shadow .7s var(--slow)}
 .gcard:hover{transform:translateY(-3px);box-shadow:var(--sh)}
 .gcard img{width:100%;aspect-ratio:3/2;object-fit:cover}
 .gcard .b{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
@@ -176,7 +176,7 @@ p{margin:0}
 /* Phone quick bar: shows once the article heading has scrolled away */
 .qbar{display:none}
 @media (max-width:760px){
-  .qbar{position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-radius:999px;background:#fff;box-shadow:0 0 0 1px rgba(21,23,28,.06),0 14px 34px -12px rgba(21,23,28,.4);
+  .qbar{position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-radius:999px;background:var(--card);box-shadow:0 0 0 1px rgba(21,23,28,.06),0 14px 34px -12px rgba(21,23,28,.4);
     transform:translateY(140%);transition:transform .8s var(--slow)}
   .qbar.show{transform:none}
   .qbar .btn{min-height:46px;padding:0 12px}
@@ -193,24 +193,35 @@ html.js .rv.in{opacity:1;transform:none}
   .faq details::details-content{transition:none}
 }
 
-/* Ask Shine: a little Shine SUV. Body = the button; cabin with roof rails, lights and wheels drawn in CSS. Compact on phones. */
-body .ac-launch{overflow:visible;height:46px;padding:0 26px 0 14px;gap:9px;border-radius:9px 14px 10px 10px;color:#1a1209;
-  background:radial-gradient(ellipse 5px 4px at calc(100% - 6px) 36%,#fff2c4 0 99%,transparent),radial-gradient(ellipse 3px 5px at 4px 38%,#e0443a 0 99%,transparent),linear-gradient(180deg,transparent 0 70%,rgba(0,0,0,.16) 70% 100%),#e8740c;
-  box-shadow:0 16px 26px -14px rgba(0,0,0,.55)}
-body .ac-launch::before{content:"";position:absolute;left:4%;width:88%;top:-22px;height:23px;border:0;border-radius:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 34' preserveAspectRatio='none'%3E%3Crect x='16' y='0' width='62' height='3' rx='1.5' fill='%232a2d33'/%3E%3Crect x='22' y='2' width='3' height='4' fill='%232a2d33'/%3E%3Crect x='70' y='2' width='3' height='4' fill='%232a2d33'/%3E%3Cpath d='M3 34 L8 10 Q9 6 13 6 L80 6 Q84 6 86 10 L98 34 Z' fill='%23e8740c'/%3E%3Cpath d='M9 31 L12 12 Q13 10 15 10 L30 10 L30 31 Z' fill='%231b1e24'/%3E%3Cpath d='M34 10 L56 10 L56 31 L34 31 Z' fill='%231b1e24'/%3E%3Cpath d='M60 10 L79 10 Q82 10 83 12 L90 31 L60 31 Z' fill='%231b1e24'/%3E%3Cpath d='M63 12 L69 12 L63 22 Z' fill='%23ffffff' opacity='.18'/%3E%3C/svg%3E") center bottom/100% 100% no-repeat;pointer-events:none}
-body .ac-launch::after{content:"";position:absolute;inset:auto 0 -13px 0;height:26px;border:0;border-radius:0;opacity:1;animation:none;pointer-events:none;
-  background:radial-gradient(circle at 26px 50%,#d9d6d0 0 4px,#2a2d33 4.5px 8.5px,#121418 9.0px 12px,transparent 12.5px),radial-gradient(circle at calc(100% - 28px) 50%,#d9d6d0 0 4px,#2a2d33 4.5px 8.5px,#121418 9.0px 12px,transparent 12.5px)}
-body .ac-launch .ac-dot{position:relative;width:30px;height:30px;border-radius:50%;background:#fff url(/assets/logo-mark.svg) center/26px no-repeat;box-shadow:none;animation:none}
-body .ac-launch span:last-child{font-weight:800;letter-spacing:-.01em}
-body .ac-launch:focus-visible{outline:3px solid #15171c;outline-offset:8px}
+/* Ask Shine: a realistic Shine-orange SUV (assets/chat-suv.svg). The Shine badge sits on the front door; "Chat with us" is a speech bubble above it. On phones: a smaller SUV with a "..." bubble. */
+body .ac-launch{overflow:visible;width:184px;height:77px;padding:0;gap:0;border-radius:0;background:url(/assets/chat-suv.svg) center bottom/contain no-repeat;box-shadow:none;color:#fff}
+body .ac-launch::before{content:none}
+body .ac-launch::after{content:none;animation:none}
+body .ac-launch .ac-dot{position:absolute;left:calc(55% - 11px);top:calc(57% - 11px);width:22px;height:22px;margin:0;border-radius:50%;background:#fff url(/assets/logo-mark.svg) center/19px no-repeat;box-shadow:0 0 0 1.5px rgba(0,0,0,.18);animation:none}
+body .ac-launch .ac-dot::after{content:none}
+body .ac-launch span:last-child{position:absolute;right:4px;top:-26px;padding:7px 12px;border-radius:12px;background:#15171c;color:#fff;font:700 .82rem/1 var(--sans);letter-spacing:0;white-space:nowrap;box-shadow:0 8px 18px -10px rgba(0,0,0,.6)}
+body .ac-launch span:last-child::after{content:"";position:absolute;left:20px;bottom:-6px;border:6px solid transparent;border-top-color:#15171c;border-bottom:0}
+body .ac-launch:focus-visible{outline:3px solid #15171c;outline-offset:6px;border-radius:12px}
 @media (max-width:760px){
-  body .ac-launch{width:104px;height:28px;padding:0 0 0 18px;gap:0;justify-content:flex-start;border-radius:7px 11px 8px 8px;right:calc(env(safe-area-inset-right,0px) + 14px)}
-  body .ac-launch .ac-dot{width:22px;height:22px;background-size:19px}
-  body .ac-launch .ac-dot::after{right:-9px;top:-8px;width:13px;height:11px}
-  body .ac-launch span:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  body .ac-launch::before{left:6%;width:86%;top:-15px;height:16px}
-  body .ac-launch::after{bottom:-9px;height:18px;background:radial-gradient(circle at 20px 50%,#d9d6d0 0 2.5px,#2a2d33 3px 6px,#121418 6.5px 8.5px,transparent 9px),radial-gradient(circle at calc(100% - 21px) 50%,#d9d6d0 0 2.5px,#2a2d33 3px 6px,#121418 6.5px 8.5px,transparent 9px)}
+  body .ac-launch{width:118px;height:50px;right:calc(env(safe-area-inset-right,0px) + 12px)}
+  body .ac-launch .ac-dot{width:16px;height:16px;left:calc(55% - 8px);top:calc(57% - 8px);background-size:14px}
+  body .ac-launch span:last-child{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;box-shadow:none}
+  body .ac-launch::before{content:"";position:absolute;right:10px;top:-12px;width:21px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 17'%3E%3Cpath d='M4 1h12a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H9l-4 4v-4H4a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3z' fill='%2315171c'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.3' fill='%23fff'/%3E%3Ccircle cx='10' cy='6.5' r='1.3' fill='%23fff'/%3E%3Ccircle cx='13.5' cy='6.5' r='1.3' fill='%23fff'/%3E%3C/svg%3E") center/contain no-repeat}
 }
-body .ac-launch .ac-dot::after{content:"";position:absolute;right:-9px;top:-11px;width:20px;height:17px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 17'%3E%3Cpath d='M4 1h12a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H9l-4 4v-4H4a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3z' fill='%2315171c'/%3E%3Ccircle cx='6.5' cy='6.5' r='1.3' fill='%23fff'/%3E%3Ccircle cx='10' cy='6.5' r='1.3' fill='%23fff'/%3E%3Ccircle cx='13.5' cy='6.5' r='1.3' fill='%23fff'/%3E%3C/svg%3E") center/contain no-repeat}
 body .ac-av{background:url(/assets/logo-mark.svg) center/cover no-repeat;border-radius:50%}
 body .ac-av svg{display:none}
+
+/* Light and dark mode (same as the home page): follows the device; the header button switches and remembers. */
+html[data-theme="dark"]{color-scheme:dark;--bg:#0e1013;--card:#1a1d23;--ink:#eef0f3;--ink-2:#b6bcc6;--ink-3:#959ca7;--line:#2a2e36;--line-2:#363b45;--orange-d:#f6ab5f;--orange-soft:#2b1f12}
+html[data-theme="dark"] body{background:linear-gradient(180deg,#0e1013 0,#12151a 40%,#0e1013 100%)}
+.theme-btn{display:inline-grid;place-items:center;width:44px;height:44px;border:0;border-radius:999px;cursor:pointer;background:rgba(21,23,28,.06);color:var(--ink);flex:none}
+.theme-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.theme-btn .i-moon{fill:currentColor;stroke:none}
+.theme-btn .i-sun{display:none}
+html[data-theme="dark"] .theme-btn .i-sun{display:block}
+html[data-theme="dark"] .theme-btn .i-moon{display:none}
+html[data-theme="dark"] .theme-btn{background:rgba(255,255,255,.08)}
+html[data-theme="dark"] [style*="#faf9f7"],html[data-theme="dark"] .btn--ghost{background:#22262d;color:var(--ink)}
+html[data-theme="dark"] body .ac-launch{background:url(/assets/chat-suv.svg) center bottom/contain no-repeat;color:#fff}
+html[data-theme="dark"] body .ac-panel,html[data-theme="dark"] body .ac-nudge{--ac-bg:#16191e;--ac-head:#1a1d23;--ac-ink:#eef0f3;--ac-muted:#a6adb8;--ac-soft:#0e1013;--ac-bot:#22262d;--ac-card:#2a2e36;--ac-chip:#1d2026;--ac-link:#f6ab5f}
+html[data-theme="dark"]{--soft:#15181d;--soft2:#15181d}

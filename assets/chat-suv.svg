@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240 100" role="img" aria-label="Shine SUV">
+  <defs>
+    <linearGradient id="paint" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffa64d"/>
+      <stop offset=".35" stop-color="#f08326"/>
+      <stop offset=".7" stop-color="#e8740c"/>
+      <stop offset="1" stop-color="#b85806"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a4250"/>
+      <stop offset="1" stop-color="#14171c"/>
+    </linearGradient>
+    <radialGradient id="rim" cx=".45" cy=".4" r=".7">
+      <stop offset="0" stop-color="#f1f2f4"/>
+      <stop offset=".7" stop-color="#b8bcc2"/>
+      <stop offset="1" stop-color="#7d8188"/>
+    </radialGradient>
+    <clipPath id="low"><rect x="0" y="69" width="240" height="31"/></clipPath>
+    <path id="body" d="M10 80 L6 62 Q5 41 12 31 L19 23 Q23 19 30 19 L147 19 Q155 19 161 24 L186 44 L219 50 Q232 53 234 62 L235 74 Q235 81 228 81 L212 81 A22 22 0 0 0 168 81 L80 81 A22 22 0 0 0 36 81 Z"/>
+    <g id="wheel">
+      <circle r="17" fill="#121418"/>
+      <circle r="15" fill="none" stroke="#24272d" stroke-width="2"/>
+      <circle r="11" fill="url(#rim)"/>
+      <circle r="8.6" fill="#1f2227"/>
+      <g fill="#d6d9dd">
+        <path d="M-1.6 -10 L1.6 -10 L1 -2 L-1 -2 Z"/>
+        <path d="M-1.6 -10 L1.6 -10 L1 -2 L-1 -2 Z" transform="rotate(72)"/>
+        <path d="M-1.6 -10 L1.6 -10 L1 -2 L-1 -2 Z" transform="rotate(144)"/>
+        <path d="M-1.6 -10 L1.6 -10 L1 -2 L-1 -2 Z" transform="rotate(216)"/>
+        <path d="M-1.6 -10 L1.6 -10 L1 -2 L-1 -2 Z" transform="rotate(288)"/>
+      </g>
+      <circle r="2.8" fill="#9aa0a7"/>
+    </g>
+  </defs>
+  <!-- ground shadow -->
+  <ellipse cx="122" cy="94" rx="112" ry="4.5" fill="#000" opacity=".28"/>
+  <!-- roof rails -->
+  <path d="M36 17.5 L138 17.5" stroke="#1d2025" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M42 17.5 V20 M132 17.5 V20" stroke="#1d2025" stroke-width="2.4"/>
+  <!-- body -->
+  <use xlink:href="#body" href="#body" fill="url(#paint)"/>
+  <use xlink:href="#body" href="#body" fill="#2b2e34" clip-path="url(#low)"/>
+  <!-- wheel wells -->
+  <path d="M36 81 A22 22 0 0 1 80 81 Z" fill="#16181c"/>
+  <path d="M168 81 A22 22 0 0 1 212 81 Z" fill="#16181c"/>
+  <!-- wheel arch trims -->
+  <path d="M33 81 A25 25 0 0 1 83 81" fill="none" stroke="#24272d" stroke-width="4"/>
+  <path d="M165 81 A25 25 0 0 1 215 81" fill="none" stroke="#24272d" stroke-width="4"/>
+  <!-- greenhouse -->
+  <path d="M15 43 L18 31 Q20 25 27 24.5 L145 24.5 Q151 24.5 156 28.5 L176 44.5 L15 44.5 Z" fill="url(#glass)"/>
+  <!-- pillars -->
+  <path d="M15 44.5 L18 31 Q20 25 27 24.5 L31 24.5 L28 44.5 Z" fill="url(#paint)"/>
+  <rect x="58" y="24.5" width="4" height="20" fill="#16191e"/>
+  <rect x="104" y="24.5" width="5" height="20" fill="#16191e"/>
+  <!-- glass reflections -->
+  <path d="M66 27 L80 27 L70 42 L62 42 Z" fill="#fff" opacity=".1"/>
+  <path d="M114 27 L126 27 L117 42 L110 42 Z" fill="#fff" opacity=".1"/>
+  <!-- beltline and shoulder highlight -->
+  <path d="M14 45.5 L178 45.5" stroke="#1d2025" stroke-width="1.4"/>
+  <path d="M12 52 Q120 50 226 55" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.4"/>
+  <!-- door shut lines -->
+  <path d="M60 46 L60 70 M106 46 Q107 60 105 70 M153 46 Q156 58 154 70" fill="none" stroke="#7a3a02" stroke-opacity=".55" stroke-width="1"/>
+  <!-- handles -->
+  <rect x="88" y="51" width="9" height="2.4" rx="1.2" fill="#1d2025" opacity=".7"/>
+  <rect x="136" y="51" width="9" height="2.4" rx="1.2" fill="#1d2025" opacity=".7"/>
+  <!-- mirror -->
+  <path d="M160 39 L170 40 Q172 41 171 44 L163 45 Q159 44 160 39 Z" fill="#e8740c" stroke="#7a3a02" stroke-opacity=".5" stroke-width=".8"/>
+  <!-- headlight, grille, tail light -->
+  <path d="M216 53 L231 57 Q233 58 232 60 L218 59 Q214 58 216 53 Z" fill="#fff6d8" stroke="#3a3d43" stroke-width=".8"/>
+  <path d="M226 64 L235 64 L235 71 L227 71 Z" fill="#1d2025"/>
+  <path d="M6.5 36 L11 34 L11 49 L6 50 Z" fill="#d9342b"/>
+  <!-- wheels -->
+  <use xlink:href="#wheel" href="#wheel" transform="translate(58 80)"/>
+  <use xlink:href="#wheel" href="#wheel" transform="translate(190 80)"/>
+</svg>
