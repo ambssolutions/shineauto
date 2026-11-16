@@ -327,3 +327,18 @@ html:not(.drive) body .ac-launch::after{content:""!important;position:absolute!i
 /* Green LED inline, centred, to the left of the chat icon */
 html:not(.drive) body .ac-launch::after{position:static!important;inset:auto!important;order:-1!important;flex:none!important;margin:0 -2px 0 0!important;width:9px!important;height:9px!important}
 html:not(.drive) body .ac-launch{padding-left:16px!important}
+
+/* Phones and tablets: chat button matches the Call / Directions buttons (icon-only orange pill in a white ring) */
+@media (max-width:1060px){
+  html:not(.drive) body .ac-launch{width:53px!important;height:38px!important;padding:0!important;gap:0!important;justify-content:center!important;
+    left:calc(50% + 7px)!important;bottom:calc(13px + var(--tk,0px) + env(safe-area-inset-bottom,0px))!important;
+    box-shadow:0 0 0 3px var(--card),0 0 0 4px rgba(21,23,28,.06),0 16px 34px -14px rgba(21,23,28,.45)!important}
+  html[data-theme="dark"]:not(.drive) body .ac-launch{box-shadow:0 0 0 3px var(--card),0 0 0 4px var(--line),0 16px 30px -16px rgba(0,0,0,.8)!important}
+  html:not(.drive) body .ac-launch span:last-child{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important}
+  html:not(.drive) body .ac-launch svg{width:18px!important;height:18px!important}
+  html:not(.drive) body .ac-launch::after{position:absolute!important;inset:7px auto auto 13px!important;width:7px!important;height:7px!important;margin:0!important;box-shadow:0 0 0 1.5px #e8740c,0 0 5px rgba(47,209,90,.9)!important}
+}
+@media (max-width:1060px){
+  html.js .qbar{right:calc(50% - 25px)!important}
+  html:not(.drive) body .ac-launch{left:calc(50% + 36px)!important}
+}
