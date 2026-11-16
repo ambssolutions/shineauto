@@ -320,7 +320,7 @@ html:not(.drive) body:not(.ac-on) .ac-launch,html.parked body .ac-launch{filter:
 html:not(.drive) body .ac-launch{animation-name:none!important}
 html.parked body .ac-launch{animation:btn-pop .55s cubic-bezier(.3,1.5,.5,1) both!important}
 html:not(.drive) body .ac-launch::after{content:""!important;position:absolute!important;top:7px!important;left:12px!important;right:auto!important;bottom:auto!important;inset:7px auto auto 12px!important;width:8px!important;height:8px!important;border:0!important;border-radius:50%!important;
-  background:#2fd15a!important;box-shadow:0 0 0 2px rgba(255,255,255,.85),0 0 6px rgba(47,209,90,.9)!important;opacity:1!important;transform:none!important;animation:led 1.4s ease-in-out infinite!important}
+  background:#2fd15a!important;box-shadow:0 0 0 2px rgba(255,255,255,.85),0 0 6px rgba(47,209,90,.9)!important;transform:none!important;animation:led 1.4s ease-in-out infinite!important}
 @keyframes led{0%,100%{opacity:1}50%{opacity:.25}}
 @media (prefers-reduced-motion:reduce){html:not(.drive) body .ac-launch::after{animation:none!important}}
 
@@ -342,3 +342,9 @@ html:not(.drive) body .ac-launch{padding-left:16px!important}
   html.js .qbar{right:calc(50% - 25px)!important}
   html:not(.drive) body .ac-launch{left:calc(50% + 36px)!important}
 }
+
+@media (max-width:1060px){
+  html:not(.drive) body .ac-launch{justify-content:flex-end!important;padding-right:14px!important}
+  html:not(.drive) body .ac-launch::after{inset:50% auto auto 9px!important;margin-top:-4px!important;width:8px!important;height:8px!important;animation:led2 1.2s ease-in-out infinite!important}
+}
+@keyframes led2{0%,100%{opacity:1;box-shadow:0 0 0 1.5px #e8740c,0 0 7px rgba(47,209,90,.95)}50%{opacity:.2;box-shadow:0 0 0 1.5px #e8740c}}
