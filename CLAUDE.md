@@ -16,7 +16,7 @@ Built by AMBS Solutions. Follow the **ambs-website-design** skill (and **website
 - Declutter: one headline and one main action in the hero; few cards, chips and arrows.
 - Doesn't look AI-generated: plain Australian English (this client is in NSW), no em dashes, no exclamation marks, no hype words, no "X. One Y." headings, no eyebrow on every section.
 - Real, sharp, uncropped photos (WebP with srcset). Smooth on phones: no live backdrop-blur.
-- Header stays visible while scrolling. On phones, a small Call / Book bar that hides while the hero shows.
+- Header stays visible while scrolling. On phones and tablets, Call / Directions and the Chat button sit together at the bottom; they appear as soon as the drive-in car parks (owner asked for this, overriding the old "hide while the hero shows").
 - Dark mode (if offered) built properly, including menus and overlays. It never switches by time of day.
 - Forms really send. Contact details live in one place. Never invent facts: hide what the client hasn't supplied (`CONTENT-NEEDED.md`).
 - Footer credit: "Proudly designed by AMBS Solutions".
