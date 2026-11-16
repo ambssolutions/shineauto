@@ -1167,6 +1167,22 @@ html:not(.drive) body .ac-launch:hover{background:#d96200!important}
   .hero__body{padding-bottom:clamp(118px,17vh,160px)}
   html.drive body .ac-launch{width:136px!important;height:70px!important;bottom:calc(4px + var(--tk,0px))!important}
 }
+
+/* Chat window in Shine's colours; on phones a shorter bottom sheet sized to the conversation */
+body .ac-head::after{background:#e8740c!important;opacity:1!important;height:2px!important}
+body .ac-panel{--ac-link:#9a5208;--ac-brand:#e8740c}
+html[data-theme="dark"] body .ac-panel{--ac-link:#f6ab5f}
+body .ac-chip:hover,body .ac-links a:hover{border-color:#e8740c!important;color:var(--ac-ink)!important}
+@media (max-width:640px){body .ac-panel{height:min(62dvh,560px)!important}}
+/* Laptop drive-in: the smaller car shows just the Shine badge, centred on the rear door */
+@media (min-width:1061px){
+  html.drive body .ac-launch span:last-child{display:none!important}
+  html.drive body .ac-launch .ac-dot{width:20px!important;height:20px!important;left:calc(34% - 10px)!important;top:calc(59% - 10px)!important;background-size:17px!important}
+}
+
+@media (min-width:641px){body .ac-panel{bottom:calc(env(safe-area-inset-bottom,0px) + 16px + var(--tk,42px))!important;height:min(600px,calc(100dvh - 40px - var(--tk,42px) - 80px))!important}}
+@media (max-width:640px){body .ac-panel{bottom:0!important;z-index:400!important}}
+@media (min-width:1061px){html.drive body .ac-launch .ac-dot{top:calc(63% - 10px)!important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens if the car fails its inspection?", "acceptedAnswer": {"@type": "Answer", "text": "We tell you what failed. Have it fixed and checked again here within 14 days and there's no second inspection fee."}}, {"@type": "Question", "name": "How do I know if my car needs an inspection?", "acceptedAnswer": {"@type": "Answer", "text": "Your rego renewal notice says whether you need one. You can check when your rego is due with Service NSW."}}, {"@type": "Question", "name": "How much is a pink slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle pink slip is $52, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How much is a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle blue slip is $82, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How long is a pink slip valid?", "acceptedAnswer": {"@type": "Answer", "text": "A pink slip report is valid for 6 months. A blue slip is valid for 42 days."}}, {"@type": "Question", "name": "Do you do pink slips for LPG and diesel cars?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do pink slips for petrol, diesel and LPG vehicles."}}, {"@type": "Question", "name": "Do I need a pink slip or a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "Most light vehicles over five years old need a pink slip to renew rego. You need a blue slip if the rego expired more than three months ago, the car is from interstate or overseas, it has no plates, or it's a written-off vehicle approved for re-registration."}}, {"@type": "Question", "name": "What are your opening hours?", "acceptedAnswer": {"@type": "Answer", "text": "Monday to Friday 9am to 5pm, and Saturday 9am to 2pm. We're closed on Sunday."}}, {"@type": "Question", "name": "How do I book?", "acceptedAnswer": {"@type": "Answer", "text": "Call the workshop on (02) 8798 5715, or Balli on 0433 597 181, and tell us the car and what it needs."}}, {"@type": "Question", "name": "Do you service all makes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We service all makes. We're an independent workshop, not linked to any car maker."}}, {"@type": "Question", "name": "Will a logbook service here keep my new car warranty?", "acceptedAnswer": {"@type": "Answer", "text": "Under the Australian Consumer Law, a new car warranty can't be voided just because an independent workshop did the servicing, as long as it's done to the maker's specifications. Bring your logbook so the service can be recorded."}}, {"@type": "Question", "name": "Do you regas air con?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do air con regas and repairs, for air con that blows warm or doesn't cool like it used to."}}]}</script>
 </head>

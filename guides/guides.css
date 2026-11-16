@@ -298,3 +298,19 @@ html:not(.drive) body .ac-launch:hover{background:#d96200!important}
   html:not(.drive) body .ac-launch{height:44px!important;padding:0 16px 0 13px!important;bottom:calc(10px + var(--tk,0px) + env(safe-area-inset-bottom,0px))!important}
   html:not(.drive) body .ac-launch span:last-child{font-size:14px!important}
 }
+
+/* Chat window in Shine's colours; on phones a shorter bottom sheet sized to the conversation */
+body .ac-head::after{background:#e8740c!important;opacity:1!important;height:2px!important}
+body .ac-panel{--ac-link:#9a5208;--ac-brand:#e8740c}
+html[data-theme="dark"] body .ac-panel{--ac-link:#f6ab5f}
+body .ac-chip:hover,body .ac-links a:hover{border-color:#e8740c!important;color:var(--ac-ink)!important}
+@media (max-width:640px){body .ac-panel{height:min(62dvh,560px)!important}}
+/* Laptop drive-in: the smaller car shows just the Shine badge, centred on the rear door */
+@media (min-width:1061px){
+  html.drive body .ac-launch span:last-child{display:none!important}
+  html.drive body .ac-launch .ac-dot{width:20px!important;height:20px!important;left:calc(34% - 10px)!important;top:calc(59% - 10px)!important;background-size:17px!important}
+}
+
+@media (min-width:641px){body .ac-panel{bottom:calc(env(safe-area-inset-bottom,0px) + 16px + 0px)!important;height:min(600px,calc(100dvh - 40px - 0px - 80px))!important}}
+@media (max-width:640px){body .ac-panel{bottom:0!important;z-index:400!important}}
+@media (min-width:1061px){html.drive body .ac-launch .ac-dot{top:calc(63% - 10px)!important}}
