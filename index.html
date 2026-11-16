@@ -951,6 +951,26 @@ html[data-theme="dark"].drive body .ac-launch{background-image:url(/assets/chat-
   body .ac-launch::before{right:4px;top:-11px;width:17px;height:15px}
   body.ac-qbar-on .ac-launch,body .ac-launch{bottom:calc(env(safe-area-inset-bottom,0px) + 12px + var(--tk))!important}
 }
+
+/* Phones: icon-only Call and Directions with a small, occasional motion */
+@media (max-width:759px){
+  .qbar{gap:6px;padding:5px}
+  .qbar .btn{width:44px;min-height:44px;padding:0;border-radius:50%;gap:0}
+  .qbar .btn .ic{width:19px;height:19px}
+  .qbar .q-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
+@media (max-width:759px) and (prefers-reduced-motion:no-preference){
+  .q-call .ic{animation:q-ring 5s ease-in-out 2s infinite;transform-origin:50% 60%}
+  .q-dir .ic{animation:q-hop 5s ease-in-out 3.2s infinite}
+}
+@keyframes q-ring{0%,82%,100%{transform:none}85%{transform:rotate(-14deg)}88%{transform:rotate(12deg)}91%{transform:rotate(-8deg)}94%{transform:rotate(5deg)}97%{transform:none}}
+@keyframes q-hop{0%,84%,100%{transform:none}89%{transform:translateY(-4px)}93%{transform:translateY(0)}96%{transform:translateY(-1.5px)}}
+
+/* Chat SUV: a soft orange ring pulses on the ground under it, so it reads as something to tap */
+body .ac-launch::after{content:"";position:absolute;left:6%;right:6%;bottom:-6px;height:16px;border-radius:50%;border:2px solid rgba(232,116,12,.75);background:none;opacity:0;pointer-events:none;inset:auto 6% -6px 6%;animation:suv-halo 2.8s ease-out 1s infinite}
+@keyframes suv-halo{0%{opacity:.85;transform:scale(.7)}70%{opacity:0;transform:scale(1.25)}100%{opacity:0;transform:scale(1.25)}}
+html.drive body .ac-launch::after,body.ac-on .ac-launch::after{animation:none;opacity:0}
+@media (prefers-reduced-motion:reduce){body .ac-launch::after{animation:none;opacity:.6;transform:none}}
 </style>
 </head>
 <body>
@@ -1398,8 +1418,8 @@ html[data-theme="dark"].drive body .ac-launch{background-image:url(/assets/chat-
   <div class="ticker__run"><ul class="tk"><li><img src="assets/brands/toyota.svg" alt="Toyota" height="26" decoding="async"></li><li><img src="assets/brands/mazda.svg" alt="Mazda" height="26" decoding="async"></li><li><img src="assets/brands/kia.svg" alt="Kia" height="26" decoding="async"></li><li><img src="assets/brands/nissan.svg" alt="Nissan" height="26" decoding="async"></li><li><img src="assets/brands/volkswagen.svg" alt="Volkswagen" height="26" decoding="async"></li><li><img class="keep" src="assets/brands/bmw.svg" alt="BMW" height="26" decoding="async"></li><li><img src="assets/brands/mercedes.svg" alt="Mercedes-Benz" height="26" decoding="async"></li><li><img src="assets/brands/audi.svg" alt="Audi" height="26" decoding="async"></li><li><img src="assets/brands/lexus.svg" alt="Lexus" height="26" decoding="async"></li><li><img src="assets/brands/volvo.svg" alt="Volvo" height="26" decoding="async"></li><li><img src="assets/brands/jeep.svg" alt="Jeep" height="26" decoding="async"></li></ul><ul class="tk" aria-hidden="true"><li><img src="assets/brands/toyota.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/mazda.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/kia.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/nissan.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/volkswagen.svg" alt="" height="26" decoding="async"></li><li><img class="keep" src="assets/brands/bmw.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/mercedes.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/audi.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/lexus.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/volvo.svg" alt="" height="26" decoding="async"></li><li><img src="assets/brands/jeep.svg" alt="" height="26" decoding="async"></li></ul></div>
 </aside>
 <nav class="qbar" aria-label="Quick contact">
-  <a class="btn" href="tel:+61287985715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
-  <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Directions</a>
+  <a class="btn q-call" href="tel:+61287985715" aria-label="Call the workshop, (02) 8798 5715"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span class="q-t">Call</span></a>
+  <a class="btn btn--ghost q-dir" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener" aria-label="Directions to the workshop"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span class="q-t">Directions</span></a>
 </nav>
 
 <script src="assets/site.js?v=f6fbe9a9"></script>
