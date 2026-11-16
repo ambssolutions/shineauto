@@ -348,3 +348,29 @@ html:not(.drive) body .ac-launch{padding-left:16px!important}
   html:not(.drive) body .ac-launch::after{inset:50% auto auto 9px!important;margin-top:-4px!important;width:8px!important;height:8px!important;animation:led2 1.2s ease-in-out infinite!important}
 }
 @keyframes led2{0%,100%{opacity:1;box-shadow:0 0 0 1.5px #e8740c,0 0 7px rgba(47,209,90,.95)}50%{opacity:.2;box-shadow:0 0 0 1.5px #e8740c}}
+
+/* Reading experience */
+:root{--read:66ch}
+.prose{font-size:1.125rem;line-height:1.75}
+.prose p,.prose li{color:var(--ink)}
+.prose h2{scroll-margin-top:96px;margin-top:2.2em}
+.prose h3{scroll-margin-top:96px}
+.prose li+li{margin-top:.55em}
+.lede{font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.6}
+.photo{max-width:760px}.photo img{max-height:min(380px,46vh);object-fit:cover}
+.toc{max-width:var(--read);margin:28px auto 0;padding:18px 22px;border-radius:18px;background:var(--card);box-shadow:var(--sh-sm,0 6px 20px -14px rgba(0,0,0,.25))}
+.toc p{margin:0 0 8px;font:700 .78rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--orange-d)}
+.toc ol{margin:0;padding-left:1.3em;display:grid;gap:4px}
+.toc a{color:var(--ink);text-decoration:none;font-weight:500}.toc a:hover{color:var(--orange-d);text-decoration:underline}
+.toc li::marker{color:var(--orange-d);font-weight:700}
+.readbar{position:fixed;left:0;top:0;height:3px;width:100%;z-index:200;background:#e8740c;transform-origin:left;transform:scaleX(0);pointer-events:none}
+@media (max-width:760px){.prose{font-size:1.0625rem;line-height:1.72}.toc{padding:14px 16px}}
+/* Phones: Call, Directions and Chat as one centred group, like the home page */
+@media (max-width:1060px){
+  .qbar{display:grid!important;grid-template-columns:auto auto!important;gap:5px!important;left:auto!important;right:calc(50% - 25px)!important;width:max-content;padding:3px!important;transform:none!important;bottom:calc(10px + env(safe-area-inset-bottom))!important;border-radius:999px}
+  .qbar .btn{width:53px;min-height:38px!important;padding:0!important;font-size:0!important;gap:0!important;border-radius:999px}
+  .qbar .btn .ic{width:17px;height:17px}
+  body .ac-launch,body.ac-qbar-on .ac-launch{left:calc(50% + 36px)!important;right:auto!important;bottom:calc(13px + env(safe-area-inset-bottom,0px))!important}
+  .head .nav .btn{display:none}
+}
+@media (min-width:761px){.toc ol{grid-template-columns:1fr 1fr;column-gap:28px}}
