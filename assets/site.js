@@ -344,4 +344,4 @@ document.addEventListener("animationend",function(e){if(e.animationName==="suv-i
 })();
 
 /* If the visitor scrolls during the drive-in, skip straight to the parked button */
-(function(){var r=document.documentElement;if(!r.classList.contains("drive"))return;function stop(){if(scrollY>40&&r.classList.contains("drive")){r.classList.remove("drive");removeEventListener("scroll",stop)}}addEventListener("scroll",stop,{passive:true})})();
+(function(){var r=document.documentElement;function stop(){if(scrollY>40&&r.classList.contains("drive"))r.classList.remove("drive")}addEventListener("scroll",stop,{passive:true})})();
