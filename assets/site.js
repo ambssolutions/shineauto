@@ -32,6 +32,8 @@
   var nav=$("#nav"),mb=$(".menu-btn",nav);
   function setMenu(o){nav.classList.toggle("open",o);mb.setAttribute("aria-expanded",String(o));mb.setAttribute("aria-label",o?"Close menu":"Open menu")}
   mb.addEventListener("click",function(){setMenu(mb.getAttribute("aria-expanded")!=="true")});
+  var my=0;addEventListener("scroll",function(){if(!nav.classList.contains("open")){my=scrollY;return}if(Math.abs(scrollY-my)>24)setMenu(false)},{passive:true});
+  mb.addEventListener("click",function(){my=scrollY});
   $$(".nav__links a",nav).forEach(function(a){a.addEventListener("click",function(){setMenu(false)})});
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&nav.classList.contains("open")){setMenu(false);mb.focus()}});
 
@@ -281,3 +283,6 @@ f.addEventListener("submit",function(e){e.preventDefault();var q=f.q.value.trim(
  matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(e){var saved;try{saved=localStorage.getItem("shine-theme")}catch(x){}if(!saved){root.setAttribute("data-theme",e.matches?"dark":"light");paint()}});
  paint();
 })();
+
+/* The SUV parks: once the drive-in ends, swap back to the still wheels */
+document.addEventListener("animationend",function(e){if(e.animationName==="suv-in")document.documentElement.classList.remove("drive")});

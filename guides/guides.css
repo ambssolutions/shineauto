@@ -225,3 +225,7 @@ html[data-theme="dark"] [style*="#faf9f7"],html[data-theme="dark"] .btn--ghost{b
 html[data-theme="dark"] body .ac-launch{background:url(/assets/chat-suv.svg) center bottom/contain no-repeat;color:#fff}
 html[data-theme="dark"] body .ac-panel,html[data-theme="dark"] body .ac-nudge{--ac-bg:#16191e;--ac-head:#1a1d23;--ac-ink:#eef0f3;--ac-muted:#a6adb8;--ac-soft:#0e1013;--ac-bot:#22262d;--ac-card:#2a2e36;--ac-chip:#1d2026;--ac-link:#f6ab5f}
 html[data-theme="dark"]{--soft:#15181d;--soft2:#15181d}
+
+body .ac-launch{width:170px;height:80px}
+body .ac-launch .ac-dot{width:28px;height:28px;left:calc(55% - 14px);top:calc(56% - 14px);background-size:24px}
+@media (max-width:760px){body .ac-launch{width:112px;height:53px}body .ac-launch .ac-dot{width:20px;height:20px;left:calc(55% - 10px);top:calc(56% - 10px);background-size:17px}}

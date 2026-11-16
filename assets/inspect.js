@@ -53,7 +53,7 @@ if (bay) {
     const target = new THREE.Vector3(0, 0.62, 0);
 
     // materials
-    const paint = new THREE.MeshPhysicalMaterial({ color: 0xa3120c, metalness: 0.6, roughness: 0.32, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 0.9 });
+    const paint = new THREE.MeshPhysicalMaterial({ color: 0xf07a12, metalness: 0.45, roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 0.9 });
     const glass = new THREE.MeshPhysicalMaterial({ color: 0x0b0d10, metalness: 0.2, roughness: 0.05, clearcoat: 1, clearcoatRoughness: 0.02 });
     const trim = new THREE.MeshStandardMaterial({ color: 0x15171b, metalness: 0.3, roughness: 0.55 });
     const rubber = new THREE.MeshStandardMaterial({ color: 0x141414, metalness: 0, roughness: 0.85 });

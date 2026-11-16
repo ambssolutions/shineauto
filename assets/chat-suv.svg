@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 240 100" role="img" aria-label="Shine SUV">
-  <defs>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 212 100" role="img" aria-label="Shine SUV">
+<defs>
     <linearGradient id="paint" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#ffa64d"/>
       <stop offset=".35" stop-color="#f08326"/>
@@ -18,7 +18,7 @@
     <clipPath id="low"><rect x="0" y="69" width="240" height="31"/></clipPath>
     <path id="body" d="M10 80 L6 62 Q5 41 12 31 L19 23 Q23 19 30 19 L147 19 Q155 19 161 24 L186 44 L219 50 Q232 53 234 62 L235 74 Q235 81 228 81 L212 81 A22 22 0 0 0 168 81 L80 81 A22 22 0 0 0 36 81 Z"/>
     <g id="wheel">
-      <circle r="17" fill="#121418"/>
+      <circle r="18" fill="#121418"/>
       <circle r="15" fill="none" stroke="#24272d" stroke-width="2"/>
       <circle r="11" fill="url(#rim)"/>
       <circle r="8.6" fill="#1f2227"/>
@@ -32,6 +32,7 @@
       <circle r="2.8" fill="#9aa0a7"/>
     </g>
   </defs>
+  <g transform="matrix(0.88 0 0 1.07 0 -5.6)">
   <!-- ground shadow -->
   <ellipse cx="122" cy="94" rx="112" ry="4.5" fill="#000" opacity=".28"/>
   <!-- roof rails -->
@@ -69,7 +70,7 @@
   <path d="M216 53 L231 57 Q233 58 232 60 L218 59 Q214 58 216 53 Z" fill="#fff6d8" stroke="#3a3d43" stroke-width=".8"/>
   <path d="M226 64 L235 64 L235 71 L227 71 Z" fill="#1d2025"/>
   <path d="M6.5 36 L11 34 L11 49 L6 50 Z" fill="#d9342b"/>
-  <!-- wheels -->
-  <use xlink:href="#wheel" href="#wheel" transform="translate(58 80)"/>
-  <use xlink:href="#wheel" href="#wheel" transform="translate(190 80)"/>
+  </g>
+  <g transform="translate(51 80)"><g class="spin"><use xlink:href="#wheel" href="#wheel"/></g></g>
+  <g transform="translate(167 80)"><g class="spin"><use xlink:href="#wheel" href="#wheel"/></g></g>
 </svg>

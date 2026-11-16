@@ -549,20 +549,8 @@ html:not(.js) .tbar{display:none}
 
 
 /* Ask Shine box: hands a free-text question to the website assistant */
-.askbox{max-width:760px;margin:28px auto 0;padding:18px 20px;border-radius:22px;background:linear-gradient(135deg,#fff 0%,#fff7ee 100%);box-shadow:0 1px 2px rgba(18,20,23,.06),0 18px 40px -22px rgba(18,20,23,.28);position:relative;overflow:hidden}
-.askbox::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(120deg,rgba(243,154,54,.55),rgba(217,52,43,.25),rgba(120,140,255,.35),rgba(243,154,54,.55));background-size:300% 100%;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:askflow 8s linear infinite;pointer-events:none}
 @keyframes askflow{to{background-position:300% 0}}
-.askbox-l{display:flex;align-items:center;gap:10px;font-weight:600;margin-bottom:12px}
-.askbox-spark{width:22px;height:22px;flex:none;border-radius:50%;background:conic-gradient(from 0deg,#f39a36,#d9342b,#7f8cff,#f39a36);-webkit-mask:radial-gradient(circle,#000 0 3px,transparent 3.5px 6px,#000 6.5px);mask:radial-gradient(circle,#000 0 3px,transparent 3.5px 6px,#000 6.5px);animation:askspin 6s linear infinite}
 @keyframes askspin{to{transform:rotate(360deg)}}
-.askbox-row{display:flex;gap:10px}
-.askbox-row input{flex:1;min-width:0;min-height:50px;padding:0 18px;border-radius:999px;border:1px solid rgba(18,20,23,.14);background:var(--card);font:inherit;font-size:16px}
-.askbox-row input:focus{outline:2px solid #f39a36;outline-offset:2px}
-.askbox-b{min-height:50px;padding:0 22px;border:0;border-radius:999px;cursor:pointer;font:inherit;font-weight:600;color:#1a1209;background:#e8740c;box-shadow:0 8px 18px -12px rgba(60,30,0,.5)}
-.askbox-b:hover{background:#d96200}
-.askbox-n{margin:10px 2px 0;font-size:13px;color:#5d5a54}
-@media (max-width:560px){.askbox-row{flex-direction:column}.askbox-b{width:100%}}
-@media (prefers-reduced-motion:reduce){.askbox::before,.askbox-spark{animation:none}}
 
 /* hero: five workshop scenes crossfading slowly (no zoom); one photo for reduced motion */
 .hero__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 45%;opacity:0;transition:opacity 1.8s cubic-bezier(.22,.61,.36,1)}
@@ -855,7 +843,6 @@ html[data-theme="dark"] .rbar{background:var(--line)}
 html[data-theme="dark"] .sc-btn{color:var(--ink);box-shadow:0 0 0 1px var(--line-2)}
 html[data-theme="dark"] .sc-btn:hover{background:#e8740c;color:#1a1209}
 html[data-theme="dark"] .lprog{background:rgba(255,255,255,.12)}
-html[data-theme="dark"] .askbox-row input{background:#13161a;color:var(--ink);border-color:var(--line-2)}
 html[data-theme="dark"] .sc,html[data-theme="dark"] .card,html[data-theme="dark"] .rv-c,html[data-theme="dark"] .faq__item{box-shadow:0 0 0 1px var(--line),0 18px 40px -28px rgba(0,0,0,.9)}
 html[data-theme="dark"] .head__in{box-shadow:0 0 0 1px var(--line),0 12px 30px -18px rgba(0,0,0,.8)}
 html[data-theme="dark"] .qbar{box-shadow:0 0 0 1px var(--line),0 16px 30px -16px rgba(0,0,0,.8)}
@@ -863,7 +850,6 @@ html[data-theme="dark"] body{background:linear-gradient(180deg,#0e1013 0,#12151a
 html[data-theme="dark"] .hours li,html[data-theme="dark"] .phones li{background:rgba(255,255,255,.05)}
 html[data-theme="dark"] .hours li.today{background:#2b1f12}
 html[data-theme="dark"] .today-tag{background:#e8740c;color:#1a1209}
-html[data-theme="dark"] .askbox{background:linear-gradient(135deg,#1a1d23 0%,#221c15 100%);box-shadow:0 0 0 1px var(--line)}
 html[data-theme="dark"] .fbar,html[data-theme="dark"] .tbar__track{background:var(--line)}
 html[data-theme="dark"] .pm{background:rgba(255,255,255,.12)}
 html[data-theme="dark"] body .ac-launch{background:url(/assets/chat-suv.svg) center bottom/contain no-repeat;color:#fff}
@@ -890,7 +876,7 @@ body .ac-av svg{display:none}
 
 /* Pink slip: home checks and outcome */
 .pt-info .tip{margin-top:12px;padding:12px 14px;border-radius:14px;background:#fff6ea;color:var(--ink);font-size:.93rem}
-.pt-info .tip b{display:block;font:700 .74rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#9a5208;margin-bottom:6px}
+.pt-info .tip b{display:block;font:700 .74rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--orange-d);margin-bottom:6px}
 .outcome{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .oc{display:grid;gap:4px;padding:14px 16px;border-radius:16px;background:#f4f6f3;font-size:.9rem;color:var(--ink-2)}
 .oc b{font:700 .95rem/1.2 var(--display);color:var(--ink);display:flex;align-items:center;gap:8px}
@@ -920,6 +906,38 @@ body .ac-av svg{display:none}
 .foot__small{text-align:center}
 @media (max-width:900px){.foot__cols{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.foot__cols{grid-template-columns:1fr;text-align:center;gap:22px}.foot__cols ul{justify-items:center}}
+
+/* Shutter: the full address painted on the door */
+.door__unit{text-transform:uppercase;letter-spacing:.12em;max-width:min(92vw,980px);line-height:1.35}
+@media (max-width:760px){.door__unit{font-size:.8rem;letter-spacing:.1em;max-width:70vw}}
+
+/* SUV chat button: taller and shorter so the badge sits well; wheels spin while it drives in */
+body .ac-launch{width:170px;height:80px;background-image:url(/assets/chat-suv.svg)}
+body .ac-launch .ac-dot{width:28px;height:28px;left:calc(55% - 14px);top:calc(56% - 14px);background-size:24px}
+html.drive body .ac-launch{background-image:url(/assets/chat-suv-moving.svg)}
+@media (max-width:760px){body .ac-launch{width:112px;height:53px}body .ac-launch .ac-dot{width:20px;height:20px;left:calc(55% - 10px);top:calc(56% - 10px);background-size:17px}}
+html[data-theme="dark"] body .ac-launch{background:url(/assets/chat-suv.svg) center bottom/contain no-repeat}
+html[data-theme="dark"].drive body .ac-launch{background-image:url(/assets/chat-suv-moving.svg)}
+
+/* Phone menu: opens with a soft drop and the links slide in one after another */
+@media (max-width:1060px){
+  html.js .nav__links{transform:translateY(-14px) scale(.97);transform-origin:top center;clip-path:inset(0 0 100% 0 round 22px);transition:opacity .5s var(--slow),transform .6s var(--slow),clip-path .7s var(--slow),visibility 0s .7s}
+  html.js .nav.open .nav__links{clip-path:inset(0 0 0 0 round 22px);transition:opacity .5s var(--slow),transform .6s var(--slow),clip-path .7s var(--slow)}
+  html.js .nav.open .nav__links li{animation:menu-li .6s var(--slow) both}
+  html.js .nav.open .nav__links li:nth-child(2){animation-delay:.05s}html.js .nav.open .nav__links li:nth-child(3){animation-delay:.1s}
+  html.js .nav.open .nav__links li:nth-child(4){animation-delay:.15s}html.js .nav.open .nav__links li:nth-child(5){animation-delay:.2s}html.js .nav.open .nav__links li:nth-child(6){animation-delay:.25s}
+}
+@keyframes menu-li{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){html.js .nav__links,html.js .nav.open .nav__links{clip-path:none;transform:none}html.js .nav.open .nav__links li{animation:none}}
+
+/* Warning lights: the timer is a ring filling around the active light's icon (no moving line) */
+@property --lp{syntax:"<number>";inherits:false;initial-value:0}
+.lights .lprog{position:absolute;width:1px;height:1px;margin:0;overflow:hidden;opacity:0;pointer-events:none}
+.lights .item .ib{position:relative}
+.lights.auto .lbtn[aria-pressed="true"] .ib::after{content:"";position:absolute;inset:-4px;border-radius:14px;padding:2.5px;background:conic-gradient(#e8740c calc(var(--lp) * 1%),rgba(232,116,12,.18) 0);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:lring 7s linear forwards;pointer-events:none}
+.lights.hold .lbtn[aria-pressed="true"] .ib::after{animation-play-state:paused}
+@keyframes lring{to{--lp:100}}
+@media (max-width:760px){.lights.auto .lbtn[aria-pressed="true"] .ib::after{inset:-5px;border-radius:12px}}
 </style>
 </head>
 <body>
@@ -987,10 +1005,9 @@ body .ac-av svg{display:none}
     <img data-src="assets/img/hero-street-blur-800.webp" width="800" height="450" decoding="async" alt="">
   </div>
   <div class="hero__dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
-  <span class="ai">AI illustration</span>
 
   <div class="door" aria-hidden="true">
-    <p class="door__unit">UNIT 4B</p>
+    <p class="door__unit">Unit 4B, 4 Homepride Avenue, Warwick Farm NSW 2170</p>
     <div class="door__paint">
       <img class="door__mark" src="assets/logo-mark.svg" width="64" height="64" alt="">
       <p class="door__name"><b>Shine</b><span>Auto Repairs</span></p>
@@ -1132,11 +1149,6 @@ body .ac-av svg{display:none}
         </article>
       </div>
     </div>
-    <form class="askbox" id="askbox" autocomplete="off">
-      <label for="ask-q" class="askbox-l"><span class="askbox-spark" aria-hidden="true"></span>Not a light? Describe what the car is doing</label>
-      <div class="askbox-row"><input id="ask-q" name="q" type="text" maxlength="160" placeholder="For example: squealing when I brake"><button type="submit" class="askbox-b">Ask Shine</button></div>
-      <p class="askbox-n">Answers come from this website. For anything it can't answer, call the workshop.</p>
-    </form>
     <p class="note">If a light comes on with a noise, smell, smoke or the car feels different, pull over somewhere safe and call. General guidance only. Cars differ, so check your owner's manual. If you're unsure, stop somewhere safe and call.</p>
   </div>
 </section>
@@ -1377,10 +1389,11 @@ body .ac-av svg{display:none}
   <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Directions</a>
 </nav>
 
-<script src="assets/site.js?v=24641c6e"></script>
-<script type="module" src="assets/inspect.js?v=5"></script>
+<script src="assets/site.js?v=f6fbe9a9"></script>
+<script type="module" src="assets/inspect.js?v=6"></script>
 <script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("shine-drive")){document.documentElement.classList.add("drive");sessionStorage.setItem("shine-drive","1")}}catch(e){}</script>
 <!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=93aa168b" data-label="Chat with us" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-nudge="Hi, I'm the Shine Auto Repairs assistant. Got a question about a pink slip, a repair or a warning light?" data-nudge-after="15" data-nudge-open="1" data-avoid=".qbar" defer></script><!--/chat-->
+<script>(function(){if(matchMedia("(max-width:760px)").matches){var c=document.querySelector('script[src*="chat.js"]');if(c){c.removeAttribute("data-nudge");c.removeAttribute("data-nudge-open")}}})();</script>
 
 </body>
 </html>

@@ -178,5 +178,6 @@ function paint(){var d=r.getAttribute("data-theme")==="dark";b.setAttribute("ari
 b.addEventListener("click",function(){var t=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",t);try{localStorage.setItem("shine-theme",t)}catch(e){}paint()});
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(e){var s;try{s=localStorage.getItem("shine-theme")}catch(x){}if(!s){r.setAttribute("data-theme",e.matches?"dark":"light");paint()}});paint()})();</script>
 <!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=93aa168b" data-label="Chat with us" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-nudge="Hi, I&#x27;m the Shine Auto Repairs assistant. Got a question about a pink slip, a repair or a warning light?" data-nudge-after="15" data-nudge-open="1"  defer></script><!--/chat-->
+<script>(function(){if(matchMedia("(max-width:760px)").matches){var c=document.querySelector('script[src*="chat.js"]');if(c){c.removeAttribute("data-nudge");c.removeAttribute("data-nudge-open")}}})();</script>
 </body>
 </html>
