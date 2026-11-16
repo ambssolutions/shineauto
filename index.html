@@ -1018,6 +1018,20 @@ body .ac-launch .ac-dot{width:30px;height:30px;left:calc(54% - 15px);top:calc(51
 
 body .ac-launch .ac-dot{left:calc(22% - 15px);top:calc(56% - 15px)}
 @media (max-width:760px){body .ac-launch .ac-dot{display:none}}
+
+/* Pink slip: real-looking scenes of the inspector at work, one per check, crossfading */
+.ps-scene{position:relative;overflow:hidden;border-radius:20px;background:#15171c;cursor:default}
+.ps-scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s var(--slow)}
+.ps-scene img.on{opacity:1}
+.ps-scene .ai{position:absolute;top:12px;right:12px;z-index:2}
+@media (max-width:760px){.ps-scene{height:auto!important;aspect-ratio:16/9}}
+@media (prefers-reduced-motion:reduce){.ps-scene img{transition:none}}
+
+/* Chat SUV: "Chat with us" written on the side windows; Shine badge centred on the rear door */
+body .ac-launch span:last-child{position:absolute;left:7%;width:66%;top:15%;height:19%;display:flex;align-items:center;justify-content:center;padding:0;border-radius:0;background:none;box-shadow:none;color:#fff;font:800 .72rem/1 var(--sans);letter-spacing:.02em;text-shadow:0 1px 2px rgba(0,0,0,.6);white-space:nowrap}
+body .ac-launch span:last-child::after{content:none}
+body .ac-launch .ac-dot{width:26px;height:26px;left:calc(34% - 13px);top:calc(52% - 13px);background-size:22px}
+@media (max-width:760px){body .ac-launch span:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);left:auto;top:auto}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens if the car fails its inspection?", "acceptedAnswer": {"@type": "Answer", "text": "We tell you what failed. Have it fixed and checked again here within 14 days and there's no second inspection fee."}}, {"@type": "Question", "name": "How do I know if my car needs an inspection?", "acceptedAnswer": {"@type": "Answer", "text": "Your rego renewal notice says whether you need one. You can check when your rego is due with Service NSW."}}, {"@type": "Question", "name": "How much is a pink slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle pink slip is $52, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How much is a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle blue slip is $82, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How long is a pink slip valid?", "acceptedAnswer": {"@type": "Answer", "text": "A pink slip report is valid for 6 months. A blue slip is valid for 42 days."}}, {"@type": "Question", "name": "Do you do pink slips for LPG and diesel cars?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do pink slips for petrol, diesel and LPG vehicles."}}, {"@type": "Question", "name": "Do I need a pink slip or a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "Most light vehicles over five years old need a pink slip to renew rego. You need a blue slip if the rego expired more than three months ago, the car is from interstate or overseas, it has no plates, or it's a written-off vehicle approved for re-registration."}}, {"@type": "Question", "name": "What are your opening hours?", "acceptedAnswer": {"@type": "Answer", "text": "Monday to Friday 9am to 5pm, and Saturday 9am to 2pm. We're closed on Sunday."}}, {"@type": "Question", "name": "How do I book?", "acceptedAnswer": {"@type": "Answer", "text": "Call the workshop on (02) 8798 5715, or Balli on 0433 597 181, and tell us the car and what it needs."}}, {"@type": "Question", "name": "Do you service all makes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We service all makes. We're an independent workshop, not linked to any car maker."}}, {"@type": "Question", "name": "Will a logbook service here keep my new car warranty?", "acceptedAnswer": {"@type": "Answer", "text": "Under the Australian Consumer Law, a new car warranty can't be voided just because an independent workshop did the servicing, as long as it's done to the maker's specifications. Bring your logbook so the service can be recorded."}}, {"@type": "Question", "name": "Do you regas air con?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do air con regas and repairs, for air con that blows warm or doesn't cool like it used to."}}]}</script>
 </head>
@@ -1287,21 +1301,20 @@ body .ac-launch .ac-dot{left:calc(22% - 15px);top:calc(56% - 15px)}
   <div class="wrap">
     <div class="sec__head rv">
       <h2 id="ins-h">What a pink slip checks, and how to pass first time</h2>
-      <p>Tap a point on the car to see what the inspector looks at, and what you can check at home before you book.</p>
+      <p>Tap a check to see the inspector at work, and what you can check at home before you book.</p>
     </div>
     <div class="bay rv" id="bay3d">
-      <div class="bay-stage" tabindex="0" aria-label="3D car. Drag or use the arrow keys to turn it.">
-        <div class="bay-fallback"><img data-src="assets/img/pinkslip-1200.webp" data-srcset="assets/img/pinkslip-640.webp 640w, assets/img/pinkslip-1200.webp 1200w" sizes="(max-width:980px) 92vw, 700px" width="1200" height="800" decoding="async" alt="A tread depth gauge checking a tyre during a safety inspection"><span class="ai">AI illustration</span></div>
-        <button class="pin" type="button" data-pt="tyres" aria-label="Tyres"><span>Tyres</span></button>
-        <button class="pin" type="button" data-pt="brakes" aria-label="Brakes"><span>Brakes</span></button>
-        <button class="pin" type="button" data-pt="steering" aria-label="Steering and suspension"><span>Steering and suspension</span></button>
-        <button class="pin" type="button" data-pt="lights" aria-label="Lights and indicators"><span>Lights and indicators</span></button>
-        <button class="pin" type="button" data-pt="windscreen" aria-label="Windscreen and wipers"><span>Windscreen and wipers</span></button>
-        <button class="pin" type="button" data-pt="seatbelts" aria-label="Seatbelts"><span>Seatbelts</span></button>
-        <button class="pin" type="button" data-pt="body" aria-label="Body and rust"><span>Body and rust</span></button>
-        <button class="pin" type="button" data-pt="exhaust" aria-label="Exhaust"><span>Exhaust</span></button>
-        <button class="pin" type="button" data-pt="lpg" aria-label="LPG system"><span>LPG system</span></button>
-        <span class="bay-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1-6 6h-.6a5 5 0 0 1-4.2-2.3L4.5 15a1.5 1.5 0 0 1 2.4-1.8L9 15"/></svg>Drag to turn the car</span>
+      <div class="bay-stage ps-scene">
+        <img class="on" data-pt="tyres" src="assets/img/ps-tyres-1200.webp" srcset="assets/img/ps-tyres-640.webp 640w, assets/img/ps-tyres-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic in navy overalls checks the tread depth of an orange sedan's front tyre with a gauge" loading="lazy" decoding="async">
+        <img data-pt="brakes" data-src="assets/img/ps-brakes-1200.webp" data-srcset="assets/img/ps-brakes-640.webp 640w, assets/img/ps-brakes-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic shines a torch on the brake disc and caliper of an orange sedan with its wheel off" decoding="async">
+        <img data-pt="steering" data-src="assets/img/ps-steering-1200.webp" data-srcset="assets/img/ps-steering-640.webp 640w, assets/img/ps-steering-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic checks the front steering and suspension joints of an orange sedan raised on a hoist" decoding="async">
+        <img data-pt="lights" data-src="assets/img/ps-lights-1200.webp" data-srcset="assets/img/ps-lights-640.webp 640w, assets/img/ps-lights-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic with a clipboard checks the brake lights and indicators at the back of an orange sedan" decoding="async">
+        <img data-pt="windscreen" data-src="assets/img/ps-windscreen-1200.webp" data-srcset="assets/img/ps-windscreen-640.webp 640w, assets/img/ps-windscreen-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic lifts a wiper arm and checks the windscreen of an orange sedan for chips" decoding="async">
+        <img data-pt="seatbelts" data-src="assets/img/ps-seatbelts-1200.webp" data-srcset="assets/img/ps-seatbelts-640.webp 640w, assets/img/ps-seatbelts-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic pulls the driver's seatbelt out to check the webbing and buckle in an orange sedan" decoding="async">
+        <img data-pt="body" data-src="assets/img/ps-body-1200.webp" data-srcset="assets/img/ps-body-640.webp 640w, assets/img/ps-body-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic crouches with a torch to check the door sill of an orange sedan for rust" decoding="async">
+        <img data-pt="exhaust" data-src="assets/img/ps-exhaust-1200.webp" data-srcset="assets/img/ps-exhaust-640.webp 640w, assets/img/ps-exhaust-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic checks the exhaust and muffler mounts under an orange sedan raised on a hoist" decoding="async">
+        <img data-pt="lpg" data-src="assets/img/ps-lpg-1200.webp" data-srcset="assets/img/ps-lpg-640.webp 640w, assets/img/ps-lpg-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="675" alt="A mechanic checks the LPG tank fittings in the boot of an orange sedan with leak detection spray" decoding="async">
+        <span class="ai">AI illustration</span>
       </div>
       <div class="bay-side">
         <div class="pt-card" aria-live="polite">
@@ -1481,8 +1494,7 @@ body .ac-launch .ac-dot{left:calc(22% - 15px);top:calc(56% - 15px)}
   <a class="btn btn--ghost q-dir" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener" aria-label="Directions to the workshop"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span class="q-t">Directions</span></a>
 </nav>
 
-<script src="assets/site.js?v=6764fcb7"></script>
-<script type="module" src="assets/inspect.js?v=6"></script>
+<script src="assets/site.js?v=b61f20ef"></script>
 <script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&scrollY<80&&!location.hash){document.documentElement.classList.add("drive")}}catch(e){}</script>
 <!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=9d77badc" data-label="Chat with us" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-avoid=".qbar" defer></script><!--/chat-->
 <script>(function(){if(matchMedia("(max-width:760px)").matches){var c=document.querySelector('script[src*="chat.js"]');if(c){c.removeAttribute("data-nudge");c.removeAttribute("data-nudge-open")}}})();</script>

@@ -269,7 +269,7 @@ f.addEventListener("submit",function(e){e.preventDefault();var q=f.q.value.trim(
 
 /* Pink slip on phones: step through the check points every 6s while the bay is on screen; a tap holds it for 15s */
 (function(){var bay=document.getElementById("bay3d");if(!bay||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
- var keys=[].slice.call(bay.querySelectorAll(".pt-keys button")),row=bay.querySelector(".pt-keys"),mq=matchMedia("(max-width:760px)"),vis=false,hold=0;
+ var keys=[].slice.call(bay.querySelectorAll(".pt-keys button")),row=bay.querySelector(".pt-keys"),mq=matchMedia("all"),vis=false,hold=0;
  if(!keys.length)return;
  keys.concat([].slice.call(bay.querySelectorAll(".pin"))).forEach(function(k){k.addEventListener("click",function(e){if(e.isTrusted)hold=Date.now()+15000})});
  bay.querySelector(".bay-stage").addEventListener("pointerdown",function(){hold=Date.now()+15000});
@@ -301,4 +301,14 @@ document.addEventListener("animationend",function(e){if(e.animationName==="suv-i
  run.addEventListener("touchstart",function(){last=Date.now()},{passive:true});
  if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.3}).observe(run);
  if(!reduce)setInterval(function(){if(vis&&!hold&&!document.hidden&&Date.now()-last>8000)go(1)},4500);
+})();
+
+/* Pink slip scenes: choosing a check shows the inspector doing it (images load as they are needed) */
+(function(){var bay=document.getElementById("bay3d");if(!bay)return;var keys=[].slice.call(bay.querySelectorAll(".pt-keys [data-pt]")),imgs=[].slice.call(bay.querySelectorAll(".ps-scene img"));
+ function load(im){if(im&&im.dataset.src){im.srcset=im.dataset.srcset;im.src=im.dataset.src;im.removeAttribute("data-src")}}
+ function pick(id){keys.forEach(function(k){k.setAttribute("aria-pressed",String(k.dataset.pt===id))});
+  [].forEach.call(bay.querySelectorAll(".pt-info"),function(d){d.hidden=d.dataset.pt!==id});
+  imgs.forEach(function(im,i){var on=im.dataset.pt===id;if(on){load(im);load(imgs[(i+1)%imgs.length])}im.classList.toggle("on",on)})}
+ keys.forEach(function(k){k.addEventListener("click",function(){pick(k.dataset.pt)})});
+ if("IntersectionObserver" in window)new IntersectionObserver(function(es,o){if(es[0].isIntersecting){load(imgs[1]);o.disconnect()}},{rootMargin:"300px 0px"}).observe(bay);
 })();
