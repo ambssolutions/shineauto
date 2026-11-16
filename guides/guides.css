@@ -264,3 +264,11 @@ body .ac-launch .ac-dot{width:24px;height:24px;left:calc(34% - 12px);top:calc(57
   body .ac-launch .ac-dot::after{color:var(--ink)!important;text-shadow:none!important;font-size:13px!important}
   html.drive body .ac-launch{animation:none}
 }
+
+/* Phones: just the SUV next to the Call / Directions pill, "Chat" on its door */
+@media (max-width:760px){
+  body .ac-launch,body.ac-qbar-on .ac-launch{width:112px;height:53px;border-radius:0;background:url(/assets/chat-suv.svg) center bottom/contain no-repeat!important;box-shadow:none!important;bottom:calc(6px + var(--tk) + env(safe-area-inset-bottom,0px))!important}
+  html[data-theme="dark"] body .ac-launch{box-shadow:none!important}
+  body .ac-launch .ac-dot{left:22%!important;right:auto;width:42%!important;top:34%!important;height:30%!important}
+  body .ac-launch .ac-dot::after{color:#fff!important;text-shadow:0 1px 1px rgba(0,0,0,.35)!important;font-size:12px!important}
+}
