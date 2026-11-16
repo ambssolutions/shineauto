@@ -262,7 +262,6 @@ body .ac-launch .ac-dot{width:24px;height:24px;left:calc(34% - 12px);top:calc(57
   body .ac-launch::before,body .ac-launch::after{content:none!important}
   body .ac-launch .ac-dot{left:auto!important;right:12px;top:0!important;width:auto!important;height:100%!important}
   body .ac-launch .ac-dot::after{color:var(--ink)!important;text-shadow:none!important;font-size:13px!important}
-  html.drive body .ac-launch{animation:none}
 }
 
 /* Phones: just the SUV next to the Call / Directions pill, "Chat" on its door */
@@ -271,4 +270,11 @@ body .ac-launch .ac-dot{width:24px;height:24px;left:calc(34% - 12px);top:calc(57
   html[data-theme="dark"] body .ac-launch{box-shadow:none!important}
   body .ac-launch .ac-dot{left:22%!important;right:auto;width:42%!important;top:34%!important;height:30%!important}
   body .ac-launch .ac-dot::after{color:#fff!important;text-shadow:0 1px 1px rgba(0,0,0,.35)!important;font-size:12px!important}
+}
+@media (max-width:760px){body .ac-launch,body.ac-qbar-on .ac-launch{width:86px;height:54px;background-image:url(/assets/chat-suv-short.svg)!important}body .ac-launch .ac-dot{left:18%!important;width:52%!important;top:36%!important;height:28%!important}}
+
+/* "Chat" as signwriting on the door panel, below the windows */
+@media (max-width:760px){
+  body .ac-launch .ac-dot{left:22%!important;width:46%!important;top:45%!important;height:14%!important}
+  body .ac-launch .ac-dot::after{font:700 9.5px/1 var(--sans,system-ui)!important;letter-spacing:.08em!important;text-transform:uppercase;color:rgba(255,255,255,.92)!important;text-shadow:0 .5px 0 rgba(120,50,0,.45)!important}
 }

@@ -1075,7 +1075,6 @@ body .ac-launch .ac-dot{width:24px;height:24px;left:calc(34% - 12px);top:calc(57
   body .ac-launch::before,body .ac-launch::after{content:none!important}
   body .ac-launch .ac-dot{left:auto!important;right:12px;top:0!important;width:auto!important;height:100%!important}
   body .ac-launch .ac-dot::after{color:var(--ink)!important;text-shadow:none!important;font-size:13px!important}
-  html.drive body .ac-launch{animation:none}
 }
 @media (max-width:759px){.qbar .btn{width:53px;min-height:38px;border-radius:999px}}
 
@@ -1085,6 +1084,28 @@ body .ac-launch .ac-dot{width:24px;height:24px;left:calc(34% - 12px);top:calc(57
   html[data-theme="dark"] body .ac-launch{box-shadow:none!important}
   body .ac-launch .ac-dot{left:22%!important;right:auto;width:42%!important;top:34%!important;height:30%!important}
   body .ac-launch .ac-dot::after{color:#fff!important;text-shadow:0 1px 1px rgba(0,0,0,.35)!important;font-size:12px!important}
+}
+
+/* Phones: a shorter SUV, and the drive-in into the garage before it parks by the buttons */
+@media (max-width:760px){
+  body .ac-launch,body.ac-qbar-on .ac-launch{width:86px;height:54px;background-image:url(/assets/chat-suv-short.svg)!important}
+  html.drive body .ac-launch{background-image:url(/assets/chat-suv-short-moving.svg)!important;animation:suv-in-m 5s linear 1.5s both!important}
+  body .ac-launch .ac-dot{left:18%!important;width:52%!important;top:36%!important;height:28%!important}
+}
+@keyframes suv-in-m{
+  0%{translate:-100vw -16vh;scale:1.6;animation-timing-function:cubic-bezier(.2,.65,.3,1)}
+  28%{translate:-47px -16vh;scale:1.6}
+  31%{translate:-47px -16vh;scale:1.6;rotate:-1.2deg}
+  34%{translate:-47px -16vh;scale:1.6;rotate:0deg}
+  46%{translate:-47px -16vh;scale:1.6;animation-timing-function:cubic-bezier(.45,0,.25,1)}
+  92%{translate:6px 0;scale:1}
+  96%{translate:-2px 0;scale:1;rotate:-1deg}
+  100%{translate:0 0;scale:1;rotate:0deg}}
+
+/* "Chat" as signwriting on the door panel, below the windows */
+@media (max-width:760px){
+  body .ac-launch .ac-dot{left:22%!important;width:46%!important;top:45%!important;height:14%!important}
+  body .ac-launch .ac-dot::after{font:700 9.5px/1 var(--sans,system-ui)!important;letter-spacing:.08em!important;text-transform:uppercase;color:rgba(255,255,255,.92)!important;text-shadow:0 .5px 0 rgba(120,50,0,.45)!important}
 }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens if the car fails its inspection?", "acceptedAnswer": {"@type": "Answer", "text": "We tell you what failed. Have it fixed and checked again here within 14 days and there's no second inspection fee."}}, {"@type": "Question", "name": "How do I know if my car needs an inspection?", "acceptedAnswer": {"@type": "Answer", "text": "Your rego renewal notice says whether you need one. You can check when your rego is due with Service NSW."}}, {"@type": "Question", "name": "How much is a pink slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle pink slip is $52, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How much is a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle blue slip is $82, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How long is a pink slip valid?", "acceptedAnswer": {"@type": "Answer", "text": "A pink slip report is valid for 6 months. A blue slip is valid for 42 days."}}, {"@type": "Question", "name": "Do you do pink slips for LPG and diesel cars?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do pink slips for petrol, diesel and LPG vehicles."}}, {"@type": "Question", "name": "Do I need a pink slip or a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "Most light vehicles over five years old need a pink slip to renew rego. You need a blue slip if the rego expired more than three months ago, the car is from interstate or overseas, it has no plates, or it's a written-off vehicle approved for re-registration."}}, {"@type": "Question", "name": "What are your opening hours?", "acceptedAnswer": {"@type": "Answer", "text": "Monday to Friday 9am to 5pm, and Saturday 9am to 2pm. We're closed on Sunday."}}, {"@type": "Question", "name": "How do I book?", "acceptedAnswer": {"@type": "Answer", "text": "Call the workshop on (02) 8798 5715, or Balli on 0433 597 181, and tell us the car and what it needs."}}, {"@type": "Question", "name": "Do you service all makes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We service all makes. We're an independent workshop, not linked to any car maker."}}, {"@type": "Question", "name": "Will a logbook service here keep my new car warranty?", "acceptedAnswer": {"@type": "Answer", "text": "Under the Australian Consumer Law, a new car warranty can't be voided just because an independent workshop did the servicing, as long as it's done to the maker's specifications. Bring your logbook so the service can be recorded."}}, {"@type": "Question", "name": "Do you regas air con?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do air con regas and repairs, for air con that blows warm or doesn't cool like it used to."}}]}</script>
