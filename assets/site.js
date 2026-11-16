@@ -307,12 +307,27 @@ document.addEventListener("animationend",function(e){if(e.animationName==="suv-i
  else vis=true,tick();
 })();
 
-/* Pink slip scenes: choosing a check shows the inspector doing it (images load as they are needed) */
-(function(){var bay=document.getElementById("bay3d");if(!bay)return;var keys=[].slice.call(bay.querySelectorAll(".pt-keys [data-pt]")),imgs=[].slice.call(bay.querySelectorAll(".ps-scene img"));
- function load(im){if(im&&im.dataset.src){im.srcset=im.dataset.srcset;im.src=im.dataset.src;im.removeAttribute("data-src")}}
+/* Pink slip: live drawing. Choosing a check walks the mechanic to it and shows the job being done */
+(function(){var bay=document.getElementById("bay3d"),lw=document.getElementById("lw");if(!bay||!lw)return;
+ var keys=[].slice.call(bay.querySelectorAll(".pt-keys [data-pt]")),man=lw.querySelector(".lw-man"),ring=lw.querySelector(".lw-ring"),cap=lw.querySelector(".lw-capt");
+ var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ var S={tyres:{x:622,f:-1,p:"c",t:"gauge",a:"low",r:[562,300]},brakes:{x:214,f:1,p:"c",t:"torch",a:"low",r:[278,300]},
+  steering:{x:545,f:1,p:"s",t:"torch",a:"up",r:[562,230],lift:1},lights:{x:142,f:1,p:"s",t:"clip",a:"clip",r:[196,264],o:"s-lights"},
+  windscreen:{x:600,f:-1,p:"s",t:"",a:"reach",r:[522,212]},seatbelts:{x:620,f:-1,p:"s",t:"",a:"reach",r:[470,250],o:"o-door"},
+  body:{x:398,f:1,p:"c",t:"torch",a:"low",r:[420,292]},exhaust:{x:292,f:1,p:"s",t:"torch",a:"up",r:[236,229],lift:1},
+  lpg:{x:150,f:1,p:"s",t:"spray",a:"spray",r:[248,232],o:"o-boot"}};
+ var names={};keys.forEach(function(k){names[k.dataset.pt]=k.textContent.trim()});var lastX=null,wt=0;
+ function set(id){var c=S[id];if(!c)return;
+  lw.classList.remove("f-l","p-c","t-gauge","t-torch","t-clip","t-spray","a-low","a-up","a-clip","a-reach","a-spray","lift","s-lights","o-door","o-boot");
+  if(c.f<0)lw.classList.add("f-l");if(c.p==="c")lw.classList.add("p-c");if(c.t)lw.classList.add("t-"+c.t);lw.classList.add("a-"+c.a);if(c.lift)lw.classList.add("lift");if(c.o)lw.classList.add(c.o);
+  man.style.transform="translate("+c.x+"px,330px)";ring.style.transform="translate("+c.r[0]+"px,"+c.r[1]+"px)";
+  if(lastX!==null&&lastX!==c.x&&!reduce){lw.classList.add("walk");clearTimeout(wt);wt=setTimeout(function(){lw.classList.remove("walk")},1100)}lastX=c.x;
+  cap.textContent="Checking: "+(names[id]||id);lw.setAttribute("aria-label","Animated drawing: a Shine mechanic doing the "+(names[id]||id).toLowerCase()+" check on an orange sedan")}
  function pick(id){keys.forEach(function(k){k.setAttribute("aria-pressed",String(k.dataset.pt===id))});
-  [].forEach.call(bay.querySelectorAll(".pt-info"),function(d){d.hidden=d.dataset.pt!==id});
-  imgs.forEach(function(im,i){var on=im.dataset.pt===id;if(on){load(im);load(imgs[(i+1)%imgs.length])}im.classList.toggle("on",on)})}
+  [].forEach.call(bay.querySelectorAll(".pt-info"),function(d){d.hidden=d.dataset.pt!==id});set(id)}
  keys.forEach(function(k){k.addEventListener("click",function(){pick(k.dataset.pt)})});
- if("IntersectionObserver" in window)new IntersectionObserver(function(es,o){if(es[0].isIntersecting){load(imgs[1]);o.disconnect()}},{rootMargin:"300px 0px"}).observe(bay);
+ var first=(keys.find(function(k){return k.getAttribute("aria-pressed")==="true"})||keys[0]).dataset.pt;set(first);
+ function go(){lw.classList.add("in");if(!reduce){lw.classList.add("driving");setTimeout(function(){lw.classList.remove("driving")},2300)}}
+ if(reduce||!("IntersectionObserver" in window))lw.classList.add("in");
+ else new IntersectionObserver(function(es,o){if(es[0].isIntersecting){go();o.disconnect()}},{threshold:.4}).observe(lw);
 })();
