@@ -250,3 +250,17 @@ body .ac-launch .ac-dot{width:24px;height:24px;left:calc(34% - 12px);top:calc(57
   body .ac-launch .ac-dot{display:flex!important;align-items:center;justify-content:center;position:absolute;left:22%;width:42%;top:36%;height:30%;background:none;border-radius:0;box-shadow:none}
   body .ac-launch .ac-dot::after{content:"Chat";position:static;width:auto;height:auto;background:none;color:#fff;font:800 11px/1 var(--sans,system-ui);letter-spacing:.02em;text-shadow:0 1px 1px rgba(0,0,0,.35)}
 }
+
+/* Phones: two matching pills centred side by side: Call + Directions, and Chat */
+@media (max-width:759px){
+  .qbar{left:auto!important;right:calc(50% + 4px)!important;margin:0!important;width:max-content;bottom:calc(10px + var(--tk) + env(safe-area-inset-bottom))!important}
+}
+@media (max-width:760px){
+  body .ac-launch,body.ac-qbar-on .ac-launch{left:calc(50% + 4px)!important;right:auto!important;bottom:calc(10px + var(--tk) + env(safe-area-inset-bottom,0px))!important;width:118px;height:44px;border-radius:999px;
+    background:var(--card) url(/assets/chat-suv.svg) 8px 55%/62px auto no-repeat!important;box-shadow:0 0 0 1px rgba(21,23,28,.06),0 16px 34px -14px rgba(21,23,28,.45)!important}
+  html[data-theme="dark"] body .ac-launch{box-shadow:0 0 0 1px var(--line),0 16px 30px -16px rgba(0,0,0,.8)!important}
+  body .ac-launch::before,body .ac-launch::after{content:none!important}
+  body .ac-launch .ac-dot{left:auto!important;right:12px;top:0!important;width:auto!important;height:100%!important}
+  body .ac-launch .ac-dot::after{color:var(--ink)!important;text-shadow:none!important;font-size:13px!important}
+  html.drive body .ac-launch{animation:none}
+}
