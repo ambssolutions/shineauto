@@ -2,6 +2,7 @@
 
 | Need | Goes in |
 |---|---|
+| 9 short phone clips of Balli doing each pink slip check (see FILMING.md) | Pink slip section, `assets/video/`, then list them in `CLIPS` in `assets/site.js` |
 | 3 to 5 real five-star Google reviews to quote word for word (reviewer first name, month and year), with Shine's OK. Google hides review text from automated tools, so these must be copied by hand | Reviews card |
 | Google currently shows 4.7 stars; the site quotes Birdeye's breakdown (53 of 57 five-star, 15 Nov 2026). Re-check before launch | Reviews card, chat |
 | **Before launch (NSW):** Motor Vehicle Repairer Licence number (MVRL), to show as "Lic. No. MVRL…" in the footer. NSW Fair Trading: a repair business must hold a current licence | Footer |

@@ -345,3 +345,15 @@ document.addEventListener("animationend",function(e){if(e.animationName==="suv-i
 
 /* If the visitor scrolls during the drive-in, skip straight to the parked button */
 (function(){var r=document.documentElement;function stop(){if(scrollY>40&&r.classList.contains("drive"))r.classList.remove("drive")}addEventListener("scroll",stop,{passive:true})})();
+
+/* Pink slip clips: list the checks that have a real clip in assets/video/ps-<check>.mp4 (and .webm, optional poster from the photo).
+   Until a clip is listed here, that check shows its photo. Example: var CLIPS=["tyres","brakes"]; */
+(function(){var CLIPS=[];var bay=document.getElementById("bay3d");if(!bay||!CLIPS.length)return;
+ var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,stage=bay.querySelector(".ps-scene");
+ CLIPS.forEach(function(n){var im=stage.querySelector('img[data-pt="'+n+'"]');if(!im)return;var v=document.createElement("video");
+  v.dataset.pt=n;v.muted=true;v.loop=true;v.playsInline=true;v.preload="none";v.setAttribute("aria-label",im.alt);v.poster=(im.dataset.src||im.src);
+  v.innerHTML='<source src="assets/video/ps-'+n+'.webm" type="video/webm"><source src="assets/video/ps-'+n+'.mp4" type="video/mp4">';
+  v.className=im.className;im.after(v);im.classList.add("has-clip")});
+ function sync(){stage.querySelectorAll("video").forEach(function(v){var on=!!stage.querySelector('img.on[data-pt="'+v.dataset.pt+'"]');v.classList.toggle("on",on);if(on&&!reduce){v.preload="auto";v.play().catch(function(){})}else v.pause()})}
+ new MutationObserver(sync).observe(stage,{subtree:true,attributes:true,attributeFilter:["class"]});sync();
+})();
