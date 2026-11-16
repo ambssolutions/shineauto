@@ -342,7 +342,7 @@ document.addEventListener("animationend",function(e){if(e.animationName==="suv-i
  if(again)again.addEventListener("click",function(){lw.classList.remove("in");lastX=860;man.style.transform="translate(860px,332px)";paused=false;stage.classList.remove("is-paused");lw.classList.remove("paused");bay.classList.remove("hold");
   setTimeout(function(){go();setTimeout(function(){pick(0)},1500)},60)});
  function togglePause(){paused=!paused;stage.classList.toggle("is-paused",paused);lw.classList.toggle("paused",paused);bay.classList.toggle("hold",paused);if(!paused)tick()}
- stage.addEventListener("click",togglePause);stage.addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();togglePause()}});
+ stage.addEventListener("click",function(e){if(e.target.closest(".pt-again"))return;togglePause()});stage.addEventListener("keydown",function(e){if(e.target.closest(".pt-again"))return;if(e.key===" "||e.key==="Enter"){e.preventDefault();togglePause()}});
  function go(){lw.classList.add("in");if(!reduce){lw.classList.add("driving");setTimeout(function(){lw.classList.remove("driving")},2300)}}
  var started=false;
  if(reduce||!("IntersectionObserver" in window)){lw.classList.add("in");vis=true;pick(0)}

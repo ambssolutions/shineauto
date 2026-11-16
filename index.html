@@ -1408,7 +1408,7 @@ html[data-theme="dark"] .pt-steps li.on{background:#2b1f12}
   .pt-steps li::before{width:17px;height:17px;margin-top:-8.5px;left:6px;font-size:.66rem}
   .pt-info .tip{margin-top:6px;padding:6px 10px;font-size:.78rem;line-height:1.35}
   .pt-info .tip b{font-size:.66rem;margin-bottom:2px}
-  .pt-again{position:absolute;right:14px;top:14px;z-index:3;min-height:30px;padding:0 10px;font-size:.72rem;background:rgba(21,23,28,.75)}
+  .pt-again{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:3;min-height:30px;padding:0 10px;font-size:.72rem;background:rgba(21,23,28,.75)}
   .outcome{grid-template-columns:1fr 1fr!important;gap:6px}
   .oc{padding:6px 8px;font-size:.72rem;line-height:1.3;gap:2px}
   .oc b{font-size:.78rem}
@@ -1511,6 +1511,7 @@ html[data-theme="dark"] .lights .lp dl>div:nth-child(2){background:color-mix(in 
 .lights .lp.on>dl{min-height:0}
 .ticker__lbl{flex-direction:column;justify-content:center;align-items:flex-start;font-size:.6rem;line-height:1.25;letter-spacing:.12em;text-align:left}
 @media (max-width:759px){.ticker__lbl{font-size:.56rem;letter-spacing:.1em}}
+.lw-stage>.pt-again{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:3;min-height:32px;padding:0 12px;font-size:.76rem;background:rgba(21,23,28,.8);color:#fff}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens if the car fails its inspection?", "acceptedAnswer": {"@type": "Answer", "text": "We tell you what failed. Have it fixed and checked again here within 14 days and there's no second inspection fee."}}, {"@type": "Question", "name": "How do I know if my car needs an inspection?", "acceptedAnswer": {"@type": "Answer", "text": "Your rego renewal notice says whether you need one. You can check when your rego is due with Service NSW."}}, {"@type": "Question", "name": "How much is a pink slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle pink slip is $52, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How much is a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle blue slip is $82, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How long is a pink slip valid?", "acceptedAnswer": {"@type": "Answer", "text": "A pink slip report is valid for 6 months. A blue slip is valid for 42 days."}}, {"@type": "Question", "name": "Do you do pink slips for LPG and diesel cars?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do pink slips for petrol, diesel and LPG vehicles."}}, {"@type": "Question", "name": "Do I need a pink slip or a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "Most light vehicles over five years old need a pink slip to renew rego. You need a blue slip if the rego expired more than three months ago, the car is from interstate or overseas, it has no plates, or it's a written-off vehicle approved for re-registration."}}, {"@type": "Question", "name": "What are your opening hours?", "acceptedAnswer": {"@type": "Answer", "text": "Monday to Friday 9am to 5pm, and Saturday 9am to 2pm. We're closed on Sunday."}}, {"@type": "Question", "name": "How do I book?", "acceptedAnswer": {"@type": "Answer", "text": "Call the workshop on (02) 8798 5715, or Balli on 0433 597 181, and tell us the car and what it needs."}}, {"@type": "Question", "name": "Do you service all makes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We service all makes. We're an independent workshop, not linked to any car maker."}}, {"@type": "Question", "name": "Will a logbook service here keep my new car warranty?", "acceptedAnswer": {"@type": "Answer", "text": "Under the Australian Consumer Law, a new car warranty can't be voided just because an independent workshop did the servicing, as long as it's done to the maker's specifications. Bring your logbook so the service can be recorded."}}, {"@type": "Question", "name": "Do you regas air con?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do air con regas and repairs, for air con that blows warm or doesn't cool like it used to."}}]}</script>
 </head>
@@ -1913,6 +1914,7 @@ html[data-theme="dark"] .lights .lp dl>div:nth-child(2){background:color-mix(in 
           </g></g>
         </svg>
         <span class="lw-paused" aria-hidden="true">Paused · tap to carry on</span>
+        <button type="button" class="pt-again">Start again</button>
       </div>
       <div class="bay-side">
         <div class="pt-card" aria-live="polite">
@@ -1938,7 +1940,6 @@ html[data-theme="dark"] .lights .lp dl>div:nth-child(2){background:color-mix(in 
           <button type="button" data-pt="exhaust" aria-pressed="false" aria-label="Check 8: Exhaust"><span>8</span></button>
           <button type="button" data-pt="lpg" aria-pressed="false" aria-label="Check 9: LPG system"><span>9</span></button>
         </div>
-        <button type="button" class="pt-again">Start again</button>
         <div class="outcome" id="ps">
           <div class="oc oc--pass"><b>If it passes</b><span>The result goes to Transport for NSW electronically. It's valid for 6 months.</span></div>
           <div class="oc oc--fail"><b>If it fails</b><span>We tell you what failed. Fix it within 14 days and the re-check here has no extra fee.</span></div>
@@ -2084,7 +2085,7 @@ html[data-theme="dark"] .lights .lp dl>div:nth-child(2){background:color-mix(in 
   <a class="btn btn--ghost q-dir" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener" aria-label="Directions to the workshop"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span class="q-t">Directions</span></a>
 </nav>
 
-<script src="assets/site.js?v=45778de4"></script>
+<script src="assets/site.js?v=40f22fa4"></script>
 <!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=b66cd6f6" data-label="Chat with us" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-avoid=".qbar" defer></script><!--/chat-->
 <script src="/chat/guide.js?v=9fd2d268" defer></script>
 <script>(function(){if(matchMedia("(max-width:760px)").matches){var c=document.querySelector('script[src*="chat.js"]');if(c){c.removeAttribute("data-nudge");c.removeAttribute("data-nudge-open")}}})();</script>
