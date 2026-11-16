@@ -296,11 +296,11 @@ document.addEventListener("animationend",function(e){if(e.animationName==="suv-i
  function step(){return cards.length>1?cards[1].offsetLeft-cards[0].offsetLeft:run.clientWidth}
  function go(d){var max=run.scrollWidth-run.clientWidth,x=run.scrollLeft+d*step();if(d>0&&run.scrollLeft>=max-4)x=0;if(d<0&&run.scrollLeft<=4)x=max;run.scrollTo({left:x,behavior:reduce?"auto":"smooth"})}
  [].forEach.call(document.querySelectorAll(".rv-b"),function(b){b.addEventListener("click",function(){go(+b.dataset.d);last=Date.now()})});
- run.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")hold=true});run.addEventListener("pointerleave",function(){hold=false});
  run.addEventListener("focusin",function(){hold=true});run.addEventListener("focusout",function(){hold=false});
  run.addEventListener("touchstart",function(){last=Date.now()},{passive:true});
- if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.3}).observe(run);
- if(!reduce)setInterval(function(){if(vis&&!hold&&!document.hidden&&Date.now()-last>8000)go(1)},4500);
+ var tm=0;function tick(){clearTimeout(tm);if(reduce)return;tm=setTimeout(function(){if(vis&&!hold&&!document.hidden&&Date.now()-last>6000)go(1);tick()},3500)}
+ if("IntersectionObserver" in window)new IntersectionObserver(function(es){var was=vis;vis=es[0].isIntersecting;if(vis&&!was&&!reduce){clearTimeout(tm);tm=setTimeout(function(){go(1);tick()},1000)}},{threshold:.25}).observe(run);
+ else vis=true,tick();
 })();
 
 /* Pink slip scenes: choosing a check shows the inspector doing it (images load as they are needed) */
