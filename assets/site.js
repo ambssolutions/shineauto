@@ -271,17 +271,7 @@ f.addEventListener("submit",function(e){e.preventDefault();var q=f.q.value.trim(
  mq.addEventListener("change",set);
 })();
 
-/* Pink slip on phones: step through the check points every 6s while the bay is on screen; a tap holds it for 15s */
-(function(){var bay=document.getElementById("bay3d");if(!bay||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
- var keys=[].slice.call(bay.querySelectorAll(".pt-keys button")),row=bay.querySelector(".pt-keys"),mq=matchMedia("all"),vis=false,hold=0;
- if(!keys.length)return;
- keys.concat([].slice.call(bay.querySelectorAll(".pin"))).forEach(function(k){k.addEventListener("click",function(e){if(e.isTrusted)hold=Date.now()+15000})});
- bay.querySelector(".bay-stage").addEventListener("pointerdown",function(){hold=Date.now()+15000});
- if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.5}).observe(bay);
- setInterval(function(){if(!mq.matches||!vis||document.hidden||Date.now()<hold)return;
-  var i=keys.findIndex(function(k){return k.getAttribute("aria-pressed")==="true"}),n=keys[(i+1)%keys.length];n.click();
-  if(row)row.scrollTo({left:n.offsetLeft-(row.clientWidth-n.offsetWidth)/2,behavior:"smooth"})},6000);
-})();
+
 
 /* Theme button */
 (function(){var b=document.querySelector(".theme-btn");if(!b)return;var root=document.documentElement;
@@ -307,41 +297,9 @@ document.addEventListener("animationend",function(e){if(e.animationName==="suv-i
  else vis=true,tick();
 })();
 
-/* Pink slip: live drawing. Choosing a check walks the mechanic to it and shows the job being done */
-(function(){var bay=document.getElementById("bay3d"),lw=document.getElementById("lw");if(!bay||!lw)return;
- var keys=[].slice.call(bay.querySelectorAll(".pt-keys [data-pt]")),man=lw.querySelector(".lw-man"),ring=lw.querySelector(".lw-ring"),cap=lw.querySelector(".lw-capt");
- var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
- var S={tyres:{x:622,f:-1,p:"c",t:"gauge",a:"low",r:[562,300]},brakes:{x:214,f:1,p:"c",t:"torch",a:"low",r:[278,300]},
-  steering:{x:545,f:1,p:"s",t:"torch",a:"up",r:[562,230],lift:1},lights:{x:142,f:1,p:"s",t:"clip",a:"clip",r:[196,264],o:"s-lights"},
-  windscreen:{x:600,f:-1,p:"s",t:"",a:"reach",r:[522,212]},seatbelts:{x:620,f:-1,p:"s",t:"",a:"reach",r:[470,250],o:"o-door"},
-  body:{x:398,f:1,p:"c",t:"torch",a:"low",r:[420,292]},exhaust:{x:292,f:1,p:"s",t:"torch",a:"up",r:[236,229],lift:1},
-  lpg:{x:150,f:1,p:"s",t:"spray",a:"spray",r:[248,232],o:"o-boot"}};
- var names={};keys.forEach(function(k){names[k.dataset.pt]=k.textContent.trim()});var lastX=null,wt=0;
- function set(id){var c=S[id];if(!c)return;
-  lw.classList.remove("f-l","p-c","t-gauge","t-torch","t-clip","t-spray","a-low","a-up","a-clip","a-reach","a-spray","lift","s-lights","o-door","o-boot");
-  if(c.f<0)lw.classList.add("f-l");if(c.p==="c")lw.classList.add("p-c");if(c.t)lw.classList.add("t-"+c.t);lw.classList.add("a-"+c.a);if(c.lift)lw.classList.add("lift");if(c.o)lw.classList.add(c.o);
-  man.style.transform="translate("+c.x+"px,330px)";ring.style.transform="translate("+c.r[0]+"px,"+c.r[1]+"px)";
-  if(lastX!==null&&lastX!==c.x&&!reduce){lw.classList.add("walk");clearTimeout(wt);wt=setTimeout(function(){lw.classList.remove("walk")},1100)}lastX=c.x;
-  cap.textContent="Checking: "+(names[id]||id);lw.setAttribute("aria-label","Animated drawing: a Shine mechanic doing the "+(names[id]||id).toLowerCase()+" check on an orange sedan")}
- function pick(id){keys.forEach(function(k){k.setAttribute("aria-pressed",String(k.dataset.pt===id))});
-  [].forEach.call(bay.querySelectorAll(".pt-info"),function(d){d.hidden=d.dataset.pt!==id});set(id)}
- keys.forEach(function(k){k.addEventListener("click",function(){pick(k.dataset.pt)})});
- var first=(keys.find(function(k){return k.getAttribute("aria-pressed")==="true"})||keys[0]).dataset.pt;set(first);
- function go(){lw.classList.add("in");if(!reduce){lw.classList.add("driving");setTimeout(function(){lw.classList.remove("driving")},2300)}}
- if(reduce||!("IntersectionObserver" in window))lw.classList.add("in");
- else new IntersectionObserver(function(es,o){if(es[0].isIntersecting){go();o.disconnect()}},{threshold:.4}).observe(lw);
-})();
 
-/* Pink slip scenes: each check shows the mechanic doing it, with a live caption */
-(function(){var bay=document.getElementById("bay3d");if(!bay||!bay.querySelector(".ps-scene img"))return;var keys=[].slice.call(bay.querySelectorAll(".pt-keys [data-pt]")),imgs=[].slice.call(bay.querySelectorAll(".ps-scene img")),cap=bay.querySelector(".ps-live b");
- function load(im){if(im&&im.dataset.src){im.srcset=im.dataset.srcset;im.src=im.dataset.src;im.removeAttribute("data-src")}}
- function pick(id,k){keys.forEach(function(x){x.setAttribute("aria-pressed",String(x.dataset.pt===id))});
-  [].forEach.call(bay.querySelectorAll(".pt-info"),function(d){d.hidden=d.dataset.pt!==id});
-  imgs.forEach(function(im,i){var on=im.dataset.pt===id;if(on){load(im);load(imgs[(i+1)%imgs.length])}im.classList.toggle("on",on)});
-  if(cap&&k)cap.textContent="Checking: "+k.textContent.trim()}
- keys.forEach(function(k){k.addEventListener("click",function(){pick(k.dataset.pt,k)})});
- if("IntersectionObserver" in window)new IntersectionObserver(function(es,o){if(es[0].isIntersecting){load(imgs[1]);o.disconnect()}},{rootMargin:"300px 0px"}).observe(bay);
-})();
+
+
 
 /* If the visitor scrolls during the drive-in, skip straight to the parked button */
 (function(){var r=document.documentElement;function stop(){if(scrollY>40&&r.classList.contains("drive"))r.classList.remove("drive")}addEventListener("scroll",stop,{passive:true})})();
@@ -356,4 +314,40 @@ document.addEventListener("animationend",function(e){if(e.animationName==="suv-i
   v.className=im.className;im.after(v);im.classList.add("has-clip")});
  function sync(){stage.querySelectorAll("video").forEach(function(v){var on=!!stage.querySelector('img.on[data-pt="'+v.dataset.pt+'"]');v.classList.toggle("on",on);if(on&&!reduce){v.preload="auto";v.play().catch(function(){})}else v.pause()})}
  new MutationObserver(sync).observe(stage,{subtree:true,attributes:true,attributeFilter:["class"]});sync();
+})();
+
+/* Pink slip: Delta-style live diagram. Steps through the nine checks; numbers jump; tap the scene to pause. */
+(function(){var bay=document.getElementById("bay3d"),lw=document.getElementById("lw");if(!bay||!lw)return;
+ var stage=bay.querySelector(".lw-stage"),keys=[].slice.call(bay.querySelectorAll(".pt-num [data-pt]")),again=bay.querySelector(".pt-again"),man=lw.querySelector(".lw-man"),hl=lw.querySelector(".lw-hl");
+ var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,cur=0,vis=false,paused=false,hold=0,timer=0,typeT=0,walkT=0,lastX=860;
+ var S={tyres:{x:622,f:-1,p:"c",t:"gauge",a:"low",h:[524,262,76,76,38]},brakes:{x:214,f:1,p:"c",t:"torch",a:"low",h:[240,262,76,76,38]},
+  steering:{x:545,f:1,p:"s",t:"torch",a:"up",h:[516,186,92,74,20],lift:1},lights:{x:142,f:1,p:"s",t:"clip",a:"clip",h:[182,246,30,36,8],o:"s-lights"},
+  windscreen:{x:600,f:-1,p:"s",t:"",a:"reach",h:[440,194,122,50,12]},seatbelts:{x:620,f:-1,p:"s",t:"",a:"reach",h:[440,196,120,96,12],o:"o-door"},
+  body:{x:398,f:1,p:"c",t:"torch",a:"low",h:[300,280,250,22,8]},exhaust:{x:292,f:1,p:"s",t:"torch",a:"up",h:[188,216,100,26,10],lift:1},
+  lpg:{x:150,f:1,p:"s",t:"spray",a:"spray",h:[206,206,88,48,14],o:"o-boot"}};
+ function type(id){var d=bay.querySelector('.pt-info[data-pt="'+id+'"] p');if(!d)return;clearInterval(typeT);d.classList.remove("typing");
+  if(reduce){d.textContent=d.dataset.full||d.textContent;return}var full=d.dataset.full||(d.dataset.full=d.textContent),n=0;d.textContent="";d.classList.add("typing");
+  typeT=setInterval(function(){if(paused)return;n+=2;d.textContent=full.slice(0,n);if(n>=full.length){clearInterval(typeT);d.classList.remove("typing")}},28)}
+ function scene(id){var c=S[id];
+  lw.classList.remove("f-l","p-c","t-gauge","t-torch","t-clip","t-spray","a-low","a-up","a-clip","a-reach","a-spray","lift","s-lights","o-door","o-boot");
+  if(c.f<0)lw.classList.add("f-l");if(c.p==="c")lw.classList.add("p-c");if(c.t)lw.classList.add("t-"+c.t);lw.classList.add("a-"+c.a);if(c.lift)lw.classList.add("lift");if(c.o)lw.classList.add(c.o);
+  hl.setAttribute("x",c.h[0]);hl.setAttribute("y",c.h[1]+(c.lift?-70:0));hl.setAttribute("width",c.h[2]);hl.setAttribute("height",c.h[3]);hl.setAttribute("rx",c.h[4]);
+  if(lastX!==c.x&&!reduce){lw.classList.add("walk");clearTimeout(walkT);walkT=setTimeout(function(){lw.classList.remove("walk")},1300)}
+  man.style.transform="translate("+c.x+"px,332px)";lastX=c.x;
+  lw.setAttribute("aria-label","Animated drawing: a Shine mechanic doing the "+keys[cur].getAttribute("aria-label").replace(/^Check \d+: /,"").toLowerCase()+" check")}
+ function pick(i){cur=(i+keys.length)%keys.length;var id=keys[cur].dataset.pt;
+  keys.forEach(function(k,n){k.setAttribute("aria-pressed",String(n===cur))});
+  [].forEach.call(bay.querySelectorAll(".pt-info"),function(d){d.hidden=d.dataset.pt!==id});
+  scene(id);type(id);restart()}
+ function restart(){clearTimeout(timer);bay.classList.remove("auto");if(reduce||paused||!vis)return;void bay.offsetWidth;bay.classList.add("auto");
+  timer=setTimeout(function(){if(!paused&&vis&&Date.now()>hold&&!document.hidden)pick(cur+1);else restart()},7000)}
+ keys.forEach(function(k,n){k.addEventListener("click",function(){hold=Date.now()+12000;pick(n)})});
+ if(again)again.addEventListener("click",function(){lw.classList.remove("in");lastX=860;man.style.transform="translate(860px,332px)";paused=false;stage.classList.remove("is-paused");lw.classList.remove("paused");
+  setTimeout(function(){go();pick(0)},60)});
+ function togglePause(){paused=!paused;stage.classList.toggle("is-paused",paused);lw.classList.toggle("paused",paused);bay.classList.toggle("hold",paused);if(!paused)restart()}
+ stage.addEventListener("click",togglePause);stage.addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();togglePause()}});
+ function go(){lw.classList.add("in");if(!reduce){lw.classList.add("driving");setTimeout(function(){lw.classList.remove("driving")},2300)}}
+ var started=false;
+ if(reduce||!("IntersectionObserver" in window)){lw.classList.add("in");vis=true;pick(0)}
+ else new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!started){started=true;go();setTimeout(function(){pick(0)},1500)}else restart()},{threshold:.35}).observe(stage);
 })();
