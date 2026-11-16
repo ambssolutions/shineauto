@@ -290,3 +290,15 @@ f.addEventListener("submit",function(e){e.preventDefault();var q=f.q.value.trim(
 
 /* The SUV parks: once the drive-in ends, swap back to the still wheels */
 document.addEventListener("animationend",function(e){if(e.animationName==="suv-in")document.documentElement.classList.remove("drive")});
+
+/* Reviews: move one review at a time every 4.5s while on screen; pause on hover or focus; previous / next always work */
+(function(){var run=document.querySelector(".rv-run");if(!run)return;var cards=[].slice.call(run.querySelectorAll(".rv-c")),reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,hold=false,vis=false,last=0;
+ function step(){return cards.length>1?cards[1].offsetLeft-cards[0].offsetLeft:run.clientWidth}
+ function go(d){var max=run.scrollWidth-run.clientWidth,x=run.scrollLeft+d*step();if(d>0&&run.scrollLeft>=max-4)x=0;if(d<0&&run.scrollLeft<=4)x=max;run.scrollTo({left:x,behavior:reduce?"auto":"smooth"})}
+ [].forEach.call(document.querySelectorAll(".rv-b"),function(b){b.addEventListener("click",function(){go(+b.dataset.d);last=Date.now()})});
+ run.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")hold=true});run.addEventListener("pointerleave",function(){hold=false});
+ run.addEventListener("focusin",function(){hold=true});run.addEventListener("focusout",function(){hold=false});
+ run.addEventListener("touchstart",function(){last=Date.now()},{passive:true});
+ if("IntersectionObserver" in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.3}).observe(run);
+ if(!reduce)setInterval(function(){if(vis&&!hold&&!document.hidden&&Date.now()-last>8000)go(1)},4500);
+})();

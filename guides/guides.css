@@ -236,3 +236,5 @@ body .ac-launch::after{content:"";position:absolute;inset:auto 6% -6px 6%;height
 body .ac-launch{width:164px;height:84px}
 body .ac-launch .ac-dot{width:30px;height:30px;left:calc(54% - 15px);top:calc(51% - 15px);background-size:26px}
 @media (max-width:760px){body .ac-launch{width:80px;height:40px}body .ac-launch .ac-dot{display:none}}
+body .ac-launch .ac-dot{left:calc(22% - 15px);top:calc(56% - 15px)}
+@media (max-width:760px){body .ac-launch .ac-dot{display:none}}
