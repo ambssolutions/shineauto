@@ -316,38 +316,34 @@ document.addEventListener("animationend",function(e){if(e.animationName==="suv-i
  new MutationObserver(sync).observe(stage,{subtree:true,attributes:true,attributeFilter:["class"]});sync();
 })();
 
-/* Pink slip: Delta-style live diagram. Steps through the nine checks; numbers jump; tap the scene to pause. */
+/* Pink slip: Delta-style live diagram. Each check lists its steps; the mechanic does them in order, the current step is highlighted. */
 (function(){var bay=document.getElementById("bay3d"),lw=document.getElementById("lw");if(!bay||!lw)return;
  var stage=bay.querySelector(".lw-stage"),keys=[].slice.call(bay.querySelectorAll(".pt-num [data-pt]")),again=bay.querySelector(".pt-again"),man=lw.querySelector(".lw-man"),hl=lw.querySelector(".lw-hl");
- var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,cur=0,vis=false,paused=false,hold=0,timer=0,typeT=0,walkT=0,lastX=860;
- var S={tyres:{x:622,f:-1,p:"c",t:"gauge",a:"low",h:[524,262,76,76,38]},brakes:{x:214,f:1,p:"c",t:"torch",a:"low",h:[240,262,76,76,38]},
-  steering:{x:545,f:1,p:"s",t:"torch",a:"up",h:[516,186,92,74,20],lift:1},lights:{x:142,f:1,p:"s",t:"clip",a:"clip",h:[182,246,30,36,8],o:"s-lights"},
-  windscreen:{x:600,f:-1,p:"s",t:"",a:"reach",h:[440,194,122,50,12]},seatbelts:{x:620,f:-1,p:"s",t:"",a:"reach",h:[440,196,120,96,12],o:"o-door"},
-  body:{x:398,f:1,p:"c",t:"torch",a:"low",h:[300,280,250,22,8]},exhaust:{x:292,f:1,p:"s",t:"torch",a:"up",h:[188,216,100,26,10],lift:1},
-  lpg:{x:150,f:1,p:"s",t:"spray",a:"spray",h:[206,206,88,48,14],o:"o-boot"}};
- function type(id){var d=bay.querySelector('.pt-info[data-pt="'+id+'"] p');if(!d)return;clearInterval(typeT);d.classList.remove("typing");
-  if(reduce){d.textContent=d.dataset.full||d.textContent;return}var full=d.dataset.full||(d.dataset.full=d.textContent),n=0;d.textContent="";d.classList.add("typing");
-  typeT=setInterval(function(){if(paused)return;n+=2;d.textContent=full.slice(0,n);if(n>=full.length){clearInterval(typeT);d.classList.remove("typing")}},28)}
- function scene(id){var c=S[id];
-  lw.classList.remove("f-l","p-c","t-gauge","t-torch","t-clip","t-spray","a-low","a-up","a-clip","a-reach","a-spray","lift","s-lights","o-door","o-boot");
+ var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,cur=0,step=0,vis=false,paused=false,hold=0,timer=0,walkT=0,lastX=860,STEP_MS=2800;
+ var S={"tyres": [{"x": 622, "f": -1, "p": "c", "t": "gauge", "a": "low", "h": [530, 282, 64, 40, 10]}, {"x": 622, "f": -1, "p": "c", "t": "torch", "a": "low", "h": [524, 262, 76, 76, 38]}, {"x": 214, "f": 1, "p": "c", "t": "torch", "a": "low", "h": [240, 262, 76, 76, 38]}], "brakes": [{"x": 214, "f": 1, "p": "c", "t": "torch", "a": "low", "h": [248, 272, 60, 56, 28]}, {"x": 620, "f": -1, "p": "s", "t": "", "a": "reach", "h": [444, 240, 112, 48, 10], "o": "o-door"}], "steering": [{"x": 650, "f": -1, "p": "s", "t": "", "a": "clip", "h": [512, 240, 96, 10, 4], "lift": 1}, {"x": 545, "f": 1, "p": "s", "t": "", "a": "up", "h": [530, 196, 64, 64, 32], "lift": 1}, {"x": 545, "f": 1, "p": "s", "t": "torch", "a": "up", "h": [500, 180, 40, 50, 10], "lift": 1}], "lights": [{"x": 686, "f": -1, "p": "s", "t": "clip", "a": "clip", "h": [632, 248, 26, 22, 8]}, {"x": 142, "f": 1, "p": "s", "t": "clip", "a": "clip", "h": [182, 246, 30, 36, 8], "o": "s-lights"}, {"x": 142, "f": 1, "p": "s", "t": "clip", "a": "clip", "h": [186, 270, 30, 26, 6], "o": "s-lights"}], "windscreen": [{"x": 600, "f": -1, "p": "s", "t": "", "a": "reach", "h": [444, 198, 112, 42, 12]}, {"x": 600, "f": -1, "p": "s", "t": "", "a": "reach", "h": [438, 232, 124, 14, 6]}], "seatbelts": [{"x": 620, "f": -1, "p": "s", "t": "", "a": "reach", "h": [444, 198, 112, 92, 12], "o": "o-door"}, {"x": 620, "f": -1, "p": "s", "t": "", "a": "low", "h": [444, 250, 60, 40, 10], "o": "o-door"}, {"x": 620, "f": -1, "p": "s", "t": "", "a": "reach", "h": [444, 198, 40, 60, 10], "o": "o-door"}], "body": [{"x": 398, "f": 1, "p": "c", "t": "torch", "a": "low", "h": [300, 280, 250, 22, 8]}, {"x": 500, "f": -1, "p": "c", "t": "torch", "a": "low", "h": [520, 252, 84, 40, 20]}], "exhaust": [{"x": 170, "f": 1, "p": "s", "t": "", "a": "clip", "h": [232, 240, 96, 10, 4], "lift": 1}, {"x": 292, "f": 1, "p": "s", "t": "torch", "a": "up", "h": [188, 216, 100, 26, 10], "lift": 1}, {"x": 330, "f": 1, "p": "s", "t": "", "a": "up", "h": [262, 212, 40, 30, 10], "lift": 1}], "lpg": [{"x": 150, "f": 1, "p": "s", "t": "", "a": "reach", "h": [206, 206, 88, 48, 14], "o": "o-boot"}, {"x": 150, "f": 1, "p": "s", "t": "spray", "a": "spray", "h": [226, 206, 40, 24, 10], "o": "o-boot"}, {"x": 150, "f": 1, "p": "s", "t": "clip", "a": "clip", "h": [206, 218, 88, 34, 14], "o": "o-boot"}]};
+ var CL=["f-l","p-c","t-gauge","t-torch","t-clip","t-spray","a-low","a-up","a-clip","a-reach","a-spray","lift","s-lights","o-door","o-boot"];
+ function pose(c){CL.forEach(function(x){lw.classList.remove(x)});
   if(c.f<0)lw.classList.add("f-l");if(c.p==="c")lw.classList.add("p-c");if(c.t)lw.classList.add("t-"+c.t);lw.classList.add("a-"+c.a);if(c.lift)lw.classList.add("lift");if(c.o)lw.classList.add(c.o);
   hl.setAttribute("x",c.h[0]);hl.setAttribute("y",c.h[1]+(c.lift?-70:0));hl.setAttribute("width",c.h[2]);hl.setAttribute("height",c.h[3]);hl.setAttribute("rx",c.h[4]);
   if(lastX!==c.x&&!reduce){lw.classList.add("walk");clearTimeout(walkT);walkT=setTimeout(function(){lw.classList.remove("walk")},1300)}
-  man.style.transform="translate("+c.x+"px,332px)";lastX=c.x;
-  lw.setAttribute("aria-label","Animated drawing: a Shine mechanic doing the "+keys[cur].getAttribute("aria-label").replace(/^Check \d+: /,"").toLowerCase()+" check")}
- function pick(i){cur=(i+keys.length)%keys.length;var id=keys[cur].dataset.pt;
+  man.style.transform="translate("+c.x+"px,332px)";lastX=c.x}
+ function showStep(){var id=keys[cur].dataset.pt,list=bay.querySelectorAll('.pt-info[data-pt="'+id+'"] .pt-steps li');
+  [].forEach.call(list,function(li,n){li.classList.toggle("on",n===step);li.classList.toggle("done",n<step)});pose(S[id][step]);
+  var li=list[step];lw.setAttribute("aria-label","Animated drawing: the mechanic doing step "+(step+1)+" of the "+keys[cur].getAttribute("aria-label").replace(/^Check \d+: /,"").toLowerCase()+" check: "+(li?li.textContent:""))}
+ function pick(i){cur=(i+keys.length)%keys.length;step=0;var id=keys[cur].dataset.pt;
   keys.forEach(function(k,n){k.setAttribute("aria-pressed",String(n===cur))});
   [].forEach.call(bay.querySelectorAll(".pt-info"),function(d){d.hidden=d.dataset.pt!==id});
-  scene(id);type(id);restart()}
- function restart(){clearTimeout(timer);bay.classList.remove("auto");if(reduce||paused||!vis)return;void bay.offsetWidth;bay.classList.add("auto");
-  timer=setTimeout(function(){if(!paused&&vis&&Date.now()>hold&&!document.hidden)pick(cur+1);else restart()},7000)}
+  bay.style.setProperty("--chk",(S[id].length*STEP_MS/1000)+"s");showStep();restart()}
+ function restart(){clearTimeout(timer);bay.classList.remove("auto");if(reduce||paused||!vis)return;void bay.offsetWidth;bay.classList.add("auto");tick()}
+ function tick(){clearTimeout(timer);timer=setTimeout(function(){if(paused||!vis||document.hidden)return tick();var n=S[keys[cur].dataset.pt].length;
+  if(step<n-1){step++;showStep();tick()}else if(Date.now()>hold)pick(cur+1);else tick()},STEP_MS)}
  keys.forEach(function(k,n){k.addEventListener("click",function(){hold=Date.now()+12000;pick(n)})});
- if(again)again.addEventListener("click",function(){lw.classList.remove("in");lastX=860;man.style.transform="translate(860px,332px)";paused=false;stage.classList.remove("is-paused");lw.classList.remove("paused");
-  setTimeout(function(){go();pick(0)},60)});
- function togglePause(){paused=!paused;stage.classList.toggle("is-paused",paused);lw.classList.toggle("paused",paused);bay.classList.toggle("hold",paused);if(!paused)restart()}
+ if(again)again.addEventListener("click",function(){lw.classList.remove("in");lastX=860;man.style.transform="translate(860px,332px)";paused=false;stage.classList.remove("is-paused");lw.classList.remove("paused");bay.classList.remove("hold");
+  setTimeout(function(){go();setTimeout(function(){pick(0)},1500)},60)});
+ function togglePause(){paused=!paused;stage.classList.toggle("is-paused",paused);lw.classList.toggle("paused",paused);bay.classList.toggle("hold",paused);if(!paused)tick()}
  stage.addEventListener("click",togglePause);stage.addEventListener("keydown",function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();togglePause()}});
  function go(){lw.classList.add("in");if(!reduce){lw.classList.add("driving");setTimeout(function(){lw.classList.remove("driving")},2300)}}
  var started=false;
  if(reduce||!("IntersectionObserver" in window)){lw.classList.add("in");vis=true;pick(0)}
- else new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!started){started=true;go();setTimeout(function(){pick(0)},1500)}else restart()},{threshold:.35}).observe(stage);
+ else new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!started){started=true;go();setTimeout(function(){pick(0)},1500)}else if(vis)restart()},{threshold:.35}).observe(stage);
 })();
