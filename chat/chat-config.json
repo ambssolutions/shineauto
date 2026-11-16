@@ -172,8 +172,8 @@
   {
    "id": "where",
    "q": "Where are you?",
-   "also": "address, location, where, directions, find you, warwick farm, homepride avenue, liverpool, map",
-   "a": "Unit 4B, 4 Homepride Avenue, Warwick Farm NSW 2170.",
+   "also": "address, location, where, directions, find you, warwick farm, homepride avenue, liverpool, map, what is your address, your address, workshop address, where is the workshop, where is your workshop, how do i get there, how to get there, how do i find you, find you, map, google maps, located, where located, street address, which street, directions to the workshop, get directions, near liverpool",
+   "a": "Unit 4B, 4 Homepride Avenue, Warwick Farm NSW 2170, a few minutes from Liverpool.",
    "link": "https://www.google.com/maps/search/?api=1&query=Shine+Auto+Repairs+Warwick+Farm&query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI",
    "link_label": "Get directions"
   },
