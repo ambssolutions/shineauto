@@ -155,6 +155,30 @@
       log.appendChild(b); scroll(log);
     });
   }, true);
+
+  /* Voice: say what went wrong instead of failing silently (the shared engine only reports a blocked mic) */
+  (function () {
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition; if (!SR || !SR.prototype || SR.prototype.__sg) return;
+    var MSG = {
+      "no-speech": "I didn't hear anything. Tap the microphone, wait for \"Listening\", then speak. Or type your question.",
+      "audio-capture": "I couldn't find a microphone on this device. Please type your question.",
+      "network": "Voice needs this browser's speech service, and it couldn't connect. Please try Chrome or Safari, or type your question.",
+      "language-not-supported": "Voice isn't available in this browser's language setting. Please type your question.",
+      "service-not-allowed": null, "not-allowed": null, "aborted": null
+    };
+    var start = SR.prototype.start;
+    SR.prototype.start = function () {
+      var rec = this, heard = false;
+      try { rec.addEventListener("result", function () { heard = true; }); } catch (e) {}
+      try { rec.addEventListener("error", function (ev) {
+        var m = MSG[ev.error]; if (m === null) return; if (m === undefined) m = "Voice didn't work in this browser (" + ev.error + "). Please type your question.";
+        var log = document.querySelector(".ac-panel.on .ac-log") || document.querySelector(".ac-log"); if (!log) return;
+        log.dataset.sg = "1"; log.appendChild(el("div", "ac-m ac-bot", m)); scroll(log); track("voice_" + ev.error);
+      }); } catch (e) {}
+      return start.apply(rec, arguments);
+    };
+    SR.prototype.__sg = 1;
+  })();
   var css = ".sg-typing{display:flex;gap:4px;align-items:center;width:max-content}.sg-typing i{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.35;animation:sg-b 1s infinite}.sg-typing i:nth-child(2){animation-delay:.15s}.sg-typing i:nth-child(3){animation-delay:.3s}@keyframes sg-b{0%,100%{opacity:.25;transform:none}50%{opacity:.8;transform:translateY(-2px)}}" +
     ".sg-chips .ac-chip[disabled]{opacity:.45;cursor:default}.sg-chips .ac-chip.sg-picked{opacity:1;border-color:#e8740c;background:#fff3e4;color:#1a1209}html[data-theme=dark] .sg-chips .ac-chip.sg-picked{background:#2b1f12;color:#fff}" +
     ".sg-tag{display:inline-block;margin-bottom:6px;padding:3px 9px;border-radius:999px;font-size:11.5px;font-weight:700}.sg-book{background:#fde3c8;color:#7a3b04}.sg-none{background:#dcf2e3;color:#1d6b3a}.sg-expert{background:#e3e9f7;color:#2a4f9c}" +
