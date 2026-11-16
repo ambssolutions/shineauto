@@ -28,7 +28,7 @@ Built by AMBS Solutions. Follow the **ambs-website-design** skill (and **website
 - NSW fees and rules are sourced from nsw.gov.au and dated. Re-check every 1 July.
 - Warning-light wording was safety-reviewed: change it only with care, in the page and in `chat/chat-config.json` together.
 - Stack: static HTML (one self-contained `index.html`), no build step. Preview with `python3 -m http.server` in the repo root.
-- Facts live in `index.html` (hours appear in the hero status script, the hours card, the FAQ and the JSON-LD; rating is Google 4.7 from 64, 59 of them five-star (92%), as at 16 Nov 2026, from the owner, in the hero badge with the Google G, the reviews section, guides and chat) and in `chat/chat-config.json` for the assistant: change both together, then rebuild the chat index.
+- Facts live in `index.html` (hours appear in the hero status script, the hours card, the FAQ and the JSON-LD; rating is Google 4.7 from 64, 59 of them five-star (92%), as at 16 Nov 2026, from the owner, in the hero badge (white G, 4.7 stars, "(64)"), the reviews section, guides and chat) and in `chat/chat-config.json` for the assistant: change both together, then rebuild the chat index.
 - Rego lookup: `api/rego.mjs`, switched on by Vercel env vars (see README).
 - Languages: English (Australia), `lang="en-AU"`. Phones shown as (02) 8798 5715, linked as tel:+61287985715.
 - Things to finish before launch: see README.md
