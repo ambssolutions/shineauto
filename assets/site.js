@@ -80,7 +80,7 @@
     cards.forEach(function(c,i){var r=document.createElementNS("http://www.w3.org/2000/svg","svg");r.setAttribute("class","sc-ring");r.setAttribute("aria-hidden","true");
       r.innerHTML='<rect width="100%" height="100%" rx="26" ry="26" pathLength="100"/>';c.appendChild(r);
       r.firstChild.addEventListener("animationend",function(){if(i===cur&&!car.classList.contains("still"))show((cur+1)%cards.length)})});
-    function centre(i){var c=cards[i];return c.offsetLeft-(tr.clientWidth-c.offsetWidth)/2}
+    function centre(i){var c=cards[i].getBoundingClientRect(),t=tr.getBoundingClientRect();return Math.round(tr.scrollLeft+(c.left-t.left)-(tr.clientWidth-c.width)/2)}
     function paint(){cards.forEach(function(c,k){if(k===cur){c.classList.remove("on");void c.offsetWidth;c.classList.add("on")}else c.classList.remove("on")});
       bars.forEach(function(b,k){b.classList.toggle("done",k<cur);var was=b.classList.contains("on");b.classList.remove("on");if(k===cur){void b.offsetWidth;b.classList.add("on")}b.setAttribute("aria-current",String(k===cur))});
       cnt.textContent=cur+1}
@@ -99,6 +99,10 @@
       var mid=tr.scrollLeft+tr.clientWidth/2,best=0,d=1e9;cards.forEach(function(c,k){var x=Math.abs(c.offsetLeft+c.offsetWidth/2-mid);if(x<d){d=x;best=k}});
       if(best!==cur){cur=best;paint()}})},{passive:true});
     document.addEventListener("visibilitychange",hold);
+    /* finger swipes: when the scrolling stops, glide to the nearest card */
+    var settleT=0,touching=false;tr.addEventListener("touchstart",function(){touching=true;cancelAnimationFrame(glide.r)},{passive:true});
+    tr.addEventListener("touchend",function(){touching=false},{passive:true});
+    tr.addEventListener("scroll",function(){if(prog||touching)return;clearTimeout(settleT);settleT=setTimeout(function(){if(prog||touching)return;var x=centre(cur);if(Math.abs(tr.scrollLeft-x)>2){prog=setTimeout(function(){prog=0},1200);glide(x)}},140)},{passive:true});
     if(hasIO)new IntersectionObserver(function(es){why.o=!es[0].isIntersecting;hold()},{threshold:.35}).observe(car);else why.o=0;
     if(reduce)car.classList.add("still");
     addEventListener("resize",function(){tr.scrollTo({left:centre(cur)})});
