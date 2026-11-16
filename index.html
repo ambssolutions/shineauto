@@ -255,7 +255,7 @@ html:not(.js) .lp + .lp{border-top:1px solid var(--line)}
 }
 
 /* 3D pink slip bay (module: assets/inspect.js) */
-.bay{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px;padding:12px;border-radius:var(--r-lg);color:#eef0f3;background:linear-gradient(160deg,#1d1f25,#101114 60%);box-shadow:var(--sh)}
+.bay{position:relative;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px;padding:12px;border-radius:var(--r-lg);color:#eef0f3;background:linear-gradient(160deg,#1d1f25,#101114 60%);box-shadow:var(--sh)}
 .bay-stage{position:relative;min-height:clamp(320px,60vh,540px);overflow:hidden;border-radius:20px;background:radial-gradient(80% 90% at 50% 72%,#2b2d34,#141519 70%);touch-action:pan-y;cursor:grab;outline-offset:4px}
 .bay-stage.grab{cursor:grabbing}
 .bay-stage canvas{position:absolute;inset:0;width:100%;height:100%}
@@ -1395,6 +1395,24 @@ html:not(.drive) body .ac-launch{padding-left:16px!important}
 .pt-steps li.done::before{content:"\2713";background:#2f9e5b;color:#fff}
 html[data-theme="dark"] .pt-steps li.on{background:#2b1f12}
 .pt-info>p:first-of-type{display:none}
+
+/* Phones: the whole pink slip bay fits one screen */
+@media (max-width:760px){
+  .bay{gap:6px;padding:6px}
+  .bay-side{gap:6px}
+  .pt-info{padding:10px 12px}
+  .pt-info .k{font-size:.72rem}
+  .pt-info h3{font-size:1.05rem;margin:2px 0 4px}
+  .pt-steps{margin-top:4px;gap:2px}
+  .pt-steps li{font-size:.8rem;padding:3px 8px 3px 28px}
+  .pt-steps li::before{width:17px;height:17px;margin-top:-8.5px;left:6px;font-size:.66rem}
+  .pt-info .tip{margin-top:6px;padding:6px 10px;font-size:.78rem;line-height:1.35}
+  .pt-info .tip b{font-size:.66rem;margin-bottom:2px}
+  .pt-again{position:absolute;right:14px;top:14px;z-index:3;min-height:30px;padding:0 10px;font-size:.72rem;background:rgba(21,23,28,.75)}
+  .outcome{grid-template-columns:1fr 1fr!important;gap:6px}
+  .oc{padding:6px 8px;font-size:.72rem;line-height:1.3;gap:2px}
+  .oc b{font-size:.78rem}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens if the car fails its inspection?", "acceptedAnswer": {"@type": "Answer", "text": "We tell you what failed. Have it fixed and checked again here within 14 days and there's no second inspection fee."}}, {"@type": "Question", "name": "How do I know if my car needs an inspection?", "acceptedAnswer": {"@type": "Answer", "text": "Your rego renewal notice says whether you need one. You can check when your rego is due with Service NSW."}}, {"@type": "Question", "name": "How much is a pink slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle pink slip is $52, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How much is a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle blue slip is $82, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How long is a pink slip valid?", "acceptedAnswer": {"@type": "Answer", "text": "A pink slip report is valid for 6 months. A blue slip is valid for 42 days."}}, {"@type": "Question", "name": "Do you do pink slips for LPG and diesel cars?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do pink slips for petrol, diesel and LPG vehicles."}}, {"@type": "Question", "name": "Do I need a pink slip or a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "Most light vehicles over five years old need a pink slip to renew rego. You need a blue slip if the rego expired more than three months ago, the car is from interstate or overseas, it has no plates, or it's a written-off vehicle approved for re-registration."}}, {"@type": "Question", "name": "What are your opening hours?", "acceptedAnswer": {"@type": "Answer", "text": "Monday to Friday 9am to 5pm, and Saturday 9am to 2pm. We're closed on Sunday."}}, {"@type": "Question", "name": "How do I book?", "acceptedAnswer": {"@type": "Answer", "text": "Call the workshop on (02) 8798 5715, or Balli on 0433 597 181, and tell us the car and what it needs."}}, {"@type": "Question", "name": "Do you service all makes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We service all makes. We're an independent workshop, not linked to any car maker."}}, {"@type": "Question", "name": "Will a logbook service here keep my new car warranty?", "acceptedAnswer": {"@type": "Answer", "text": "Under the Australian Consumer Law, a new car warranty can't be voided just because an independent workshop did the servicing, as long as it's done to the maker's specifications. Bring your logbook so the service can be recorded."}}, {"@type": "Question", "name": "Do you regas air con?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do air con regas and repairs, for air con that blows warm or doesn't cool like it used to."}}]}</script>
 </head>
