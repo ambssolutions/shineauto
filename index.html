@@ -674,8 +674,8 @@ body .ac-nudge{bottom:calc(env(safe-area-inset-bottom,0px) + 84px + var(--tk))!i
 }
 
 /* Home page: once the roller door is up, the SUV drives in and parks as the chat button (once per visit; not with reduced motion) */
-html.drive .ac-launch{animation:suv-in 2.6s cubic-bezier(.22,.7,.25,1) 2.2s both}
-@keyframes suv-in{0%{translate:calc(-100vw - 220px) 0;rotate:0deg}78%{translate:12px 0;rotate:0deg}86%{translate:-2px 0;rotate:-1.6deg}94%{translate:0 0;rotate:.4deg}100%{translate:0 0;rotate:0deg}}
+html.drive .ac-launch{animation:suv-in 5s linear 1.5s both}
+@keyframes suv-in{0%{translate:calc(-100vw - 260px) -12vh;scale:1.7;animation-timing-function:cubic-bezier(.2,.65,.3,1)}28%{translate:calc(-50vw + 50% + 20px) -12vh;scale:1.7}31%{translate:calc(-50vw + 50% + 20px) -12vh;scale:1.7;rotate:-1.2deg}34%{rotate:0deg;translate:calc(-50vw + 50% + 20px) -12vh;scale:1.7}46%{translate:calc(-50vw + 50% + 20px) -12vh;scale:1.7;animation-timing-function:cubic-bezier(.45,0,.25,1)}92%{translate:10px 0;scale:1}96%{translate:-2px 0;scale:1;rotate:-1deg}100%{translate:0 0;scale:1;rotate:0deg}}
 @media (prefers-reduced-motion:reduce){html.drive .ac-launch{animation:none}}
 /* Phones: a plain three-line menu, no call button in the header (the bottom bar has Call) */
 .menu-btn{width:44px;padding:0;justify-content:center}
@@ -1404,7 +1404,7 @@ html[data-theme="dark"].drive body .ac-launch{background-image:url(/assets/chat-
 
 <script src="assets/site.js?v=f6fbe9a9"></script>
 <script type="module" src="assets/inspect.js?v=6"></script>
-<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("shine-drive")){document.documentElement.classList.add("drive");sessionStorage.setItem("shine-drive","1")}}catch(e){}</script>
+<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&scrollY<80&&!location.hash){document.documentElement.classList.add("drive")}}catch(e){}</script>
 <!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=93aa168b" data-label="Chat with us" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-nudge="Hi, I'm the Shine Auto Repairs assistant. Got a question about a pink slip, a repair or a warning light?" data-nudge-after="15" data-nudge-open="1" data-avoid=".qbar" defer></script><!--/chat-->
 <script>(function(){if(matchMedia("(max-width:760px)").matches){var c=document.querySelector('script[src*="chat.js"]');if(c){c.removeAttribute("data-nudge");c.removeAttribute("data-nudge-open")}}})();</script>
 
