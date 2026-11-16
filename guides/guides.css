@@ -278,3 +278,8 @@ body .ac-launch .ac-dot{width:24px;height:24px;left:calc(34% - 12px);top:calc(57
   body .ac-launch .ac-dot{left:22%!important;width:46%!important;top:45%!important;height:14%!important}
   body .ac-launch .ac-dot::after{font:700 9.5px/1 var(--sans,system-ui)!important;letter-spacing:.08em!important;text-transform:uppercase;color:rgba(255,255,255,.92)!important;text-shadow:0 .5px 0 rgba(120,50,0,.45)!important}
 }
+
+/* Chat SUV highlight: a soft orange glow pulses around the car's outline once it has parked */
+@keyframes chat-glow{0%,55%,100%{filter:drop-shadow(0 0 0 rgba(232,116,12,0))}70%{filter:drop-shadow(0 0 7px rgba(232,116,12,.95)) drop-shadow(0 0 14px rgba(243,154,54,.55))}}
+body:not(.ac-on) .ac-launch{animation:chat-glow 3.2s ease-in-out 1s infinite}
+@media (prefers-reduced-motion:reduce){body .ac-launch{animation:none;filter:drop-shadow(0 0 5px rgba(232,116,12,.7))}}

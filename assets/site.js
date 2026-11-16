@@ -289,7 +289,7 @@ f.addEventListener("submit",function(e){e.preventDefault();var q=f.q.value.trim(
 })();
 
 /* The SUV parks: once the drive-in ends, swap back to the still wheels */
-document.addEventListener("animationend",function(e){if(e.animationName==="suv-in")document.documentElement.classList.remove("drive")});
+document.addEventListener("animationend",function(e){if(e.animationName==="suv-in"||e.animationName==="suv-in-m")document.documentElement.classList.remove("drive")});
 
 /* Reviews: move one review at a time every 4.5s while on screen; pause on hover or focus; previous / next always work */
 (function(){var run=document.querySelector(".rv-run");if(!run)return;var cards=[].slice.call(run.querySelectorAll(".rv-c")),reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,hold=false,vis=false,last=0;
