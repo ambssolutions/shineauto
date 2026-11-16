@@ -1521,6 +1521,27 @@ html[data-theme="dark"] .lights .lp dl>div:nth-child(2){background:color-mix(in 
 @media (min-width:1061px){.head .nav{flex:1;margin-left:0}.head .nav__links{margin:0 auto}}
 html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;font-optical-sizing:auto;font-synthesis-weight:none}
 img{image-rendering:auto}
+/* Brand ticker waits for the roller door to open */
+@keyframes tk-in{from{transform:translateY(105%)}}
+html.drive .ticker{animation:tk-in .8s cubic-bezier(.2,.7,.2,1) 2.75s both}
+@media (prefers-reduced-motion:reduce){html.drive .ticker{animation:none}}
+@media (max-width:760px){.lw-stage>.pt-again{left:10px;top:10px;min-height:28px;padding:0 10px;font-size:.7rem;gap:4px}.lw-stage>.pt-again::before{font-size:.85rem}.lw .cu-ex{display:none}}
+/* Short phone screens: tighter hero so the bottom buttons never cover it */
+@media (max-width:760px) and (max-height:760px){
+  .hero__body{gap:8px}
+  .hero__meta{gap:6px}
+  .hero__meta>*{min-height:28px;padding-top:2px;padding-bottom:2px;font-size:.84rem}
+  #hero-h{font-size:clamp(1.8rem,8.2vw,2.15rem)}
+  .hero__lede{font-size:.92rem;line-height:1.45}
+  .rego{gap:7px}
+  .plate{height:50px}
+  .rego__row select,.rego__row button{min-height:46px}
+  .rego__priv{font-size:.74rem;line-height:1.35}
+  .hero__more{font-size:.86rem}
+}
+@media (max-width:760px) and (max-height:640px){
+  .hero__lede{display:none}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens if the car fails its inspection?", "acceptedAnswer": {"@type": "Answer", "text": "We tell you what failed. Have it fixed and checked again here within 14 days and there's no second inspection fee."}}, {"@type": "Question", "name": "How do I know if my car needs an inspection?", "acceptedAnswer": {"@type": "Answer", "text": "Your rego renewal notice says whether you need one. You can check when your rego is due with Service NSW."}}, {"@type": "Question", "name": "How much is a pink slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle pink slip is $52, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How much is a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "The most a station can charge for a light vehicle blue slip is $82, from 1 July 2026. The NSW Government sets this maximum."}}, {"@type": "Question", "name": "How long is a pink slip valid?", "acceptedAnswer": {"@type": "Answer", "text": "A pink slip report is valid for 6 months. A blue slip is valid for 42 days."}}, {"@type": "Question", "name": "Do you do pink slips for LPG and diesel cars?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do pink slips for petrol, diesel and LPG vehicles."}}, {"@type": "Question", "name": "Do I need a pink slip or a blue slip?", "acceptedAnswer": {"@type": "Answer", "text": "Most light vehicles over five years old need a pink slip to renew rego. You need a blue slip if the rego expired more than three months ago, the car is from interstate or overseas, it has no plates, or it's a written-off vehicle approved for re-registration."}}, {"@type": "Question", "name": "What are your opening hours?", "acceptedAnswer": {"@type": "Answer", "text": "Monday to Friday 9am to 5pm, and Saturday 9am to 2pm. We're closed on Sunday."}}, {"@type": "Question", "name": "How do I book?", "acceptedAnswer": {"@type": "Answer", "text": "Call the workshop on (02) 8798 5715, or Balli on 0433 597 181, and tell us the car and what it needs."}}, {"@type": "Question", "name": "Do you service all makes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We service all makes. We're an independent workshop, not linked to any car maker."}}, {"@type": "Question", "name": "Will a logbook service here keep my new car warranty?", "acceptedAnswer": {"@type": "Answer", "text": "Under the Australian Consumer Law, a new car warranty can't be voided just because an independent workshop did the servicing, as long as it's done to the maker's specifications. Bring your logbook so the service can be recorded."}}, {"@type": "Question", "name": "Do you regas air con?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We do air con regas and repairs, for air con that blows warm or doesn't cool like it used to."}}]}</script>
 </head>
@@ -1908,7 +1929,7 @@ img{image-rendering:auto}
               <g class="cx cx-tag"><rect x="-70" y="-70" width="140" height="140" fill="#a7adb5"/><rect x="-46" y="-26" width="92" height="52" rx="6" fill="#fff" stroke="#1d2025" stroke-width="2"/><text x="0" y="-6" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="700" fill="#1d2025">Tank test date</text><text x="0" y="12" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="800" fill="#1d6b3a">In date</text></g>
             </g>
             <g class="cu-tick"><circle cx="54" cy="-54" r="16" fill="#2f9e5b" stroke="#fff" stroke-width="3"/><path d="M46 -54 L52 -48 L62 -60" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
-            <text class="cu-ex" x="0" y="-84" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="700" fill="#6b6459">Close-up · example</text>
+            <text class="cu-ex" x="0" y="-82" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="700" fill="#6b6459">Close-up · example</text>
           </g>
           <!-- the mechanic -->
           <g class="lw-man" style="transform:translate(860px,332px)"><g class="lw-face">
