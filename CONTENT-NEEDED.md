@@ -4,7 +4,7 @@
 |---|---|
 | 9 short phone clips of Balli doing each pink slip check (see FILMING.md) | Pink slip section, `assets/video/`, then list them in `CLIPS` in `assets/site.js` |
 | 3 to 5 real five-star Google reviews to quote word for word (reviewer first name, month and year), with Shine's OK. Google hides review text from automated tools, so these must be copied by hand | Reviews card |
-| Google shows 4.7 from 64 reviews (15 Nov 2026), used in the hero badge, reviews section and chat. Re-check before launch | Hero, reviews, chat |
+| Hero shows Birdeye's 93% five-star (53 of 57, 15 Nov 2026); Google shows 4.7 from 64 (reviews section, chat). Send Google's star breakdown to show a Google % with the G. Re-check before launch | Hero, reviews, chat |
 | **Before launch (NSW):** Motor Vehicle Repairer Licence number (MVRL), to show as "Lic. No. MVRL…" in the footer. NSW Fair Trading: a repair business must hold a current licence | Footer |
 | **Before launch (NSW):** confirm Shine is an Authorised Inspection Station for light vehicle pink slips, blue slips (AUVIS) and LPG (AGIS), as the site advertises all three | Services, fees, LPG guide |
 | Do they service electric cars (Tesla, BYD)? Removed from the makes strip until confirmed | Makes strip, chat |
