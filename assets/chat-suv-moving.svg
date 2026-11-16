@@ -16,7 +16,7 @@
       <stop offset="1" stop-color="#7d8188"/>
     </radialGradient>
     <clipPath id="low"><rect x="0" y="69" width="240" height="31"/></clipPath>
-    <path id="body" d="M10 80 L6 62 Q5 41 12 31 L19 23 Q23 19 30 19 L147 19 Q155 19 161 24 L186 44 L219 50 Q232 53 234 62 L235 74 Q235 81 228 81 L212 81 A22 22 0 0 0 168 81 L80 81 A22 22 0 0 0 36 81 Z"/>
+    <path id="body" d="M 10 80 L 6 62 Q 5 32 12 22 L 19 14 Q 23 10 30 10 L 147 10 Q 155 10 161 15 L 186 35 L 219 43.65 Q 232 48.24 234 62 L 235 74 Q 235 81 228 81 L 212 81 A 22 22 0 0 0 168 81 L 80 81 A 22 22 0 0 0 36 81 Z"/>
     <g id="wheel">
       <circle r="18" fill="#121418"/>
       <circle r="15" fill="none" stroke="#24272d" stroke-width="2"/>
@@ -36,40 +36,40 @@
   <!-- ground shadow -->
   <ellipse cx="122" cy="94" rx="112" ry="4.5" fill="#000" opacity=".28"/>
   <!-- roof rails -->
-  <path d="M36 17.5 L138 17.5" stroke="#1d2025" stroke-width="2.6" stroke-linecap="round"/>
-  <path d="M42 17.5 V20 M132 17.5 V20" stroke="#1d2025" stroke-width="2.4"/>
+  <path d="M 36 8.5 L 138 8.5" stroke="#1d2025" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M 42 8.5 V 11 M 132 8.5 V 11" stroke="#1d2025" stroke-width="2.4"/>
   <!-- body -->
   <use xlink:href="#body" href="#body" fill="url(#paint)"/>
   <use xlink:href="#body" href="#body" fill="#2b2e34" clip-path="url(#low)"/>
   <!-- wheel wells -->
-  <path d="M36 81 A22 22 0 0 1 80 81 Z" fill="#16181c"/>
-  <path d="M168 81 A22 22 0 0 1 212 81 Z" fill="#16181c"/>
+  <path d="M 36 81 A 22 22 0 0 1 80 81 Z" fill="#16181c"/>
+  <path d="M 168 81 A 22 22 0 0 1 212 81 Z" fill="#16181c"/>
   <!-- wheel arch trims -->
-  <path d="M33 81 A25 25 0 0 1 83 81" fill="none" stroke="#24272d" stroke-width="4"/>
-  <path d="M165 81 A25 25 0 0 1 215 81" fill="none" stroke="#24272d" stroke-width="4"/>
+  <path d="M 33 81 A 25 25 0 0 1 83 81" fill="none" stroke="#24272d" stroke-width="4"/>
+  <path d="M 165 81 A 25 25 0 0 1 215 81" fill="none" stroke="#24272d" stroke-width="4"/>
   <!-- greenhouse -->
-  <path d="M15 43 L18 31 Q20 25 27 24.5 L145 24.5 Q151 24.5 156 28.5 L176 44.5 L15 44.5 Z" fill="url(#glass)"/>
+  <path d="M 15 34 L 18 22 Q 20 16 27 15.5 L 145 15.5 Q 151 15.5 156 19.5 L 176 35.5 L 15 35.5 Z" fill="url(#glass)"/>
   <!-- pillars -->
-  <path d="M15 44.5 L18 31 Q20 25 27 24.5 L31 24.5 L28 44.5 Z" fill="url(#paint)"/>
-  <rect x="58" y="24.5" width="4" height="20" fill="#16191e"/>
-  <rect x="104" y="24.5" width="5" height="20" fill="#16191e"/>
+  <path d="M 15 35.5 L 18 22 Q 20 16 27 15.5 L 31 15.5 L 28 35.5 Z" fill="url(#paint)"/>
+  <rect x="58" y="15.5" width="4" height="20" fill="#16191e"/>
+  <rect x="104" y="15.5" width="5" height="20" fill="#16191e"/>
   <!-- glass reflections -->
-  <path d="M66 27 L80 27 L70 42 L62 42 Z" fill="#fff" opacity=".1"/>
-  <path d="M114 27 L126 27 L117 42 L110 42 Z" fill="#fff" opacity=".1"/>
+  <path d="M 66 18 L 80 18 L 70 33 L 62 33 Z" fill="#fff" opacity=".1"/>
+  <path d="M 114 18 L 126 18 L 117 33 L 110 33 Z" fill="#fff" opacity=".1"/>
   <!-- beltline and shoulder highlight -->
-  <path d="M14 45.5 L178 45.5" stroke="#1d2025" stroke-width="1.4"/>
-  <path d="M12 52 Q120 50 226 55" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.4"/>
+  <path d="M 14 36.76 L 178 36.76" stroke="#1d2025" stroke-width="1.4"/>
+  <path d="M 12 46.71 Q 120 43.65 226 51.29" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.4"/>
   <!-- door shut lines -->
-  <path d="M60 46 L60 70 M106 46 Q107 60 105 70 M153 46 Q156 58 154 70" fill="none" stroke="#7a3a02" stroke-opacity=".55" stroke-width="1"/>
+  <path d="M 60 37.53 L 60 70 M 106 37.53 Q 107 58.94 105 70 M 153 37.53 Q 156 55.88 154 70" fill="none" stroke="#7a3a02" stroke-opacity=".55" stroke-width="1"/>
   <!-- handles -->
-  <rect x="88" y="51" width="9" height="2.4" rx="1.2" fill="#1d2025" opacity=".7"/>
-  <rect x="136" y="51" width="9" height="2.4" rx="1.2" fill="#1d2025" opacity=".7"/>
+  <rect x="88" y="45.18" width="9" height="2.4" rx="1.2" fill="#1d2025" opacity=".7"/>
+  <rect x="136" y="45.18" width="9" height="2.4" rx="1.2" fill="#1d2025" opacity=".7"/>
   <!-- mirror -->
-  <path d="M160 39 L170 40 Q172 41 171 44 L163 45 Q159 44 160 39 Z" fill="#e8740c" stroke="#7a3a02" stroke-opacity=".5" stroke-width=".8"/>
+  <path d="M 160 30 L 170 31 Q 172 32 171 35 L 163 36 Q 159 35 160 30 Z" fill="#e8740c" stroke="#7a3a02" stroke-opacity=".5" stroke-width=".8"/>
   <!-- headlight, grille, tail light -->
-  <path d="M216 53 L231 57 Q233 58 232 60 L218 59 Q214 58 216 53 Z" fill="#fff6d8" stroke="#3a3d43" stroke-width=".8"/>
-  <path d="M226 64 L235 64 L235 71 L227 71 Z" fill="#1d2025"/>
-  <path d="M6.5 36 L11 34 L11 49 L6 50 Z" fill="#d9342b"/>
+  <path d="M 216 48.24 L 231 54.35 Q 233 55.88 232 58.94 L 218 57.41 Q 214 55.88 216 48.24 Z" fill="#fff6d8" stroke="#3a3d43" stroke-width=".8"/>
+  <path d="M 226 64 L 235 64 L 235 71 L 227 71 Z" fill="#1d2025"/>
+  <path d="M 6.5 27 L 11 25 L 11 42.12 L 6 43.65 Z" fill="#d9342b"/>
   </g>
   <g transform="translate(51 80)"><g class="spin"><use xlink:href="#wheel" href="#wheel"/></g></g>
   <g transform="translate(167 80)"><g class="spin"><use xlink:href="#wheel" href="#wheel"/></g></g>

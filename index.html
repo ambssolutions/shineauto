@@ -971,6 +971,40 @@ body .ac-launch::after{content:"";position:absolute;left:6%;right:6%;bottom:-6px
 @keyframes suv-halo{0%{opacity:.85;transform:scale(.7)}70%{opacity:0;transform:scale(1.25)}100%{opacity:0;transform:scale(1.25)}}
 html.drive body .ac-launch::after,body.ac-on .ac-launch::after{animation:none;opacity:0}
 @media (prefers-reduced-motion:reduce){body .ac-launch::after{animation:none;opacity:.6;transform:none}}
+
+/* Services on laptops: the card grows to fit its write-up, the photo fills the left side */
+@media (min-width:761px){
+  .sc{height:auto;min-height:clamp(300px,calc(100vh - 400px),440px)}
+  .sc__img{position:relative;min-height:100%}
+  .sc__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .sc__body{padding:clamp(24px,3vw,44px) clamp(24px,3vw,48px)}
+  .sc p{font-size:clamp(.95rem,1.05vw,1.04rem);line-height:1.6}
+}
+
+/* Pink slip on laptops: the whole bay fits the screen height (car, answer, check points and outcome together) */
+@media (min-width:761px){
+  .bay{height:clamp(420px,calc(100vh - 150px),640px);align-items:stretch}
+  .bay-stage{min-height:0;height:100%}
+  .bay-side{gap:8px;align-content:start;overflow:hidden;min-height:0}
+  .pt-card{min-height:0}
+  .pt-info{padding:14px 18px}
+  .pt-info h3{font-size:1.2rem;margin:4px 0}
+  .pt-info p{font-size:.88rem;line-height:1.45}
+  .pt-info .tip{margin-top:8px;padding:8px 12px;font-size:.84rem}
+  .pt-info .tip b{margin-bottom:3px}
+  .bay-lbl{padding:2px 4px 0;font-size:.74rem}
+  .pt-keys{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .pt-keys button{min-height:32px;padding:4px 12px;border-radius:999px;font-size:.78rem;gap:6px}
+  .pt-keys button::before{width:12px;height:12px}
+  .oc{padding:8px 12px;font-size:.8rem;line-height:1.4}
+  .oc b{font-size:.86rem}
+}
+@media (min-width:761px) and (max-height:700px){.pt-info .tip{display:none}.bay-lbl{display:none}}
+
+/* SUV: taller body; the Shine badge sits in the middle of the front door */
+body .ac-launch{width:164px;height:84px}
+body .ac-launch .ac-dot{width:30px;height:30px;left:calc(54% - 15px);top:calc(51% - 15px);background-size:26px}
+@media (max-width:760px){body .ac-launch{width:80px;height:40px}body .ac-launch .ac-dot{display:none}}
 </style>
 </head>
 <body>
@@ -1422,7 +1456,7 @@ html.drive body .ac-launch::after,body.ac-on .ac-launch::after{animation:none;op
   <a class="btn btn--ghost q-dir" href="https://www.google.com/maps/search/?api=1&amp;query=Shine+Auto+Repairs+Warwick+Farm&amp;query_place_id=ChIJ-YbkfgOVEmsRFlQ4039uDYI" rel="noopener" aria-label="Directions to the workshop"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg><span class="q-t">Directions</span></a>
 </nav>
 
-<script src="assets/site.js?v=f6fbe9a9"></script>
+<script src="assets/site.js?v=76cd7721"></script>
 <script type="module" src="assets/inspect.js?v=6"></script>
 <script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&scrollY<80&&!location.hash){document.documentElement.classList.add("drive")}}catch(e){}</script>
 <!--chat--><script src="/chat/chat.js?v=ea4d8a04" data-index="/chat/chat-index.json?v=93aa168b" data-label="Chat with us" data-langs="en" data-key="shineauto-chat" data-color="#c4700f" data-nudge="Hi, I'm the Shine Auto Repairs assistant. Got a question about a pink slip, a repair or a warning light?" data-nudge-after="15" data-nudge-open="1" data-avoid=".qbar" defer></script><!--/chat-->

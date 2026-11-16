@@ -84,8 +84,12 @@
     function paint(){cards.forEach(function(c,k){if(k===cur){c.classList.remove("on");void c.offsetWidth;c.classList.add("on")}else c.classList.remove("on")});
       bars.forEach(function(b,k){b.classList.toggle("done",k<cur);var was=b.classList.contains("on");b.classList.remove("on");if(k===cur){void b.offsetWidth;b.classList.add("on")}b.setAttribute("aria-current",String(k===cur))});
       cnt.textContent=cur+1}
-    function show(i,byUser){cur=(i+cards.length)%cards.length;clearTimeout(prog);prog=setTimeout(function(){prog=0},1000);
-      tr.scrollTo({left:centre(cur),behavior:reduce?"auto":"smooth"});paint()}
+    /* a slow eased glide between services (snap is paused while it runs) */
+    function glide(x){if(reduce){tr.scrollLeft=x;return}cancelAnimationFrame(glide.r);var s0=tr.scrollLeft,d=x-s0,t0=0;tr.style.scrollSnapType="none";
+      function st(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/950),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;tr.scrollLeft=s0+d*e;if(k<1)glide.r=requestAnimationFrame(st);else tr.style.scrollSnapType=""}
+      glide.r=requestAnimationFrame(st)}
+    function show(i,byUser){cur=(i+cards.length)%cards.length;clearTimeout(prog);prog=setTimeout(function(){prog=0},1200);
+      glide(centre(cur));paint()}
     function hold(){car.classList.toggle("hold",!!(user||why.h||why.f||why.o||why.t||document.hidden))}
     function setUser(p){user=p;car.classList.toggle("is-paused",p);play.setAttribute("aria-label",p?"Play the services slideshow":"Pause the services slideshow");hold()}
     $$(".sc-btn[data-dir]",car).forEach(function(b){b.addEventListener("click",function(){show(cur+(+b.dataset.dir),true)})});
