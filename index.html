@@ -172,7 +172,7 @@ html:not(.js) .hero__blur img:first-child{opacity:1}
     linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,rgba(0,0,0,.25)),
     linear-gradient(97deg,rgba(255,255,255,0) 20%,rgba(255,255,255,.07) 38%,rgba(255,255,255,0) 52%),
     repeating-linear-gradient(180deg,#2a2d32 0,#50545a calc(var(--s)*.14),#7a7e85 calc(var(--s)*.3),#61656b calc(var(--s)*.5),#43464c calc(var(--s)*.78),#1c1e22 calc(var(--s)*.94),#111216 var(--s));
-  animation:door-up 1.7s .55s both}
+  animation:door-up 2.3s .55s both}
 .door::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,rgba(0,0,0,.42) 0,rgba(255,255,255,.1) calc(var(--s)*.3),rgba(255,255,255,0) calc(var(--s)*.5),rgba(0,0,0,.18) calc(var(--s)*.8),rgba(0,0,0,.55) var(--s))}
 .door__paint{position:absolute;inset:var(--head-b) 0 0;display:grid;place-content:center;justify-items:center;text-align:center;padding-bottom:6vh}
 .door__mark{width:clamp(70px,min(18vw,15vh),132px);height:auto;margin-bottom:clamp(10px,2vh,20px);filter:drop-shadow(.06em .08em 0 rgba(18,13,7,.85));opacity:.96}
@@ -1138,7 +1138,7 @@ html.parked body .ac-launch{animation:suv-settle .7s cubic-bezier(.3,1.4,.5,1) b
 /* Laptops: hero content sits higher, leaving a clear lane at the bottom; the SUV drives straight along it to its spot on the right */
 @media (min-width:1061px){
   .hero__body{padding-bottom:clamp(150px,23vh,200px)}
-  html.drive body .ac-launch{animation:suv-lane 3.6s linear 1.6s both}
+  html.drive body .ac-launch{animation:suv-lane 3.6s linear 2.2s both}
 }
 @keyframes suv-lane{
   0%{translate:calc(-100vw - 200px) 0;animation-timing-function:cubic-bezier(.25,.6,.3,1)}
@@ -1205,7 +1205,7 @@ body .ac-chip:hover,body .ac-links a:hover{border-color:#e8740c!important;color:
 
 /* Phones and tablets: a smoother drive-in along the bottom, a brake dip, then the car turns into the chat button */
 @media (max-width:1060px){
-  html.drive body .ac-launch{animation:suv-lane-m 3.4s linear 1.7s both!important}
+  html.drive body .ac-launch{animation:suv-lane-m 3.4s linear 2.3s both!important}
   html.parked body .ac-launch{animation:btn-pop .55s cubic-bezier(.3,1.5,.5,1) both,chat-glow 3.2s ease-in-out 1.2s infinite!important}
 }
 @keyframes suv-lane-m{
