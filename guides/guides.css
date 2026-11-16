@@ -323,3 +323,7 @@ html:not(.drive) body .ac-launch::after{content:""!important;position:absolute!i
   background:#2fd15a!important;box-shadow:0 0 0 2px rgba(255,255,255,.85),0 0 6px rgba(47,209,90,.9)!important;opacity:1!important;transform:none!important;animation:led 1.4s ease-in-out infinite!important}
 @keyframes led{0%,100%{opacity:1}50%{opacity:.25}}
 @media (prefers-reduced-motion:reduce){html:not(.drive) body .ac-launch::after{animation:none!important}}
+
+/* Green LED inline, centred, to the left of the chat icon */
+html:not(.drive) body .ac-launch::after{position:static!important;inset:auto!important;order:-1!important;flex:none!important;margin:0 -2px 0 0!important;width:9px!important;height:9px!important}
+html:not(.drive) body .ac-launch{padding-left:16px!important}
